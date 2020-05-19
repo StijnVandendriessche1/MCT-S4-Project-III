@@ -1,6 +1,8 @@
 """ Class for send to the mqtt-server
 pip install paho-mqtt """
 
+from queue import Queue
+from threading import Thread
 
 import paho.mqtt.client as mqtt
 import paho.mqtt.subscribe as subscribe
@@ -17,7 +19,9 @@ from Logic.get_vars import GetVars
 
 
 class MQTT:
-    def __init__(self, topic):
+    def __init__(self, topic, pubsub=False, messages_queue = None):
+        self.pubsub = pubsub
+        self.messages_queue = messages_queue
         self.get_vars = GetVars()
         self.ip = self.get_vars.get_var("MQTT_IP")
         self.port = self.get_vars.get_var("MQTT_Port")
@@ -27,16 +31,21 @@ class MQTT:
 
     def start(self):
         self.Client = mqtt.Client()
-        self.Client.on_connect = self.on_connect
-        self.Client.on_message = self.on_message
+        if self.pubsub:
+            self.Client.on_connect = self.on_connect
+            self.Client.on_message = self.on_message
 
         self.Client.connect(self.ip, self.port, 60)
+
+        if self.pubsub:
+            self.Client.loop_forever()
 
     def on_connect(self, client, userdata, flags, rc):
         self.Client.subscribe(self.topic)
 
     def on_message(self, client, userdata, msg):
-        pass
+        message = json.loads(msg.payload)
+        self.messages_queue.put(message)
 
     def publish(self, data):
         objPayload = json.dumps(data)
@@ -44,6 +53,25 @@ class MQTT:
                             qos=self.qos, retain=False)
 
 
-test = MQTT("test")
+""" test = MQTT("test")
 test_json = {"test": "Topi"}
-test.publish(test_json)
+test.publish(test_json) """
+
+""" messages_queue = Queue()
+
+def start_mqtt():
+    test = MQTT("test", True, messages_queue)
+
+def send_data():
+    message = messages_queue.get()
+    while True:
+        print(message)
+        messages_queue.task_done()
+        message = messages_queue.get()
+
+
+t = Thread(target=start_mqtt)
+t.start()
+
+t = Thread(target=send_data)
+t.start() """
