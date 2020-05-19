@@ -1,15 +1,26 @@
 """ Class for send to the mqtt-server
 pip install paho-mqtt """
 
+
 import paho.mqtt.client as mqtt
 import paho.mqtt.subscribe as subscribe
 import json
 
+import sys
+import os
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_ROOT)
+sys.path.insert(0, BASE_DIR)
+
+from Logic.get_vars import GetVars
+
 
 class MQTT:
     def __init__(self, topic):
-        self.ip = "localhost"
-        self.port = 1883
+        self.get_vars = GetVars()
+        self.ip = self.get_vars.get_var("MQTT_IP")
+        self.port = self.get_vars.get_var("MQTT_Port")
         self.topic = topic
         self.qos = 1
         self.start()
@@ -32,6 +43,7 @@ class MQTT:
         self.Client.publish(self.topic, payload=objPayload,
                             qos=self.qos, retain=False)
 
-""" test = MQTT("test")
+
+test = MQTT("test")
 test_json = {"test": "Topi"}
-test.publish(test_json) """
+test.publish(test_json)
