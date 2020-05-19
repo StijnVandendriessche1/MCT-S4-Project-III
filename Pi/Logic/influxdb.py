@@ -13,8 +13,11 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
 
+from Models.sensordata import Sensordata
+from Models.data import Data
+
 class Influxdb:
-    def __init__(self, host):
+    def __init__(self, host = ""):
         self.get_vars = GetVars()
         self.host = host
         self.connection = False
@@ -32,14 +35,23 @@ class Influxdb:
         except Exception as ex:
             print(ex)
 
-    def write_data(self, measurement, key, value):
+    def write_data(self, sensordata):
+        try:
+            for data in sensordata.data:
+                sequence = [f"{sensordata.measurement},host={sensordata.host} {data.key}={data.value}"]
+                self.write_api.write(self.bucket, self.org, sequence)
+            return True
+        except Exception as ex:
+            print(ex)
+            return False
+    """ def write_data(self, measurement, host, key, value):
         try:
             sequence = [f"{measurement},host={self.host} {key}={value}"]
             self.write_api.write(self.bucket, self.org, sequence)
             return True
         except Exception as ex:
             print(ex)
-            return False
+            return False """
 
 
 """ test = Influxdb("Kitchen")
