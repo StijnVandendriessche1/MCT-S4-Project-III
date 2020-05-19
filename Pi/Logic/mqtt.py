@@ -16,6 +16,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
+import jsonpickle
 
 
 class MQTT:
@@ -44,12 +45,14 @@ class MQTT:
         self.Client.subscribe(self.topic)
 
     def on_message(self, client, userdata, msg):
-        message = json.loads(msg.payload)
+        #message = json.loads(msg.payload)
+        message = jsonpickle.decode(msg.payload)
         self.messages_queue.put(message)
 
     def publish(self, data):
-        objPayload = json.dumps(data)
-        self.Client.publish(self.topic, payload=objPayload,
+        json_data = jsonpickle.encode(data)
+        #objPayload = json.dumps(json_data)
+        self.Client.publish(self.topic, payload=json_data,
                             qos=self.qos, retain=False)
 
 
