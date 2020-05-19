@@ -1,24 +1,32 @@
 """ Class for write the data to the InfluxDB 2.O (cloud) """
 
-from datetime import datetime
-
-from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
+from influxdb_client import InfluxDBClient, Point, WritePrecision
+from datetime import datetime
+import sys
+import os
 
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_ROOT)
+sys.path.insert(0, BASE_DIR)
+
+from Logic.get_vars import GetVars
 
 class Influxdb:
     def __init__(self, host):
+        self.get_vars = GetVars()
         self.host = host
         self.connection = False
         self.start()
 
     def start(self):
         try:
-            token = "0FYRJRMjyVbUZo-0Aln-7oN37v_5VzW1Abpv_ERUAABivBZ1hji1oOtcVmiVsP6LqdUCFRo_hcJpECg_k2Z8mA=="
-            self.org = "6a7311f79ed1ac39"
-            self.bucket = "robin.deneef's Bucket"
+            token = self.get_vars.get_var("InfluxDB_Token")
+            self.org = self.get_vars.get_var("Org")
+            self.bucket = self.get_vars.get_var("Bucket")
             client = InfluxDBClient(
-                url="https://us-central1-1.gcp.cloud2.influxdata.com", token=token)
+                url=self.get_vars.get_var("InfluxDB_URL"), token=token)
             self.write_api = client.write_api(write_options=SYNCHRONOUS)
             self.connection = True
         except Exception as ex:
