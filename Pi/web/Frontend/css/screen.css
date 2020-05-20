@@ -1,0 +1,769 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 400;
+	src: url('../assets/fonts/Roboto-Regular.ttf') format('ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 500;
+	src: url('../assets/fonts/Roboto-Medium.ttf') format('ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-weight: 700;
+	src: url('../assets/fonts/Roboto-Bold.ttf') format('ttf');
+	font-display: swap;
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+	/* colors */
+
+	--global-accent: #FF9900;
+	--global-white: #FFFFFF;
+	--global-grey: #00000040;
+
+	--global-on: var(--global-accent);
+	--global-off: var(--global-grey);
+
+	/* Font weights */
+	--global-default-weight: 400;
+
+	/* Shadows */
+	--shadow-neutral: 0 2px 6px rgba(0, 0, 0, 0.04);
+	--shadow-box: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+	/* border radius */
+	--global-borderRadius: 3px;
+	--global-borderWidth: 1px;
+
+	/* Grid System */
+
+	--global-baseline: 8px;
+	--global-whitespace: calc(var(--global-baseline) * 3); /* 24 px */
+
+	--global-whitespace-xs: calc(var(--global-baseline) * 0.5); /* 4 px */
+	--global-whitespace-sm: calc(var(--global-baseline) * 1); /* 8 px */
+	--global-whitespace-md: calc(var(--global-baseline) * 2); /* 16 px */
+	--global-whitespace-lg: calc(var(--global-baseline) * 4); /* 32 px */
+	--global-whitespace-xl: calc(var(--global-whitespace) * 2);  /* 48 px */
+	--global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* 72 px */
+
+	--global-input-focus-boxShadowSpread: 0 0 0 3px;
+	--global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+	--global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+	font-size: 16px;
+	font-weight: var(--global-default-weight);
+	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+	color: var(--color-neutral-dark);
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--color-alpha-light-x);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+	background: var(--color-alpha);
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: var(--color-alpha);
+	color: white;
+	text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 48px;
+	margin: 0 0 24px;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 40px;
+	margin: 0 0 24px;
+}
+
+h3 {
+	font-size: 26px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+	margin: 0 0 24px;
+}
+
+ul,
+ol {
+	padding-left: 24px;
+}
+
+li ul,
+li ol {
+	margin-bottom: 0;
+}
+
+blockquote {
+	font-style: normal;
+	font-size: 23px;
+	line-height: 32px;
+	margin: 0 0 24px;
+}
+
+blockquote * {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+figcaption {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 8px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: LightGrey;
+	margin: 0 0 24px;
+}
+
+a {
+	transition: all var(--global-transitionDuration-alpha);
+	color: var(--color-input-alpha);
+	outline-color: var(--color-alpha);
+	outline-width: medium;
+	outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+	color: var(--color-input-alpha-x-light);
+}
+
+a:hover,
+a:focus {
+	color: var(--color-input-alpha-x-light);
+}
+
+label,
+input {
+	display: block;
+}
+
+select {
+	width: 100%;
+}
+
+input::placeholder {
+	color: var(--color-neutral-light);
+}
+
+span {
+	font-weight: 700;
+	font-size: 20px;
+}
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+	position: relative;
+	padding: 24px 24px 0;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100em; /* 100 * 16px = 1600 */
+	width: 100%;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+	list-style: none;
+	padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Dashboard
+    ---
+    Website dashboard
+*/
+
+.c-dashboard {
+	display: grid;
+	grid-gap: calc(var(--global-baseline) * 6);
+	margin-bottom: var(--global-whitespace-md);
+}
+
+.c-dashboard__item {
+	box-shadow: var(--shadow-box);
+	background-color: #fff;
+	padding: calc(var(--global-baseline) * 4);
+	border-radius: var(--global-whitespace);
+	border: 3px solid var(--global-white)
+}
+
+@media screen and (min-width: 992px) {
+	.c-dashboard {
+		grid-template-columns: repeat(24, 1fr);
+	}
+
+	.c-dashboard__item {
+		grid-column: span 24;
+	}
+}
+
+/*
+    Component: App
+    ---
+    Website main layout
+*/
+
+.c-app {
+	min-height: 100vh;
+}
+
+.c-app__title {
+	text-align: center;
+}
+
+.c-app__content {
+	margin-top: var(--global-whitespace-md);
+}
+
+/*
+    Component: card
+    ---
+    cards layout
+*/
+
+.c-card__text {
+	margin-top: 16px;
+	margin-bottom: 0;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+/*
+    Component: js
+    ---
+    css for js things
+*/
+
+.js-on {
+	border: 3px solid var(--global-on);
+}
+
+.js-off {
+	border: 3px solid var(--global-off);
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: grid
+    ---
+    Utility classes to put specefic grid size onto elements
+*/
+
+@media (min-width: 992px) {
+	.u-x-span-1-bp3 {
+		grid-column: span 1;
+	}
+
+	.u-x-span-2-bp3 {
+		grid-column: span 2;
+	}
+
+	.u-x-span-3-bp3 {
+		grid-column: span 3;
+	}
+
+	.u-x-span-4-bp3 {
+		grid-column: span 4;
+	}
+
+	.u-x-span-5-bp3 {
+		grid-column: span 5;
+	}
+
+	.u-x-span-6-bp3 {
+		grid-column: span 6;
+	}
+
+	.u-x-span-7-bp3 {
+		grid-column: span 7;
+	}
+
+	.u-x-span-8-bp3 {
+		grid-column: span 8;
+	}
+
+	.u-x-span-9-bp3 {
+		grid-column: span 9;
+	}
+
+	.u-x-span-10-bp3 {
+		grid-column: span 10;
+	}
+
+	.u-x-span-11-bp3 {
+		grid-column: span 11;
+	}
+
+	.u-x-span-12-bp3 {
+		grid-column: span 12;
+	}
+
+	.u-x-span-13-bp3 {
+		grid-column: span 13;
+	}
+
+	.u-x-span-14-bp3 {
+		grid-column: span 14;
+	}
+
+	.u-x-span-15-bp3 {
+		grid-column: span 15;
+	}
+
+	.u-x-span-16-bp3 {
+		grid-column: span 16;
+	}
+
+	.u-x-span-17-bp3 {
+		grid-column: span 17;
+	}
+
+	.u-x-span-18-bp3 {
+		grid-column: span 18;
+	}
+
+	.u-x-span-19-bp3 {
+		grid-column: span 19;
+	}
+
+	.u-x-span-20-bp3 {
+		grid-column: span 20;
+	}
+
+	.u-x-span-21-bp3 {
+		grid-column: span 21;
+	}
+
+	.u-x-span-22-bp3 {
+		grid-column: span 22;
+	}
+
+	.u-x-span-23-bp3 {
+		grid-column: span 23;
+	}
+
+	.u-x-span-24-bp3 {
+		grid-column: span 24;
+	}
+
+	.u-y-span-1-bp3 {
+		grid-row: span 1;
+	}
+
+	.u-y-span-2-bp3 {
+		grid-row: span 2;
+	}
+
+	.u-y-span-3-bp3 {
+		grid-row: span 3;
+	}
+
+	.u-y-span-4-bp3 {
+		grid-row: span 4;
+	}
+
+	.u-y-span-5-bp3 {
+		grid-row: span 5;
+	}
+}
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral {
+	color: var(--color-neutral);
+}
+
+.u-color-neutral-dark {
+	color: var(--color-neutral-dark);
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+	padding-top: 0 !important;
+}
+
+.u-mb-clear {
+	margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+	margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+	margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+	margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+	margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+	margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+	max-width: 27em !important;
+}
+
+.u-max-width-sm {
+	max-width: 39em !important;
+}
+
+.u-max-width-md {
+	max-width: 50em !important;
+}
+
+.u-max-width-lg {
+	max-width: 85em !important;
+}
+
+.u-max-width-none {
+	max-width: none !important;
+}
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+	text-align: center;
+}
+
+.u-align-center {
+	margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+	font-size: 14px;
+}
+
+.u-hidden {
+	display: none !important;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+	*,
+	*:before,
+	*:after {
+		background: transparent !important;
+		color: #000 !important;
+		/* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: ' (' attr(href) ')';
+	}
+	abbr[title]:after {
+		content: ' (' attr(title) ')';
+	}
+	/*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+	a[href^='#']:after,
+	a[href^='javascript:']:after {
+		content: '';
+	}
+	pre {
+		white-space: pre-wrap !important;
+	}
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	/*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+	thead {
+		display: table-header-group;
+	}
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
