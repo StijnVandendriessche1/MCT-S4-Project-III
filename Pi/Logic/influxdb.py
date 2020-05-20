@@ -21,6 +21,7 @@ class Influxdb:
         self.get_vars = GetVars()
         self.host = host
         self.connection = False
+        self.Messages = []
         self.start()
 
     def start(self):
@@ -44,14 +45,9 @@ class Influxdb:
         except Exception as ex:
             print(ex)
             return False
-    """ def write_data(self, measurement, host, key, value):
-        try:
-            sequence = [f"{measurement},host={self.host} {key}={value}"]
-            self.write_api.write(self.bucket, self.org, sequence)
-            return True
-        except Exception as ex:
-            print(ex)
-            return False """
+        
+    def get_messages(self):
+        
 
 
 """ test = Influxdb("Kitchen")
