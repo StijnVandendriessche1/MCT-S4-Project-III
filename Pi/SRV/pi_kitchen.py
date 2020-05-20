@@ -1,6 +1,8 @@
 import random
 
 import sys, os
+
+from datetime import datetime
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
@@ -26,7 +28,7 @@ class PiKitchen:
             try:
                 data = []
                 data.append(Data("temperature", self.temperature_sensor()))
-                sensordata = Sensordata("temperature_room",self.host, data)
+                sensordata = Sensordata("temperature_room",self.host, datetime.now(), data)
                 self.mqtt.publish(sensordata)
                 sleep(3)
             except Exception as ex:
