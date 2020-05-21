@@ -29,13 +29,40 @@
 
 :root {
 	/* colors */
-
 	--global-accent: #FF9900;
 	--global-white: #FFFFFF;
+	--global-dark-grey: #AAAAAA;
 	--global-grey: #00000040;
+	--global-light-grey: #00000020;
+
+	--global-color-alpha-transparent: #FF9900bf;
+	--global-color-alpha-x-transparent: #FF99004d;
+
+	--global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7;
+    --global-color-neutral-xx-light: #caccd4;
+    --global-color-neutral-x-light: #b5b6c0;
+    --global-color-neutral-light: #a0a1ad;
+    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4b4c60;
+    --global-color-neutral-xxx-dark: #35374d;
+    --global-color-neutral-xxxx-dark: #20223a;
+    --global-color-error: #FF3333;
+    --global-color-error-transparent: #FF3333bf;
+    --global-color-error-x-transparent: #FF33334d;
+
+	--global-title-line: var(--global-grey);
 
 	--global-on: var(--global-accent);
 	--global-off: var(--global-grey);
+
+	--global-icon-on: var(--global-accent);
+	--global-icon-off: var(--global-dark-grey);
+
+	--global-selection: var(--global-white);
+	--global-selection-background: var(--global-accent);
 
 	/* Font weights */
 	--global-default-weight: 400;
@@ -47,6 +74,13 @@
 	/* border radius */
 	--global-borderRadius: 3px;
 	--global-borderWidth: 1px;
+
+	/* transitions */
+    --global-transitionEasing-out: ease-out;
+    --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --global-transitionDuration-alpha: .1s;
+    --global-transitionDuration-beta: .2s;
+    --global-transitionDuration-gamma: .3s;
 
 	/* Grid System */
 
@@ -63,6 +97,18 @@
 	--global-input-focus-boxShadowSpread: 0 0 0 3px;
 	--global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
 	--global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+
+	--global-label-color: var(--global-color-neutral-xx-dark);
+    --global-placeholder-color: var(--global-color-neutral-x-light);
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-error-borderColor: var(--global-color-error);
+    --global-input-focus-boxShadowSpread: 0 0 0 3px;
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+    --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
 /*------------------------------------*\
@@ -101,14 +147,14 @@ html {
 */
 
 ::-moz-selection {
-	background: var(--color-alpha);
-	color: white;
+	background: var(--global-selection-background);
+	color: var(--global-selection);
 	text-shadow: none;
 }
 
 ::selection {
-	background: var(--color-alpha);
-	color: white;
+	background: var(--global-selection-background);
+	color: var(--global-selection);
 	text-shadow: none;
 }
 
@@ -380,7 +426,7 @@ span {
 .c-dashboard__item {
 	box-shadow: var(--shadow-box);
 	background-color: #fff;
-	padding: calc(var(--global-baseline) * 4);
+	padding: calc(var(--global-baseline) * 3);
 	border-radius: var(--global-whitespace);
 	border: 3px solid var(--global-white)
 }
@@ -407,10 +453,9 @@ span {
 
 .c-app__title {
 	text-align: center;
-}
-
-.c-app__content {
-	margin-top: var(--global-whitespace-md);
+	border-bottom: 1px solid var(--global-title-line);
+	margin-bottom: var(--global-whitespace);
+	padding-top: var(--global-whitespace);
 }
 
 /*
@@ -420,10 +465,109 @@ span {
 */
 
 .c-card__text {
-	margin-top: 16px;
 	margin-bottom: 0;
-	font-weight: 600;
+	margin-top: var(--global-whitespace-md);
+	font-weight: 500;
 	font-size: 24px;
+}
+
+.c-card__top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.c-icon__meeting {
+	fill: var(--global-accent);
+}
+
+/*
+    Component: custom toggle
+    ---
+    toggle switches for cards
+*/
+
+.c-custom-toggle {
+    --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
+    --toggle-borderColor: var(--global-input-borderColor);
+    --toggle-focus-borderColor: var(--global-input-focus-borderColor);
+    --toggle-checked-borderColor: var(--global-color-alpha-dark);
+    --toggle-checked-backgroundColor: var(--global-accent);
+    --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
+    --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    --toggle__switch-backgroundColor: White;
+    --toggle__switch-checked-backgroundColor: White;
+    --toggle__switch-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    display: flex;
+    align-items: center;
+}
+
+.c-custom-toggle--inverted {
+	flex-direction: row-reverse;
+}
+
+.c-custom-toggle__fake-input {
+    display: block;
+    height: 24px;
+    width: 48px;
+    margin-right: 16px;
+    background-color: var(--toggle-backgroundColor);
+    border-radius: 32px;
+    border: 1px solid var(--toggle-borderColor);
+    transition: var(--toggle-transition);
+	box-shadow: var(--toggle-boxShadow, 0);
+	margin-left: var(--global-whitespace);
+}
+
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+    margin-right: 0;
+}
+
+.c-custom-toggle__fake-input::after {
+    position: relative;
+    display: block;
+    content: '';
+    height: 22px;
+    width: 22px;
+    border-radius: 22px;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+    background-color: var(--toggle__switch-backgroundColor);
+    transition: var(--toggle__switch-transition);
+}
+
+
+/* focused and active state */
+
+.c-option--hidden:focus + .c-custom-toggle,
+.c-option--hidden:active + .c-custom-toggle {
+    --toggle-borderColor: var(--toggle-focus-borderColor);
+    --toggle-boxShadow: var(--toggle-focus-boxShadow);
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-toggle {
+    --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
+    --toggle-borderColor: var(--toggle-checked-borderColor);
+    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translate(24px,0);
+}
+
+/* special active state */
+
+.c-option--hidden:active + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    width: 28px;
+}
+
+.c-option--hidden:active:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    margin-left: -6px;
+}
+
+.c-label {
+	font-size: 16px;
+	font-weight: 600;
 }
 
 /*
@@ -438,6 +582,14 @@ span {
 
 .js-off {
 	border: 3px solid var(--global-off);
+}
+
+.js-icon__off {
+	fill: var(--global-icon-off);
+}
+
+.js-icon__on {
+	fill: var(--global-icon-on);
 }
 
 /*------------------------------------*\

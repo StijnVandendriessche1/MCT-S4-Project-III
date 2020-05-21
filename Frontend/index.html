@@ -8,6 +8,8 @@
     <meta name="description" content="Dashboard Influxdb 2.0 stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="manifest" href="/manifest.json">
+
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -25,34 +27,34 @@
 <body>
     <div class="c-app">
         <div class="c-app__content">
-            <div class="o-container">
-                <div class="c-app__title">
-                    <h1>
-                        Dashboard
-                    </h1>
-                </div>
+            <div class="c-app__title">
+                <h1>
+                    Dashboard
+                </h1>
+            </div>
+            <div class="o-container">   
                 <div class="c-dashboard">
-                    <div class="c-dashboard__item u-x-span-6-bp3 js-off">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-off">
                         <div class="c-card">
                             <div class="c-card__top">
                                 <div class="c-card__icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
-                                        <defs>
-                                          <clipPath id="clip-path">
-                                            <rect id="Rectangle_14" data-name="Rectangle 14" width="40" height="40" transform="translate(1496 248)" fill="#aaa" stroke="#707070" stroke-width="1"/>
-                                          </clipPath>
-                                        </defs>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__off">
                                         <g id="Mask_Group_7" data-name="Mask Group 7" transform="translate(-1496 -248)" clip-path="url(#clip-path)">
                                           <g id="video-call" transform="translate(1496 248)">
-                                            <circle id="Ellipse_1" data-name="Ellipse 1" cx="4" cy="4" r="4" transform="translate(12 9.333)" fill="#aaa"/>
-                                            <path id="Path_3" data-name="Path 3" d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z" fill="#aaa"/>
-                                            <path id="Path_4" data-name="Path 4" d="M17.952,28.667a2,2,0,0,1,.273-1,.667.667,0,0,0-.577-1h-.315V25.26a.667.667,0,0,0,.34-.779,6.727,6.727,0,0,1-.168-.8,11.552,11.552,0,0,1-.141-1.876,11.215,11.215,0,0,1,.427-2.883.667.667,0,0,0-.555-.836A9.215,9.215,0,0,0,16,18a12.165,12.165,0,0,0-6.153,1.932A3.98,3.98,0,0,0,8.1,22.667H2.667V5.333H29.333V10.42a.667.667,0,0,0,.449.631,7.418,7.418,0,0,1,1.223.552.667.667,0,0,0,.995-.58V5.333a2.669,2.669,0,0,0-2.667-2.667H2.667A2.669,2.669,0,0,0,0,5.333V22.667a2.669,2.669,0,0,0,2.667,2.667h12v1.333H11.333a.667.667,0,0,0-.667.667v1.333a.667.667,0,0,0,.667.667h5.952a.667.667,0,0,0,.667-.667Z" fill="#aaa"/>
+                                            <circle id="Ellipse_1" data-name="Ellipse 1" cx="4" cy="4" r="4" transform="translate(12 9.333)"/>
+                                            <path id="Path_3" data-name="Path 3" d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z"/>
+                                            <path id="Path_4" data-name="Path 4" d="M17.952,28.667a2,2,0,0,1,.273-1,.667.667,0,0,0-.577-1h-.315V25.26a.667.667,0,0,0,.34-.779,6.727,6.727,0,0,1-.168-.8,11.552,11.552,0,0,1-.141-1.876,11.215,11.215,0,0,1,.427-2.883.667.667,0,0,0-.555-.836A9.215,9.215,0,0,0,16,18a12.165,12.165,0,0,0-6.153,1.932A3.98,3.98,0,0,0,8.1,22.667H2.667V5.333H29.333V10.42a.667.667,0,0,0,.449.631,7.418,7.418,0,0,1,1.223.552.667.667,0,0,0,.995-.58V5.333a2.669,2.669,0,0,0-2.667-2.667H2.667A2.669,2.669,0,0,0,0,5.333V22.667a2.669,2.669,0,0,0,2.667,2.667h12v1.333H11.333a.667.667,0,0,0-.667.667v1.333a.667.667,0,0,0,.667.667h5.952a.667.667,0,0,0,.667-.667Z"/>
                                           </g>
                                         </g>
                                       </svg>                                      
                                 </div>
                                 <div class="c-card__switch">
-
+                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox" id="meeting">
+                                    <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted" for="meeting">
+                                        <span class="c-custom-toggle__fake-input">
+                                        </span>
+                                        Off
+                                    </label>
                                 </div>
                             </div>
                             <div class="c-card__text">
@@ -61,27 +63,24 @@
                         </div>
                     </div>
 
-                    <div class="c-dashboard__item u-x-span-6-bp3 js-on">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on">
                         <div class="c-card">
                             <div class="c-card__top">
                                 <div class="c-card__icon">                       
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40" style="color: #ffffff">
-                                        <defs>
-                                          <clipPath id="clip-path">
-                                            <rect id="Rectangle_14" data-name="Rectangle 14" width="40" height="40" transform="translate(1496 248)" fill="#aaa" stroke="#707070" stroke-width="1"/>
-                                          </clipPath>
-                                        </defs>
-                                        <g id="Mask_Group_7" data-name="Mask Group 7" transform="translate(-1496 -248)" clip-path="url(#clip-path)">
-                                          <g id="video-call" transform="translate(1496 248)">
-                                            <circle id="Ellipse_1" data-name="Ellipse 1" cx="4" cy="4" r="4" transform="translate(12 9.333)" fill="#aaa"/>
-                                            <path id="Path_3" data-name="Path 3" d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z" fill="#aaa"/>
-                                            <path id="Path_4" data-name="Path 4" d="M17.952,28.667a2,2,0,0,1,.273-1,.667.667,0,0,0-.577-1h-.315V25.26a.667.667,0,0,0,.34-.779,6.727,6.727,0,0,1-.168-.8,11.552,11.552,0,0,1-.141-1.876,11.215,11.215,0,0,1,.427-2.883.667.667,0,0,0-.555-.836A9.215,9.215,0,0,0,16,18a12.165,12.165,0,0,0-6.153,1.932A3.98,3.98,0,0,0,8.1,22.667H2.667V5.333H29.333V10.42a.667.667,0,0,0,.449.631,7.418,7.418,0,0,1,1.223.552.667.667,0,0,0,.995-.58V5.333a2.669,2.669,0,0,0-2.667-2.667H2.667A2.669,2.669,0,0,0,0,5.333V22.667a2.669,2.669,0,0,0,2.667,2.667h12v1.333H11.333a.667.667,0,0,0-.667.667v1.333a.667.667,0,0,0,.667.667h5.952a.667.667,0,0,0,.667-.667Z" fill="#aaa"/>
-                                          </g>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__on">
+                                        <g id="Mask_Group_10" data-name="Mask Group 10" transform="translate(-1504 -256)" clip-path="url(#clip-path)">
+                                          <path id="coffee-kettle" d="M40,17.5A12.514,12.514,0,0,0,27.5,5H2.648a2.5,2.5,0,0,0-1.53,4.477l2.965,2.29A16.181,16.181,0,0,0,5.117,34.32,2.5,2.5,0,0,0,6.832,35H25.667a2.5,2.5,0,0,0,1.715-.68,16.282,16.282,0,0,0,3.532-4.855A12.48,12.48,0,0,0,40,17.5ZM27.19,25H5.31a11.251,11.251,0,1,1,21.88,0Zm5.28-1.925c.007-.192.03-.382.03-.575A16.222,16.222,0,0,0,26.618,10H27.5a7.471,7.471,0,0,1,4.97,13.075Z" transform="translate(1504 256)"/>
                                         </g>
-                                      </svg>                                      
+                                      </svg>
+                                                                        
                                 </div>
                                 <div class="c-card__switch">
-
+                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox" id="coffee" checked>
+                                    <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted" for="coffee">
+                                        <span class="c-custom-toggle__fake-input">
+                                        </span>
+                                        On
+                                    </label>
                                 </div>
                             </div>
                             <div class="c-card__text">
@@ -90,14 +89,35 @@
                         </div>
                     </div>
 
-                    <div class="c-dashboard__item u-x-span-6-bp3">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on">
                         <div class="c-card">
-                            <div class="c-card__header">
-                                <div class="c-card__title"></div>
+                            <div class="c-card__top">
+                                <div class="c-card__icon">                       
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__on">
+                                        <g id="Mask_Group_13" data-name="Mask Group 13" transform="translate(-1104 -176)" clip-path="url(#clip-path)">
+                                          <g id="washing-machine" transform="translate(1104 176)">
+                                            <path id="Path_11" data-name="Path 11" d="M32.5,0H7.5a5.005,5.005,0,0,0-5,5V35a5.005,5.005,0,0,0,5,5h25a5.005,5.005,0,0,0,5-5V5A5.005,5.005,0,0,0,32.5,0ZM7.5,35V5h25l0,30Z"/>
+                                            <path id="Path_12" data-name="Path 12" d="M20,16.25A8.75,8.75,0,1,0,28.75,25,8.76,8.76,0,0,0,20,16.25Zm3.535,12.285a5,5,0,0,1-7.07,0l7.07-7.07A5,5,0,0,1,23.535,28.535Z"/>
+                                            <circle id="Ellipse_2" data-name="Ellipse 2" cx="2.5" cy="2.5" r="2.5" transform="translate(10 7.5)"/>
+                                            <circle id="Ellipse_3" data-name="Ellipse 3" cx="2.5" cy="2.5" r="2.5" transform="translate(17.5 7.5)"/>
+                                          </g>
+                                        </g>
+                                      </svg>
+                                                                        
+                                </div>
+                                <div class="c-card__switch">
+                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox" id="dishwasher" checked>
+                                    <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted" for="dishwasher">
+                                        <span class="c-custom-toggle__fake-input">
+                                        </span>
+                                        On
+                                    </label>
+                                </div>
                             </div>
-                            <div class="c-card__body"></div>
+                            <div class="c-card__text">
+                                Dishwasher AI
+                            </div>
                         </div>
-                        <p>Grid 3</p>
                     </div>
 
                     <div class="c-dashboard__item u-x-span-6-bp3 u-y-span-5-bp3">
