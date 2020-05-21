@@ -426,7 +426,7 @@ span {
 .c-dashboard__item {
 	box-shadow: var(--shadow-box);
 	background-color: #fff;
-	padding: calc(var(--global-baseline) * 4);
+	padding: calc(var(--global-baseline) * 3);
 	border-radius: var(--global-whitespace);
 	border: 3px solid var(--global-white)
 }
@@ -466,11 +466,14 @@ span {
 
 .c-card__text {
 	margin-bottom: 0;
-	font-weight: 600;
+	margin-top: var(--global-whitespace-md);
+	font-weight: 500;
 	font-size: 24px;
 }
 
-.c-card__switch {
+.c-card__top {
+	display: flex;
+	justify-content: space-between;
 }
 
 .c-icon__meeting {
