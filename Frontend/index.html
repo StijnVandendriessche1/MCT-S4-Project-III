@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="css/screen.css" />
 
     <link rel="stylesheet" href="https://use.typekit.net/omh4itr.css" />
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script defer src="./js/start.js"></script>
 </head>
 
 <body>
@@ -34,12 +37,13 @@
             </div>
             <div class="o-container c-container">
                 <div class="c-dashboard">
-                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-off">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-off js-box--ai-meeting">
                         <div class="c-card">
                             <div class="c-card__top">
                                 <div class="c-card__icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__off">
+                                        width="40" height="40" viewBox="0 0 40 40"
+                                        class="js-icon js-icon__off js-icon--ai-meeting">
                                         <g id="Mask_Group_7" data-name="Mask Group 7" transform="translate(-1496 -248)"
                                             clip-path="url(#clip-path)">
                                             <g id="video-call" transform="translate(1496 248)">
@@ -54,13 +58,14 @@
                                     </svg>
                                 </div>
                                 <div class="c-card__switch">
-                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox"
-                                        id="meeting">
+                                    <input
+                                        class="o-hide-accessible c-option c-option--hidden js-toggleswitch js-toggleswitch--ai-meeting"
+                                        data-name="ai_meeting" type="checkbox" id="meeting">
                                     <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
                                         for="meeting">
                                         <span class="c-custom-toggle__fake-input">
                                         </span>
-                                        Off
+                                        <span class="c-word js-word--ai-meeting">Off</span>
                                     </label>
                                 </div>
                             </div>
@@ -70,12 +75,13 @@
                         </div>
                     </div>
 
-                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on js-box--ai_coffee">
                         <div class="c-card">
                             <div class="c-card__top">
                                 <div class="c-card__icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__on">
+                                        width="40" height="40" viewBox="0 0 40 40"
+                                        class="js-icon js-icon__on js-icon--ai_coffee">
                                         <g id="Mask_Group_10" data-name="Mask Group 10"
                                             transform="translate(-1504 -256)" clip-path="url(#clip-path)">
                                             <path id="coffee-kettle"
@@ -85,13 +91,14 @@
                                     </svg>
                                 </div>
                                 <div class="c-card__switch">
-                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox"
-                                        id="coffee" checked>
+                                    <input
+                                        class="o-hide-accessible c-option c-option--hidden js-toggleswitch js-toggleswitch--ai_coffee"
+                                        data-name="ai_coffee" type="checkbox" id="coffee" checked>
                                     <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
                                         for="coffee">
                                         <span class="c-custom-toggle__fake-input">
                                         </span>
-                                        On
+                                        <span class="c-word js-word--ai_coffee">On</span>
                                     </label>
                                 </div>
                             </div>
@@ -101,12 +108,13 @@
                         </div>
                     </div>
 
-                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on">
+                    <div class="c-dashboard__item u-x-span-6-bp3 js-card js-on js-box--ai_dishwasher">
                         <div class="c-card">
                             <div class="c-card__top">
                                 <div class="c-card__icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="40" height="40" viewBox="0 0 40 40" class="js-icon js-icon__on">
+                                        width="40" height="40" viewBox="0 0 40 40"
+                                        class="js-icon js-icon__on js-icon--ai_dishwasher">
                                         <g id="Mask_Group_13" data-name="Mask Group 13"
                                             transform="translate(-1104 -176)" clip-path="url(#clip-path)">
                                             <g id="washing-machine" transform="translate(1104 176)">
@@ -123,13 +131,14 @@
                                     </svg>
                                 </div>
                                 <div class="c-card__switch">
-                                    <input class="o-hide-accessible c-option c-option--hidden" type="checkbox"
-                                        id="dishwasher" checked>
+                                    <input
+                                        class="o-hide-accessible c-option c-option--hidden js-toggleswitch js-toggleswitch--ai_dishwasher"
+                                        type="checkbox" data-name="ai_dishwasher" id="dishwasher" checked>
                                     <label class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
                                         for="dishwasher">
                                         <span class="c-custom-toggle__fake-input">
                                         </span>
-                                        On
+                                        <span class="c-word js-word--ai_dishwasher">On</span>
                                     </label>
                                 </div>
                             </div>
@@ -312,7 +321,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="c-card__body">
+                            <div class="c-card__body js-coffee-left">
                                 19.5kg
                             </div>
                         </div>
@@ -543,6 +552,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="c-loading-screen js-loadings-screen">
+        <div class="c-loading-screen__flex-item">
+            Loading
+        </div>
+        <div class="c-loader js-loader"></div>
+        <div style="display:none;" class="c-end-text js-end-text" class="c-animate-bottom">
+            <h2>Welcome to ML6 Smart Office!</h2>
+            <p>I hope you have a nice day</p>
         </div>
     </div>
 </body>

@@ -79,16 +79,16 @@ class Influxdb:
         try:
             query = f'from(bucket: "{self.bucket}") {query_in}'
             #results = self.client.query_api().query_stream(query, org=self.org)
-            results = self.client.query_api().query_data_frame(query, org=self.org)
-            #tables = self.client.query_api().query(query, org=self.org)
+            #results = self.client.query_api().query_data_frame(query, org=self.org)
+            tables = self.client.query_api().query(query, org=self.org)
             """ test = pd.DataFrame(tables)
             print(test.head(5))
-            print(test[0][0])
+            print(test[0][0]) """
             results = []
             for index, table in enumerate(tables):
                 result_row = []
                 for record in table.records:
-                    result_row.append([record.get_field(), record.get_value()]) """
+                    result_row.append([record.get_field(), record.get_value()])
             return results
         except Exception as ex:
             logging.error(ex)
@@ -102,7 +102,7 @@ print(a) """
 a = test.get_data('|> range(start:-111h)')
 print(a) """
 
-testa = Influxdb("Cloud")
+""" testa = Influxdb("Cloud")
 data = []
 data.append(Data("status", False))
 data.append(Data("ai", "meeting"))
@@ -111,6 +111,6 @@ print(testa.write_data(sensordata))
 
 
 test = Influxdb("Pi")
-a = test.get_data('|> range(start:-111h) |> filter(fn: (r) => r["_measurement"] == "Jos")')
+a = test.get_data('|> range(start:-111h) |> filter(fn: (r) => r["_measurement"] == "Jos")') """
 
 #print(a)
