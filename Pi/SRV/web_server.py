@@ -10,6 +10,7 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.server import Server
 import logging
+import random
 
 logging.basicConfig(filename="Logging.txt", level=logging.ERROR, format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
@@ -32,7 +33,14 @@ server = Server()
 @socketio.on('connect')
 def connect():
     global server
+    """ Ai on or off """
     socketio.emit('status_ai_meeting', {'status': server.status_ai["ai_meeting"]})
+    socketio.emit('status_ai_coffee', {'status': server.status_ai["ai_coffee"]})
+    socketio.emit('status_ai_dishwasher', {'status': server.status_ai["ai_dishwasher"]})
+    coffee_left = round(random.uniform(11, 31), 1)
+    socketio.emit('status_coffee_left', {'status': coffee_left})
+    socketio.emit('status_server')
+    
 
 
 """ Ai on or off """
@@ -40,7 +48,19 @@ def connect():
 def ai_meeting():
     global server
     status = server.change_ai_status("ai_meeting")
-    socketio.emit('status_ai_meeting', {'status': status})
+    socketio.emit('status_ai_meeting', {'status': server.status_ai["ai_meeting"]})
+
+@socketio.on('ai_coffee')
+def ai_coffee():
+    global server
+    status = server.change_ai_status("ai_coffee")
+    socketio.emit('status_ai_coffee', {'status': server.status_ai["ai_coffee"]})
+
+@socketio.on('ai_dishwasher')
+def ai_dishwasher():
+    global server
+    status = server.change_ai_status("ai_dishwasher")
+    socketio.emit('status_ai_dishwasher', {'status': server.status_ai["ai_dishwasher"]})
 
 
 """ Routes """

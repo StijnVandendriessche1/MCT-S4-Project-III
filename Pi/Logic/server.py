@@ -5,6 +5,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
+from Models.data import Data
+from Models.sensordata import Sensordata
+
 from Logic.influxdb import Influxdb
 from Logic.get_vars import GetVars
 
@@ -42,7 +45,15 @@ class Server:
             raise Exception(ex)
 
     def change_ai_status_influxdb(self, ai, status):
-        self.influxdb_cloud.write_data_to_influxdb(ai, self.host, "status", status)
+        try:
+            data = []
+            data.append(Data("status", False))
+            data.append(Data("ai", ai))
+            sensordata = Sensordata("Jos", self.host, data)
+            self.influxdb_cloud.write_data(sensordata)
+        except Exception as ex:
+            logging.error(ex)
+            raise  Exception(ex)
     
     def change_ai_status(self, ai):
         try:
