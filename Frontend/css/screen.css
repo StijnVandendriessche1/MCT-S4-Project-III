@@ -31,6 +31,8 @@
 	/* colors */
 	--global-accent: #FF9900;
 	--global-white: #FFFFFF;
+	--global-dark-white: #FBFBFB;
+	--global-darker-white: #F3F3F3;
 	--global-dark-grey: #AAAAAA;
 	--global-grey: #00000040;
 	--global-light-grey: #00000020;
@@ -70,6 +72,7 @@
 	/* Shadows */
 	--shadow-neutral: 0 2px 6px rgba(0, 0, 0, 0.04);
 	--shadow-box: 0 3px 6px rgba(0, 0, 0, 0.2);
+	--shadow-box-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
 
 	/* border radius */
 	--global-borderRadius: 3px;
@@ -94,17 +97,13 @@
 	--global-whitespace-xl: calc(var(--global-whitespace) * 2);  /* 48 px */
 	--global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* 72 px */
 
-	--global-input-focus-boxShadowSpread: 0 0 0 3px;
-	--global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
-	--global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
-
 	--global-label-color: var(--global-color-neutral-xx-dark);
     --global-placeholder-color: var(--global-color-neutral-x-light);
     --global-input-backgroundColor: White;
     --global-input-color: var(--global-color-neutral-xxxx-dark);
     --global-input-borderColor: var(--global-color-neutral-xxx-light);
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
-    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-focus-borderColor: var(--global-accent);
     --global-input-error-borderColor: var(--global-color-error);
     --global-input-focus-boxShadowSpread: 0 0 0 3px;
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
@@ -130,7 +129,7 @@ html {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: var(--color-alpha-light-x);
+	background-color: var(--global-darker-white);
 }
 
 *,
@@ -411,6 +410,11 @@ span {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-container {
+	margin-top: var(--global-whitespace-xl);
+	padding: 0 var(--global-whitespace)
+}
+
 /*
     Component: Dashboard
     ---
@@ -427,8 +431,21 @@ span {
 	box-shadow: var(--shadow-box);
 	background-color: #fff;
 	padding: calc(var(--global-baseline) * 3);
-	border-radius: var(--global-whitespace);
+	border-radius: var(--global-whitespace-md);
 	border: 3px solid var(--global-white)
+}
+
+.c-dashboard__item--disabled {
+	display: none;
+}
+
+.c-dashboard__item:hover {
+	box-shadow: var(--shadow-box-dark);
+}
+
+.c-dashboard__item--list {
+	background-color: var(--global-dark-white);
+	border-color: var(--global-dark-white);
 }
 
 @media screen and (min-width: 992px) {
@@ -438,6 +455,17 @@ span {
 
 	.c-dashboard__item {
 		grid-column: span 24;
+	}
+
+	.c-dashboard__item--disabled {
+		display: block;
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+	.c-dashboard__item--disabled:hover {
+		box-shadow: none;
 	}
 }
 
@@ -464,6 +492,10 @@ span {
     cards layout
 */
 
+.c-card__main {
+	background-color: var(--global-dark-white);
+}
+
 .c-card__text {
 	margin-bottom: 0;
 	margin-top: var(--global-whitespace-md);
@@ -480,6 +512,46 @@ span {
 	fill: var(--global-accent);
 }
 
+.c-card__title {
+	display: flex;
+}
+
+.c-card__title-text{
+	margin-top: 2px;
+	margin-left: var(--global-whitespace-md);
+}
+
+.c-card__body {
+	text-align: center;
+	margin: 40px;
+	font-size: 64px;
+	font-weight: 700;
+	margin-top: 16px;
+}
+
+.c-card__title--list {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.c-img {
+	width: 100%;
+	height: 100%;
+}
+
+.c-item{
+	box-shadow: var(--shadow-box);
+	background-color: #fff;
+	padding: calc(var(--global-baseline) * 3);
+	border-radius: var(--global-whitespace-md);
+	border: 3px solid var(--global-white);
+	margin-top: var(--global-whitespace);
+}
+
+.c_item + .c-item {
+	margin-bottom: var(--global-whitespace);
+}
+
 /*
     Component: custom toggle
     ---
@@ -490,7 +562,7 @@ span {
     --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
     --toggle-borderColor: var(--global-input-borderColor);
     --toggle-focus-borderColor: var(--global-input-focus-borderColor);
-    --toggle-checked-borderColor: var(--global-color-alpha-dark);
+    --toggle-checked-borderColor: var(--global-accent);
     --toggle-checked-backgroundColor: var(--global-accent);
     --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--global-input-focus-boxShadowColor);
     --toggle-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
