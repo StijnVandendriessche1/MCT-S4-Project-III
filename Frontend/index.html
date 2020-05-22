@@ -361,14 +361,49 @@
                         </div>
                     </div>
 
-                    <div class="c-dashboard__item u-x-span-18-bp3 u-y-span-3-bp3">
+                    <div class="c-dashboard__item u-x-span-18-bp3 u-y-span-3-bp3 js-on">
                         <div class="c-card">
-                            <div class="c-card__header">
-                                <div class="c-card__title"></div>
+                            <div class="c-card__header c-card__header--stats">
+                                <div class="c-card__title">
+                                    <div class="c-card__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
+                                            viewBox="0 0 40 40">
+                                            <g id="Mask_Group_9" data-name="Mask Group 9" clip-path="url(#clip-path)">
+                                                <g id="chart_1_" data-name="chart (1)">
+                                                    <path id="Path_8" data-name="Path 8"
+                                                        d="M27.5,7.5l4.483,4.483L27.5,16.465l-3.233-3.233a2.5,2.5,0,0,0-3.535,0l-10,10,3.535,3.535L22.5,18.535l3.233,3.233a2.5,2.5,0,0,0,3.535,0l6.25-6.25L40,20V7.5Z"
+                                                        fill="#f90" />
+                                                    <path id="Path_9" data-name="Path 9"
+                                                        d="M7.5,30H10V25H7.5V20H10V15H7.5V10H10V5H7.5V0h-5V32.5H0v5H2.5V40h5V37.5H40v-5H7.5Z"
+                                                        fill="#f90" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="c-title">
+                                        <div class="c-card__text c-card__title-text">
+                                            Stats
+                                        </div>
+    
+                                        <div class="c-card__stats--list">
+                                            <div class="c-stats c-stats--selected">
+                                                Meeting Room
+                                            </div>
+                                            <div class="c-stats">
+                                                Dishwasher
+                                            </div>
+                                            <div class="c-stats">
+                                                Coffee
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="c-card__body"></div>
+                            <div class="c-card__body">
+                                <canvas id="Stats" class="c-card__canvas"></canvas>
+                            </div>
                         </div>
-                        <p style="margin: 300px;">Grid 7</p>
                     </div>
 
                     <div class="c-dashboard__item c-dashboard__item--disabled u-x-span-6-bp3 u-y-span-2-bp3">
