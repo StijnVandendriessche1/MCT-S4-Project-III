@@ -9,7 +9,7 @@ let domToggleSwitch;
 socket.on("status_server", function () {
   document.querySelector(".js-loader").style.display = "none";
   document.querySelector(".js-end-text").style.display = "block";
-  setTimeout(clearLoadingscreen, 631);
+  setTimeout(clearLoadingscreen, 6311);
 });
 /* Sockets for putting the ai's on or off */
 socket.on("status_ai_meeting", function (data) {
