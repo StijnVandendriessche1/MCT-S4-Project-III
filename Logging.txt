@@ -1251,6 +1251,7 @@ HTTP response body: upstream connect error or disconnect/reset before headers. r
 2020-05-22 09:55:45,961	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:55:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xOHuN&sid=3384d3705ba14ab7b285a6cdf934114c HTTP/1.1[0m" 200 -
 2020-05-22 09:56:11,964	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:56:11] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N8xOUW1&sid=3384d3705ba14ab7b285a6cdf934114c HTTP/1.1[0m" 200 -
 2020-05-22 09:56:11,965	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:56:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xOOEn&sid=3384d3705ba14ab7b285a6cdf934114c HTTP/1.1[0m" 200 -
+<<<<<<< Updated upstream
 2020-05-22 09:56:34,096	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:56:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xOZvx HTTP/1.1[0m" 200 -
 2020-05-22 09:56:34,096	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:56:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xOUb9&sid=3384d3705ba14ab7b285a6cdf934114c HTTP/1.1[0m" 200 -
 2020-05-22 09:56:59,958	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 09:56:59] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N8xOgE2&sid=a59dc27f2d6642589e75cd66e31ef7a0 HTTP/1.1[0m" 200 -
@@ -1289,3 +1290,5 @@ HTTP response body: upstream connect error or disconnect/reset before headers. r
 2020-05-22 10:03:55,957	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 10:03:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xQ9Wf&sid=a59dc27f2d6642589e75cd66e31ef7a0 HTTP/1.1[0m" 200 -
 2020-05-22 10:04:21,959	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 10:04:21] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N8xQM8I&sid=a59dc27f2d6642589e75cd66e31ef7a0 HTTP/1.1[0m" 200 -
 2020-05-22 10:04:21,959	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [22/May/2020 10:04:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N8xQFsz&sid=a59dc27f2d6642589e75cd66e31ef7a0 HTTP/1.1[0m" 200 -
+=======
+>>>>>>> Stashed changes
