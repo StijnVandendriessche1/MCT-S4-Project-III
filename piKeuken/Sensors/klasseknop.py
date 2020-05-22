@@ -1,4 +1,4 @@
-from RPi import GPIO
+import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 
@@ -12,11 +12,7 @@ class Button:
 
     @property
     def pressed(self):
-        ingedrukt = GPIO.input(self.pin)
-        return not ingedrukt
+        return not GPIO.input(self.pin)
 
-    def on_press(self, call_method):
+    def on_action(self, call_method):
         GPIO.add_event_detect(self.pin, GPIO.BOTH, call_method, bouncetime=self.bouncetime)
-
-    def on_release(self, call_method):
-        GPIO.add_event_detect(self.pin, GPIO.RISING, call_method, bouncetime=self.bouncetime)
