@@ -17,3 +17,9 @@
 .vscode/
 
 Pi/settings.json
+
+Pi/Logic/__pycache__/
+
+Pi/Models/__pycache__/
+
+Pi/SRV/Logging.txt
