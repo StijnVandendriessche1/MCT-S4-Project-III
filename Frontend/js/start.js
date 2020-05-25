@@ -32,6 +32,10 @@ socket.on("status_dishwasher", function (data) {
   changeBoxStatus("dishwasher", data.status);
 });
 
+socket.on("welcome" , function(data) {
+  log(data);
+});
+
 /* Status rooms */
 socket.on("status_rooms", function (data) {
   output = ``;
@@ -172,6 +176,7 @@ const toggleSwitch = function (domToggleSwitch) {
 const loadDOM = function () {
   domToggleSwitches = document.querySelectorAll(".js-toggleswitch");
   for (const domToggleSwitch of domToggleSwitches) {
+    log(domToggleSwitch);
     domToggleSwitch.addEventListener("change", function () {
       toggleSwitch(domToggleSwitch);
     });
@@ -181,6 +186,7 @@ const loadDOM = function () {
 const init = function () {
   loadDOM();
   socket.emit("connect");
+  console.log("Socket emitted");
 };
 
 const registeredServiceWorker = function () {
