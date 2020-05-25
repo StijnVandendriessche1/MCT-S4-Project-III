@@ -534,6 +534,43 @@ span {
   font-weight: 500;
 }
 
+.c-card__canvas {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--global-accent);
+}
+
+.c-card__stats--list {
+  display: flex;
+  flex-flow: row;
+  margin-right: var(--global-whitespace);
+}
+
+.c-card__header--stats {
+  margin-bottom: var(--global-whitespace);
+}
+
+.c-stats {
+  margin: 0 var(--global-whitespace-md);
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid var(--global-accent);
+  padding: 8px 16px;
+  border-radius: var(--global-whitespace-md);
+}
+
+.c-stats--selected {
+  color: var(--global-white);
+  background-color: var(--global-accent);
+}
+
+.c-title {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .c-img {
   width: 100%;
   height: 100%;
