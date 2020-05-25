@@ -11,6 +11,8 @@ sys.path.insert(0, BASE_DIR)
 from Logic.server import Server
 import logging
 import random
+from threading import Thread
+from time import sleep
 
 logging.basicConfig(filename="Logging.txt", level=logging.ERROR, format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
@@ -26,6 +28,16 @@ endpoint = '/api/v1'
 """ Objects """
 server = Server()
 
+""" Functions """
+def time_status():
+    global server
+    while True:
+        socketio.emit('status_coffee_left', {'status': server.check_coffee_status()})
+        socketio.emit('status_dishwasher', {'status': server.check_status_dishwasher()})
+        sleep(11)
+
+t_mqtt = Thread(target=time_status)
+t_mqtt.start()
 
 """ Sockets """
 
@@ -37,8 +49,15 @@ def connect():
     socketio.emit('status_ai_meeting', {'status': server.status_ai["ai_meeting"]})
     socketio.emit('status_ai_coffee', {'status': server.status_ai["ai_coffee"]})
     socketio.emit('status_ai_dishwasher', {'status': server.status_ai["ai_dishwasher"]})
-    coffee_left = round(random.uniform(11, 31), 1)
-    socketio.emit('status_coffee_left', {'status': coffee_left})
+
+    """ Status coffee + dishwasher """
+    socketio.emit('status_coffee_left', {'status': server.check_coffee_status()})
+    socketio.emit('status_dishwasher', {'status': server.check_status_dishwasher()})
+
+    """ Status of the rooms """
+    socketio.emit('status_rooms', {'status': server.get_meeting_box_status()})
+
+    """ Send serverstatus to the clients """
     socketio.emit('status_server')
     
 
@@ -62,9 +81,14 @@ def ai_dishwasher():
     status = server.change_ai_status("ai_dishwasher")
     socketio.emit('status_ai_dishwasher', {'status': server.status_ai["ai_dishwasher"]})
 
+@socketio.on('status_room_change')
+def status_rooms_change():
+    global server
+    status = server.change_ai_status("ai_dishwasher")
+    socketio.emit('status_rooms', {'status': server.get_meeting_box_status()})
+
 
 """ Routes """
-
 
 @app.route('/')
 def hallo():
