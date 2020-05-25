@@ -183,8 +183,17 @@ const init = function () {
   socket.emit("connect");
 };
 
+const registeredServiceWorker = function () {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').then(function (registration) {
+    console.log('Excellent, registered with scope: ', registration.scope);
+    });
+   }
+}
+
 /* When the script starts */
 document.addEventListener("DOMContentLoaded", function () {
   log("Js Started");
+  registeredServiceWorker();
   init();
 });
