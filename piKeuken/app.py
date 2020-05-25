@@ -19,7 +19,7 @@ dht = DHT11(pin=17)
 def run_light():
     global light
     while run:
-        light = mcp.read_channel(2) / 1024 * 100
+        light = (mcp.read_channel(1) / 1024 * 100)
 
 def run_temp():
     global temp
@@ -41,12 +41,12 @@ try:
     actHmdt = threading.Thread(target=run_hmdt)
     actHmdt.start()
 
-    while (True):
+    while True:
         print("light: %f%%" % light)
         print("temperature: %f°C" % temp)
         print("humidity: %d%%" % hmdt)
         print("")
-        time.sleep(0.5)
+        time.sleep(1)
 
 except Exception as ex:
     print(ex)
