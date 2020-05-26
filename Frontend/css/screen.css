@@ -557,6 +557,7 @@ span {
   border: 2px solid var(--global-accent);
   padding: 8px 16px;
   border-radius: var(--global-whitespace-md);
+  cursor: pointer;
 }
 
 .c-stats--selected {
