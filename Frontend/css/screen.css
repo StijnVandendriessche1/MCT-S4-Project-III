@@ -747,7 +747,14 @@ span {
   font-size: 3rem;
 }
 
+.c-room:hover {
+  stroke: var(--global-accent);
+}
 
+.c-room:active {
+  stroke: var(--global-accent);
+  stroke-width: 5px;
+}
 
 .c-loader {
   position: absolute;
