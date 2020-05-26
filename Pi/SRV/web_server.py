@@ -82,9 +82,9 @@ def ai_dishwasher():
     socketio.emit('status_ai_dishwasher', {'status': server.status_ai["ai_dishwasher"]})
 
 @socketio.on('status_room_change')
-def status_rooms_change():
+def status_rooms_change(data):
     global server
-    status = server.change_ai_status("ai_dishwasher")
+    status = server.change_meeting_boxs(data["room"])
     socketio.emit('status_rooms', {'status': server.get_meeting_box_status()})
 
 
@@ -96,4 +96,4 @@ def hallo():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port="5000")
+    socketio.run(app, host="0.0.0.0", port="5000")
