@@ -550,12 +550,54 @@ span {
   margin-bottom: var(--global-whitespace);
 }
 
+.c-card__body--map {
+  display: block;
+}
+
+.c-map {
+  width: 100%;
+}
+
+.c-map__card {
+  box-shadow: var(--shadow-box);
+  background-color: #fff;
+  padding: calc(var(--global-baseline) * 3);
+  border-radius: var(--global-whitespace-md);
+  border: 3px solid var(--global-white);
+  width: 100%;
+}
+
+.c-card__icon {
+  font-size: 24px;
+}
+
+.c-map__svg {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  
+  .c-map {
+    padding: var(--global-whitespace);
+  }
+
+  .c-card__body--map {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .c-map__card {
+    width: 25%;
+    margin: var(--global-whitespace);
+  }
+}
 .c-stats {
   margin: 0 var(--global-whitespace-md);
   font-size: 16px;
   font-weight: 500;
   border: 2px solid var(--global-accent);
-  padding: 8px 16px;
+  padding: 10px 16px;
   border-radius: var(--global-whitespace-md);
 }
 
