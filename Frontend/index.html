@@ -11,20 +11,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
 
     <link rel="stylesheet" href="https://use.typekit.net/omh4itr.css" />
 
-=======
->>>>>>> develop
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script defer src="./js/start.js"></script>
 
@@ -392,7 +388,7 @@
                                         <div class="c-card__text c-card__title-text">
                                             Stats
                                         </div>
-    
+
                                         <div class="c-card__stats--list">
                                             <div class="c-stats c-stats--selected">
                                                 Meeting Room
@@ -584,13 +580,307 @@
                     </div>
 
                     <div class="c-dashboard__item u-x-span-24-bp3">
-                        <div class="c-card">
-                            <div class="c-card__header">
-                                <div class="c-card__title"></div>
+                        <div class="c-card__header c-card__header--stats">
+                            <div class="c-card__title">
+                                <div class="c-card__icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="40" height="40" viewBox="0 0 40 40">
+                                        <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(-60 -200)"
+                                            clip-path="url(#clip-path)">
+                                            <path id="map"
+                                                d="M41.5,3.286a2.857,2.857,0,0,0-2.78-.126L28.571,8.234,18.42,3.16a2.843,2.843,0,0,0-2.554.023V3.16L4.437,8.874a2.857,2.857,0,0,0-1.58,2.554V40a2.86,2.86,0,0,0,4.134,2.557L17.143,37.48l10.151,5.077a2.866,2.866,0,0,0,2.554,0l11.429-5.714a2.857,2.857,0,0,0,1.58-2.557V5.714A2.857,2.857,0,0,0,41.5,3.286ZM14.286,32.517,8.571,35.374V13.194l5.714-2.857V32.52Zm11.429,2.857L20,32.517V10.337l5.714,2.857V35.377Zm11.429-2.857-5.714,2.857V13.194l5.714-2.857V32.52Z"
+                                                transform="translate(57.143 197.142)" fill="#f90" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                <div class="c-title">
+                                    <div class="c-card__text c-card__title-text">
+                                        Map
+                                    </div>
+                                </div>
                             </div>
-                            <div class="c-card__body"></div>
                         </div>
-                        <p>Grid 8</p>
+                        <div class="c-card__body c-card__body--map">
+                            <div class="c-map">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="1300.579" height="562.579" viewBox="0 0 1300.579 562.579" class="c-map__svg">
+                                    <g id="Map" transform="translate(-117.921 -1478.5)">
+                                        <g id="Walls">
+                                            <path id="Path_15" data-name="Path 15" d="M0,0H1297"
+                                                transform="translate(120 1480)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <line id="Line_19" data-name="Line 19" x2="963"
+                                                transform="translate(454 2039)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <line id="Line_18" data-name="Line 18" y2="54"
+                                                transform="translate(120 1480)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <line id="Line_20" data-name="Line 20" x2="334" y2="505"
+                                                transform="translate(120 1534)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <line id="Line_21" data-name="Line 21" y2="559"
+                                                transform="translate(1417 1480)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <line id="Line_23" data-name="Line 23" y2="287"
+                                                transform="translate(695 1752)" fill="none" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                        </g>
+                                        <path id="Chill_Room_Door" data-name="Chill Room Door"
+                                            d="M0,0H78V78A78,78,0,0,1,0,0Z" transform="translate(617 1674)" fill="none"
+                                            stroke="#000" stroke-linecap="round" stroke-width="3" />
+                                        <path id="East_Door" data-name="East Door" d="M0,0H47V47A47,47,0,0,1,0,0Z"
+                                            transform="translate(1370 1702)" fill="none" stroke="#000"
+                                            stroke-linecap="round" stroke-width="3" />
+                                        <g id="Kitchen">
+                                            <rect id="Rectangle_27" data-name="Rectangle 27" width="78" height="233"
+                                                transform="translate(617 1806)" fill="#fff" stroke="#000"
+                                                stroke-width="3" />
+                                            <g id="Group_52" data-name="Group 52" transform="translate(-165 345)">
+                                                <g id="Mask_Group_20" data-name="Mask Group 20"
+                                                    transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
+                                                    <g id="light" transform="translate(0 0)">
+                                                        <path id="Path_42" data-name="Path 42"
+                                                            d="M26.916,9.771V2.427A2.427,2.427,0,0,0,24.489,0H14.781a2.427,2.427,0,0,0-2.427,2.427V9.771a12.135,12.135,0,1,0,14.562,0ZM17.208,4.854h4.854V7.526a12.135,12.135,0,0,0-4.854,0ZM19.635,26.7a7.281,7.281,0,1,1,7.281-7.281A7.29,7.29,0,0,1,19.635,26.7Z"
+                                                            transform="translate(-0.219)" />
+                                                        <path id="Path_43" data-name="Path 43"
+                                                            d="M17.5,35h4.854v4.854H17.5Z"
+                                                            transform="translate(-0.511 -1.022)" />
+                                                        <path id="Path_44" data-name="Path 44"
+                                                            d="M35,17.5h4.854v4.854H35Z"
+                                                            transform="translate(-1.022 -0.511)" />
+                                                        <path id="Path_45" data-name="Path 45"
+                                                            d="M0,17.5H4.854v4.854H0Z"
+                                                            transform="translate(0 -0.511)" />
+                                                        <path id="Path_46" data-name="Path 46" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.971 31.43) rotate(-45)" />
+                                                        <path id="Path_47" data-name="Path 47" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.997 7.402) rotate(-45)" />
+                                                        <path id="Path_48" data-name="Path 48" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.998 31.429) rotate(-45)" />
+                                                        <path id="Path_49" data-name="Path 49" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.97 7.403) rotate(-45)" />
+                                                    </g>
+                                                </g>
+                                                <circle id="Ellipse_113" data-name="Ellipse 113" cx="7.3" cy="7.3"
+                                                    r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                        <g id="Meeting_Box_1" data-name="Meeting Box 1">
+                                            <g id="Rectangle_38" data-name="Rectangle 38"
+                                                transform="translate(1102 1702)" fill="#fff" stroke="#000"
+                                                stroke-width="3">
+                                                <rect width="100" height="100" stroke="none" />
+                                                <rect x="1.5" y="1.5" width="97" height="97" fill="none" />
+                                            </g>
+                                            <g id="Group_53" data-name="Group 53" transform="translate(332 175)">
+                                                <g id="Mask_Group_20-2" data-name="Mask Group 20"
+                                                    transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
+                                                    <g id="light-2" data-name="light" transform="translate(0 0)">
+                                                        <path id="Path_42-2" data-name="Path 42"
+                                                            d="M26.916,9.771V2.427A2.427,2.427,0,0,0,24.489,0H14.781a2.427,2.427,0,0,0-2.427,2.427V9.771a12.135,12.135,0,1,0,14.562,0ZM17.208,4.854h4.854V7.526a12.135,12.135,0,0,0-4.854,0ZM19.635,26.7a7.281,7.281,0,1,1,7.281-7.281A7.29,7.29,0,0,1,19.635,26.7Z"
+                                                            transform="translate(-0.219)" />
+                                                        <path id="Path_43-2" data-name="Path 43"
+                                                            d="M17.5,35h4.854v4.854H17.5Z"
+                                                            transform="translate(-0.511 -1.022)" />
+                                                        <path id="Path_44-2" data-name="Path 44"
+                                                            d="M35,17.5h4.854v4.854H35Z"
+                                                            transform="translate(-1.022 -0.511)" />
+                                                        <path id="Path_45-2" data-name="Path 45"
+                                                            d="M0,17.5H4.854v4.854H0Z"
+                                                            transform="translate(0 -0.511)" />
+                                                        <path id="Path_46-2" data-name="Path 46" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.971 31.43) rotate(-45)" />
+                                                        <path id="Path_47-2" data-name="Path 47" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.997 7.402) rotate(-45)" />
+                                                        <path id="Path_48-2" data-name="Path 48" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.998 31.429) rotate(-45)" />
+                                                        <path id="Path_49-2" data-name="Path 49" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.97 7.403) rotate(-45)" />
+                                                    </g>
+                                                </g>
+                                                <circle id="Ellipse_113-2" data-name="Ellipse 113" cx="7.3" cy="7.3"
+                                                    r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                        <g id="Entry">
+                                            <g id="Entry_Door" data-name="Entry Door">
+                                                <path id="Intersection_3" data-name="Intersection 3"
+                                                    d="M0,0H30V30A30,30,0,0,1,0,0Z"
+                                                    transform="translate(955 1808) rotate(180)" fill="none"
+                                                    stroke="#000" stroke-linecap="round" stroke-width="3" />
+                                                <path id="Intersection_4" data-name="Intersection 4"
+                                                    d="M0,0H30V30A30,30,0,0,1,0,0Z"
+                                                    transform="translate(985 1778) rotate(90)" fill="none" stroke="#000"
+                                                    stroke-linecap="round" stroke-width="3" />
+                                            </g>
+                                            <rect id="Toilets_Entry" data-name="Toilets &amp; Entry" width="313"
+                                                height="233" transform="translate(695 1806)" fill="#fff" stroke="#000"
+                                                stroke-width="3" />
+                                        </g>
+                                        <rect id="Handwash_Corner" data-name="Handwash Corner" width="55" height="233"
+                                            transform="translate(1008 1806)" fill="#fff" stroke="#000"
+                                            stroke-width="3" />
+                                        <g id="Table_Tennis_Table" data-name="Table Tennis Table"
+                                            transform="translate(437 1674)" fill="#fff" stroke="#000" stroke-width="3">
+                                            <rect width="99" height="182" stroke="none" />
+                                            <rect x="1.5" y="1.5" width="96" height="179" fill="none" />
+                                        </g>
+                                        <rect id="Reception" width="132" height="34" stroke-width="3" fill="none"
+                                            stroke="#000" transform="translate(961 1640)" />
+                                        <g id="Meeting_Box_2" data-name="Meeting Box 2">
+                                            <g id="Rectangle_38-2" data-name="Rectangle 38"
+                                                transform="translate(1232 1702)" fill="#fff" stroke="#000"
+                                                stroke-width="3">
+                                                <rect width="100" height="100" stroke="none" />
+                                                <rect x="1.5" y="1.5" width="97" height="97" fill="none" />
+                                            </g>
+                                            <g id="Group_54" data-name="Group 54" transform="translate(462 175)">
+                                                <g id="Mask_Group_20-3" data-name="Mask Group 20"
+                                                    transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
+                                                    <g id="light-3" data-name="light" transform="translate(0 0)">
+                                                        <path id="Path_42-3" data-name="Path 42"
+                                                            d="M26.916,9.771V2.427A2.427,2.427,0,0,0,24.489,0H14.781a2.427,2.427,0,0,0-2.427,2.427V9.771a12.135,12.135,0,1,0,14.562,0ZM17.208,4.854h4.854V7.526a12.135,12.135,0,0,0-4.854,0ZM19.635,26.7a7.281,7.281,0,1,1,7.281-7.281A7.29,7.29,0,0,1,19.635,26.7Z"
+                                                            transform="translate(-0.219)" />
+                                                        <path id="Path_43-3" data-name="Path 43"
+                                                            d="M17.5,35h4.854v4.854H17.5Z"
+                                                            transform="translate(-0.511 -1.022)" />
+                                                        <path id="Path_44-3" data-name="Path 44"
+                                                            d="M35,17.5h4.854v4.854H35Z"
+                                                            transform="translate(-1.022 -0.511)" />
+                                                        <path id="Path_45-3" data-name="Path 45"
+                                                            d="M0,17.5H4.854v4.854H0Z"
+                                                            transform="translate(0 -0.511)" />
+                                                        <path id="Path_46-3" data-name="Path 46" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.971 31.43) rotate(-45)" />
+                                                        <path id="Path_47-3" data-name="Path 47" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.997 7.402) rotate(-45)" />
+                                                        <path id="Path_48-3" data-name="Path 48" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.998 31.429) rotate(-45)" />
+                                                        <path id="Path_49-3" data-name="Path 49" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.97 7.403) rotate(-45)" />
+                                                    </g>
+                                                </g>
+                                                <circle id="Ellipse_113-3" data-name="Ellipse 113" cx="7.3" cy="7.3"
+                                                    r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                        <g id="Meeting_Room" data-name="Meeting Room">
+                                            <rect id="Rectangle_36" data-name="Rectangle 36" width="88" height="176"
+                                                rx="1" transform="translate(1329 1480)" fill="#fff" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <g id="Group_44" data-name="Group 44" transform="translate(553 -9)">
+                                                <g id="Mask_Group_20-4" data-name="Mask Group 20"
+                                                    transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
+                                                    <g id="light-4" data-name="light" transform="translate(0 0)">
+                                                        <path id="Path_42-4" data-name="Path 42"
+                                                            d="M26.916,9.771V2.427A2.427,2.427,0,0,0,24.489,0H14.781a2.427,2.427,0,0,0-2.427,2.427V9.771a12.135,12.135,0,1,0,14.562,0ZM17.208,4.854h4.854V7.526a12.135,12.135,0,0,0-4.854,0ZM19.635,26.7a7.281,7.281,0,1,1,7.281-7.281A7.29,7.29,0,0,1,19.635,26.7Z"
+                                                            transform="translate(-0.219)" />
+                                                        <path id="Path_43-4" data-name="Path 43"
+                                                            d="M17.5,35h4.854v4.854H17.5Z"
+                                                            transform="translate(-0.511 -1.022)" />
+                                                        <path id="Path_44-4" data-name="Path 44"
+                                                            d="M35,17.5h4.854v4.854H35Z"
+                                                            transform="translate(-1.022 -0.511)" />
+                                                        <path id="Path_45-4" data-name="Path 45"
+                                                            d="M0,17.5H4.854v4.854H0Z"
+                                                            transform="translate(0 -0.511)" />
+                                                        <path id="Path_46-4" data-name="Path 46" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.971 31.43) rotate(-45)" />
+                                                        <path id="Path_47-4" data-name="Path 47" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.997 7.402) rotate(-45)" />
+                                                        <path id="Path_48-4" data-name="Path 48" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.998 31.429) rotate(-45)" />
+                                                        <path id="Path_49-4" data-name="Path 49" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.97 7.403) rotate(-45)" />
+                                                    </g>
+                                                </g>
+                                                <circle id="Ellipse_113-4" data-name="Ellipse 113" cx="7.3" cy="7.3"
+                                                    r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                        <g id="Big_Meeting_Room" data-name="Big Meeting Room">
+                                            <rect id="Rectangle_34" data-name="Rectangle 34" width="250" height="194"
+                                                transform="translate(695 1480)" fill="#fff" stroke="#000"
+                                                stroke-linecap="round" stroke-width="3" />
+                                            <g id="Group_43" data-name="Group 43">
+                                                <g id="Mask_Group_20-5" data-name="Mask Group 20"
+                                                    transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
+                                                    <g id="light-5" data-name="light" transform="translate(0 0)">
+                                                        <path id="Path_42-5" data-name="Path 42"
+                                                            d="M26.916,9.771V2.427A2.427,2.427,0,0,0,24.489,0H14.781a2.427,2.427,0,0,0-2.427,2.427V9.771a12.135,12.135,0,1,0,14.562,0ZM17.208,4.854h4.854V7.526a12.135,12.135,0,0,0-4.854,0ZM19.635,26.7a7.281,7.281,0,1,1,7.281-7.281A7.29,7.29,0,0,1,19.635,26.7Z"
+                                                            transform="translate(-0.219)" />
+                                                        <path id="Path_43-5" data-name="Path 43"
+                                                            d="M17.5,35h4.854v4.854H17.5Z"
+                                                            transform="translate(-0.511 -1.022)" />
+                                                        <path id="Path_44-5" data-name="Path 44"
+                                                            d="M35,17.5h4.854v4.854H35Z"
+                                                            transform="translate(-1.022 -0.511)" />
+                                                        <path id="Path_45-5" data-name="Path 45"
+                                                            d="M0,17.5H4.854v4.854H0Z"
+                                                            transform="translate(0 -0.511)" />
+                                                        <path id="Path_46-5" data-name="Path 46" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.971 31.43) rotate(-45)" />
+                                                        <path id="Path_47-5" data-name="Path 47" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.997 7.402) rotate(-45)" />
+                                                        <path id="Path_48-5" data-name="Path 48" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(27.998 31.429) rotate(-45)" />
+                                                        <path id="Path_49-5" data-name="Path 49" d="M0,0H4.854V4.854H0Z"
+                                                            transform="translate(3.97 7.403) rotate(-45)" />
+                                                    </g>
+                                                </g>
+                                                <circle id="Ellipse_113-5" data-name="Ellipse 113" cx="7.3" cy="7.3"
+                                                    r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
+                                            </g>
+                                        </g>
+                                        <g id="Pantry" transform="translate(466 1975)" fill="#fff" stroke="#000"
+                                            stroke-width="3">
+                                            <rect width="110" height="41" stroke="none" />
+                                            <rect x="1.5" y="1.5" width="107" height="38" fill="none" />
+                                        </g>
+                                        <g id="PlayStation_Corner" data-name="PlayStation Corner">
+                                            <g id="Rectangle_49" data-name="Rectangle 49"
+                                                transform="translate(521 1488)" fill="#fff" stroke="#000"
+                                                stroke-width="3">
+                                                <rect width="110" height="30" stroke="none" />
+                                                <rect x="1.5" y="1.5" width="107" height="27" fill="none" />
+                                            </g>
+                                            <g id="Rectangle_50" data-name="Rectangle 50"
+                                                transform="translate(679 1526) rotate(90)" fill="#fff" stroke="#000"
+                                                stroke-width="3">
+                                                <rect width="110" height="30" stroke="none" />
+                                                <rect x="1.5" y="1.5" width="107" height="27" fill="none" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="c-map__card">
+                                <div class="c-card__title">
+                                    <div class="c-card__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
+                                            viewBox="0 0 40 40" class="js-icon js-icon__on">
+                                            <g id="Mask_Group_7" data-name="Mask Group 7"
+                                                transform="translate(-1496 -248)" clip-path="url(#clip-path)">
+                                                <g id="video-call" transform="translate(1496 248)">
+                                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="4" cy="4" r="4"
+                                                        transform="translate(12 9.333)" />
+                                                    <path id="Path_3" data-name="Path 3"
+                                                        d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z" />
+                                                    <path id="Path_4" data-name="Path 4"
+                                                        d="M17.952,28.667a2,2,0,0,1,.273-1,.667.667,0,0,0-.577-1h-.315V25.26a.667.667,0,0,0,.34-.779,6.727,6.727,0,0,1-.168-.8,11.552,11.552,0,0,1-.141-1.876,11.215,11.215,0,0,1,.427-2.883.667.667,0,0,0-.555-.836A9.215,9.215,0,0,0,16,18a12.165,12.165,0,0,0-6.153,1.932A3.98,3.98,0,0,0,8.1,22.667H2.667V5.333H29.333V10.42a.667.667,0,0,0,.449.631,7.418,7.418,0,0,1,1.223.552.667.667,0,0,0,.995-.58V5.333a2.669,2.669,0,0,0-2.667-2.667H2.667A2.669,2.669,0,0,0,0,5.333V22.667a2.669,2.669,0,0,0,2.667,2.667h12v1.333H11.333a.667.667,0,0,0-.667.667v1.333a.667.667,0,0,0,.667.667h5.952a.667.667,0,0,0,.667-.667Z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+
+                                    </div>
+                                    <div class="c-card__text c-card__title-text">
+                                        Meeting Room
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
