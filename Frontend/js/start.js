@@ -2,7 +2,8 @@ const production = false,
   ip = "http://localhost:5000";
 let socket = io.connect(ip);
 
-let domToggleSwitch;
+let domToggleSwitch, domToggleSwitchRoomBoxes, domBtnStats;
+const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
 
@@ -32,20 +33,22 @@ socket.on("status_dishwasher", function (data) {
   changeBoxStatus("dishwasher", data.status);
 });
 
-socket.on("welcome" , function(data) {
+socket.on("welcome", function (data) {
   log(data);
 });
 
 /* Status rooms */
 socket.on("status_rooms", function (data) {
   output = ``;
-  log(data.status)
   for (const roomData in data.status) {
-    check = ""
-    if(data.status[roomData]) check = "checked"
-    log(roomData + data.status[roomData]);
-    status = getStatus(data.status[roomData])
-    log(status)
+    let check = "";
+    let busy = "Empty";
+    roomDataId = roomData.replace(/ /g, "");
+    if (data.status[roomData]) {
+      check = "checked";
+      busy = "Busy";
+    }
+    status = getStatus(data.status[roomData]);
     output += `<div class="c-item js-card js-${status}">
     <div class="c-item__header c-card__top">
         <div class="c-item__icon c-card__icon">
@@ -66,13 +69,13 @@ socket.on("status_rooms", function (data) {
             </svg>
         </div>
         <div class="c-item__toggle">
-            <input class="o-hide-accessible c-option c-option--hidden" type="checkbox"
-                id="${roomData}" ${check}>
+            <input class="o-hide-accessible c-option c-option--hidden js-toggleswicht--roomBox" type="checkbox"
+                id="${roomDataId}" data-room="${roomData}" data-name="RoomStatus" ${check}>
             <label
                 class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
-                for="${roomData}">
+                for="${roomDataId}">
                 <span class="c-custom-toggle__fake-input"></span>
-                Empty
+                ${busy}
             </label>
         </div>
     </div>
@@ -82,9 +85,35 @@ socket.on("status_rooms", function (data) {
 </div>`;
   }
   document.querySelector(".js-meeting-rooms").innerHTML = output;
+  getDOMRoomBoxes();
 });
 
 /* Functions */
+
+/* Add addEventListener to Roomboxes */
+const getDOMRoomBoxes = function () {
+  /* Check if their are elements in the var */
+  if (domToggleSwitchRoomBoxes != null) {
+    /* Remove all the eventlisteners */
+    for (const toggleSwitchRoomBox of domToggleSwitchRoomBoxes) {
+      toggleSwitchRoomBox.removeEventListener("change", function () {
+        toggleSwitch(toggleSwitchRoomBox);
+      });
+    }
+  }
+  /* Add eventlisteners to the elements */
+  domToggleSwitchRoomBoxes = document.querySelectorAll(
+    ".js-toggleswicht--roomBox"
+  );
+  for (const toggleSwitchRoomBox of domToggleSwitchRoomBoxes) {
+    toggleSwitchRoomBox.addEventListener("change", function () {
+      toggleSwitch(
+        toggleSwitchRoomBox,
+        toggleSwitchRoomBox.getAttribute("data-room")
+      );
+    });
+  }
+};
 /* const clearLoadingscreen = function () {
   document.querySelector(".js-loadings-screen").style.display = "none";
 }; */
@@ -156,7 +185,7 @@ const toggleBox = function (domToggleSwitch) {
   }
 };
 /* Check wich toggle it is */
-const toggleSwitch = function (domToggleSwitch) {
+const toggleSwitch = function (domToggleSwitch, box = null) {
   switch (domToggleSwitch.getAttribute("data-name")) {
     case "ai_meeting":
       socket.emit("ai_meeting");
@@ -167,13 +196,23 @@ const toggleSwitch = function (domToggleSwitch) {
     case "ai_dishwasher":
       socket.emit("ai_dishwasher");
       break;
+    case "RoomStatus":
+      socket.emit("status_room_change", { room: box });
+      break;
 
     default:
       break;
   }
 };
+/* Function that clear the stat-btns */
+const resetBtnStats = function () {
+  for (const domBtnStat of domBtnStats) {
+    domBtnStat.classList.remove(classStatsSelected);
+  }
+};
 /* Load toggleSwitches */
 const loadDOM = function () {
+  /* Load the toggleswitches */
   domToggleSwitches = document.querySelectorAll(".js-toggleswitch");
   for (const domToggleSwitch of domToggleSwitches) {
     log(domToggleSwitch);
@@ -181,21 +220,29 @@ const loadDOM = function () {
       toggleSwitch(domToggleSwitch);
     });
   }
+  /* Load the btns for the stats */
+  domBtnStats = document.querySelectorAll(".js-btn--stats");
+  for (const domBtnStat of domBtnStats) {
+    domBtnStat.addEventListener("click", function () {
+      resetBtnStats();
+      domBtnStat.classList.add(classStatsSelected);
+    });
+  }
 };
 /* init-function --> For starting the script */
 const init = function () {
   loadDOM();
   socket.emit("connect");
-  console.log("Socket emitted");
+  log("Socket emitted");
 };
 
 const registeredServiceWorker = function () {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').then(function (registration) {
-    console.log('Excellent, registered with scope: ', registration.scope);
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js").then(function (registration) {
+      log("Excellent, registered with scope: ", registration.scope);
     });
-   }
-}
+  }
+};
 
 /* When the script starts */
 document.addEventListener("DOMContentLoaded", function () {
