@@ -54,7 +54,7 @@ socket.on("status_rooms", function (data) {
         <div class="c-item__icon c-card__icon">
             <svg xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
-                viewBox="0 0 40 40" class="js-icon js-icon__off">
+                viewBox="0 0 40 40" class="js-icon js-icon__${status}">
                 <g id="Mask_Group_7" data-name="Mask Group 7"
                     transform="translate(-1496 -248)" clip-path="url(#clip-path)">
                     <g id="video-call" transform="translate(1496 248)">

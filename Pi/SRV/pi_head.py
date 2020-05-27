@@ -25,7 +25,7 @@ class PiHead:
             self.messages_queue = Queue()
             self.influxdb = Influxdb()
             self.start()
-        except Excepti"on as ex:
+        except Exception as ex:
             logging.error(ex)
     
     def start(self):
