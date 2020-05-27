@@ -1,7 +1,7 @@
 # import the necessary packages
 import numpy as np
 import cv2
- 
+from imutils.object_detection import non_max_suppression
 
 classifier = cv2.CascadeClassifier('ML\haarcascade_fullbody.xml')
 
@@ -24,16 +24,10 @@ while(True):
     rects = classifier.detectMultiScale(
         blackwhite, scaleFactor=1.3, minNeighbors=4, minSize=(30, 30),
         flags=cv2.CASCADE_SCALE_IMAGE)
-    print(rects)
     
-    boxes = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
-
-    count_persons = 0
-    for (xA, yA, xB, yB) in boxes:
-        count_persons += 1
-        # display the detected boxes in the colour picture
-        cv2.rectangle(frame, (xA, yA), (xB, yB),
-                          (0, 255, 0), 2)
+    rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
+    pick = non_max_suppression(rects, probs=None, overlapThresh=0.65)
+    print(len(pick))
 
 
     # Display the resulting frame
