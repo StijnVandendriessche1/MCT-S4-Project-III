@@ -1,5 +1,6 @@
 import cv2
 import time
+import numpy as np
 
 # Create an object. Zeor for externa camera
 
@@ -14,7 +15,9 @@ while True:
     print(frame)
 
     # Converting to grayscale
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    ret,frame = cv2.threshold(frame,80,255,cv2.THRESH_BINARY)
 
     # Show the frame
     cv2.imshow("Capturing", gray)
