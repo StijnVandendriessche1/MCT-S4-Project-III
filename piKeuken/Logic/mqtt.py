@@ -1,80 +1,92 @@
-""" Class for send to the mqtt-server
-pip install paho-mqtt """
-
-from queue import Queue
-from threading import Thread
-
+#!/usr/bin/python
+import datetime
+import time
+import jwt
+import logging
 import paho.mqtt.client as mqtt
-import paho.mqtt.subscribe as subscribe
-import json
 
-import sys
-import os
+import sys, os
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
-import jsonpickle
-
 
 class MQTT:
-    def __init__(self, topic, pubsub=False, messages_queue = None):
-        self.pubsub = pubsub
-        self.messages_queue = messages_queue
-        self.get_vars = GetVars()
-        self.ip = self.get_vars.get_var("MQTT_IP")
-        self.port = self.get_vars.get_var("MQTT_Port")
-        self.topic = topic
-        self.qos = 1
-        self.start()
+    def __init__(self, device_id):
+        try:
+            self.get_vars = GetVars()
 
+            self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
+            self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
+            self.root_cert_filepath = self.get_vars.get_var("GoogleIOT_CertPath")
+            self.project_id = self.get_vars.get_var("GoogleIOT_ProjectID")
+            self.gcp_location = self.get_vars.get_var("GoogleIOT_Location")
+            self.registry_id = self.get_vars.get_var("GoogleIOT_RegistryId")
+            self.device_id = device_id
+
+            self._CLIENT_ID = 'projects/{}/locations/{}/registries/{}/devices/{}'.format(self.project_id, self.gcp_location, self.registry_id, self.device_id)
+
+            self.start()
+        except Exception as ex:
+            logging.Error(ex)
+    
     def start(self):
-        self.Client = mqtt.Client()
-        if self.pubsub:
-            self.Client.on_connect = self.on_connect
-            self.Client.on_message = self.on_message
+        try:
+            self.client = mqtt.Client(client_id=self._CLIENT_ID)
+            # authorization is handled purely with JWT, no user/pass, so username can be whatever
+            self.client.username_pw_set(
+                username='unused',
+                password=create_jwt())
+            
+            self.client.on_connect = self.on_connect
+            self.client.on_publish = self.on_publish
 
-        self.Client.connect(self.ip, self.port, 60)
+            self.client.tls_set(ca_certs=self.root_cert_filepath) # Replace this with 3rd party cert if that was used when creating registry
+            self.client.connect('mqtt.googleapis.com', 8883)
+            #self.client.loop_start()
+        except Exception as ex:
+            logging.Error(ex)
+            raise Exception(ex)
+    
+    def create_jwt(self):
+        try:
+            cur_time = datetime.datetime.utcnow()
+            token = {
+                'iat': cur_time,
+                'exp': cur_time + datetime.timedelta(minutes=60),
+                'aud': project_id
+            }
 
-        if self.pubsub:
-            self.Client.loop_forever()
+            with open(self.ssl_private_key_filepath, 'r') as f:
+                private_key = f.read()
 
-    def on_connect(self, client, userdata, flags, rc):
-        self.Client.subscribe(self.topic)
+            return jwt.encode(token, private_key, self.ssl_algorithm)
+        except Exception as ex:
+            logging.Error(ex)
+            raise Exception(ex)
+    
+    def error_str(self, rc):
+        return '{}: {}'.format(rc, mqtt.error_string(rc))
 
-    def on_message(self, client, userdata, msg):
-        #message = json.loads(msg.payload)
-        message = jsonpickle.decode(msg.payload)
-        self.messages_queue.put(message)
+    def on_connect(self, unusued_client, unused_userdata, unused_flags, rc):
+        print('on_connect', error_str(rc))
 
-    def publish(self, data):
-        json_data = jsonpickle.encode(data)
-        #objPayload = json.dumps(json_data)
-        self.Client.publish(self.topic, payload=json_data,
-                            qos=self.qos, retain=False)
-
-
-""" test = MQTT("test")
-test_json = {"test": "Topi"}
-test.publish(test_json) """
-
-""" messages_queue = Queue()
-
-def start_mqtt():
-    test = MQTT("test", True, messages_queue)
-
-def send_data():
-    message = messages_queue.get()
-    while True:
-        print(message)
-        messages_queue.task_done()
-        message = messages_queue.get()
-
-
-t = Thread(target=start_mqtt)
-t.start()
-
-t = Thread(target=send_data)
-t.start() """
+    def on_publish(self, unused_client, unused_userdata, unused_mid):
+        print('on_publish')
+    
+    def send(self, payload, topic):
+        try:
+            for i in range(1, 11):
+                """ #payload = '{{ "ts": {}, "temperature": {}, "pressure": {}, "humidity": {} }}'.format(int(time.time()), temperature, light, humidity)
+                payload = "hallo" """
+                #Uncomment following line when ready to publish
+                client.publish(topic, payload, qos=1)
+                time.sleep(1)
+            #self.client.loop_stop()
+        except Exception as ex:
+            logging.Error(ex)
+            raise Exception(ex)
+    
+test = MQTT("DEVICEID")

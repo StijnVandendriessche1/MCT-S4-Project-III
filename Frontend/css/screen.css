@@ -1,0 +1,1165 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("../assets/fonts/Roboto-Medium.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("ttf");
+  font-display: swap;
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* colors */
+  --global-accent: #ff9900;
+  --global-white: #ffffff;
+  --global-dark-white: #fbfbfb;
+  --global-darker-white: #f3f3f3;
+  --global-dark-grey: #aaaaaa;
+  --global-grey: #00000040;
+  --global-light-grey: #00000020;
+
+  --global-color-alpha-transparent: #ff9900bf;
+  --global-color-alpha-x-transparent: #ff99004d;
+
+  --global-color-neutral-xxxx-light: #f5f6fa;
+  --global-color-neutral-xxx-light: #e2e3e7;
+  --global-color-neutral-xx-light: #caccd4;
+  --global-color-neutral-x-light: #b5b6c0;
+  --global-color-neutral-light: #a0a1ad;
+  --global-color-neutral: #8b8c9a;
+  --global-color-neutral-dark: #757787;
+  --global-color-neutral-x-dark: #606274;
+  --global-color-neutral-xx-dark: #4b4c60;
+  --global-color-neutral-xxx-dark: #35374d;
+  --global-color-neutral-xxxx-dark: #20223a;
+  --global-color-error: #ff3333;
+  --global-color-error-transparent: #ff3333bf;
+  --global-color-error-x-transparent: #ff33334d;
+
+  --global-title-line: var(--global-grey);
+
+  --global-on: var(--global-accent);
+  --global-off: var(--global-grey);
+
+  --global-icon-on: var(--global-accent);
+  --global-icon-off: var(--global-dark-grey);
+
+  --global-selection: var(--global-white);
+  --global-selection-background: var(--global-accent);
+
+  /* Font weights */
+  --global-default-weight: 400;
+
+  /* Shadows */
+  --shadow-neutral: 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-box: 0 3px 6px rgba(0, 0, 0, 0.2);
+  --shadow-box-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+  /* border radius */
+  --global-borderRadius: 3px;
+  --global-borderWidth: 1px;
+
+  /* transitions */
+  --global-transitionEasing-out: ease-out;
+  --global-transitionEasing-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --global-transitionDuration-alpha: 0.1s;
+  --global-transitionDuration-beta: 0.2s;
+  --global-transitionDuration-gamma: 0.3s;
+
+  /* Grid System */
+
+  --global-baseline: 8px;
+  --global-whitespace: calc(var(--global-baseline) * 3); /* 24 px */
+
+  --global-whitespace-xs: calc(var(--global-baseline) * 0.5); /* 4 px */
+  --global-whitespace-sm: calc(var(--global-baseline) * 1); /* 8 px */
+  --global-whitespace-md: calc(var(--global-baseline) * 2); /* 16 px */
+  --global-whitespace-lg: calc(var(--global-baseline) * 4); /* 32 px */
+  --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* 48 px */
+  --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* 72 px */
+
+  --global-label-color: var(--global-color-neutral-xx-dark);
+  --global-placeholder-color: var(--global-color-neutral-x-light);
+  --global-input-backgroundColor: White;
+  --global-input-color: var(--global-color-neutral-xxxx-dark);
+  --global-input-borderColor: var(--global-color-neutral-xxx-light);
+  --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
+  --global-input-focus-borderColor: var(--global-accent);
+  --global-input-error-borderColor: var(--global-color-error);
+  --global-input-focus-boxShadowSpread: 0 0 0 3px;
+  --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+  --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 16px;
+  font-weight: var(--global-default-weight);
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-neutral-dark);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--global-darker-white);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: var(--global-selection-background);
+  color: var(--global-selection);
+  text-shadow: none;
+}
+
+::selection {
+  background: var(--global-selection-background);
+  color: var(--global-selection);
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  transition: all var(--global-transitionDuration-alpha);
+  color: var(--color-input-alpha);
+  outline-color: var(--color-alpha);
+  outline-width: medium;
+  outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+  color: var(--color-input-alpha-x-light);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-input-alpha-x-light);
+}
+
+label,
+input {
+  display: block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--color-neutral-light);
+}
+
+span {
+  font-weight: 700;
+  font-size: 20px;
+}
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  position: relative;
+  padding: 24px 24px 0;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100em; /* 100 * 16px = 1600 */
+  width: 100%;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+.c-container {
+  margin-top: var(--global-whitespace-xl);
+  padding: 0 var(--global-whitespace);
+}
+
+/*
+    Component: Dashboard
+    ---
+    Website dashboard
+*/
+
+.c-dashboard {
+  display: grid;
+  grid-gap: calc(var(--global-baseline) * 6);
+  margin-bottom: var(--global-whitespace-md);
+}
+
+.c-dashboard__item {
+  box-shadow: var(--shadow-box);
+  background-color: #fff;
+  padding: calc(var(--global-baseline) * 3);
+  border-radius: var(--global-whitespace-md);
+  border: 3px solid var(--global-white);
+}
+
+.c-dashboard__item--disabled {
+  display: none;
+}
+
+.c-dashboard__item:hover {
+  box-shadow: var(--shadow-box-dark);
+}
+
+.c-dashboard__item--list {
+  background-color: var(--global-dark-white);
+  border-color: var(--global-dark-white);
+}
+
+@media screen and (min-width: 992px) {
+  .c-dashboard {
+    grid-template-columns: repeat(24, 1fr);
+  }
+
+  .c-dashboard__item {
+    grid-column: span 24;
+  }
+
+  .c-dashboard__item--disabled {
+    display: block;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .c-dashboard__item--disabled:hover {
+    box-shadow: none;
+  }
+}
+
+/*
+    Component: App
+    ---
+    Website main layout
+*/
+
+.c-app {
+  min-height: 100vh;
+}
+
+.c-app__title {
+  text-align: center;
+  border-bottom: 1px solid var(--global-title-line);
+  margin-bottom: var(--global-whitespace);
+  padding-top: var(--global-whitespace);
+}
+
+/*
+    Component: card
+    ---
+    cards layout
+*/
+
+.c-card__main {
+  background-color: var(--global-dark-white);
+}
+
+.c-card__text {
+  margin-bottom: 0;
+  margin-top: var(--global-whitespace-md);
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.c-card__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-icon__meeting {
+  fill: var(--global-accent);
+}
+
+.c-card__title {
+  display: flex;
+}
+
+.c-card__title-text {
+  margin-top: 2px;
+  margin-left: var(--global-whitespace-md);
+}
+
+.c-card__body {
+  text-align: center;
+  margin: 40px;
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.c-card__title--list {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.c-card__canvas {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--global-accent);
+}
+
+.c-card__stats--list {
+  display: flex;
+  flex-flow: row;
+  margin-right: var(--global-whitespace);
+}
+
+.c-card__header--stats {
+  margin-bottom: var(--global-whitespace);
+}
+
+.c-card__body--map {
+  display: block;
+}
+
+.c-map {
+  width: 100%;
+}
+
+.c-map__card {
+  box-shadow: var(--shadow-box);
+  background-color: #fff;
+  padding: calc(var(--global-baseline) * 3);
+  border-radius: var(--global-whitespace-md);
+  border: 3px solid var(--global-white);
+  width: 100%;
+}
+
+.c-card__icon {
+  font-size: 24px;
+}
+
+.c-map__svg {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  
+  .c-map {
+    padding: var(--global-whitespace);
+  }
+
+  .c-card__body--map {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .c-map__card {
+    width: 25%;
+    margin: var(--global-whitespace);
+  }
+}
+.c-stats {
+  margin: 0 var(--global-whitespace-md);
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid var(--global-accent);
+  padding: 10px 16px;
+  border-radius: var(--global-whitespace-md);
+  cursor: pointer;
+}
+
+.c-stats--selected {
+  color: var(--global-white);
+  background-color: var(--global-accent);
+}
+
+.c-title {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.c-img {
+  width: 100%;
+  height: 100%;
+}
+
+.c-item {
+  box-shadow: var(--shadow-box);
+  background-color: #fff;
+  padding: calc(var(--global-baseline) * 3);
+  border-radius: var(--global-whitespace-md);
+  border: 3px solid var(--global-white);
+  margin-top: var(--global-whitespace);
+}
+
+.c_item + .c-item {
+  margin-bottom: var(--global-whitespace);
+}
+
+/*
+    Component: custom toggle
+    ---
+    toggle switches for cards
+*/
+
+.c-custom-toggle {
+  --toggle-backgroundColor: var(--global-color-neutral-xxxx-light);
+  --toggle-borderColor: var(--global-input-borderColor);
+  --toggle-focus-borderColor: var(--global-input-focus-borderColor);
+  --toggle-checked-borderColor: var(--global-accent);
+  --toggle-checked-backgroundColor: var(--global-accent);
+  --toggle-focus-boxShadow: var(--global-input-focus-boxShadowSpread)
+    var(--global-input-focus-boxShadowColor);
+  --toggle-transition: all var(--global-transitionDuration-alpha)
+    var(--global-transitionEasing-out);
+  --toggle__switch-backgroundColor: White;
+  --toggle__switch-checked-backgroundColor: White;
+  --toggle__switch-transition: all var(--global-transitionDuration-alpha)
+    var(--global-transitionEasing-out);
+  display: flex;
+  align-items: center;
+}
+
+.c-custom-toggle--inverted {
+  flex-direction: row-reverse;
+}
+
+.c-custom-toggle__fake-input {
+  display: block;
+  height: 24px;
+  width: 48px;
+  margin-right: 16px;
+  background-color: var(--toggle-backgroundColor);
+  border-radius: 32px;
+  border: 1px solid var(--toggle-borderColor);
+  transition: var(--toggle-transition);
+  box-shadow: var(--toggle-boxShadow, 0);
+  margin-left: var(--global-whitespace);
+}
+
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+  margin-right: 0;
+}
+
+.c-custom-toggle__fake-input::after {
+  position: relative;
+  display: block;
+  content: "";
+  height: 22px;
+  width: 22px;
+  border-radius: 22px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--toggle__switch-backgroundColor);
+  transition: var(--toggle__switch-transition);
+}
+
+/* focused and active state */
+
+.c-option--hidden:focus + .c-custom-toggle,
+.c-option--hidden:active + .c-custom-toggle {
+  --toggle-borderColor: var(--toggle-focus-borderColor);
+  --toggle-boxShadow: var(--toggle-focus-boxShadow);
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-toggle {
+  --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
+  --toggle-borderColor: var(--toggle-checked-borderColor);
+  --toggle__switch-backgroundColor: var(
+    --toggle__switch-checked-backgroundColor
+  );
+}
+
+.c-option--hidden:checked
+  + .c-custom-toggle
+  .c-custom-toggle__fake-input::after {
+  transform: translate(24px, 0);
+}
+
+/* special active state */
+
+.c-option--hidden:active
+  + .c-custom-toggle
+  .c-custom-toggle__fake-input::after {
+  width: 28px;
+}
+
+.c-option--hidden:active:checked
+  + .c-custom-toggle
+  .c-custom-toggle__fake-input::after {
+  margin-left: -6px;
+}
+
+.c-label {
+  font-size: 16px;
+  font-weight: 600;
+}
+.c-loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--global-darker-white);
+  display: flex;
+}
+.c-loading-screen__flex-item {
+  align-self: start;
+  justify-self: center;
+  align-content: center;
+  font-size: 3rem;
+}
+
+.c-room:hover {
+  stroke: var(--global-accent);
+}
+
+.c-room:active {
+  stroke: var(--global-accent);
+  stroke-width: 5px;
+}
+
+.c-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid var(--global-color-neutral-xxxx-light);
+  border-radius: 50%;
+  border-top: 16px solid var(--global-accent);
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2.1s linear infinite;
+  animation: spin 2.1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.c-animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+.c-end-text {
+  display: none;
+  text-align: center;
+}
+
+
+
+
+
+/*
+    Component: js
+    ---
+    css for js things
+*/
+
+.js-on {
+  border: 3px solid var(--global-on);
+}
+
+.js-off {
+  border: 3px solid var(--global-off);
+}
+
+.js-icon__off {
+  fill: var(--global-icon-off);
+}
+
+.js-icon__on {
+  fill: var(--global-icon-on);
+}
+.c-word {
+  text-transform: capitalize;
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: grid
+    ---
+    Utility classes to put specefic grid size onto elements
+*/
+
+@media (min-width: 992px) {
+  .u-x-span-1-bp3 {
+    grid-column: span 1;
+  }
+
+  .u-x-span-2-bp3 {
+    grid-column: span 2;
+  }
+
+  .u-x-span-3-bp3 {
+    grid-column: span 3;
+  }
+
+  .u-x-span-4-bp3 {
+    grid-column: span 4;
+  }
+
+  .u-x-span-5-bp3 {
+    grid-column: span 5;
+  }
+
+  .u-x-span-6-bp3 {
+    grid-column: span 6;
+  }
+
+  .u-x-span-7-bp3 {
+    grid-column: span 7;
+  }
+
+  .u-x-span-8-bp3 {
+    grid-column: span 8;
+  }
+
+  .u-x-span-9-bp3 {
+    grid-column: span 9;
+  }
+
+  .u-x-span-10-bp3 {
+    grid-column: span 10;
+  }
+
+  .u-x-span-11-bp3 {
+    grid-column: span 11;
+  }
+
+  .u-x-span-12-bp3 {
+    grid-column: span 12;
+  }
+
+  .u-x-span-13-bp3 {
+    grid-column: span 13;
+  }
+
+  .u-x-span-14-bp3 {
+    grid-column: span 14;
+  }
+
+  .u-x-span-15-bp3 {
+    grid-column: span 15;
+  }
+
+  .u-x-span-16-bp3 {
+    grid-column: span 16;
+  }
+
+  .u-x-span-17-bp3 {
+    grid-column: span 17;
+  }
+
+  .u-x-span-18-bp3 {
+    grid-column: span 18;
+  }
+
+  .u-x-span-19-bp3 {
+    grid-column: span 19;
+  }
+
+  .u-x-span-20-bp3 {
+    grid-column: span 20;
+  }
+
+  .u-x-span-21-bp3 {
+    grid-column: span 21;
+  }
+
+  .u-x-span-22-bp3 {
+    grid-column: span 22;
+  }
+
+  .u-x-span-23-bp3 {
+    grid-column: span 23;
+  }
+
+  .u-x-span-24-bp3 {
+    grid-column: span 24;
+  }
+
+  .u-y-span-1-bp3 {
+    grid-row: span 1;
+  }
+
+  .u-y-span-2-bp3 {
+    grid-row: span 2;
+  }
+
+  .u-y-span-3-bp3 {
+    grid-row: span 3;
+  }
+
+  .u-y-span-4-bp3 {
+    grid-row: span 4;
+  }
+
+  .u-y-span-5-bp3 {
+    grid-row: span 5;
+  }
+}
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral {
+  color: var(--color-neutral);
+}
+
+.u-color-neutral-dark {
+  color: var(--color-neutral-dark);
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+  max-width: 27em !important;
+}
+
+.u-max-width-sm {
+  max-width: 39em !important;
+}
+
+.u-max-width-md {
+  max-width: 50em !important;
+}
+
+.u-max-width-lg {
+  max-width: 85em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+  text-align: center;
+}
+
+.u-align-center {
+  margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-sm {
+  font-size: 14px;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
