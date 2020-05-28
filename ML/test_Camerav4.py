@@ -2,13 +2,22 @@
 import numpy as np
 import cv2
 from imutils.object_detection import non_max_suppression
+import pafy
 
 classifier = cv2.CascadeClassifier('ML\haarcascade_fullbody.xml')
 
 cv2.startWindowThread()
 
 # open webcam video stream
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
+urls = ["oMJyrvHSGqY", "6iuNSa4lJoA"]
+url = f'https://youtu.be/{urls[0]}'
+vPafy = pafy.new(url)
+play = vPafy.getbest(preftype="mp4")
+
+#start the video
+cap = cv2.VideoCapture()
+cap.open(play.url)
 
 while(True):
     # Capture frame-by-frame
@@ -28,6 +37,9 @@ while(True):
     rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
     pick = non_max_suppression(rects, probs=None, overlapThresh=0.65)
     print(len(pick))
+
+    for (xA, yA, xB, yB) in pick:
+        cv2.rectangle(frame, (xA, yA), (xB, yB), (0, 255, 0), 2)
 
 
     # Display the resulting frame
