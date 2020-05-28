@@ -8,7 +8,7 @@ sys.path.insert(0, BASE_DIR)
 
 class GetVars:
     def __init__(self):
-        self.file = "Pi\settings.json"
+        self.file = "../settings.json"
         self.vars = self.start()
 
     def start(self):
