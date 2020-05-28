@@ -89,6 +89,7 @@ class Influxdb:
                 result_row = []
                 for record in table.records:
                     result_row.append([record.get_field(), record.get_value()])
+                results.append(result_row)
             return results
         except Exception as ex:
             logging.error(ex)
@@ -102,15 +103,14 @@ print(a) """
 a = test.get_data('|> range(start:-111h)')
 print(a) """
 
-""" testa = Influxdb("Cloud")
-data = []
+testa = Influxdb("Cloud")
+""" data = []
 data.append(Data("status", False))
 data.append(Data("ai", "meeting"))
 sensordata = Sensordata("Jos", "TestServer", data)
-print(testa.write_data(sensordata))
+print(testa.write_data(sensordata)) """
 
 
 test = Influxdb("Pi")
-a = test.get_data('|> range(start:-111h) |> filter(fn: (r) => r["_measurement"] == "Jos")') """
-
-#print(a)
+a = test.get_data('|> range(start: -24) |> filter(fn: (r) => r["_measurement"] == "sensordata")')
+print(a)
