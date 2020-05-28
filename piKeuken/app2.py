@@ -23,7 +23,7 @@ import paho.mqtt.client as mqtt
 # Define some project-based variables to be used below. This should be the only
 # block of variables that you need to edit in order to run this script
 
-ssl_private_key_filepath = '/home/pi/keys/rsa_private.pem'
+ssl_private_key_filepath = '/home/pi/rsa_private.pem'
 ssl_algorithm = 'RS256' # Either RS256 or ES256
 root_cert_filepath = '/home/pi/project3/keys/roots.pem'
 project_id = 'engaged-context-277613'
@@ -83,8 +83,8 @@ for i in range(1, 11):
   ligth = 35
   humidity = 54
 
-  #payload = '{{ "ts": {}, "temperature": {}, "pressure": {}, "humidity": {} }}'.format(int(time.time()), temperature, light, humidity)
-  payload = "hallo"
+  payload = '{{ "ts": {}, "temperature": {}, "light": {}, "humidity": {} }}'.format(int(time.time()), temperature, light, humidity)
+  #payload = "hallo"
 
   #Uncomment following line when ready to publish
   client.publish(_MQTT_TOPIC, payload, qos=1)
