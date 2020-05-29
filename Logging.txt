@@ -6359,3 +6359,24 @@ HTTP response body: upstream connect error or disconnect/reset before headers. r
 2020-05-27 11:33:32,047	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [27/May/2020 11:33:32] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9LUj8A&sid=1a14178f1f5d475db1b6bb45c9af72e3 HTTP/1.1[0m" 200 -
 2020-05-27 11:33:32,048	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [27/May/2020 11:33:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9LUhqK&sid=1a14178f1f5d475db1b6bb45c9af72e3 HTTP/1.1[0m" 200 -
 2020-05-27 11:33:37,669	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [27/May/2020 11:33:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9LUj8O&sid=1a14178f1f5d475db1b6bb45c9af72e3 HTTP/1.1[0m" 200 -
+2020-05-29 10:31:48,089	ERROR -- MainProcess influxdb.py:98 -- 'list' object has no attribute 'head'
+2020-05-29 10:31:48,217	ERROR -- MainProcess server.py:57 -- 'list' object has no attribute 'head'
+2020-05-29 10:31:48,217	ERROR -- MainProcess server.py:29 -- 'list' object has no attribute 'head'
+2020-05-29 10:31:48,223	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-05-29 10:31:48,239	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-05-29 10:32:27,243	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9VZvqj HTTP/1.1[0m" 200 -
+2020-05-29 10:32:31,192	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:31] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9VZwtJ&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:32,014	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9VZvvs&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:32,323	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9VZx4J&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:43,221	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9VZx96&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:52,255	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:52] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9Va00U&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:52,255	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9VZzpR&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:32:54,222	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:32:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va00a&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:05,223	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va0VR&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:08,258	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:08] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9Va3wT&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:08,677	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va3BA&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:09,318	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:09] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9Va4B1&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:09,653	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va41B&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:16,225	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va4GQ&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:17,569	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:17] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9Va67D&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
+2020-05-29 10:33:17,570	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [29/May/2020 10:33:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9Va5t7&sid=9c78364d87794d2592c2528cb6943f77 HTTP/1.1[0m" 200 -
