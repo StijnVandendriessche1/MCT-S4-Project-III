@@ -18,6 +18,10 @@
 
 Pi/settings.json
 
+piKeuken/keys/
+
+piKeuken/settings.json
+
 Pi/Logic/__pycache__/
 
 Pi/Models/__pycache__/
