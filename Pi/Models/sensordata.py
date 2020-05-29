@@ -15,3 +15,6 @@ class Sensordata:
         self.host = host
         self.timestamp = timestamp
         self.data = data
+    
+    def __eq__(self, other):
+        return self.host == other.host and self.measurement == other.measurement and self.timestamp == other.timestamp

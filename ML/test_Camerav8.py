@@ -31,7 +31,7 @@ fps = FPS().start() """
 
 urls = ["oMJyrvHSGqY", "6iuNSa4lJoA",
         "fz9eXjzg1ZA", "rjb9FdVdX5I?t=1119", "rjb9FdVdX5I", "hrqi4PM-uL0", "eZe4Q_58UTU", "U2ZA7oUhwEI", "oaQcuHidqWc", "CQ_eDE0OMds", "DyluIwHgXfQ"]
-url = f'https://youtu.be/{urls[10]}'
+url = f'https://youtu.be/{urls[7]}'
 vPafy = pafy.new(url)
 play = vPafy.getbest(preftype="mp4")
 

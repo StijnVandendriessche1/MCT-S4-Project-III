@@ -2,7 +2,7 @@
 
 
 from influxdb_client.client.write_api import SYNCHRONOUS
-from influxdb_client import InfluxDBClient, Point, WritePrecision
+from influxdb_client import InfluxDBClient, Point, WritePrecision, Dialect
 
 from datetime import datetime
 import sys
@@ -77,19 +77,22 @@ class Influxdb:
 
     def get_data(self, query_in):
         try:
-            query = f'from(bucket: "{self.bucket}") {query_in}'
+            query = f'from(bucket: "{self.bucket}") {query_in} |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
             #results = self.client.query_api().query_stream(query, org=self.org)
+            
             #results = self.client.query_api().query_data_frame(query, org=self.org)
-            tables = self.client.query_api().query(query, org=self.org)
-            """ test = pd.DataFrame(tables)
+            results = self.client.query_api().query_data_frame(query, org=self.org)
+            print(results.head())
+            """ tables = self.client.query_api().query(query, org=self.org)
+            test = pd.DataFrame(tables)
             print(test.head(5))
-            print(test[0][0]) """
+            print(test[0][0])
             results = []
             for index, table in enumerate(tables):
                 result_row = []
                 for record in table.records:
                     result_row.append([record.get_field(), record.get_value()])
-                results.append(result_row)
+                results.append(result_row) """
             return results
         except Exception as ex:
             logging.error(ex)
@@ -103,7 +106,7 @@ print(a) """
 a = test.get_data('|> range(start:-111h)')
 print(a) """
 
-testa = Influxdb("Cloud")
+#testa = Influxdb("Cloud")
 """ data = []
 data.append(Data("status", False))
 data.append(Data("ai", "meeting"))
@@ -111,6 +114,5 @@ sensordata = Sensordata("Jos", "TestServer", data)
 print(testa.write_data(sensordata)) """
 
 
-test = Influxdb("Pi")
-a = test.get_data('|> range(start: -24) |> filter(fn: (r) => r["_measurement"] == "sensordata")')
-print(a)
+""" test = Influxdb("Pi")
+a = test.get_data('|> range(start: -24) |> filter(fn: (r) => r["_measurement"] == "sensordata") |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")') """
