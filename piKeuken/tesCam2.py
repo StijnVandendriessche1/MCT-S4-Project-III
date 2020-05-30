@@ -6,6 +6,8 @@ import argparse
 import imutils
 import time
 import cv2
+import sys
+import os
 
 """ https://www.pyimagesearch.com/2017/09/18/real-time-object-detection-with-deep-learning-and-opencv/ """
 
@@ -19,7 +21,7 @@ COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
 # load our serialized model from disk
 print("[INFO] loading model...")
 net = cv2.dnn.readNetFromCaffe(
-    "ML\MobileNetSSD_deploy.prototxt.txt", "ML\MobileNetSSD_deploy.caffemodel")
+    "/home/pi/project3/ML/MobileNetSSD_deploy.prototxt.txt", "/home/pi/project3/ML/MobileNetSSD_deploy.caffemodel")
 # initialize the video stream, allow the cammera sensor to warmup,
 # and initialize the FPS counter
 """ print("[INFO] starting video stream...")
@@ -34,14 +36,15 @@ url = f'https://youtu.be/{urls[7]}'
 play = vPafy.getbest(preftype="mp4")"""
 
 # start the video
-cap = cv2.VideoCapture()
+#cap = cv2.VideoCapture()
 #cap.open(play.url)
 
-#cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 # loop over the frames from the video stream
 while True:
     ret, frame = cap.read()
+    frame = cv2.flip(frame, 0)
     frame = imutils.resize(frame, width=400)
     # Convert img to blob
     (h, w) = frame.shape[:2]
@@ -76,7 +79,7 @@ while True:
             cv2.putText(frame, label, (startX, y),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
     # show the output frame
-    cv2.imshow("Frame", frame)
+    #cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
     print(f"Count persons: {count_persons}")
     if key == ord("q"):
