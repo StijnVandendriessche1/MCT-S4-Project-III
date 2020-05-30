@@ -1,6 +1,9 @@
 """ Class for write the data to the InfluxDB 2.O (cloud) """
 
 
+import pandas as pd
+import logging
+
 from influxdb_client.client.write_api import SYNCHRONOUS
 from influxdb_client import InfluxDBClient, Point, WritePrecision, Dialect
 
@@ -12,14 +15,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
-from Models.data import Data
-from Models.sensordata import Sensordata
 from Logic.get_vars import GetVars
-import logging
-import pandas as pd
+from Models.sensordata import Sensordata
+from Models.data import Data
+
 
 class Influxdb:
-    def __init__(self, token_type = "Pi"):
+    def __init__(self, token_type="Pi"):
         try:
             self.get_vars = GetVars()
             self.connection = False
@@ -53,17 +55,18 @@ class Influxdb:
                 if isinstance(data.value, str):
                     data.value = f'"{data.value}"'
                 """ Put the keys and values in a string """
-                if i!=0:
+                if i != 0:
                     fields += f",{data.key}={data.value}"
                 else:
                     fields = f"{data.key}={data.value}"
             """ Put the row into the database """
-            self.write_data_to_influxdb(sensordata.measurement, sensordata.host, fields, sensordata.timestamp)
+            self.write_data_to_influxdb(
+                sensordata.measurement, sensordata.host, fields, sensordata.timestamp)
             return True
         except Exception as ex:
             logging.error(ex)
             return False
-    
+
     def write_data_to_influxdb(self, measurement, host, fields, timestamp):
         try:
             """ Convert the datatime to a timestamp in nanoseconds """
@@ -75,28 +78,17 @@ class Influxdb:
             logging.error(ex)
             raise ex
 
-    def get_data(self, query_in):
+    def get_data(self, query_in, change_format=True):
         try:
-            query = f'from(bucket: "{self.bucket}") {query_in} |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
-            #results = self.client.query_api().query_stream(query, org=self.org)
-            
-            #results = self.client.query_api().query_data_frame(query, org=self.org)
+            if change_format:
+                query_in += ' |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
+            query = f'from(bucket: "{self.bucket}") {query_in}'
             results = self.client.query_api().query_data_frame(query, org=self.org)
-            print(results.head())
-            """ tables = self.client.query_api().query(query, org=self.org)
-            test = pd.DataFrame(tables)
-            print(test.head(5))
-            print(test[0][0])
-            results = []
-            for index, table in enumerate(tables):
-                result_row = []
-                for record in table.records:
-                    result_row.append([record.get_field(), record.get_value()])
-                results.append(result_row) """
             return results
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
+
 
 """ test = Influxdb('Kitchen', True)
 a = test.get_data('|> range(start: -24h) |> filter(fn: (r) => r["_measurement"] == "temperature_room")')
