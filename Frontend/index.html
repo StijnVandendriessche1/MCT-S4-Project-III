@@ -25,6 +25,7 @@
     <link rel="manifest" href="manifest.json">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="./js/datahandler.js"></script>
     <script src="./js/start.js"></script>
 </head>
 
@@ -178,17 +179,17 @@
                                         </div>
                                         <div class="c-item__toggle">
                                             <input class="o-hide-accessible c-option c-option--hidden" type="checkbox"
-                                                id="MeetingBox1">
+                                                id="GoldenEye">
                                             <label
                                                 class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
-                                                for="MeetingBox1">
+                                                for="GoldenEye">
                                                 <span class="c-custom-toggle__fake-input"></span>
                                                 Empty
                                             </label>
                                         </div>
                                     </div>
                                     <div class="c-item__title c-card__text">
-                                        Meeting Box 1
+                                        GoldenEye
                                     </div>
                                 </div>
 
@@ -223,7 +224,7 @@
                                         </div>
                                     </div>
                                     <div class="c-item__title c-card__text">
-                                        Meeting Box 2
+                                        Casino Royale
                                     </div>
                                 </div>
 
@@ -631,7 +632,8 @@
                                         <path id="East_Door" data-name="East Door" d="M0,0H47V47A47,47,0,0,1,0,0Z"
                                             transform="translate(1370 1702)" fill="none" stroke="#000"
                                             stroke-linecap="round" stroke-width="3" />
-                                        <g id="Meeting_Box_1" data-name="Meeting Box 1">
+                                        <g id="Meeting_Box_1" class="js-map js-map--MoonRaker"
+                                            data-name="Meeting Box 1">
                                             <g id="Rectangle_38" class="c-room" data-name="Rectangle 38"
                                                 transform="translate(1102 1702)" fill="#fff" stroke="#000"
                                                 stroke-width="3">
@@ -683,9 +685,9 @@
                                                 height="233" transform="translate(695 1806)" fill="#fff" stroke="#000"
                                                 stroke-width="3" />
                                         </g>
-                                        <g id="Kitchen">
-                                            <rect id="Rectangle_27" class="c-room" data-name="Rectangle 27" width="78" height="233"
-                                                transform="translate(617 1806)" fill="#fff" stroke="#000"
+                                        <g id="Kitchen" class="js-map js-map--Kitchen">
+                                            <rect id="Rectangle_27" class="c-room" data-name="Rectangle 27" width="78"
+                                                height="233" transform="translate(617 1806)" fill="#fff" stroke="#000"
                                                 stroke-width="3" />
                                             <g id="Group_52" data-name="Group 52" transform="translate(-165 345)">
                                                 <g id="Mask_Group_20" data-name="Mask Group 20"
@@ -727,7 +729,8 @@
                                         </g>
                                         <rect id="Reception" width="132" height="34" stroke-width="3" fill="none"
                                             stroke="#000" transform="translate(961 1640)" />
-                                        <g id="Meeting_Box_2" data-name="Meeting Box 2">
+                                        <g id="Meeting_Box_2" class="js-map js-map--GoldFinger"
+                                            data-name="Meeting Box 2">
                                             <g id="Rectangle_38-2" class="c-room" data-name="Rectangle 38"
                                                 transform="translate(1232 1702)" fill="#fff" stroke="#000"
                                                 stroke-width="3">
@@ -764,10 +767,11 @@
                                                     r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
                                             </g>
                                         </g>
-                                        <g id="Meeting_Room" data-name="Meeting Room">
-                                            <rect id="Rectangle_36" class="c-room" data-name="Rectangle 36" width="88" height="176"
-                                                rx="1" transform="translate(1329 1480)" fill="#fff" stroke="#000"
-                                                stroke-linecap="round" stroke-width="3" />
+                                        <g id="Meeting_Room" class="js-map js-map--CasinoRoyale"
+                                            data-name="Meeting Room">
+                                            <rect id="Rectangle_36" class="c-room" data-name="Rectangle 36" width="88"
+                                                height="176" rx="1" transform="translate(1329 1480)" fill="#fff"
+                                                stroke="#000" stroke-linecap="round" stroke-width="3" />
                                             <g id="Group_44" data-name="Group 44" transform="translate(553 -9)">
                                                 <g id="Mask_Group_20-4" data-name="Mask Group 20"
                                                     transform="translate(801.47 1558.272)" clip-path="url(#clip-path)">
@@ -798,9 +802,10 @@
                                                     r="7.3" transform="translate(813.6 1570.4)" fill="#fff" />
                                             </g>
                                         </g>
-                                        <g id="Big_Meeting_Room" data-name="Big Meeting Room">
-                                            <rect id="Rectangle_34" class="c-room" data-name="Rectangle 34" width="250" height="194"
-                                                transform="translate(695 1480)" fill="#fff" stroke="#000"
+                                        <g id="Big_Meeting_Room" class="js-map js-map--GoldenEye"
+                                            data-name="Big Meeting Room">
+                                            <rect id="Rectangle_34" class="c-room" data-name="Rectangle 34" width="250"
+                                                height="194" transform="translate(695 1480)" fill="#fff" stroke="#000"
                                                 stroke-linecap="round" stroke-width="3" />
                                             <g id="Group_43" data-name="Group 43">
                                                 <g id="Mask_Group_20-5" data-name="Mask Group 20"
@@ -866,7 +871,7 @@
                                                     <circle id="Ellipse_1" data-name="Ellipse 1" cx="4" cy="4" r="4"
                                                         transform="translate(12 9.333)" />
                                                     <path id="Path_3" data-name="Path 3"
-                                                          d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z" />
+                                                        d="M39.8,36.189A13.2,13.2,0,0,0,35.521,33.4l-2.512-1.019a4.116,4.116,0,0,1-2.177-2.048,4.315,4.315,0,0,1,.988-.048.667.667,0,0,0,1.071-.756,1.845,1.845,0,0,0,1.623-.387.667.667,0,0,0,0-.955,2.285,2.285,0,0,1-.387-1.635v-.173a1.5,1.5,0,0,1,.333-1.075,5.285,5.285,0,0,0,.843-3.5C35.3,18.48,32.58,12,27.587,12a3.565,3.565,0,0,0-1.981.572h-.367c-3.733,0-6.541,5.6-6.541,9.237a5.285,5.285,0,0,0,.843,3.5,1.5,1.5,0,0,1,.333,1.073v.175a2.285,2.285,0,0,1-.387,1.635.667.667,0,0,0,0,.955,1.862,1.862,0,0,0,1.621.391.684.684,0,0,0,.181.836.623.623,0,0,0,.827-.037,3.106,3.106,0,0,1,1.051,0,4.116,4.116,0,0,1-2.176,2.045L18.479,33.4A13.2,13.2,0,0,0,14.2,36.189a.667.667,0,0,0,.465,1.144H39.333a.667.667,0,0,0,.465-1.144Z" />
                                                     <path id="Path_4" data-name="Path 4"
                                                         d="M17.952,28.667a2,2,0,0,1,.273-1,.667.667,0,0,0-.577-1h-.315V25.26a.667.667,0,0,0,.34-.779,6.727,6.727,0,0,1-.168-.8,11.552,11.552,0,0,1-.141-1.876,11.215,11.215,0,0,1,.427-2.883.667.667,0,0,0-.555-.836A9.215,9.215,0,0,0,16,18a12.165,12.165,0,0,0-6.153,1.932A3.98,3.98,0,0,0,8.1,22.667H2.667V5.333H29.333V10.42a.667.667,0,0,0,.449.631,7.418,7.418,0,0,1,1.223.552.667.667,0,0,0,.995-.58V5.333a2.669,2.669,0,0,0-2.667-2.667H2.667A2.669,2.669,0,0,0,0,5.333V22.667a2.669,2.669,0,0,0,2.667,2.667h12v1.333H11.333a.667.667,0,0,0-.667.667v1.333a.667.667,0,0,0,.667.667h5.952a.667.667,0,0,0,.667-.667Z" />
                                                 </g>

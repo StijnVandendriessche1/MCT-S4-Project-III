@@ -36,10 +36,10 @@ class Server:
                 "ai_dishwasher": False
             }
             self.status_meeting_box = {
-                "Meeting Box 1": True,
-                "Meeting Box 2": False,
-                "Meeting Room": False,
-                "Big Meeting Room": True
+                "GoldenEye": False,
+                "Casino Royale": False,
+                "Moon Raker": False,
+                "Gold Finger": False
             }
             self.get_ai_status()
             self.get_meeting_box_status()
@@ -56,20 +56,18 @@ class Server:
             else:
                 for ai in self.status_ai:
                     row = settings_data[settings_data["ai"] == ai]
-                    test = row["status"]
-                    print(test)
-                    print(ai, row)
-                    #self.status_ai[ai] = settings_data[]
+                    status_ai = bool(row["status"].astype(bool).values[0])
+                    self.status_ai[ai] = status_ai
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
 
-    def change_ai_status_influxdb(self, ai, status):
+    def change_status_influxdb(self,sort,sort_status, key, status):
         try:
             data = []
             data.append(Data("status", status))
-            data.append(Data("ai", ai))
-            sensordata = Sensordata("ai_status", self.host, data)
+            data.append(Data(sort, key))
+            sensordata = Sensordata(sort_status, self.host, data)
             self.influxdb_cloud.write_data(sensordata)
         except Exception as ex:
             logging.error(ex)
@@ -81,7 +79,7 @@ class Server:
                 self.status_ai[ai] = False
             else:
                 self.status_ai[ai] = True
-            self.change_ai_status_influxdb(ai, self.status_ai[ai])
+            self.change_status_influxdb("ai", "ai_status", ai, self.status_ai[ai])
             return self.get_ai_status
         except Exception as ex:
             logging.error(ex)
@@ -104,7 +102,16 @@ class Server:
 
     def get_meeting_box_status(self):
         try:
-            return self.status_meeting_box
+            query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "meetingbox_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "meetingbox")'
+            settings_data = self.influxdb_settings.get_data(query, False)
+            if settings_data.empty:
+                for meetingbox, status in self.status_meeting_box.items():
+                    self.change_status_influxdb("meetingbox", "meetingbox_status", meetingbox, self.status_meeting_box[meetingbox])
+            else:
+                for status_meetingbox in self.status_meeting_box:
+                    row = settings_data[settings_data["meetingbox"] == status_meetingbox]
+                    status_meeting_box = bool(row["status"].astype(bool).values[0])
+                    self.status_meeting_box[status_meetingbox] = status_meeting_box
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
@@ -115,6 +122,7 @@ class Server:
                 self.status_meeting_box[box] = False
             else:
                 self.status_meeting_box[box] = True
+            self.change_status_influxdb("meetingbox", "meetingbox_status", box, self.status_meeting_box[box])
             return self.status_meeting_box
         except Exception as ex:
             logging.error(ex)

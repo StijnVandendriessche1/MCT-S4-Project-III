@@ -35,10 +35,8 @@ server = Server()
 def time_status():
     global server
     while True:
-        socketio.emit('status_coffee_left', {
-                      'status': server.check_coffee_status()})
-        socketio.emit('status_dishwasher', {
-                      'status': server.check_status_dishwasher()})
+        socketio.emit('status_coffee_left', {'status': server.check_coffee_status()})
+        socketio.emit('status_dishwasher', {'status': server.check_status_dishwasher()})
         sleep(11)
 
 
@@ -52,8 +50,7 @@ t_mqtt.start()
 def connect():
     global server
     """ Ai on or off """
-    socketio.emit('status_ai_meeting', {
-                  'status': server.status_ai["ai_meeting"]})
+    socketio.emit('status_ai_meeting', {'status': server.status_ai["ai_meeting"]})
     socketio.emit('status_ai_coffee', {
                   'status': server.status_ai["ai_coffee"]})
     socketio.emit('status_ai_dishwasher', {
@@ -66,7 +63,7 @@ def connect():
                   'status': server.check_status_dishwasher()})
 
     """ Status of the rooms """
-    socketio.emit('status_rooms', {'status': server.get_meeting_box_status()})
+    socketio.emit('status_rooms', {'status': server.status_meeting_box})
 
     """ Send serverstatus to the clients """
     socketio.emit('status_server')
@@ -101,7 +98,7 @@ def ai_dishwasher():
 def status_rooms_change(data):
     global server
     status = server.change_meeting_boxs(data["room"])
-    socketio.emit('status_rooms', {'status': server.get_meeting_box_status()})
+    socketio.emit('status_rooms', {'status': server.status_meeting_box})
 
 
 """ Routes """
@@ -110,6 +107,10 @@ def status_rooms_change(data):
 @app.route('/')
 def hallo():
     return "Server is running"
+
+@app.route(endpoint + '/meetingbox/status')
+def get_meetingbox_status():
+    return jsonify({'status': server.status_meeting_box})
 
 
 if __name__ == '__main__':
