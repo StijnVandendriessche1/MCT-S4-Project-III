@@ -787,3 +787,371 @@ KeyError: 'Session is disconnected'
 2020-05-31 20:08:14,938	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [31/May/2020 20:08:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9hwtnn&sid=9e5f8ef3282b45fcba1fedc55e6a1e8f HTTP/1.1[0m" 200 -
 2020-05-31 20:08:25,441	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [31/May/2020 20:08:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9hwtvX&sid=9e5f8ef3282b45fcba1fedc55e6a1e8f HTTP/1.1[0m" 200 -
 2020-05-31 20:08:36,443	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [31/May/2020 20:08:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9hwwTg&sid=9e5f8ef3282b45fcba1fedc55e6a1e8f HTTP/1.1[0m" 200 -
+2020-06-01 14:08:04,985	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 14:08:05,019	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 14:08:05,202	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo1ql HTTP/1.1[0m" 200 -
+2020-06-01 14:08:05,492	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:05] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:05,748	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:05] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:08,015	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo2XC HTTP/1.1[0m" 200 -
+2020-06-01 14:08:08,016	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo1rR&sid=57674b933d3047ed926bb2850670427e HTTP/1.1[0m" 200 -
+2020-06-01 14:08:08,032	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:08] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:15,981	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo2XZ&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:26,982	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo4cf&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:33,344	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:33] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lo8eC&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:33,345	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo79g&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:37,983	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo8j7&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:48,985	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo9rb&sid=24a38ec154ae4b98935dffea071d4dc2 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:49,064	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loCTr HTTP/1.1[0m" 200 -
+2020-06-01 14:08:49,077	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:49] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:49,330	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:49] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:51,850	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loDE4 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:51,850	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loCYj&sid=b45f9ed7d9834c06b6835f9c5faaffd5 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:51,878	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:51] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:54,282	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loDEe&sid=59343b201db84d55b61697d8ddb0d3b3 HTTP/1.1[0m" 200 -
+2020-06-01 14:08:54,284	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loDpp HTTP/1.1[0m" 200 -
+2020-06-01 14:08:54,675	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:54] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:54,926	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:54] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:57,662	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loDrk&sid=b0b988055f76455a906b95c7da8d219b HTTP/1.1[0m" 200 -
+2020-06-01 14:08:57,664	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loEel HTTP/1.1[0m" 200 -
+2020-06-01 14:08:57,737	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:57] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:59,018	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loEzz HTTP/1.1[0m" 200 -
+2020-06-01 14:08:59,019	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loEgH&sid=cef59288617b48fa89e02936be09058e HTTP/1.1[0m" 200 -
+2020-06-01 14:08:59,381	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:59] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:08:59,987	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:08:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loE_9&sid=1fa3397d049744d08145689a06a051e7 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:01,314	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:01] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:01,565	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loFDX&sid=1fa3397d049744d08145689a06a051e7 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:01,569	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loFX2 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:01,627	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:01] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:10,990	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loFcH&sid=dea723be2ac4425c8d27cf84ea497f20 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:21,992	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loHvO&sid=dea723be2ac4425c8d27cf84ea497f20 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:26,596	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:26] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9loLiw&sid=dea723be2ac4425c8d27cf84ea497f20 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:26,598	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loKbI&sid=dea723be2ac4425c8d27cf84ea497f20 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:27,719	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loL-J HTTP/1.1[0m" 200 -
+2020-06-01 14:09:27,721	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loLjS&sid=dea723be2ac4425c8d27cf84ea497f20 HTTP/1.1[0m" 200 -
+2020-06-01 14:09:28,100	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:28] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:28,355	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:28] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:32,993	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loM02&sid=737cfccaad4d447487f51e31569974ed HTTP/1.1[0m" 200 -
+2020-06-01 14:09:36,213	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:36] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:36,464	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loNHD&sid=737cfccaad4d447487f51e31569974ed HTTP/1.1[0m" 200 -
+2020-06-01 14:09:36,465	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loO2J HTTP/1.1[0m" 200 -
+2020-06-01 14:09:36,526	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:36] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:09:43,995	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loO7W&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:09:54,996	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:09:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loPz5&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:01,836	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:01] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9loUJa&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:01,837	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loSet&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:05,998	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loUJt&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:16,999	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loVKu&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:24,271	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loZnD HTTP/1.1[0m" 200 -
+2020-06-01 14:10:24,272	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loY0p&sid=5bd7e1fd5484492bb3b85666d1cc721d HTTP/1.1[0m" 200 -
+2020-06-01 14:10:24,668	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:24] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:24,918	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:24] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:27,611	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loabT HTTP/1.1[0m" 200 -
+2020-06-01 14:10:27,612	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loZr2&sid=7bb5733781f846f29b44f4b7511a8e4a HTTP/1.1[0m" 200 -
+2020-06-01 14:10:27,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:27] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:28,025	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:28] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loadP&sid=6148c10fbe4f4ceb91905b140f6db108 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:29,922	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lobAK HTTP/1.1[0m" 200 -
+2020-06-01 14:10:29,923	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loajC&sid=6148c10fbe4f4ceb91905b140f6db108 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:30,246	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:30] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:30,497	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:30] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:39,002	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:39] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lobBP&sid=4c84cb6c75d7429f840602c5407fb843 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:40,897	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lodOb&sid=4c84cb6c75d7429f840602c5407fb843 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:40,900	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lodn5 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:40,913	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:40] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:41,167	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:41] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:49,243	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lodsH&sid=dfe6095cf41c466d84a26643d9d19f21 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:49,244	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lofu8 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:49,266	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:49] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:49,580	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:49] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:50,005	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lofvn&sid=76bd8a98f683423abc72c6b60d2b22c0 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:51,831	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:51] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:10:52,119	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9log4U&sid=76bd8a98f683423abc72c6b60d2b22c0 HTTP/1.1[0m" 200 -
+2020-06-01 14:10:52,124	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:10:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9logWO HTTP/1.1[0m" 200 -
+2020-06-01 14:11:00,082	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:00] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loiXc HTTP/1.1[0m" 200 -
+2020-06-01 14:11:00,083	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:00] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9logdl&sid=c838ceaca7954bc8826f7315da75b709 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:00,438	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:00] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:00,689	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:00] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:01,006	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loiYg&sid=4cfc6bd2cb8d4edab43bcc46098c78f2 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:09,005	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:09] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:09,280	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lokih HTTP/1.1[0m" 200 -
+2020-06-01 14:11:09,280	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loimP&sid=4cfc6bd2cb8d4edab43bcc46098c78f2 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:09,311	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:09] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:11,773	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loknc&sid=80e5587ec174444aaca4bcbf3c2c2edd HTTP/1.1[0m" 200 -
+2020-06-01 14:11:11,774	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lolO6 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:11,845	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:11] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:12,168	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lolPj&sid=55544c3f08674e298772e43a586aec35 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:21,003	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loned HTTP/1.1[0m" 200 -
+2020-06-01 14:11:21,003	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lolUq&sid=55544c3f08674e298772e43a586aec35 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:21,308	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:21] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:21,561	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:21] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:11:23,009	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:23] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lonev&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:34,010	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loo84&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:45,012	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loqp_&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:46,841	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:46] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lotyF&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:46,842	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:46] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lotVx&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:11:56,013	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:11:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lotyY&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:07,014	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lowBs&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:12,836	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:12] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lo-IT&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:12,837	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9loytm&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:18,015	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo-Ij&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:29,016	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lo_Zg&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:38,837	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:38] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lp4ej&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:38,838	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:38] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp2FY&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:40,018	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp4f3&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:12:51,019	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:12:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp4xP&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:02,020	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp7dK&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:03,859	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:03] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lpAli&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:03,860	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpAJC&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:13,021	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpAly&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:24,021	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpC_2&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:28,876	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:28] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lpGsb&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:28,877	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:28] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpFgu&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:35,022	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:35] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpGss&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:46,023	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:46] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpIMt&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:53,892	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:53] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lpMzV&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:53,893	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpL2m&sid=888eaeb71a4049c2a769a4957ed40c61 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:54,214	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpN1z HTTP/1.1[0m" 200 -
+2020-06-01 14:13:54,559	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:54] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:13:54,811	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:54] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:13:57,025	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpN3T&sid=ea4e8413d67e4f588374ab94a9b8229c HTTP/1.1[0m" 200 -
+2020-06-01 14:13:57,330	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:57] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:13:57,568	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpNo3 HTTP/1.1[0m" 200 -
+2020-06-01 14:13:57,569	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:13:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpNkh&sid=ea4e8413d67e4f588374ab94a9b8229c HTTP/1.1[0m" 200 -
+2020-06-01 14:14:03,307	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpPGT HTTP/1.1[0m" 200 -
+2020-06-01 14:14:03,308	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpNtK&sid=fe0e47531d4c41c9af653a498b9e68c1 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:03,684	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:03] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:03,934	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:03] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:08,025	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpPI3&sid=a818f2e240304240931e78068a96fc0a HTTP/1.1[0m" 200 -
+2020-06-01 14:14:08,044	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpQQe HTTP/1.1[0m" 200 -
+2020-06-01 14:14:08,061	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:08] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:09,225	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpQj3 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:09,226	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpQQ_&sid=789dda7c3a444c24916db0e79701a0f7 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:09,559	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:09] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:09,802	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:09] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:10,718	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpR4P HTTP/1.1[0m" 200 -
+2020-06-01 14:14:10,719	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpQja&sid=3b8a0c22f6084b829152533fe422bd18 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:10,741	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:10] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:12,710	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpR4u&sid=523bc6c1a9a34382b93b62914960e356 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:12,713	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpRZN HTTP/1.1[0m" 200 -
+2020-06-01 14:14:13,073	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:13] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:19,030	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpRac&sid=dc6d9e40aef04b5bb6b72ddab8acd2f4 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:19,148	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpT7e HTTP/1.1[0m" 200 -
+2020-06-01 14:14:19,246	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:19] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:19,570	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:19] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:22,893	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpT9v&sid=a34bb88a975b4e2fb79261e51970cd0f HTTP/1.1[0m" 200 -
+2020-06-01 14:14:22,894	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpU2S HTTP/1.1[0m" 200 -
+2020-06-01 14:14:22,946	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:22] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:30,032	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpU3g&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:41,034	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:41] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpVoV&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:47,962	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:47] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lpaAG&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:47,963	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpYUP&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:52,035	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpaAa&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:52,719	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpbFt HTTP/1.1[0m" 200 -
+2020-06-01 14:14:52,719	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpbAE&sid=ce247007a4874d2bbc0328b48e3f1805 HTTP/1.1[0m" 200 -
+2020-06-01 14:14:52,737	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:52] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:14:52,986	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:14:52] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:15:03,036	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpbKs&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:14,038	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpds6&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:17,732	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:17] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lphRU&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:17,732	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpgXx&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:25,039	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lphRf&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:36,040	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpjDu&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:42,118	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpnOO HTTP/1.1[0m" 200 -
+2020-06-01 14:15:42,118	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lplvo&sid=a97225fa8956449f907b4ee4afac4779 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:42,475	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:42] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:15:42,727	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:42] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:15:47,041	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpnPY&sid=f33b8219f95c4220b1bb2219f95d48b9 HTTP/1.1[0m" 200 -
+2020-06-01 14:15:58,042	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:15:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpobb&sid=f33b8219f95c4220b1bb2219f95d48b9 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:07,181	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:07] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9lptW5&sid=f33b8219f95c4220b1bb2219f95d48b9 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:07,182	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lprHY&sid=f33b8219f95c4220b1bb2219f95d48b9 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:07,500	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpta2 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:07,748	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:07] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:08,001	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:08] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:09,043	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lptbG&sid=f64d664fb05b4cc89ffea5c5dbd09746 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:12,267	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:12] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:12,555	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpulN HTTP/1.1[0m" 200 -
+2020-06-01 14:16:12,555	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lptzO&sid=f64d664fb05b4cc89ffea5c5dbd09746 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:20,050	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpuqG&sid=f36ad82efc7348b881596e0a1aa0f29a HTTP/1.1[0m" 200 -
+2020-06-01 14:16:22,574	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpwfW&sid=f36ad82efc7348b881596e0a1aa0f29a HTTP/1.1[0m" 200 -
+2020-06-01 14:16:22,576	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpxBt HTTP/1.1[0m" 200 -
+2020-06-01 14:16:22,587	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:22] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:22,838	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:22] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:31,057	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpxH4&sid=62e99a65953949d19823aa1f24554c48 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:31,091	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpzLa&sid=62e99a65953949d19823aa1f24554c48 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:35,459	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:35] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp-Q0 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:35,459	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:35] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lpzM1&sid=62e99a65953949d19823aa1f24554c48 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:35,801	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:35] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:36,052	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:36] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:37,073	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp-pD HTTP/1.1[0m" 200 -
+2020-06-01 14:16:37,073	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp-Qh&sid=709977a8c25e46afad6474a4f9b05030 HTTP/1.1[0m" 200 -
+2020-06-01 14:16:37,093	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:37] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 14:16:42,061	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 14:16:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9lp-pe&sid=785222445494414e83ba017a6e106cb6 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:15,059	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:01:15,078	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:01:15,253	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-CfE HTTP/1.1[0m" 200 -
+2020-06-01 15:01:15,262	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:15] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:01:15,508	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:15] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:01:15,524	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:15] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:01:26,057	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Cfw&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:37,058	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-FIl&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:40,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:40] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9l-IvU&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:40,833	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-H-d&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:48,059	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Iva&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:01:50,360	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:50] "[33mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 404 -
+2020-06-01 15:01:50,774	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-06-01 15:01:59,059	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:01:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-KgU&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:06,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:06] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9l-PFi&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:06,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-NMM&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:10,060	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-PFp&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:21,061	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Q2H&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:32,062	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Sk7&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:32,833	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:32] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9l-Vbz&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:32,834	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-VQ2&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:43,063	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Vc5&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:02:54,063	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:02:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9l-Y5v&sid=3302652bc0cf48b093677dbdd34ac6f0 HTTP/1.1[0m" 200 -
+2020-06-01 15:10:51,386	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:10:51,404	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:10:51,449	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:10:51] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:10:51,453	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:10:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0Ojb HTTP/1.1[0m" 200 -
+2020-06-01 15:10:51,554	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:10:51] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:10:51,765	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:10:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0PMP HTTP/1.1[0m" 200 -
+2020-06-01 15:10:57,249	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:10:57] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:11:02,384	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0PPx&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:13,386	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0R_r&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:16,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:16] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m0VXV&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:16,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0Uhp&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:24,387	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0VXb&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:33,103	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:33] "[37mGET /api/v1/meetingbox/RaspberryPiKitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:11:35,388	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:35] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0XNi&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:42,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:42] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m0btj&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:42,833	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0a3V&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:46,388	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:46] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0btp&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:11:51,732	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:51] "[37mGET /api/v1/meetingbox/RaspberryPiKitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:11:57,389	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:11:57] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0clN&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:08,390	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0fRG&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:08,951	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:08] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m0iDz&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:08,952	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0i79&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:19,392	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0iFz&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:30,394	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0kp8&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:34,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:34] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m0oaD&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:34,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:34] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0nV2&sid=f09d690a4af346f7b792fc67930ccb71 HTTP/1.1[0m" 200 -
+2020-06-01 15:12:56,324	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:12:56,426	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:12:56,858	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0ttf HTTP/1.1[0m" 200 -
+2020-06-01 15:12:56,861	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:56] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:12:57,113	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:12:57] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:13:01,689	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:13:01] "[37mGET /api/v1/meetingbox/RaspberryPiKitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:13:07,321	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:13:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m0tyV&sid=bec8481748e34163ac98c177c08901e4 HTTP/1.1[0m" 200 -
+2020-06-01 15:14:21,269	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:14:21,281	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:14:21,299	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1CFE HTTP/1.1[0m" 200 -
+2020-06-01 15:14:21,301	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:21] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:14:21,546	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:21] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:14:21,588	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1Cbk HTTP/1.1[0m" 200 -
+2020-06-01 15:14:21,588	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1CZy&sid=4eb0a12c9d9b478b800261538f4d7dbf HTTP/1.1[0m" 200 -
+2020-06-01 15:14:24,470	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:24] "[37mGET /api/v1/meetingbox/RaspberryPiKitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:14:32,266	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1CeO&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:14:43,267	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1FFC&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:14:46,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:46] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m1Iom&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:14:46,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:46] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1HxB&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:14:54,268	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:14:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1Iot&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:15:05,270	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:15:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1Kd5&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:15:12,830	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:15:12] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m1P8y&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:15:12,830	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:15:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m1NI-&sid=dfb31a5bbd1e4106883b3aa36155cb44 HTTP/1.1[0m" 200 -
+2020-06-01 15:34:32,211	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:34:32,234	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:34:32,376	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:34:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m5qEo HTTP/1.1[0m" 200 -
+2020-06-01 15:34:32,681	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:34:32] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:34:32,932	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:34:32] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:34:43,024	ERROR -- MainProcess influxdb.py:89 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:34:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f17d6dbc7b6de7d5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:34:43,024	ERROR -- MainProcess server.py:136 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:34:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f17d6dbc7b6de7d5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:34:43,024	ERROR -- MainProcess web_server.py:145 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:34:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f17d6dbc7b6de7d5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:34:43,024	ERROR -- MainProcess app.py:1891 -- Exception on /api/v1/meetingbox/Kitchen/info [GET]
+Traceback (most recent call last):
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-06-01 15:34:43,025	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:34:43] "[35m[1mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 500 -
+2020-06-01 15:34:43,207	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:34:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m5qFE&sid=97996cc712c44a96959b57848cbe23c3 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:07,591	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:35:07,609	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:35:07,763	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m5ytj HTTP/1.1[0m" 200 -
+2020-06-01 15:35:08,071	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:08] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:35:08,320	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:08] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:35:18,585	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m5yu7&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:22,634	ERROR -- MainProcess influxdb.py:89 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:35:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '2636ea2c6583f0fc', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:35:22,635	ERROR -- MainProcess server.py:137 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:35:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '2636ea2c6583f0fc', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:35:22,635	ERROR -- MainProcess web_server.py:145 -- (400)
+Reason: Bad Request
+HTTP response headers: HTTPHeaderDict({'Date': 'Mon, 01 Jun 2020 13:35:23 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '2636ea2c6583f0fc', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'invalid'})
+HTTP response body: b'{"code":"invalid","message":"compilation failed: error at @1:301-1:302: invalid statement: )"}'
+
+2020-06-01 15:35:22,635	ERROR -- MainProcess app.py:1891 -- Exception on /api/v1/meetingbox/Kitchen/info [GET]
+Traceback (most recent call last):
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "C:\Users\tibov\AppData\Local\Programs\Python\Python38\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2020-06-01 15:35:22,637	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:22] "[35m[1mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 500 -
+2020-06-01 15:35:29,586	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m5_Wz&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:32,837	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:32] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m62_T&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:32,837	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m62Ct&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:40,588	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m62_f&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:51,588	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m64um&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:58,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:58] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m69Lj&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:35:58,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:35:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m67ae&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:36:02,589	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m69Lp&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:36:13,590	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6AGX&sid=8236d8c202324a8b9ec986d735811092 HTTP/1.1[0m" 200 -
+2020-06-01 15:36:45,588	WARNING -- MainProcess _internal.py:113 -- WebSocket transport not available. Install eventlet or gevent and gevent-websocket for improved performance.
+2020-06-01 15:36:45,601	INFO -- MainProcess _internal.py:113 --  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-01 15:36:45,840	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6Kos HTTP/1.1[0m" 200 -
+2020-06-01 15:36:46,059	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:46] "[37mOPTIONS /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:36:46,311	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:46] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-01 15:36:48,323	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:48] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-01 15:36:56,587	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:36:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6KqL&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:07,588	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6NSD&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:11,833	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:11] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m6RAM&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:11,834	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6Q87&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:18,589	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6RAT&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:29,590	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6Sq0&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:37,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:37] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m6XWc&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:37,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6VVv&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:40,591	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6XWj&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:37:51,592	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:37:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6YBp&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:02,593	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6ath&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:03,831	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:03] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m6dsr&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:03,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6dZa&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:13,593	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6dsw&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:24,594	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6gFT&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:29,833	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:29] "[37mPOST /socket.io/?EIO=3&transport=polling&t=N9m6kD5&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -
+2020-06-01 15:38:29,834	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [01/Jun/2020 15:38:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9m6ixL&sid=8cf4f3dea0cf4cd392f046dd27dc0ee9 HTTP/1.1[0m" 200 -

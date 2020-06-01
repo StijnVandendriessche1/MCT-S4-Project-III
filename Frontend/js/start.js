@@ -252,8 +252,10 @@ const getMapBoxes = function () {
   domMapMeetingBoxes = document.querySelectorAll(".js-map");
   for (const meetingBox of domMapMeetingBoxes) {
     meetingBox.addEventListener("click", function () {
-      log(meetingBox);
-      alert("hier");
+      /* Get the box-name from the dom */
+      box = meetingBox.getAttribute("data-room")
+      /* Send the boxname to the api */
+      
     });
   }
 };
