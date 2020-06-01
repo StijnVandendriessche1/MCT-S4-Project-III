@@ -21,8 +21,7 @@ class Server:
     def __init__(self):
         try:
             self.host = "webserver"
-            self.influxdb_settings = Influxdb("Pi")
-            self.influxdb_sensors = Influxdb("Pi")
+            self.influxdb = Influxdb("Pi")
             self.influxdb_cloud = Influxdb("Cloud")
             self.start_status()
         except Exception as ex:
@@ -49,7 +48,7 @@ class Server:
     def get_ai_status(self):
         try:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "ai_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "ai")'
-            settings_data = self.influxdb_settings.get_data(query, False)
+            settings_data = self.influxdb.get_data(query, False)
             if settings_data.empty:
                 for ai, status in self.status_ai.items():
                     self.change_ai_status_influxdb(ai, status)
@@ -103,7 +102,7 @@ class Server:
     def get_meeting_box_status(self):
         try:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "meetingbox_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "meetingbox")'
-            settings_data = self.influxdb_settings.get_data(query, False)
+            settings_data = self.influxdb.get_data(query, False)
             if settings_data.empty:
                 for meetingbox, status in self.status_meeting_box.items():
                     self.change_status_influxdb("meetingbox", "meetingbox_status", meetingbox, self.status_meeting_box[meetingbox])
@@ -124,6 +123,15 @@ class Server:
                 self.status_meeting_box[box] = True
             self.change_status_influxdb("meetingbox", "meetingbox_status", box, self.status_meeting_box[box])
             return self.status_meeting_box
+        except Exception as ex:
+            logging.error(ex)
+            raise Exception(ex)
+    
+    def get_info_box(self, box):
+        try:
+            query = f'|> range(start: 2018-05-22T23:30:00Z) |> last() |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r) => r["host"] == "{box}") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
+            data_info = self.influxdb.get_data(query, False)
+            return data_info.to_json(orient="records")
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
