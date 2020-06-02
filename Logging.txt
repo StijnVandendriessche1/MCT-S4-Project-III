@@ -4979,6 +4979,7 @@ TypeError: The view function did not return a valid response. The function eithe
 2020-06-02 10:46:20,214	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDPb7&sid=a4e8ebc1d153403c9ea1f620ec6ff52b HTTP/1.1[0m" 200 -
 2020-06-02 10:46:20,215	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDPt_&sid=5f95fb4315da4d41babc84e0fd237484 HTTP/1.1[0m" 200 -
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2020-06-02 10:46:25,653	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDTW- HTTP/1.1[0m" 200 -
 2020-06-02 10:46:25,654	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDSGx&sid=a4e8ebc1d153403c9ea1f620ec6ff52b HTTP/1.1[0m" 200 -
 2020-06-02 10:46:25,654	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDSG-&sid=5f95fb4315da4d41babc84e0fd237484 HTTP/1.1[0m" 200 -
@@ -4988,5 +4989,7 @@ TypeError: The view function did not return a valid response. The function eithe
 2020-06-02 10:46:26,074	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDTbv&sid=a4e8ebc1d153403c9ea1f620ec6ff52b HTTP/1.1[0m" 200 -
 2020-06-02 10:46:31,214	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDTiU&sid=a4e8ebc1d153403c9ea1f620ec6ff52b HTTP/1.1[0m" 200 -
 2020-06-02 10:46:31,215	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [02/Jun/2020 10:46:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=N9qDTby&sid=10d6a59501324a419fde268a7ffbd542 HTTP/1.1[0m" 200 -
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
