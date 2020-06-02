@@ -4,7 +4,12 @@ let socket = io.connect(ip);
 
 let domReady = false;
 
-let domToggleSwitch, domToggleSwitchRoomBoxes, domBtnStats, domMapMeetingBoxes;
+let domToggleSwitch,
+  domToggleSwitchRoomBoxes,
+  domBtnStats,
+  domMapMeetingBoxes,
+  domMapCardBody,
+  domMapCardTitle;
 const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
@@ -231,6 +236,8 @@ const resetBtnStats = function () {
 };
 /* Load toggleSwitches */
 const loadDOM = function () {
+  domMapCardBody = document.querySelector(".js-map-card__body");
+  domMapCardTitle = document.querySelector(".js-map-card__title");
   /* Load the toggleswitches */
   domToggleSwitches = document.querySelectorAll(".js-toggleswitch");
   for (const domToggleSwitch of domToggleSwitches) {
@@ -248,14 +255,72 @@ const loadDOM = function () {
     });
   }
 };
+const isFloat = function (n) {
+  return Number(n) === n && n % 1 !== 0;
+};
+const sensorNotation = function (sensor, data) {
+  output = "";
+  if (isFloat(data)) data = data.toFixed(2);
+  switch (sensor) {
+    case "temperature":
+      output = `${data}°C`;
+      break;
+
+    default:
+      output = `${data}`;
+      break;
+  }
+  return output;
+};
+const cleanDict = function (data) {
+  const delItems = [
+    "result",
+    "table",
+    "_measurement",
+    "_start",
+    "_stop",
+    "_time",
+    "host",
+  ];
+  for (const delItem of delItems) {
+    if (data.hasOwnProperty(delItem)) {
+      delete data[delItem];
+    }
+  }
+  return data;
+};
+const changeInfoMapBoxes = function (data) {
+  let output = "";
+  let box = data[0]["host"];
+  box = box.replace(/ /g, "");
+  const domMapBox = document.querySelector(`.js-map-room${box}`);
+  domMapBox.style.stroke = "var(--global-accent)";
+  domMapBox.style.strokeWidth = "5px";
+  document.querySelector(`.js-map-icon${box}`).style.fill =
+    "var(--global-accent)";
+  /* Clean the dict */
+  data = cleanDict(data[0]);
+  for (const sensor in data) {
+    if (data.hasOwnProperty(sensor)) {
+      const element = data[sensor];
+      output += `<div class="c-card__text c-card__body-text"><div>${sensor}</div><div>${sensorNotation(
+        sensor,
+        element
+      )}</div></div>`;
+    }
+  }
+  domMapCardBody.innerHTML = output;
+};
 const getMapBoxes = function () {
   domMapMeetingBoxes = document.querySelectorAll(".js-map");
   for (const meetingBox of domMapMeetingBoxes) {
     meetingBox.addEventListener("click", function () {
       /* Get the box-name from the dom */
-      box = meetingBox.getAttribute("data-room")
+      box = meetingBox.getAttribute("data-room");
+      /* Change the title */
+      domMapCardTitle.innerHTML = box;
       /* Send the boxname to the api */
-      
+      getAPI(`meetingbox/${box}/info`, changeInfoMapBoxes);
     });
   }
 };
@@ -266,6 +331,8 @@ const init = function () {
   socket.emit("connect");
   log("Socket emitted");
   getMapBoxes();
+  /* Send the boxname to the api */
+  getAPI(`meetingbox/Kitchen/info`, changeInfoMapBoxes);
 };
 
 const registeredServiceWorker = function () {
