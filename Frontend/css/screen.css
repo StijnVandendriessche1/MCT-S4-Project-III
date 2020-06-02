@@ -578,7 +578,7 @@ span {
 @media screen and (min-width: 992px) {
   
   .c-map {
-    padding: var(--global-whitespace);
+    padding: 0 var(--global-whitespace);
   }
 
   .c-card__body--map {
@@ -628,6 +628,35 @@ span {
 .c-img {
   width: 100%;
   height: 100%;
+}
+
+.c-card__row--data {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.c-card__row--error {
+  margin-left: 20px;
+}
+
+.c-card__data {
+  margin: 16px 0;
+}
+
+.c-card__label {
+  display: flex;
+  flex-flow: row;
+}
+
+.card__label--text {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.c-card__value {
+  font-size: 16px;
 }
 
 .c-item {
