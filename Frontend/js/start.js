@@ -300,15 +300,13 @@ const changeInfoMapBoxes = function (data) {
     "var(--global-accent)";
   /* Clean the dict */
   data = cleanDict(data[0]);
-  for (const sensor in data) {
-    if (data.hasOwnProperty(sensor)) {
-      const element = data[sensor];
-      output += `<div class="c-card__text c-card__body-text"><div>${sensor}</div><div>${sensorNotation(
-        sensor,
-        element
-      )}</div></div>`;
-    }
-  }
+  document.querySelector(".js-card__temp").innerHTML = data[
+    "temperature"
+  ].toFixed(2);
+  document.querySelector(".js-card__humidity").innerHTML = data["humidity"];
+  document.querySelector(".js-card__light").innerHTML = data["light"].toFixed(
+    2
+  );
   domMapCardBody.innerHTML = output;
 };
 const getMapBoxes = function () {
