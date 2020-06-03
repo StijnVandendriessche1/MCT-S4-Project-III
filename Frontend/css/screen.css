@@ -469,6 +469,11 @@ span {
   }
 }
 
+.c-img__profile {
+  width: 56px;
+  height: 56px;
+}
+
 /*
     Component: App
     ---
@@ -479,11 +484,40 @@ span {
   min-height: 100vh;
 }
 
+.c-app__top {
+  border-bottom: 1px solid var(--global-title-line);
+}
+
 .c-app__title {
   text-align: center;
-  border-bottom: 1px solid var(--global-title-line);
+  font-size: 40px;
+  font-weight: 700;
   margin-bottom: var(--global-whitespace);
-  padding-top: var(--global-whitespace);
+}
+
+.c-top__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.c-app__user {
+  display: flex;
+  justify-self: end;
+}
+
+.c-app__userdetails {
+  margin-left: 16px;
+}
+
+.c-app__name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--global-accent);
+}
+
+.c-app__email {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /*
