@@ -2,7 +2,14 @@ const production = false,
   ip = "http://localhost:5000";
 let socket = io.connect(ip);
 
-let domToggleSwitch, domToggleSwitchRoomBoxes, domBtnStats;
+let domReady = false;
+
+let domToggleSwitch,
+  domToggleSwitchRoomBoxes,
+  domBtnStats,
+  domMapMeetingBoxes,
+  domMapCardBody,
+  domMapCardTitle;
 const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
@@ -33,12 +40,28 @@ socket.on("status_dishwasher", function (data) {
   changeBoxStatus("dishwasher", data.status);
 });
 
+/* Status MeetingBoxes */
+socket.on("status_rooms", function (data) {
+  if (domReady) {
+    for (const box in data.status) {
+      roomDataId = box.replace(/ /g, "");
+      changeBoxStatus(roomDataId, data.status[box]);
+      selected = "Empty";
+      if (data.status[box]) selected = "Busy";
+      document.querySelector(`.js-word--${roomDataId}`).innerHTML = selected;
+    }
+  }
+});
+
 socket.on("welcome", function (data) {
   log(data);
 });
 
-/* Status rooms */
-socket.on("status_rooms", function (data) {
+/* Functions */
+
+/* Reset status_Meetingboxes */
+const resetMeetingBoxes = function (data) {
+  log(data);
   output = ``;
   for (const roomData in data.status) {
     let check = "";
@@ -49,12 +72,12 @@ socket.on("status_rooms", function (data) {
       busy = "Busy";
     }
     status = getStatus(data.status[roomData]);
-    output += `<div class="c-item js-card js-${status}">
+    output += `<div class="c-item js-card js-${status} js-box--${roomDataId}">
     <div class="c-item__header c-card__top">
         <div class="c-item__icon c-card__icon">
             <svg xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
-                viewBox="0 0 40 40" class="js-icon js-icon__${status}">
+                viewBox="0 0 40 40" class="js-icon js-icon__${status} js-icon--${roomDataId}">
                 <g id="Mask_Group_7" data-name="Mask Group 7"
                     transform="translate(-1496 -248)" clip-path="url(#clip-path)">
                     <g id="video-call" transform="translate(1496 248)">
@@ -75,7 +98,7 @@ socket.on("status_rooms", function (data) {
                 class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
                 for="${roomDataId}">
                 <span class="c-custom-toggle__fake-input"></span>
-                ${busy}
+                <span class="js-word--${roomDataId}">${busy}</span>
             </label>
         </div>
     </div>
@@ -85,13 +108,12 @@ socket.on("status_rooms", function (data) {
 </div>`;
   }
   document.querySelector(".js-meeting-rooms").innerHTML = output;
-  getDOMRoomBoxes();
-});
-
-/* Functions */
+  getDOMMeetingBoxes();
+  domReady = true;
+};
 
 /* Add addEventListener to Roomboxes */
-const getDOMRoomBoxes = function () {
+const getDOMMeetingBoxes = function () {
   /* Check if their are elements in the var */
   if (domToggleSwitchRoomBoxes != null) {
     /* Remove all the eventlisteners */
@@ -125,6 +147,8 @@ const getStatus = function (status) {
 const changeBoxStatus = function (box, status) {
   /* Get all the elements from this box */
   const domBoxAIMeeting = document.querySelector(`.js-box--${box}`);
+  log(domBoxAIMeeting);
+  log(`.js-box--${box}`);
 
   /* Check if the element is showed */
   selected = getStatus(status);
@@ -212,6 +236,8 @@ const resetBtnStats = function () {
 };
 /* Load toggleSwitches */
 const loadDOM = function () {
+  domMapCardBody = document.querySelector(".js-map-card__body");
+  domMapCardTitle = document.querySelector(".js-map-card__title");
   /* Load the toggleswitches */
   domToggleSwitches = document.querySelectorAll(".js-toggleswitch");
   for (const domToggleSwitch of domToggleSwitches) {
@@ -229,11 +255,82 @@ const loadDOM = function () {
     });
   }
 };
+const isFloat = function (n) {
+  return Number(n) === n && n % 1 !== 0;
+};
+const sensorNotation = function (sensor, data) {
+  output = "";
+  if (isFloat(data)) data = data.toFixed(2);
+  switch (sensor) {
+    case "temperature":
+      output = `${data}°C`;
+      break;
+
+    default:
+      output = `${data}`;
+      break;
+  }
+  return output;
+};
+const cleanDict = function (data) {
+  const delItems = [
+    "result",
+    "table",
+    "_measurement",
+    "_start",
+    "_stop",
+    "_time",
+    "host",
+  ];
+  for (const delItem of delItems) {
+    if (data.hasOwnProperty(delItem)) {
+      delete data[delItem];
+    }
+  }
+  return data;
+};
+const changeInfoMapBoxes = function (data) {
+  let output = "";
+  let box = data[0]["host"];
+  box = box.replace(/ /g, "");
+  const domMapBox = document.querySelector(`.js-map-room${box}`);
+  domMapBox.style.stroke = "var(--global-accent)";
+  domMapBox.style.strokeWidth = "5px";
+  document.querySelector(`.js-map-icon${box}`).style.fill =
+    "var(--global-accent)";
+  /* Clean the dict */
+  data = cleanDict(data[0]);
+  document.querySelector(".js-card__temp").innerHTML = data[
+    "temperature"
+  ].toFixed(2);
+  document.querySelector(".js-card__humidity").innerHTML = data["humidity"];
+  document.querySelector(".js-card__light").innerHTML = data["light"].toFixed(
+    2
+  );
+  domMapCardBody.innerHTML = output;
+};
+const getMapBoxes = function () {
+  domMapMeetingBoxes = document.querySelectorAll(".js-map");
+  for (const meetingBox of domMapMeetingBoxes) {
+    meetingBox.addEventListener("click", function () {
+      /* Get the box-name from the dom */
+      box = meetingBox.getAttribute("data-room");
+      /* Change the title */
+      domMapCardTitle.innerHTML = box;
+      /* Send the boxname to the api */
+      getAPI(`meetingbox/${box}/info`, changeInfoMapBoxes);
+    });
+  }
+};
 /* init-function --> For starting the script */
 const init = function () {
   loadDOM();
+  getAPI("meetingbox/status", resetMeetingBoxes);
   socket.emit("connect");
   log("Socket emitted");
+  getMapBoxes();
+  /* Send the boxname to the api */
+  getAPI(`meetingbox/Kitchen/info`, changeInfoMapBoxes);
 };
 
 const registeredServiceWorker = function () {
