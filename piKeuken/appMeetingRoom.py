@@ -1,5 +1,6 @@
 from Sensors.Mcp import Mcp
-import RPi.GPIO as GPIO
+import RPi
+from RPi import GPIO
 from Sensors.dht11 import DHT11
 from Sensors.klasseknop import Button
 import time
@@ -13,6 +14,7 @@ from Models.sensordata import Sensordata
 import jsonpickle
 from Logic.mqtt_pub_sub import MQTT
 from Logic.ml_object_detection import MLObjectDetection
+import queue
 
 GPIO.setmode(GPIO.BCM)
 
@@ -26,6 +28,9 @@ prs = {'person': 0}
 mcp = Mcp(0,0)
 dht = DHT11(pin=17)
 ml = MLObjectDetection()
+q = queue.Queue()
+mqtt = MQTT(2817465839732274, q)
+
 
 def run_light():
     global light
@@ -44,12 +49,30 @@ def run_hmdt():
         if result.is_valid():
             hmdt = result.humidity
 
-def run_human_count():
-    global prs
-    while run:
-        prs = ml.count_objects()
-        time.sleep(2)
+# def run_human_count():
+#     global prs
+#     while run and mqtt.runPrs:
+#         prs = ml.count_objects()
+#         time.sleep(2)
+#     ml.stop()
+#     print("stopped")
 
+def run_human_count():
+    while run and mqtt.runPrs:
+        print("running human count")
+        time.sleep(5)
+
+def queue_listener():
+    while run:
+        com = q.get()
+        print(com)
+        if com == "people":
+            print("peoplecounter started")
+            actPrsCount = threading.Thread(target=run_human_count)
+            actPrsCount.start()
+            q.task_done()
+        else:
+            print("command not found")
 
 try:
     actLight = threading.Thread(target=run_light)
@@ -60,25 +83,26 @@ try:
     actHmdt.start()
     actPrs = threading.Thread(target=run_human_count)
     actPrs.start()
-    mqtt = MQTT(2817465839732274)
-
+    actQueueListener = threading.Thread(target=queue_listener)
+    actQueueListener.start()
 
     while True:
-        print("light: %f%%" % light)
-        print("temperature: %f°C" % temp)
-        print("humidity: %d%%" % hmdt)
-        print(str(prs.get('person')))
+        #print("light: %f%%" % light)
+        #print("temperature: %f°C" % temp)
+        #print("humidity: %d%%" % hmdt)
+        #print(str(prs.get('person')))
         #print("")
         t = []
         t.append(Data("temperature", temp))
         t.append(Data("light", light))
         t.append(Data("humidity", hmdt))
-        t.append(Data("persons", prs.get('person')))
-        x = Sensordata("sensordata", "RaspberryPiKitchen", t)
-        print(x.timestamp)
+        if mqtt.runPrs:
+            t.append(Data("persons", prs.get('person')))
+        x = Sensordata("sensordata", "Kitchen", t)
+        #print(x.timestamp)
         y = jsonpickle.encode(x)
         mqtt.send(y)
-        #payload = '{{ "ts": {}, "temperature": {}, "light": {}, "humidity": {} }}'.format(int(time.time() * 1000000000), temp, light, hmdt)
+        print(y)
         time.sleep(5)
 
 except Exception as ex:

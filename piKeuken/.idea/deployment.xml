@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="piProject3">
+  <component name="PublishConfigData" autoUpload="Always" serverName="piKitchen">
     <serverData>
       <paths name="RPI-PROJECT">
         <serverdata>
@@ -27,6 +27,20 @@
         <serverdata>
           <mappings>
             <mapping deploy="/tmp/pycharm_project_836" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="piKitchen">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/project3" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="piMeeting">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/project3" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -66,6 +80,6 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
