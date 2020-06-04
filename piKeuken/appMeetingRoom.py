@@ -15,6 +15,7 @@ import jsonpickle
 from Logic.mqtt_pub_sub import MQTT
 from Logic.ml_object_detection import MLObjectDetection
 import queue
+import cv2
 
 GPIO.setmode(GPIO.BCM)
 
@@ -29,7 +30,8 @@ mcp = Mcp(0,0)
 dht = DHT11(pin=17)
 ml = MLObjectDetection()
 q = queue.Queue()
-mqtt = MQTT(2817465839732274, q)
+mqtt = MQTT(3052736401110405, q)
+startPrs = False
 
 
 def run_light():
@@ -49,27 +51,41 @@ def run_hmdt():
         if result.is_valid():
             hmdt = result.humidity
 
-# def run_human_count():
-#     global prs
-#     while run and mqtt.runPrs:
-#         prs = ml.count_objects()
-#         time.sleep(2)
-#     ml.stop()
-#     print("stopped")
-
 def run_human_count():
-    while run and mqtt.runPrs:
-        print("running human count")
-        time.sleep(5)
+    global prs
+    global startPrs
+    global ml
+    while run:
+        if mqtt.runPrs:
+            if startPrs:
+                ml = MLObjectDetection()
+                startPrs = False
+            prs = ml.count_total_objects
+        else:
+            if startPrs == False:
+                ml.stop()
+                del ml
+                startPrs = True
+
+    #global prs
+    #ml.cap = cv2.VideoCapture(0)
+    #counter_objects = threading.Thread(target=ml.count_objects)
+    #counter_objects.start()
+    #while run and mqtt.runPrs:
+        #prs = ml.count_total_objects
+    #ml.stop()
 
 def queue_listener():
+    global actPrs
     while run:
         com = q.get()
-        print(com)
         if com == "people":
-            print("peoplecounter started")
-            actPrsCount = threading.Thread(target=run_human_count)
-            actPrsCount.start()
+            mqtt.runPrs = True
+            del actPrs
+            actPrs = threading.Thread(target=run_human_count)
+            actPrs.start()
+            #actPrsCount = threading.Thread(target=run_human_count)
+            #actPrsCount.start()
             q.task_done()
         else:
             print("command not found")
@@ -86,6 +102,8 @@ try:
     actQueueListener = threading.Thread(target=queue_listener)
     actQueueListener.start()
 
+
+
     while True:
         #print("light: %f%%" % light)
         #print("temperature: %f°C" % temp)
@@ -98,7 +116,7 @@ try:
         t.append(Data("humidity", hmdt))
         if mqtt.runPrs:
             t.append(Data("persons", prs.get('person')))
-        x = Sensordata("sensordata", "Kitchen", t)
+        x = Sensordata("sensordata", "MeetingRoom", t)
         #print(x.timestamp)
         y = jsonpickle.encode(x)
         mqtt.send(y)
@@ -107,6 +125,7 @@ try:
 
 except Exception as ex:
     print(ex)
+    ml.cleanup()
     run = False
     time.sleep(1)
     GPIO.cleanup()
