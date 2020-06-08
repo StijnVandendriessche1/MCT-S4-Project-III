@@ -63,6 +63,10 @@ server = Server()
 def load_user(user_id):
     return user_id
 
+@login_manager.unauthorized_handler
+def unauthorized():
+    return "You must be logged in to access this content.", 403
+
 
 def time_status():
     global server
@@ -156,10 +160,17 @@ def status_rooms_change(data):
 """ Routes """
 @app.route('/')
 def hallo():
-    if current_user.is_authenticated:
-        return "Server is running"
-    else:
-        return '<a class="button" href="/login">Google Login</a>'
+    try:
+        azerty = current_user
+        print(current_user)
+        if current_user.is_authenticated():
+            #return render_template("main_for_user.html")
+            return "Server is running"
+        else:
+            return '<a class="button" href="/login">Google Login</a>'
+    except Exception as ex:
+        logging.error(ex)
+        return "ok"
 
 def get_google_provider_cfg():
     return requests.get(GOOGLE_DISCOVERY_URL).json()
@@ -173,7 +184,6 @@ def logout():
 @app.route('/login')
 def login():
     try:
-        
         # Find out what URL to hit for Google login
         google_provider_cfg = get_google_provider_cfg()
         authorization_endpoint = google_provider_cfg["authorization_endpoint"]
@@ -283,6 +293,8 @@ def get_box_info(box):
 
 try:
     if __name__ == '__main__':
-        socketio.run(app, host="0.0.0.0", port="5000")
+        #socketio.run(app, host="0.0.0.0", port="5000")
+        #context = ('local.crt', 'local.key')
+        app.run(host="0.0.0.0", port="5000", ssl_context='adhoc')
 except Exception as ex:
     logging.error(ex)
