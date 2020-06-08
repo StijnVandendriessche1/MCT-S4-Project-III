@@ -206,7 +206,7 @@ h4,
 h5,
 h6 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 24px;
   margin: 0 0 24px;
 }
@@ -472,6 +472,22 @@ span {
 .c-img__profile {
   width: 56px;
   height: 56px;
+  border-radius: 8px;
+}
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form-field {
+  position: relative;
+}
+
+.c-form-field--option {
+  display: flex;
+  align-items: center;
 }
 
 /*
@@ -511,13 +527,13 @@ span {
 
 .c-app__name {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--global-accent);
 }
 
 .c-app__email {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /*
@@ -578,6 +594,11 @@ span {
   display: flex;
   flex-flow: row;
   margin-right: var(--global-whitespace);
+}
+
+.c-card__header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .c-card__header--stats {
@@ -722,6 +743,104 @@ span {
 }
 
 /*
+    Component: Option list
+    ---
+
+*/
+
+.c-option-list {
+  margin-bottom: var(--global-whitespace-lg);
+}
+
+.c-option-list__item {
+  margin-bottom: calc(var(--global-baseline) * 1.5);
+}
+
+/*
+  Custom option
+  ---
+  Custom checkboxes & radio buttons
+*/
+
+/* Hide the actual input with the class .o-hide-accessible */
+
+.c-custom-option {
+  --custom-option-background: var(--global-input-backgroundColor);
+  --custom-option-borderRadius: var(--global-borderRadius);
+  --custom-option-borderColor: var(--global-input-borderColor);
+  --custom-option-hover-borderColor: var(--global-input-hover-borderColor);
+  --custom-option-focus-borderColor: var(--global-input-focus-borderColor);
+  --custom-option-focus-boxShadowColor: var(--global-input-focus-boxShadowColor);
+  --custom-option-focus-boxShadow: var(--global-input-focus-boxShadowSpread) var(--custom-option-focus-boxShadowColor);
+  --custom-option__symbol-fill: var(--global-accent);
+  --custom-option-transition: var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+  display: flex;
+  align-items: center;
+}
+
+.c-custom-option__fake-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background: var(--custom-option-background);
+  border: 1px solid var(--custom-option-borderColor);
+  transition: all var(--custom-option-transition);
+  box-shadow: var(--custom-option-boxShadow, 0);
+}
+
+.c-custom-option__fake-input--checkbox {
+  border-radius: var(--custom-option-borderRadius);
+}
+
+.c-custom-option__fake-input--radio {
+  border-radius: 100%;
+}
+
+.c-custom-option__symbol {
+  display: block;
+  opacity: 0; /* Hide the symbol initially */
+  transform: scale(.5);
+  transition: transform var(--custom-option-transition), opacity var(--custom-option-transition);
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+  width: 10px;
+  height: 10px;
+  fill: var(--custom-option__symbol-fill);
+}
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+  background-color: var(--custom-option__symbol-fill);
+  border-radius: 100%;
+  width: 6px;
+  height: 6px;
+}
+
+/* hover state */
+
+.c-custom-option:hover {
+  --custom-option-borderColor: var(--custom-option-hover-borderColor);
+}
+
+/* focused and active state */
+
+.c-option--hidden:focus + .c-custom-option,
+.c-option--hidden:active + .c-custom-option {
+  --custom-option-borderColor: var(--custom-option-focus-borderColor);
+  --custom-option-boxShadow: var(--custom-option-focus-boxShadow);
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
+  opacity: 1; /* Show the symbol when the invisible checkbox/radio button is checked */
+  transform: scale(1);
+}
+
+/*
     Component: custom toggle
     ---
     toggle switches for cards
@@ -818,7 +937,7 @@ span {
 
 .c-label {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 5;
 }
 .c-loading-screen {
   position: fixed;
@@ -939,6 +1058,104 @@ span {
 }
 .c-word {
   text-transform: capitalize;
+}
+
+
+.c-calendar__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-calendar__title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.c-calendar__content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 16px;
+}
+
+.c-calendar__item {
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 16px;
+}
+
+.c-calendar__day {
+  margin-bottom: 4px;
+  color: var(--global-grey);
+  text-align: center;
+}
+
+.c-calendar__day-item {
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+  flex-flow: column;
+  align-items: center;
+  border-bottom: 3px solid var(--global-accent);
+}
+
+.c-calendar__number {
+  margin-top: 16px;
+}
+
+.c-calendar__text {
+  margin-bottom: 16px;
+}
+
+.c-calendar__next {
+  color: var(--global-grey);
+}
+
+.c-dashboard__disabled {
+  background-color: var(--global-darker-white);
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.c-dashboard__disabled:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.c-calendar__week {
+  display: flex;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.c-calendar__arrows--main {
+  margin-left: 8px;
+  display: flex;
+}
+
+.c-arrow {
+  align-self: center;
+}
+
+.c-dashboard__option {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.c-label__rooms {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.c-dashboard__calendar {
+  padding: 0;
+}
+
+.c-calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 /*------------------------------------*\

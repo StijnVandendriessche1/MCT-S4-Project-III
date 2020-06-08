@@ -15,18 +15,17 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="preload" as="font" href="assets/fonts/Roboto-Regular.ttf" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" as="font" href="assets/fonts/Roboto-Medium.ttf" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" as="font" href="assets/fonts/Roboto-Bold.ttf" type="font/ttf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}"> 
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="{{ url_for('static', filename='json/manifest.json') }} ">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="./js/datahandler.js"></script>
     <script src="./js/start.js"></script>
+    
 </head>
 
 <body>
@@ -197,6 +196,13 @@
                                 <div class="c-card__title--list">
                                     Meeting Rooms
                                 </div>
+                                <a href="/calendar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="33" viewBox="0 0 32 33">
+                                        <g id="Mask_Group_23" data-name="Mask Group 23" transform="translate(-1512 -48)" clip-path="url(#clip-path)">
+                                          <path id="calendar" d="M32.156,7.745H28.985V6.372a1.333,1.333,0,1,0-2.665,0V7.745H15.66V6.372a1.333,1.333,0,1,0-2.665,0V7.745H9.824A4.911,4.911,0,0,0,5,12.713V32.971A4.911,4.911,0,0,0,9.824,37.94H32.156a4.9,4.9,0,0,0,4.824-4.968V12.713A4.911,4.911,0,0,0,32.156,7.745ZM12.995,33.822a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,22.842Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,22.842Zm5.33-6.862H7.665V12.713A2.205,2.205,0,0,1,9.824,10.49h3.171v1.372a1.333,1.333,0,1,0,2.665,0V10.49H26.32v1.372a1.333,1.333,0,1,0,2.665,0V10.49h3.171a2.205,2.205,0,0,1,2.159,2.223Z" transform="translate(1507 43)" fill="#f90"/>
+                                        </g>
+                                      </svg>
+                                </a>
                             </div>
                             <div class="c-card__list js-meeting-rooms">
                                 <div class="c-item js-card js-off">

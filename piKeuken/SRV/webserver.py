@@ -150,6 +150,11 @@ def index():
     except Exception as ex:
         logging.error(ex)
 
+
+@app.route('/sw.js', methods=['GET'])
+def sw():
+    return current_app.send_static_file('sw.js')
+
 @app.route('/<page>')
 def html(page):
     try:
@@ -180,7 +185,7 @@ def js(page):
         return 'You are not currently logged in.'
     except Exception as ex:
         logging.error(ex)
-
+""" 
 @app.route('/<page>.json')
 def js_root(page):
     try:
@@ -188,7 +193,7 @@ def js_root(page):
             return render_template(f"{page}.json")
         return 'You are not currently logged in.'
     except Exception as ex:
-        logging.error(ex)
+        logging.error(ex) """
 
 """ Router for img """
 @app.route('/<page>.png')
