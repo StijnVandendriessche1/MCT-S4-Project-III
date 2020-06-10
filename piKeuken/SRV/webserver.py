@@ -32,7 +32,6 @@ import flask
 logging.basicConfig(filename="piKeuken/data/logging_webserver.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
-app = Flask(__name__, static_folder="templates")
 app = Flask(__name__)
 CORS(app)
 app.config['SECRET_KEY'] = 'Secret!'
@@ -153,7 +152,7 @@ def index():
 
 @app.route('/sw.js', methods=['GET'])
 def sw():
-    return current_app.send_static_file('sw.js')
+    return app.send_static_file('sw.js')
 
 @app.route('/<page>')
 def html(page):
@@ -255,6 +254,6 @@ def get_box_info(box):
 
 try:
     if __name__ == '__main__':
-        app.run(host="0.0.0.0", port="5000", ssl_context='adhoc')
+        app.run(host="0.0.0.0", port="5000", ssl_context=('piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'))
 except Exception as ex:
     logging.error(ex)
