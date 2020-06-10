@@ -2305,3 +2305,98 @@ Traceback (most recent call last):
   File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\async_drivers\eventlet.py", line 16, in __call__
     raise RuntimeError('You need to use the eventlet server. '
 RuntimeError: You need to use the eventlet server. See the Deployment section of the documentation for more information.
+2020-06-10 11:39:43,687	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-10 11:39:44,503	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATcNjB HTTP/1.1[0m" 200 -
+2020-06-10 11:39:44,505	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:44] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,133	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[35m[1mGET /socket.io/?EIO=3&transport=websocket&sid=a400430e7fce4716adc6e910ce50d167 HTTP/1.1[0m" 500 -
+2020-06-10 11:39:45,136	ERROR -- MainProcess _internal.py:113 -- Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\werkzeug\serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\werkzeug\serving.py", line 312, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\flask_socketio\__init__.py", line 46, in __call__
+    start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\middleware.py", line 60, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\socketio\server.py", line 558, in handle_request
+    return self.eio.handle_request(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\server.py", line 377, in handle_request
+    environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\socket.py", line 108, in handle_get_request
+    start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\socket.py", line 152, in _upgrade_websocket
+    return ws(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\async_drivers\eventlet.py", line 16, in __call__
+    raise RuntimeError('You need to use the eventlet server. '
+RuntimeError: You need to use the eventlet server. See the Deployment section of the documentation for more information.
+2020-06-10 11:39:45,220	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,273	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,282	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,294	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,628	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATcOmR HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,632	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 11:39:45,634	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 11:39:45,936	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:45] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-10 11:39:46,169	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:46] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-10 11:39:46,317	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:46] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-10 11:39:46,319	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:46] "[35m[1mGET /socket.io/?EIO=3&transport=websocket&sid=9180378736414c248495ad89ce23e66e HTTP/1.1[0m" 500 -
+2020-06-10 11:39:46,323	ERROR -- MainProcess _internal.py:113 -- Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\werkzeug\serving.py", line 323, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\werkzeug\serving.py", line 312, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\flask_socketio\__init__.py", line 46, in __call__
+    start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\middleware.py", line 60, in __call__
+    return self.engineio_app.handle_request(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\socketio\server.py", line 558, in handle_request
+    return self.eio.handle_request(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\server.py", line 377, in handle_request
+    environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\socket.py", line 108, in handle_get_request
+    start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\socket.py", line 152, in _upgrade_websocket
+    return ws(environ, start_response)
+  File "C:\Users\Arora\AppData\Local\Programs\Python\Python37\lib\site-packages\engineio\async_drivers\eventlet.py", line 16, in __call__
+    raise RuntimeError('You need to use the eventlet server. '
+RuntimeError: You need to use the eventlet server. See the Deployment section of the documentation for more information.
+2020-06-10 11:39:46,379	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:46] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 11:39:46,382	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:39:46,384	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:46] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,011	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,196	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:39:47,198	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,317	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /calendar HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,965	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,972	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,975	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 11:39:47,982	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:47] "[37mGET /js/calendar.js HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,218	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /sw.js HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,273	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,315	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 11:39:48,316	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,869	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,883	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:39:48,885	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 11:39:48,892	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:39:48,893	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:39:48] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
+2020-06-10 11:40:30,238	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-10 11:40:34,385	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:34] "[37mGET /calendar HTTP/1.1[0m" 200 -
+2020-06-10 11:40:34,785	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 11:40:34,786	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:34] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,053	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,060	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,065	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,071	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /js/calendar.js HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,965	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,971	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:40:35,973	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 11:40:35,992	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:35] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 11:40:36,582	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 11:40:36,584	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 11:40:36] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
