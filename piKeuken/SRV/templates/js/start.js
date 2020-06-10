@@ -5,6 +5,7 @@ let socket = io.connect(ip);
 let domReady = false;
 
 let isclicked = false;
+let isSettingsClicked = false;
 
 let domToggleSwitch,
   domToggleSwitchRoomBoxes,
@@ -269,6 +270,11 @@ const loadDOM = function () {
   domBell.addEventListener("click", function () {
     showNotifications();
   });
+
+  domSettings = document.querySelector(".c-settings__icon");
+  domSettings.addEventListener("click", function () {
+    showSettings();
+  });
 };
 
 const showNotifications = function () {
@@ -280,6 +286,20 @@ const showNotifications = function () {
   } else {
     box.style.display = "none";
     isclicked = false;
+    console.log("hidden");
+  }
+};
+
+const showSettings = function () {
+  box = document.querySelector(".c-settings__box");
+  console.log(box);
+  if (isSettingsClicked == false) {
+    box.style.display = "block";
+    isSettingsClicked = true;
+    console.log("showed");
+  } else {
+    box.style.display = "none";
+    isSettingsClicked = false;
     console.log("hidden");
   }
 };
