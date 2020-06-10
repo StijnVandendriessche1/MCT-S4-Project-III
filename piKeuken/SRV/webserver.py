@@ -176,6 +176,10 @@ def index():
         return "Error"
 
 
+@app.route('/sw.js', methods=['GET'])
+def sw():
+    return current_app.send_static_file('sw.js')
+
 @app.route('/<page>')
 def html(page):
     try:

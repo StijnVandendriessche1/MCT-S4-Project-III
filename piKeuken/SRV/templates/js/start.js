@@ -343,10 +343,15 @@ const init = function () {
 };
 
 const registeredServiceWorker = function () {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js").then(function (registration) {
-      log("Excellent, registered with scope: ", registration.scope);
-    });
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register("./sw.js", {scope: '/'})
+      .then(registration => {
+        console.log("ServiceWorker running");
+      })
+      .catch(err => {
+         console.log(err);
+      })
   }
 };
 
