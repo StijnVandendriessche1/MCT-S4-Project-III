@@ -4,6 +4,8 @@ let socket = io.connect(ip);
 
 let domReady = false;
 
+let isclicked = false;
+
 let domToggleSwitch,
   domToggleSwitchRoomBoxes,
   domBtnStats,
@@ -262,7 +264,26 @@ const loadDOM = function () {
       domBtnStat.classList.add(classStatsSelected);
     });
   }
+
+  domBell = document.querySelector(".js-bell");
+  domBell.addEventListener("click", function () {
+    showNotifications();
+    })
 };
+
+const showNotifications = function () {
+  box = document.getElementById("js-box")
+  if (isclicked == false) {
+    box.style.display = "block";
+    isclicked = true
+    console.log("showed")
+  } else {
+    box.style.display = "none";
+    isclicked = false
+    console.log("hidden")
+  }
+}
+
 const isFloat = function (n) {
   return Number(n) === n && n % 1 !== 0;
 };
