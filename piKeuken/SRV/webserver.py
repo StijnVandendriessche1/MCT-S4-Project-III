@@ -302,7 +302,7 @@ def get_notifications():
             user_info = google_auth.get_user_info()
             notifications_result = server.notifications.get_notifications(
                 user_info["id"])
-            notifications_result["viewed"] = [False if uid == None else True if int(uid)>0 else False for uid in notifications_result["uid"]]
+            notifications_result["viewed"] = [False if uid else True for uid in notifications_result["uid"].isnull()]
             notifications_result = notifications_result.drop(columns=["uid"])
             return json.dumps(notifications_result.to_dict(orient="records"))
         return authorization_error
@@ -313,13 +313,14 @@ def get_notifications():
 @app.route(endpoint + '/notifications/<notification_id>', methods = ['POST'])
 def notifications_viewed(notification_id):
     try:
+        print(notification_id)
         if google_auth.is_logged_in():
             global server
             """ When the user viewed the notification """
             user_info=google_auth.get_user_info()
             server.notifications.notification_viewed(
                 notification_id, user_info["id"])
-            return jsonify({'status': True})
+            return jsonify({'status': True, 'nid': notification_id})
         return authorization_error
     except Exception as ex:
         logging.error(ex)
@@ -327,6 +328,13 @@ def notifications_viewed(notification_id):
 
 try:
     if __name__ == '__main__':
-        app.run(host="0.0.0.0", port="5000", ssl_context=('piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'))
+        app.run(host="0.0.0.0", port="5000", ssl_context=('piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'), threaded=True)
 except Exception as ex:
     logging.error(ex)
+
+
+""" 🚚 Your coffee is on it's way!
+☕ Your coffee has arrived to the office!
+😢 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️
+🍽 The Dishwasher is empty! Time to empty it!
+💩 Don't forget to fill in the dishwasher! """

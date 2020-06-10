@@ -77,10 +77,11 @@ class Notifications:
     def get_notifications(self, user_id):
         try:
             #""" Get the notifications from the database """
-            notifications = self.db.execute('''SELECT id as nid, name as title, message as msg, user_id as uid FROM tb_notifications
+            notifications = self.db.execute('''SELECT id as nid, name as title, message as msg, user_id as uid, tb_notifications.datetime as dt FROM tb_notifications
                                             LEFT JOIN tb_notifications_viewed
                                             ON tb_notifications_viewed.notification_id= tb_notifications.id
-                                            AND tb_notifications_viewed.user_id=:UserId''', {'UserId':user_id}, True)
+                                            AND tb_notifications_viewed.user_id=:UserId
+                                            ORDER BY dt DESC''', {'UserId':user_id}, True)
             return notifications
         except Exception as ex:
             logging.error(ex)
