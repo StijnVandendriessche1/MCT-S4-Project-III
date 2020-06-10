@@ -3,21 +3,19 @@ import sqlite3
 import sys
 import os
 import logging
+import pandas as pd
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
-logging.basicConfig(filename="piKeuken/data/logging_db.txt", level=logging.ERROR,
+
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
-
-
-""" https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python """
-
 
 class DB:
     def __init__(self):
         try:
-            self.database_location = "piKeuken/data/db"
+            self.database_location = "piKeuken/data/ootf.db"
             """ Create the tables if they don't exist'"""
             self.create_start_tables()
         except Exception as ex:
@@ -37,13 +35,36 @@ class DB:
 
     def execute(self, command, par=(), read=False):
         try:
-            """ Open a connections with the database """
+            # Open a connections with the database
+            db = sqlite3.connect(self.database_location)
+            if read:
+                results = pd.read_sql_query(command, db, params=par)
+                return results
+            else:
+                db.row_factory = sqlite3.Row
+                cursor = db.cursor()
+                cursor.execute(command, par)
+                db.commit()
+        except Exception as ex:
+            logging.error(ex)
+            db.rollback()
+            raise ex
+        finally:
+            # Close the database connection
+            if read == False:
+                cursor.close()
+            db.close()
+
+    """ def execute(self, command, par=(), read=False):
+        try:
+             #Open a connections with the database
             db = sqlite3.connect(self.database_location)
             db.row_factory = sqlite3.Row
+            connection.row_factory = sqlite3.dict_factory
             cursor = db.cursor()
             cursor.execute(command, par)
             db.commit()
-            """ Check if the data must be returned """
+            #Check if the data must be returned
             if read:
                 return cursor.fetchall()
         except Exception as ex:
@@ -51,5 +72,6 @@ class DB:
             db.rollback()
             raise ex
         finally:
-            """ Close the database connection """
-            db.close()
+            #Close the database connection
+            cursor.close()
+            db.close() """
