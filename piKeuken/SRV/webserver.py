@@ -51,27 +51,33 @@ server = Server()
 
 def time_status():
     global server
-    while True:
-        try:
-            socketio.emit('status_coffee_left', {
-                          'status': server.check_coffee_status()})
-            socketio.emit('status_dishwasher', {
-                          'status': server.check_status_dishwasher()})
-            sleep(11)
-        except Exception as ex:
-            logging.error(ex)
+    try:
+        if google_auth.is_logged_in():
+            while True:
+                try:
+                    socketio.emit('status_coffee_left', {
+                                'status': server.check_coffee_status()})
+                    socketio.emit('status_dishwasher', {
+                                'status': server.check_status_dishwasher()})
+                    sleep(11)
+                except Exception as ex:
+                    logging.error(ex)
+    except Exception as ex:
+        logging.error(ex)
 
 
 def notifications():
     try:
         global server
-        while True:
-            try:
-                message = server.notifications.notification_queue.get()
-                socketio.emit('new_notification', message)
-                server.notifications.notification_queue.task_done()
-            except Exception as ex:
-                logging.error(ex)
+        if google_auth.is_logged_in():
+            user_info = google_auth.get_user_info()
+            while True:
+                try:
+                    message = server.notifications.notification_queue.get()
+                    socketio.emit('new_notification', json.dumps(server.get_notifications(user_info)))
+                    server.notifications.notification_queue.task_done()
+                except Exception as ex:
+                    logging.error(ex)
     except Exception as ex:
         logging.error(ex)
 
@@ -300,11 +306,7 @@ def get_notifications():
         if google_auth.is_logged_in():
             global server
             user_info = google_auth.get_user_info()
-            notifications_result = server.notifications.get_notifications(
-                user_info["id"])
-            notifications_result["viewed"] = [False if uid else True for uid in notifications_result["uid"].isnull()]
-            notifications_result = notifications_result.drop(columns=["uid"])
-            return json.dumps(notifications_result.to_dict(orient="records"))
+            return json.dumps(server.get_notifications(user_info))
         return authorization_error
     except Exception as ex:
         logging.error(ex)
@@ -313,7 +315,6 @@ def get_notifications():
 @app.route(endpoint + '/notifications/<notification_id>', methods = ['POST'])
 def notifications_viewed(notification_id):
     try:
-        print(notification_id)
         if google_auth.is_logged_in():
             global server
             """ When the user viewed the notification """

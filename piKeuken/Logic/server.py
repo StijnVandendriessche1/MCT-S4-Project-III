@@ -150,3 +150,13 @@ class Server:
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
+    
+    def get_notifications(self, user_info):
+        try:
+            notifications_result = self.notifications.get_notifications(user_info["id"])
+            notifications_result["viewed"] = [False if uid else True for uid in notifications_result["uid"].isnull()]
+            notifications_result = notifications_result.drop(columns=["uid"])
+            return notifications_result.to_dict(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex

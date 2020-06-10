@@ -64,6 +64,10 @@ socket.on("welcome", function (data) {
   log(data);
 });
 
+socket.on("new_notification", function (data) {
+  getNotifications(data);
+});
+
 /* Functions */
 const changeNotificationCount = function () {
   log(notificationsNotViewed);
