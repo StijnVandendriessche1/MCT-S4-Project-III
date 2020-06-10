@@ -19,7 +19,8 @@ class Coffee:
         self.coffee_ordered = False
         self.coffee_notification = False
         self.notification_queue = notification_queue
-        #self.send_mail = SendMail()
+        self.send_mail = SendMail()
+        self.mail_coffee_company = ["tibo.van.craenenbroeck@student.howest.be"]
 
     def coffee_checker(self, coffee_left):
         try:
@@ -28,6 +29,7 @@ class Coffee:
             """ Check if the coffee must be ordered """
             if self.coffee_left <= self.coffee_left_order and self.coffee_notification == False:
                 """ Send a notification """
+                self.send_mail.send_message("Bestelling koffie ML6", "Beste<br><br>Graag zouden wij 20Kg koffie bestellen bij jullie.<br><br>MVG<br>ML6", self.mail_coffee_company)
                 self.coffee_notification = True
                 self.notification_queue.put({"name":"☕☕☕ Coffee ☕☕☕", "message": "Can I order ☕?🤔"})
         except Exception as ex:
