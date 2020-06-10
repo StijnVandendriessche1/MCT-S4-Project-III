@@ -61,7 +61,7 @@ socket.on("welcome", function (data) {
 
 /* Functions */
 /* Function for getting the notifications */
-const getNotifications = function(data){
+const getNotifications = function (data) {
   let output = "";
   for (const notification of data) {
     output += `<div data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}"><div class="">${notification["title"]}</div><div class="">${notification["msg"]}</div></div>`;
@@ -268,21 +268,21 @@ const loadDOM = function () {
   domBell = document.querySelector(".js-bell");
   domBell.addEventListener("click", function () {
     showNotifications();
-    })
+  });
 };
 
 const showNotifications = function () {
-  box = document.getElementById("js-box")
+  box = document.getElementById("js-box");
   if (isclicked == false) {
     box.style.display = "block";
-    isclicked = true
-    console.log("showed")
+    isclicked = true;
+    console.log("showed");
   } else {
     box.style.display = "none";
-    isclicked = false
-    console.log("hidden")
+    isclicked = false;
+    console.log("hidden");
   }
-}
+};
 
 const isFloat = function (n) {
   return Number(n) === n && n % 1 !== 0;
@@ -364,15 +364,15 @@ const init = function () {
 };
 
 const registeredServiceWorker = function () {
-  if ('serviceWorker' in navigator) {
+  if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./sw.js")
-      .then(registration => {
+      .then((registration) => {
         console.log("ServiceWorker running");
       })
-      .catch(err => {
-         console.log(err);
-      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 };
 
