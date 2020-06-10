@@ -1,52 +1,68 @@
-2020-06-10 10:01:51,251	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
-2020-06-10 10:02:04,766	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:04] "[37mGET / HTTP/1.1[0m" 200 -
-2020-06-10 10:02:04,803	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:04] "[33mGET /assets/fonts/Roboto-Regular.ttf HTTP/1.1[0m" 404 -
-2020-06-10 10:02:05,413	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
-2020-06-10 10:02:05,422	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
-2020-06-10 10:02:05,424	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[33mGET /assets/fonts/Roboto-Medium.ttf HTTP/1.1[0m" 404 -
-2020-06-10 10:02:05,434	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[33mGET /assets/fonts/Roboto-Bold.ttf HTTP/1.1[0m" 404 -
-2020-06-10 10:02:05,440	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
-2020-06-10 10:02:05,718	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:05] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,342	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,430	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /manifest.json HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,433	ERROR -- MainProcess webserver.py:235 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
-2020-06-10 10:02:06,434	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,504	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG2CS HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,534	ERROR -- MainProcess webserver.py:235 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
-2020-06-10 10:02:06,535	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,744	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
-2020-06-10 10:02:06,932	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:06] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
-2020-06-10 10:02:13,702	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG2Ok&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:24,860	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG49C&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:31,512	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:31] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATG8VL&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:31,512	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG6tW&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:36,026	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG8VS&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:47,190	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATG9bz&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:51,485	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:51] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGDNO&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:52,205	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGCKQ&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:53,069	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:53] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGDjS&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:53,358	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGDYm&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:56,519	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:56] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGEc5&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:56,519	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGDql&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:02:58,358	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:02:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGEcA&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:07,090	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:07] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGH1n&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:07,370	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGF2u&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:08,235	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:08] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGHSN&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:08,583	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:08] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGHFj&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:09,444	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:09] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGHkn&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:09,523	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGHYf&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:09,969	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGHnL&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:10,882	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:10] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGHz2&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:11,166	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGHuJ&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:12,061	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:12] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGIOw&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:12,356	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGIB0&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:12,970	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:12] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGIXy&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:13,259	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGITd&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:15,277	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:15] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGJ1h&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:15,635	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGIhj&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:16,499	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:16] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGJTq&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:16,838	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGJGs&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:20,690	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGJZe&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:22,130	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:22] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGKip&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:22,130	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGKVr&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
-2020-06-10 10:03:31,861	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGKsL&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
+2020-06-10 12:03:35,661	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-10 12:03:36,397	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAThriE HTTP/1.1[0m" 200 -
+2020-06-10 12:03:40,429	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:40] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,141	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,161	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,188	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,208	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,380	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAThs9V&sid=4669251479bb4d129cdef65378fc75bf HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,587	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAThtKg HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,690	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 12:03:41,696	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 12:03:41,986	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:41] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,238	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,330	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:03:42,335	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,474	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,501	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,619	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 12:03:42,976	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:03:42,982	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:42] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
+2020-06-10 12:03:46,120	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:46] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-10 12:03:46,822	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:46] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 12:03:46,832	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:46] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-10 12:03:46,937	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:46] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,004	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAThtQd&sid=1eb23f15540e4c2e9b39e1b1bb89d4dc HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,277	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAThuiP HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,321	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 12:03:47,326	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,864	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,872	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 12:03:47,965	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:03:47,971	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:47] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 12:03:48,119	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:48] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-10 12:03:48,425	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:48] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-10 12:03:48,599	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:03:48,605	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:03:48] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
+2020-06-10 12:04:17,892	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-10 12:04:18,638	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi0C5 HTTP/1.1[0m" 200 -
+2020-06-10 12:04:23,555	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:23] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,218	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,227	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,475	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi0TR&sid=d2b7eceab66a4f79b568f1f8749d376e HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,609	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
+2020-06-10 12:04:24,616	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /cache.appcache HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,677	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi1qd HTTP/1.1[0m" 200 -
+2020-06-10 12:04:24,961	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:24] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,220	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,256	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:04:25,261	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,452	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,610	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,736	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-10 12:04:25,893	ERROR -- MainProcess webserver.py:238 -- 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+2020-06-10 12:04:25,899	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:25] "[37mGET /favicon-16x16.png HTTP/1.1[0m" 200 -
+2020-06-10 12:04:29,452	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi1xm&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:04:40,622	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi36E&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:04:50,548	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:50] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATi8Fk&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:04:50,549	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi5qn&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:04:51,815	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:04:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi8F-&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:03,020	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATi8Zk&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:14,205	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiBIo&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:16,550	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:16] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATiEbz&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:16,551	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiE1W&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:25,410	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiEcG&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:36,596	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiGmg&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:42,548	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:42] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATiKyD&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:42,549	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiJVN&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
+2020-06-10 12:05:47,799	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:05:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATiKyW&sid=e5a964e7b7e044d5b19ad6c9e55f7bc1 HTTP/1.1[0m" 200 -
