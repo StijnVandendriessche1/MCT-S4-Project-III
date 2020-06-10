@@ -1239,11 +1239,43 @@ span {
   padding: var(--global-whitespace-md);
 }
 
+.c-notification__item:last-of-type {
+  border-bottom: none;
+}
+
 .c-notification__box:first-child .c-notification__item {
   padding-top: var(--global-whitespace-md);
 }
 
 .c-notificaton__bell {
+  cursor: pointer;
+}
+
+.c-settings__box {
+  background-color: var(--global-white);
+  box-shadow: var(--shadow-box);
+  border-radius: var(--global-whitespace);
+  border: 3px solid var(--global-accent);
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+
+.c-settings__item {
+  margin-top: var(--global-whitespace-sm);
+  border-bottom: 1px solid var(--global-grey);
+  padding: var(--global-whitespace-md);
+}
+
+.c-settings__item:last-of-type {
+  border-bottom: none;
+}
+
+.c-settings__box:first-child .c-settings__item {
+  padding-top: var(--global-whitespace-md);
+}
+
+.c-settings__icon {
   cursor: pointer;
 }
 
