@@ -6,12 +6,16 @@ let domReady = false;
 
 let isclicked = false;
 
+let notificationsNotViewed = [];
+
 let domToggleSwitch,
   domToggleSwitchRoomBoxes,
   domBtnStats,
   domMapMeetingBoxes,
   domMapCardBody,
-  domMapCardTitle;
+  domMapCardTitle,
+  domBoxNotifications,
+  domNotificationCount;
 const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
@@ -60,13 +64,44 @@ socket.on("welcome", function (data) {
 });
 
 /* Functions */
+const changeNotificationCount = function () {
+  log(notificationsNotViewed);
+  if (notificationsNotViewed.length == 0) {
+    domNotificationCount.style.display = "none";
+  } else {
+    domNotificationCount.style.display = "block";
+    domNotificationCount.querySelector(
+      ".js-notification-count__count"
+    ).innerHTML = notificationsNotViewed.length;
+  }
+};
+const notificationViewed = function (data) {
+  log(data);
+  /* Delete the notification from the viewed list */
+  notificationsNotViewed.splice(notificationsNotViewed.indexOf(data.nid), 1);
+  changeNotificationCount();
+};
+const checkNotificationViewed = function () {
+  /* Check if there are notifications that are not viewed */
+  if (notificationsNotViewed.length > 0) {
+    /* Set the notifications as viewed */
+    for (const notification of notificationsNotViewed) {
+      /* Send it to the API */
+      getAPI(`notifications/${notification}`, notificationViewed, "POST");
+    }
+  }
+};
 /* Function for getting the notifications */
 const getNotifications = function (data) {
   let output = "";
   for (const notification of data) {
-    output += `<div data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}"><div class="">${notification["title"]}</div><div class="">${notification["msg"]}</div></div>`;
+    /* Check if the notification already viewed */
+    if (!notification["viewed"])
+      notificationsNotViewed.push(notification["nid"]);
+    output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]}${notification["msg"]}</div>`;
   }
-  log(output);
+  changeNotificationCount();
+  domBoxNotifications.innerHTML = output;
 };
 
 /* Reset status_Meetingboxes */
@@ -157,8 +192,6 @@ const getStatus = function (status) {
 const changeBoxStatus = function (box, status) {
   /* Get all the elements from this box */
   const domBoxAIMeeting = document.querySelector(`.js-box--${box}`);
-  log(domBoxAIMeeting);
-  log(`.js-box--${box}`);
 
   /* Check if the element is showed */
   selected = getStatus(status);
@@ -248,6 +281,8 @@ const resetBtnStats = function () {
 const loadDOM = function () {
   domMapCardBody = document.querySelector(".js-map-card__body");
   domMapCardTitle = document.querySelector(".js-map-card__title");
+  domBoxNotifications = document.querySelector(".js-box-notification");
+  domNotificationCount = document.querySelector(".js-notification--count");
   /* Load the toggleswitches */
   domToggleSwitches = document.querySelectorAll(".js-toggleswitch");
   for (const domToggleSwitch of domToggleSwitches) {
@@ -272,15 +307,16 @@ const loadDOM = function () {
 };
 
 const showNotifications = function () {
-  box = document.getElementById("js-box");
   if (isclicked == false) {
-    box.style.display = "block";
+    domBoxNotifications.style.display = "block";
     isclicked = true;
-    console.log("showed");
+    log("showed");
+    /* Check if the notifications are viewed */
+    checkNotificationViewed();
   } else {
-    box.style.display = "none";
+    domBoxNotifications.style.display = "none";
     isclicked = false;
-    console.log("hidden");
+    log("hidden");
   }
 };
 
