@@ -1223,7 +1223,29 @@ span {
   margin-left: 8px;
 }
 
+.c-notification__box {
+  background-color: var(--global-white);
+  box-shadow: var(--shadow-box);
+  border-radius: var(--global-whitespace);
+  border: 3px solid var(--global-accent);
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
 
+.c-notification__item {
+  margin-top: var(--global-whitespace-sm);
+  border-bottom: 1px solid var(--global-grey);
+  padding: var(--global-whitespace-md);
+}
+
+.c-notification__box:first-child .c-notification__item {
+  padding-top: var(--global-whitespace-md);
+}
+
+.c-notificaton__bell {
+  cursor: pointer;
+}
 
 /*------------------------------------*\
 #UTILITIES

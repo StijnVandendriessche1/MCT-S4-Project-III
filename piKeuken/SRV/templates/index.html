@@ -17,15 +17,15 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
 
     <link rel="manifest" href="{{ url_for('static', filename='json/manifest.json') }} ">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="./js/datahandler.js"></script>
     <script src="./js/start.js"></script>
-    
+
 </head>
 
 <body>
@@ -34,27 +34,47 @@
             <div class="c-app__top">
                 <div class="c-container o-container">
                     <div class="c-top__content">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45"
-                            height="47" viewBox="0 0 45 47">
-                            <g id="bell_icon" data-name="bell icon" transform="translate(-80 -48)">
-                                <g id="bell" data-name="bell" transform="translate(-478 -132)"
-                                    clip-path="url(#clip-path)">
-                                    <path id="notification"
-                                        d="M39.7,35.868l-2.257-4.515a2.886,2.886,0,0,1-.3-1.274V20a14.3,14.3,0,0,0-8.883-13.21,5.673,5.673,0,0,0-10.8,0A14.3,14.3,0,0,0,8.572,20V30.074a2.847,2.847,0,0,1-.3,1.286L6.012,35.871A2.857,2.857,0,0,0,8.572,40h9.372a5.662,5.662,0,0,0,9.835,0h9.366A2.857,2.857,0,0,0,39.7,35.865ZM13.2,34.288l.189-.377a8.69,8.69,0,0,0,.906-3.829V20a8.572,8.572,0,1,1,17.144,0V30.079a8.627,8.627,0,0,0,.9,3.835l.189.374-19.33,0Z"
-                                        transform="translate(555.142 177.143)" fill="#f90" />
+                        <div class="c-notificaton">
+                            <svg class="c-notificaton__bell js-bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="45" height="47" viewBox="0 0 45 47">
+                                <g id="bell_icon" data-name="bell icon" transform="translate(-80 -48)">
+                                    <g id="bell" data-name="bell" transform="translate(-478 -132)"
+                                        clip-path="url(#clip-path)">
+                                        <path id="notification"
+                                            d="M39.7,35.868l-2.257-4.515a2.886,2.886,0,0,1-.3-1.274V20a14.3,14.3,0,0,0-8.883-13.21,5.673,5.673,0,0,0-10.8,0A14.3,14.3,0,0,0,8.572,20V30.074a2.847,2.847,0,0,1-.3,1.286L6.012,35.871A2.857,2.857,0,0,0,8.572,40h9.372a5.662,5.662,0,0,0,9.835,0h9.366A2.857,2.857,0,0,0,39.7,35.865ZM13.2,34.288l.189-.377a8.69,8.69,0,0,0,.906-3.829V20a8.572,8.572,0,1,1,17.144,0V30.079a8.627,8.627,0,0,0,.9,3.835l.189.374-19.33,0Z"
+                                            transform="translate(555.142 177.143)" fill="#f90" />
+                                    </g>
+                                    <g id="notification_circle" data-name="notification circle"
+                                        transform="translate(-2 -1)">
+                                        <circle id="Circle" data-name="Circle" cx="12" cy="12" r="12"
+                                            transform="translate(103 72)" fill="red" />
+                                        <text id="notification_number" data-name="notification number"
+                                            transform="translate(111 73)" fill="#fff" font-size="16"
+                                            font-family="Roboto-Medium, Roboto" font-weight="500">
+                                            <tspan x="-0.547" y="17">1</tspan>
+                                        </text>
+                                    </g>
                                 </g>
-                                <g id="notification_circle" data-name="notification circle"
-                                    transform="translate(-2 -1)">
-                                    <circle id="Circle" data-name="Circle" cx="12" cy="12" r="12"
-                                        transform="translate(103 72)" fill="red" />
-                                    <text id="notification_number" data-name="notification number"
-                                        transform="translate(111 73)" fill="#fff" font-size="16"
-                                        font-family="Roboto-Medium, Roboto" font-weight="500">
-                                        <tspan x="-0.547" y="17">1</tspan>
-                                    </text>
-                                </g>
-                            </g>
-                        </svg>
+                            </svg>
+                            <div class="c-notification__box" id="js-box">
+                                <div class="c-notification__item">
+                                    🚚 Your coffee is on it's way!
+                                </div>
+                                <div class="c-notification__item">
+                                    ☕ Your coffee has arrived to the office!
+                                </div>
+                                <div class="c-notification__item">
+                                    😢 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️
+                                </div>
+                                <div class="c-notification__item">
+                                    🍽 The Dishwasher is empty! Time to empty it!
+                                </div>
+                                <div class="c-notification__item">
+                                    💩 Don't forget to fill in the dishwasher!
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="c-app__title">
                             Dashboard
@@ -62,7 +82,8 @@
 
                         <div class="c-app__user">
                             <div class="c-app__img">
-                                <img class="c-img__profile" loading="lazy" alt="profilepic"src="{{user_info["picture"]}}" alt="profilepic">
+                                <img class="c-img__profile" loading="lazy" alt="profilepic"
+                                    src="{{user_info["picture"]}}" alt="profilepic">
                             </div>
                             <div class="c-app__userdetails">
                                 <div class="c-app__name">
@@ -197,11 +218,15 @@
                                     Meeting Rooms
                                 </div>
                                 <a href="/calendar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="33" viewBox="0 0 32 33">
-                                        <g id="Mask_Group_23" data-name="Mask Group 23" transform="translate(-1512 -48)" clip-path="url(#clip-path)">
-                                          <path id="calendar" d="M32.156,7.745H28.985V6.372a1.333,1.333,0,1,0-2.665,0V7.745H15.66V6.372a1.333,1.333,0,1,0-2.665,0V7.745H9.824A4.911,4.911,0,0,0,5,12.713V32.971A4.911,4.911,0,0,0,9.824,37.94H32.156a4.9,4.9,0,0,0,4.824-4.968V12.713A4.911,4.911,0,0,0,32.156,7.745ZM12.995,33.822a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,22.842Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,22.842Zm5.33-6.862H7.665V12.713A2.205,2.205,0,0,1,9.824,10.49h3.171v1.372a1.333,1.333,0,1,0,2.665,0V10.49H26.32v1.372a1.333,1.333,0,1,0,2.665,0V10.49h3.171a2.205,2.205,0,0,1,2.159,2.223Z" transform="translate(1507 43)" fill="#f90"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="32" height="33" viewBox="0 0 32 33">
+                                        <g id="Mask_Group_23" data-name="Mask Group 23" transform="translate(-1512 -48)"
+                                            clip-path="url(#clip-path)">
+                                            <path id="calendar"
+                                                d="M32.156,7.745H28.985V6.372a1.333,1.333,0,1,0-2.665,0V7.745H15.66V6.372a1.333,1.333,0,1,0-2.665,0V7.745H9.824A4.911,4.911,0,0,0,5,12.713V32.971A4.911,4.911,0,0,0,9.824,37.94H32.156a4.9,4.9,0,0,0,4.824-4.968V12.713A4.911,4.911,0,0,0,32.156,7.745ZM12.995,33.822a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,12.995,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,18.325,28.332Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,33.822Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,23.655,22.842Zm5.33,5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,28.332Zm0-5.49a1.373,1.373,0,1,1,1.332-1.372A1.353,1.353,0,0,1,28.985,22.842Zm5.33-6.862H7.665V12.713A2.205,2.205,0,0,1,9.824,10.49h3.171v1.372a1.333,1.333,0,1,0,2.665,0V10.49H26.32v1.372a1.333,1.333,0,1,0,2.665,0V10.49h3.171a2.205,2.205,0,0,1,2.159,2.223Z"
+                                                transform="translate(1507 43)" fill="#f90" />
                                         </g>
-                                      </svg>
+                                    </svg>
                                 </a>
                             </div>
                             <div class="c-card__list js-meeting-rooms">
@@ -1149,11 +1174,11 @@
 
 <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register("sw.js").then(function(registration) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register("sw.js").then(function (registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
+            }, function (err) {
                 // registration failed :(
                 console.log('ServiceWorker registration failed: ', err);
             });
