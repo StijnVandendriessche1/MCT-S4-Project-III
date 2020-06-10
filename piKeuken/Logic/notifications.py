@@ -7,12 +7,12 @@ import uuid
 
 import sys
 import os
+from threading import Thread
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.db import DB
-from threading import Thread
 
 logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")

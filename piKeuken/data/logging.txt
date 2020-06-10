@@ -50,6 +50,7 @@
 2020-06-10 10:03:22,130	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:22] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATGKip&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
 2020-06-10 10:03:22,130	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:22] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGKVr&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
 2020-06-10 10:03:31,861	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:03:31] "[37mGET /socket.io/?EIO=3&transport=polling&t=NATGKsL&sid=37c4f237170b46109a59c0447bc9cb84 HTTP/1.1[0m" 200 -
+<<<<<<< HEAD
 2020-06-10 10:52:22,443	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
 2020-06-10 10:52:50,279	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 10:52:50] "[37mGET / HTTP/1.1[0m" 200 -
 2020-06-10 10:52:50,636	ERROR -- MainProcess webserver.py:191 -- cache.appcache.html
@@ -3862,3 +3863,5 @@ Traceback (most recent call last):
     raise RuntimeError('You need to use the eventlet server. '
 RuntimeError: You need to use the eventlet server. See the Deployment section of the documentation for more information.
 2020-06-10 12:24:23,549	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [10/Jun/2020 12:24:23] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NATmcU6&sid=8c7f44cc49814612916588b30069011c HTTP/1.1[0m" 200 -
+=======
+>>>>>>> develop
