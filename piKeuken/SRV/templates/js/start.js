@@ -336,7 +336,7 @@ const init = function () {
 const registeredServiceWorker = function () {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register("./sw.js", {scope: '/'})
+      .register("./sw.js")
       .then(registration => {
         console.log("ServiceWorker running");
       })

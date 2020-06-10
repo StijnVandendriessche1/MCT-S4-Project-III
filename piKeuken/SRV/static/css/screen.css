@@ -30,6 +30,7 @@
 :root {
   /* colors */
   --global-accent: #ff9900;
+  --global-accent-light: #FFEBCC;
   --global-white: #ffffff;
   --global-dark-white: #fbfbfb;
   --global-darker-white: #f3f3f3;
@@ -404,6 +405,18 @@ span {
 
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
+}
+
+/*
+    Object: Body overflow
+    ---
+    Stops body from overflowing
+*/
+
+@media screen and (min-width: 992px) {
+  .o-body {
+    overflow: hidden;
+  }
 }
 
 /*------------------------------------*\
@@ -1153,10 +1166,64 @@ span {
   padding: 0;
 }
 
+@media screen and (min-width: 992px) {
+  .c-dashboard__calendar {
+    height: 65%;
+    overflow: auto;
+  }
+}
+
 .c-calendar__days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
+
+.c-calendar__hour-box {
+  display: flex;
+  justify-content: center;
+  padding: 8px 8px 8px 24px;
+  border-bottom: 1px solid var(--global-grey);
+  height: 100px;
+}
+
+.c-calendar__hour-box + .c-calendar__hour-box {
+  border-left: 1px solid var(--global-grey);
+}
+
+.c-calendar__hour-box:nth-child(7n+8) {
+  border-left: none;
+}
+
+.c-calendar__meeting-box {
+  background-color: var(--global-accent-light);
+  border-left: 2px solid var(--global-accent);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 100%;
+  color: var(--global-accent);
+  height: 100%;
+}
+
+.c-meeting__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.c-meeting__client {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.c-meeting__time {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+
 
 /*------------------------------------*\
 #UTILITIES
@@ -1284,6 +1351,10 @@ span {
   .u-y-span-5-bp3 {
     grid-row: span 5;
   }
+}
+
+.c-special {
+  grid-area: 7 / 7 / 6 / 7;
 }
 
 /*

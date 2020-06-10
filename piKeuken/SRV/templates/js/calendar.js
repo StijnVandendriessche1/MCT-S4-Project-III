@@ -1,17 +1,17 @@
 const production = false,
-  ip = "https://localhost:5000";
+  ip = 'https://localhost:5000';
   
 /* init-function --> For starting the script */
 const init = function () {
-    console.log("script stared");
+    console.log('script stared');
   };
   
   const registeredServiceWorker = function () {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register("./sw.js", {scope: '/'})
+        .register('./sw.js', {scope: '/'})
         .then(registration => {
-          console.log("ServiceWorker running");
+          console.log('ServiceWorker running');
         })
         .catch(err => {
            console.log(err);
@@ -20,8 +20,8 @@ const init = function () {
   };
   
   /* When the script starts */
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Js Started");
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('Js Started');
     registeredServiceWorker();
     init();
   });
