@@ -58,6 +58,14 @@ socket.on("welcome", function (data) {
 });
 
 /* Functions */
+/* Function for getting the notifications */
+const getNotifications = function(data){
+  let output = "";
+  for (const notification of data) {
+    output += `<div data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}"><div class="">${notification["title"]}</div><div class="">${notification["msg"]}</div></div>`;
+  }
+  log(output);
+};
 
 /* Reset status_Meetingboxes */
 const resetMeetingBoxes = function (data) {
@@ -326,6 +334,7 @@ const getMapBoxes = function () {
 const init = function () {
   loadDOM();
   getAPI("meetingbox/status", resetMeetingBoxes);
+  getAPI("notifications", getNotifications);
   socket.emit("connect");
   log("Socket emitted");
   getMapBoxes();

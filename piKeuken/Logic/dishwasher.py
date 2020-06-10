@@ -7,9 +7,12 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.influxdb import Influxdb
+import logging
 
 """ Class for the dishwasher """
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Dishwasher:
     def __init__(self):

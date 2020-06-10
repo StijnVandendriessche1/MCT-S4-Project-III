@@ -2,6 +2,9 @@
 import sendgrid
 import logging
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+                    
 class SendMail:
     def __init(self):
         try:

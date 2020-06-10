@@ -13,6 +13,9 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+
 class MQTT:
     def __init__(self, device_id, queue):
         try:
@@ -102,7 +105,8 @@ class MQTT:
                     print("people counter started")
                 else:
                     print("command not recognised")
-        except:
+        except Exception as ex:
+            logging.error(ex)
             print("failed to execute command")
 
 
