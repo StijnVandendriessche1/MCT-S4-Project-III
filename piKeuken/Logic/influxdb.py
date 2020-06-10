@@ -19,6 +19,8 @@ from Logic.get_vars import GetVars
 from Models.sensordata import Sensordata
 from Models.data import Data
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Influxdb:
     def __init__(self, token_type="Pi"):
