@@ -11,6 +11,8 @@ import cv2
 import logging
 from time import sleep
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class MLObjectDetection:
     def __init__(self, objects = ["person"]):

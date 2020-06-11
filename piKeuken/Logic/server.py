@@ -13,9 +13,14 @@ from Models.data import Data
 from Models.sensordata import Sensordata
 from Logic.influxdb import Influxdb
 from Logic.get_vars import GetVars
+from Logic.notifications import Notifications
+from Logic.coffee import Coffee
+
 
 """ Class for the main_server"""
 
+logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Server:
     def __init__(self):
@@ -23,6 +28,8 @@ class Server:
             self.host = "webserver"
             self.influxdb = Influxdb("Pi")
             self.influxdb_cloud = Influxdb("Cloud")
+            self.notifications = Notifications()
+            self.coffee = Coffee(self.notifications.new_notifications_queue)
             self.start_status()
         except Exception as ex:
             logging.error(ex)
@@ -86,7 +93,15 @@ class Server:
 
     def check_coffee_status(self):
         try:
-            return round(random.uniform(11, 31), 1)
+            query = ''' |> range(start: 2018-05-22T23:30:00Z)
+                        |> last()
+                        |> filter(fn: (r) => r["_measurement"] == "sensordata")
+                        |> filter(fn: (r) => r["_field"] == "weight")'''
+            coffee_status = self.influxdb.get_data(query)
+            if coffee_status.empty == False:
+                """ Change the coffee_left_status + check if there is enough """
+                self.coffee.coffee_checker(coffee_status["weight"][0])
+            return self.coffee.coffee_left
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
@@ -135,3 +150,13 @@ class Server:
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
+    
+    def get_notifications(self, user_info):
+        try:
+            notifications_result = self.notifications.get_notifications(user_info["id"])
+            notifications_result["viewed"] = [False if uid else True for uid in notifications_result["uid"].isnull()]
+            notifications_result = notifications_result.drop(columns=["uid"])
+            return notifications_result.to_dict(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex
