@@ -9,14 +9,17 @@ import datetime
 import time
 import jwt
 import paho.mqtt.client as mqtt
-from Models.data import Data
-from Models.sensordata import Sensordata
 import jsonpickle
 from Logic.mqtt_pub_sub import MQTT
 from Logic.ml_object_detection import MLObjectDetection
 import queue
+from Models.sensordata import Sensordata
+from Models.data import Data
 import cv2
-
+from Logic.switch import Button
+import pandas as pd
+import numpy as np
+import json
 GPIO.setmode(GPIO.BCM)
 
 run = True
@@ -28,11 +31,9 @@ prs = {'person': 0}
 
 mcp = Mcp(0,0)
 dht = DHT11(pin=17)
-ml = MLObjectDetection()
 q = queue.Queue()
 mqtt = MQTT(3052736401110405, q)
-startPrs = False
-
+door = Button(27)
 
 def run_light():
     global light
@@ -53,42 +54,36 @@ def run_hmdt():
 
 def run_human_count():
     global prs
-    global startPrs
-    global ml
-    while run:
-        if mqtt.runPrs:
-            if startPrs:
-                ml = MLObjectDetection()
-                startPrs = False
-            prs = ml.count_total_objects
-        else:
-            if startPrs == False:
-                ml.stop()
-                del ml
-                startPrs = True
-
-    #global prs
-    #ml.cap = cv2.VideoCapture(0)
-    #counter_objects = threading.Thread(target=ml.count_objects)
-    #counter_objects.start()
-    #while run and mqtt.runPrs:
-        #prs = ml.count_total_objects
-    #ml.stop()
+    ml = MLObjectDetection()
+    while mqtt.runPrs:
+        prs = ml.count_total_objects
+        time.sleep(3)
+    ml.stop()
+    del ml
 
 def queue_listener():
     global actPrs
     while run:
         com = q.get()
         if com == "people":
-            mqtt.runPrs = True
-            del actPrs
             actPrs = threading.Thread(target=run_human_count)
             actPrs.start()
-            #actPrsCount = threading.Thread(target=run_human_count)
-            #actPrsCount.start()
             q.task_done()
         else:
             print("command not found")
+
+def door_change(a):
+    doorstate = door.pressed
+    data = np.array([doorstate])
+    ser = pd.Series(data)
+    doorstate = ser.map({True: 'closed', False: 'open'})
+    doorstate = str(doorstate.values[0])
+    t = []
+    t.append(Data("doorstate", doorstate).__dict__)
+    x = Sensordata("sensordata", "MeetingRoom", t)
+    y = jsonpickle.encode(x.__dict__)
+    mqtt.send(y)
+    print(y)
 
 try:
     actLight = threading.Thread(target=run_light)
@@ -97,36 +92,34 @@ try:
     actTemp.start()
     actHmdt = threading.Thread(target=run_hmdt)
     actHmdt.start()
-    actPrs = threading.Thread(target=run_human_count)
-    actPrs.start()
     actQueueListener = threading.Thread(target=queue_listener)
     actQueueListener.start()
-
-
+    door.on_change(door_change)
+    door_change(0)
 
     while True:
-        #print("light: %f%%" % light)
-        #print("temperature: %f°C" % temp)
-        #print("humidity: %d%%" % hmdt)
-        #print(str(prs.get('person')))
-        #print("")
         t = []
-        t.append(Data("temperature", temp))
-        t.append(Data("light", light))
-        t.append(Data("humidity", hmdt))
+        t.append(Data("temperature", temp).__dict__)
+        t.append(Data("light", light).__dict__)
+        t.append(Data("humidity", hmdt).__dict__)
         if mqtt.runPrs:
-            t.append(Data("persons", prs.get('person')))
+            t.append(Data("persons", prs.get('person')).__dict__)
         x = Sensordata("sensordata", "MeetingRoom", t)
-        #print(x.timestamp)
-        y = jsonpickle.encode(x)
+        y = jsonpickle.encode(x.__dict__)
         mqtt.send(y)
         print(y)
         time.sleep(5)
 
-except Exception as ex:
-    print(ex)
-    ml.cleanup()
-    run = False
-    time.sleep(1)
-    GPIO.cleanup()
-    print("goodbye")
+except KeyboardInterrupt as ex:
+    try:
+        print(ex)
+        run = False
+        time.sleep(10)
+        GPIO.cleanup()
+        print("goodbye")
+    except Exception as e:
+        print(e)
+        run = False
+        time.sleep(10)
+        GPIO.cleanup()
+        print("goodbye")

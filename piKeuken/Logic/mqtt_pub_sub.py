@@ -17,10 +17,11 @@ logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class MQTT:
-    def __init__(self, device_id, queue):
+    def __init__(self, device_id, queue = None):
         try:
             self.get_vars = GetVars()
-            self.queue = queue
+            if queue is not None:
+                self.queue = queue
             self.runPrs = False
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")

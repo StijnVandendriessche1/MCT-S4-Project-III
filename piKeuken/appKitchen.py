@@ -14,7 +14,9 @@ from Models.sensordata import Sensordata
 import jsonpickle
 from Logic.mqtt_pub_sub import MQTT
 import queue
-
+from Logic.switch import Button
+import pandas as pd
+import numpy as np
 GPIO.setmode(GPIO.BCM)
 
 run = True
@@ -22,13 +24,16 @@ run = True
 light = 0
 temp = 0
 hmdt = 0
+pvaat = 0
+vaat = 0
 prs = {'person': 0}
 
 mcp = Mcp(0,0)
 dht = DHT11(pin=17)
 q = queue.Queue()
 mqtt = MQTT(2817465839732274, q)
-
+vibr = Button(pin=27)
+door = Button(pin=2)
 
 def run_light():
     global light
@@ -47,17 +52,28 @@ def run_hmdt():
         if result.is_valid():
             hmdt = result.humidity
 
-# def run_human_count():
-#     global prs
-#     while run and mqtt.runPrs:
-#         prs = ml.count_objects()
-#         time.sleep(2)
-#     ml.stop()
-#     print("stopped")
+def tril_vaat(a):
+    print("trilling gedetecteerd")
+    t = []
+    t.append(Data("dishwasherstate", "Detect").__dict__)
+    x = Sensordata("sensordata", "Kitchen", t)
+    y = jsonpickle.encode(x.__dict__)
+    mqtt.send(y)
+    print(y)
 
-#def queue_listener():
-    #while run:
 
+def door_change(a):
+    doorstate = door.pressed
+    data = np.array([doorstate])
+    ser = pd.Series(data)
+    doorstate = ser.map({True: 'closed', False: 'open'})
+    doorstate = str(doorstate.values[0])
+    t = []
+    t.append(Data("doorstate", doorstate).__dict__)
+    x = Sensordata("sensordata", "Kitchen", t)
+    y = jsonpickle.encode(x.__dict__)
+    mqtt.send(y)
+    print(y)
 
 try:
     actLight = threading.Thread(target=run_light)
@@ -66,31 +82,41 @@ try:
     actTemp.start()
     actHmdt = threading.Thread(target=run_hmdt)
     actHmdt.start()
+    vibr.on_change(tril_vaat)
+    door.on_change(door_change)
+    door_change(0)
     #actPrs = threading.Thread(target=run_human_count)
     #actPrs.start()
     #actQueueListener = threading.Thread(target=queue_listener)
     #actQueueListener.start()
 
     while True:
-        #print("light: %f%%" % light)
-        #print("temperature: %f°C" % temp)
-        #print("humidity: %d%%" % hmdt)
-        #print(str(prs.get('person')))
-        #print("")
         t = []
-        t.append(Data("temperature", temp))
-        t.append(Data("light", light))
-        t.append(Data("humidity", hmdt))
+        t.append(Data("temperature", temp).__dict__)
+        t.append(Data("light", light).__dict__)
+        t.append(Data("humidity", hmdt).__dict__)
         x = Sensordata("sensordata", "Kitchen", t)
-        #print(x.timestamp)
-        y = jsonpickle.encode(x)
+        y = jsonpickle.encode(x.__dict__)
         mqtt.send(y)
         print(y)
         time.sleep(5)
 
+except KeyboardInterrupt as ex:
+    try:
+        print("Shutting down...")
+        run = False
+        time.sleep(10)
+        GPIO.cleanup()
+        print("goodbye")
+    except Exception as e:
+        print(e)
+        run = False
+        time.sleep(10)
+        GPIO.cleanup()
+        print("goodbye")
 except Exception as ex:
-    print(ex)
+    print("something went wrong")
     run = False
-    time.sleep(1)
+    time.sleep(10)
     GPIO.cleanup()
     print("goodbye")
