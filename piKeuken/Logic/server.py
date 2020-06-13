@@ -188,9 +188,7 @@ class Server:
                         |> mean(column: "_value")
                         """
             coffee_data = self.influxdb.get_data(query, False, 'import "date"')
-
-            #coffee_data = coffee_data.groupby(["DayOfWeek"]).mean()
-            #print(coffee_data.to_dict(orient="records"))
+            #""" Add a week name to the dataframe """
             coffee_data["WeekDay"] = [self.get_day_of_week(day) for day in coffee_data["DayOfWeek"]]
             return coffee_data.to_json(orient="records")
         except Exception as ex:

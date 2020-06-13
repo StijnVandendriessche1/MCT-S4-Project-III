@@ -69,9 +69,9 @@ socket.on("new_notification", function (data) {
   getNotifications(data);
 });
 
-socket.on("coffee_chart", function (data) {
+/* socket.on("coffee_chart", function (data) {
   data = JSON.parse(data)
-  /* Create 2 vars with the data */
+  //Create 2 vars with the data 
   data_labels = [];
   data_values = []
   for (const row of data) {
@@ -79,7 +79,7 @@ socket.on("coffee_chart", function (data) {
     data_values.push(row["_value"])
   }
   Graph(data_labels, data_values)
-});
+}); */
 
 socket.on("coffee_settings", function (data) {
   log(data)
@@ -363,10 +363,12 @@ const loadDOM = function () {
   }
   /* Load the btns for the stats */
   domBtnStats = document.querySelectorAll(".js-btn--stats");
+  const graphPath = {"CoffeeWeek": "coffee/week"}
   for (const domBtnStat of domBtnStats) {
     domBtnStat.addEventListener("click", function () {
       resetBtnStats();
       domBtnStat.classList.add(classStatsSelected);
+      getAPI(`graph/${graphPath[domBtnStat.getAttribute("data-name")]}`, setDataForGraph);
     });
   }
 
@@ -486,6 +488,19 @@ const init = function () {
   getMapBoxes();
   /* Send the boxname to the api */
   getAPI(`meetingbox/Kitchen/info`, changeInfoMapBoxes);
+  getAPI(`graph/coffee/week`, setDataForGraph);
+};
+
+const setDataForGraph = function(data){
+  //data = JSON.parse(data)
+  /* Create 2 vars with the data */
+  data_labels = [];
+  data_values = []
+  for (const row of data) {
+    data_labels.push(row["WeekDay"])
+    data_values.push(row["_value"])
+  }
+  Graph(data_labels, data_values)
 };
 
 const Graph = function (data_labels, data_values) {
@@ -493,7 +508,6 @@ const Graph = function (data_labels, data_values) {
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
-      /* labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"], */
       labels: data_labels,
       datasets: [
         {
@@ -526,7 +540,7 @@ const Graph = function (data_labels, data_values) {
 const registeredServiceWorker = function () {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("./sw.js")
+      .register("sw.js")
       .then((registration) => {
         console.log("ServiceWorker running");
       })
