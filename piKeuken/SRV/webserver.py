@@ -20,6 +20,7 @@ from flask.templating import render_template
 from flask.wrappers import Response
 from flask_cors import CORS
 from flask_socketio import SocketIO
+from flask_sslify import SSLify
 
 import google_auth
 from Logic.server import Server
@@ -39,6 +40,7 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 authorization_error = 'You are not currently logged in.'
 
 app.register_blueprint(google_auth.app)
+sslify = SSLify(app)
 
 
 endpoint = '/api/v1'
@@ -52,16 +54,16 @@ server = Server()
 def time_status():
     global server
     try:
-        if google_auth.is_logged_in():
-            while True:
-                try:
-                    socketio.emit('status_coffee_left', {
-                                'status': server.check_coffee_status()})
-                    socketio.emit('status_dishwasher', {
-                                'status': server.check_status_dishwasher()})
-                    sleep(11)
-                except Exception as ex:
-                    logging.error(ex)
+        #if google_auth.is_logged_in():
+        while True:
+            try:
+                socketio.emit('status_coffee_left', {
+                            'status': server.check_coffee_status()})
+                socketio.emit('status_dishwasher', {
+                            'status': server.check_status_dishwasher()})
+                sleep(11)
+            except Exception as ex:
+                logging.error(ex)
     except Exception as ex:
         logging.error(ex)
 
@@ -113,6 +115,9 @@ def connect():
 
         """ Status of the rooms """
         socketio.emit('status_rooms', {'status': server.status_meeting_box})
+        
+        """ Coffee settings """
+        socketio.emit('coffee_settings', (server.coffee.get_coffee_settings()))
 
         """ Send serverstatus to the clients """
         socketio.emit('status_server')
@@ -312,6 +317,18 @@ def get_notifications():
         logging.error(ex)
         return str(ex)
 
+@app.route(endpoint + '/test_settings')
+def test_settings():
+    try:
+        if google_auth.is_logged_in():
+            global server
+            user_info = google_auth.get_user_info()
+            return json.dumps(server.coffee.get_coffee_settings())
+        return authorization_error
+    except Exception as ex:
+        logging.error(ex)
+        return str(ex)
+
 @app.route(endpoint + '/notifications/<notification_id>', methods = ['POST'])
 def notifications_viewed(notification_id):
     try:
@@ -322,6 +339,30 @@ def notifications_viewed(notification_id):
             server.notifications.notification_viewed(
                 notification_id, user_info["id"])
             return jsonify({'status': True, 'nid': notification_id})
+        return authorization_error
+    except Exception as ex:
+        logging.error(ex)
+        return jsonify({'status': False})
+
+@app.route(endpoint + '/settings/coffee', methods = ['POST'])
+def change_coffee_settings():
+    try:
+        if google_auth.is_logged_in():
+            global server
+            """ Chech if the values are correct """
+            user_info=google_auth.get_user_info()
+            client_data = request.get_json()
+            coffee_left_threshold = float(client_data["coffee_left_threshold"])*1000.0
+            delivery_time = int(client_data["delivery_time"])
+            mail_supplier = client_data["mail_supplier"]
+            client_data["coffee_left_threshold"] = str(coffee_left_threshold)
+            client_data["mail_message"] = client_data["mail_message"].replace('\n', '<br>')
+            """ Check if all values are valid """
+            if coffee_left_threshold>0 and coffee_left_threshold<=90000 and delivery_time>0 and delivery_time<=111 and len(mail_supplier)>0:
+                server.coffee.change_settings(client_data, user_info["id"])
+            else:
+                return jsonify({'status': False})
+            return jsonify({'status': True})
         return authorization_error
     except Exception as ex:
         logging.error(ex)

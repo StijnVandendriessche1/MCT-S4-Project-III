@@ -29,6 +29,9 @@ class DB:
             #""" Create the table where you can view wich persons has read the messages """
             self.execute(
                 "CREATE TABLE IF NOT EXISTS tb_notifications_viewed(notification_id VARCHAR(41), user_id int, datetime DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY(notification_id) REFERENCES tb_notifications(id))")
+            #""" Create the settings_tables """
+            self.execute(
+                "CREATE TABLE IF NOT EXISTS tb_settings(name VARCHAR(91) PRIMARY KEY, value VARCHAR(255), user_id int, datetime DATETIME DEFAULT CURRENT_TIMESTAMP)")
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
