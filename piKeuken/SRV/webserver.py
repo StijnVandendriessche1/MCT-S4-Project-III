@@ -122,7 +122,7 @@ def connect():
 
         """ Coffee chart """
         #socketio.emit('coffee_chart', jsonify({"data": server.get_coffee_day_of_week()}))
-        socketio.emit('coffee_chart', server.get_coffee_day_of_week())
+        #socketio.emit('coffee_chart', server.get_coffee_day_of_week())
 
         """ Send serverstatus to the clients """
         socketio.emit('status_server')
@@ -320,10 +320,10 @@ def get_notifications():
         return authorization_error
     except Exception as ex:
         logging.error(ex)
-        return str(ex)
+        return "Error"
 
-@app.route(endpoint + '/test_chart')
-def get_test():
+@app.route(endpoint + '/graph/coffee/week')
+def get_graph_coffee_week():
     try:
         if google_auth.is_logged_in():
             global server
@@ -332,7 +332,7 @@ def get_test():
         return authorization_error
     except Exception as ex:
         logging.error(ex)
-        return str(ex)
+        return "Error"
 
 @app.route(endpoint + '/notifications/<notification_id>', methods=['POST'])
 def notifications_viewed(notification_id):

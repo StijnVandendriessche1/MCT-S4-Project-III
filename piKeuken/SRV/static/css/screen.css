@@ -609,7 +609,7 @@ span {
 .c-card__canvas {
   width: 100%;
   height: auto;
-  border: 3px solid var(--global-accent);
+  /* border: 3px solid var(--global-accent); */
 }
 
 .c-card__stats--list {
