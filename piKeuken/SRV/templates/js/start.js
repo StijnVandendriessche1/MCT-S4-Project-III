@@ -6,6 +6,7 @@ let domReady = false;
 
 let isclicked = false;
 let isSettingsClicked = false;
+let graphLabel;
 
 let notificationsNotViewed = [],
   apiCoffeeSettingsSend = false;
@@ -82,7 +83,7 @@ socket.on("new_notification", function (data) {
 }); */
 
 socket.on("coffee_settings", function (data) {
-  log(data)
+  log(data);
   /* Change the settings in the inputfields from the coffee */
   for (const setting in data) {
     if (data.hasOwnProperty(setting)) {
@@ -363,12 +364,19 @@ const loadDOM = function () {
   }
   /* Load the btns for the stats */
   domBtnStats = document.querySelectorAll(".js-btn--stats");
-  const graphPath = {"CoffeeWeek": "coffee/week"}
+  const graphPath = {
+    "CoffeeWeek": ["coffee/week", "WeekDay"],
+    "temperatureRoom": ["temperature/room", "host"],
+  };
   for (const domBtnStat of domBtnStats) {
     domBtnStat.addEventListener("click", function () {
       resetBtnStats();
       domBtnStat.classList.add(classStatsSelected);
-      getAPI(`graph/${graphPath[domBtnStat.getAttribute("data-name")]}`, setDataForGraph);
+      graphLabel = graphPath[domBtnStat.getAttribute("data-name")][1];
+      getAPI(
+        `graph/${graphPath[domBtnStat.getAttribute("data-name")][0]}`,
+        setDataForGraph
+      );
     });
   }
 
@@ -488,22 +496,24 @@ const init = function () {
   getMapBoxes();
   /* Send the boxname to the api */
   getAPI(`meetingbox/Kitchen/info`, changeInfoMapBoxes);
+  graphLabel = "WeekDay";
   getAPI(`graph/coffee/week`, setDataForGraph);
 };
 
-const setDataForGraph = function(data){
+const setDataForGraph = function (data) {
   //data = JSON.parse(data)
   /* Create 2 vars with the data */
   data_labels = [];
-  data_values = []
+  data_values = [];
   for (const row of data) {
-    data_labels.push(row["WeekDay"])
-    data_values.push(row["_value"])
+    data_labels.push(row[graphLabel]);
+    data_values.push(row["_value"]);
   }
-  Graph(data_labels, data_values)
+  Graph(data_labels, data_values);
 };
 
 const Graph = function (data_labels, data_values) {
+  document.getElementById("Stats").innerHTML = "";
   var ctx = document.getElementById("Stats").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "bar",
@@ -511,14 +521,10 @@ const Graph = function (data_labels, data_values) {
       labels: data_labels,
       datasets: [
         {
-          label: "Mean Coffee Left in g",
+          label: "Mean",
           data: data_values,
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)"
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)"
-          ],
+          backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)"],
           borderWidth: 1,
         },
       ],
