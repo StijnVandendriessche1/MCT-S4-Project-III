@@ -194,3 +194,16 @@ class Server:
         except Exception as ex:
             logging.error(ex)
             raise ex
+    
+    def get_temperature_by_room(self):
+        try:
+            query ="""  |> range(start: 2018-05-22T23:30:00Z)
+                        |> filter(fn: (r) => r["_measurement"] == "sensordata")
+                        |> filter(fn: (r) => r["_field"] == "temperature")
+                        |> mean(column: "_value")
+                        """
+            temperature = self.influxdb.get_data(query, False)
+            return temperature.to_json(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex

@@ -197,3 +197,279 @@ information about how to avoid this problem.
 2020-06-13 16:24:30,058	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:24:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk4KvY&sid=248366c888044afdab28e2001619a45f HTTP/1.1[0m" 200 -
 2020-06-13 16:24:40,499	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:24:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk4L5m&sid=248366c888044afdab28e2001619a45f HTTP/1.1[0m" 200 -
 2020-06-13 16:24:51,736	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:24:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk4Ney&sid=248366c888044afdab28e2001619a45f HTTP/1.1[0m" 200 -
+2020-06-13 16:29:43,561	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:29:43,561	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:29:43,584	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:29:48,635	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5Ygl HTTP/1.1[0m" 200 -
+2020-06-13 16:29:51,922	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:51] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,558	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,562	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,571	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,577	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,581	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,800	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5YtW&sid=8c70b99316a04dba8590f142da93795e HTTP/1.1[0m" 200 -
+2020-06-13 16:29:52,988	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5ZrG HTTP/1.1[0m" 200 -
+2020-06-13 16:29:53,208	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:53] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:29:53,253	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:53] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:29:53,421	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:53] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:29:53,881	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:53] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:29:54,433	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:54] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:29:54,841	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:54] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:29:56,060	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:29:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5ZxW&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:30:00,396	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:00] "[33mGET /api/v1/graph/undefined HTTP/1.1[0m" 404 -
+2020-06-13 16:30:03,008	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:03] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:30:07,327	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5ahT&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:30:15,166	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:15] "[33mGET /api/v1/graph/undefined HTTP/1.1[0m" 404 -
+2020-06-13 16:30:18,136	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:18] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:30:18,591	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5dRX&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:30:18,608	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:18] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk5g29&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:30:19,202	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5gBX&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:30:29,860	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:30:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk5gL4&sid=6be874c844e545049677b21900b3b225 HTTP/1.1[0m" 200 -
+2020-06-13 16:41:46,676	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:41:46,676	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:41:46,699	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:41:50,171	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:41:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk8IiR HTTP/1.1[0m" 200 -
+2020-06-13 16:45:51,104	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:45:51,104	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:45:51,125	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:45:51,814	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9DT2 HTTP/1.1[0m" 200 -
+2020-06-13 16:45:58,627	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:58] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,262	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,270	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,273	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,279	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,284	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,522	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9E19&sid=1d5b38999c7246489bfaa82cdef28e36 HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,835	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9Fs1 HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,911	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:45:59,956	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:45:59] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:46:00,346	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:00] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:46:00,576	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:00] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:46:01,128	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:01] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:46:01,354	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:01] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:46:02,552	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9F-V&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:07,912	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:07] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:46:08,518	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:08] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:46:13,739	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9Gew&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:24,937	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9JNk&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:25,451	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:25] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9M57&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:25,556	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9M6h&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:36,131	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9MGR&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:48,352	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9Orb&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:50,569	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:50] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9SN3&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:50,569	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9RqY&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:46:59,533	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:46:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9SNI&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:10,727	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9UZF&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:15,584	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:15] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9YTx&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:15,584	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9XI9&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:21,916	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9YU3&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:33,102	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9a0_&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:40,590	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:40] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9eai&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:40,591	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9cln&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:44,296	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9ean&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:47:55,486	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:47:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9fUh&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:05,597	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:05] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9khQ&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:05,597	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9iDW&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:06,722	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9khW&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:17,921	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9kz5&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:29,127	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9ni4&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:30,607	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:30] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9qoA&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:30,607	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9qRA&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:40,307	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9qoI&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:51,512	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9t9r&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:55,614	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:55] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAk9wuw&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:48:55,615	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:48:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9vu-&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:02,791	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9wv3&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:14,737	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9yf9&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:20,622	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:20] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkA0_i&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:20,622	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAk9_Zp&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:25,924	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA0_n&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:37,104	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA2Id&sid=4015a6e6d3d8497ab37f03f349bad5c1 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:47,829	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:49:47,829	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:49:47,851	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:49:51,627	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA8NN HTTP/1.1[0m" 200 -
+2020-06-13 16:49:58,608	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:58] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,188	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA8aG&sid=29e100437b2843dcb5e8ae9fad066c71 HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,245	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,253	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,256	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,668	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAARP HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,873	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:49:59,906	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:49:59] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:50:00,062	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:00] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:50:00,501	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:00] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:50:00,524	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:00] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:50:00,609	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:00] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:50:10,359	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAAXv&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:21,606	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAD8w&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:24,681	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:24] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkAGeY&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:24,682	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAFue&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:32,793	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAGep&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:43,983	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAIdS&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:49,698	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:49] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkAMlS&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:49,698	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkALMI&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:50:55,160	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:50:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAMlb&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:06,342	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAO4y&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:14,708	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:14] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkASsE&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:14,708	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAQpf&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:17,526	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkASsN&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:19,250	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:19] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:51:29,167	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkATYQ&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:39,715	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:39] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkAYz0&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:39,716	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:39] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAWOH&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:40,343	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAYz8&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:51:51,621	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:51:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAZ6v&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:02,796	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:02] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAbt9&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:04,723	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:04] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkAf3o&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:04,724	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:04] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAebl&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:14,031	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAf3u&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:25,205	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAhLI&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:29,731	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:29] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkAlAW&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:29,731	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAk3u&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:36,394	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAlAf&sid=3cc03f88276a4a8f88d9b07efeb593dc HTTP/1.1[0m" 200 -
+2020-06-13 16:52:42,682	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:52:42,682	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:52:42,708	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:52:43,414	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAo6l HTTP/1.1[0m" 200 -
+2020-06-13 16:52:54,053	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:52:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAoWU&sid=e977967ca8a34e01bde3a06a6b3b63a4 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:05,230	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAr6g&sid=e977967ca8a34e01bde3a06a6b3b63a4 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:06,882	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,515	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,522	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,532	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,540	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,547	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,760	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAtrJ&sid=e977967ca8a34e01bde3a06a6b3b63a4 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:07,978	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAuPV HTTP/1.1[0m" 200 -
+2020-06-13 16:53:08,350	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:08] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:53:08,476	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:08] "[37mGET /static/favicon-32x32.png HTTP/1.1[0m" 200 -
+2020-06-13 16:53:08,511	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:08] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:53:08,697	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:08] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:53:08,782	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:08] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:53:09,375	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:09] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:53:09,495	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:09] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:53:13,686	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:13] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-13 16:53:16,408	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkAuWL&sid=d6f21bff4c1e42e19a127aa316302e81 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:37,828	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:53:37,828	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:53:37,850	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:53:38,533	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:38] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA_Mb HTTP/1.1[0m" 200 -
+2020-06-13 16:53:41,906	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:41] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,545	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,553	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,559	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,567	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,594	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,788	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkA_ze&sid=ed726dfbc5f9471ab9308ddc3f1c1414 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:42,964	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkB0z7 HTTP/1.1[0m" 200 -
+2020-06-13 16:53:43,213	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:43] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:53:43,255	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:43] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:53:43,420	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:43] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:53:43,873	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:43] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:53:44,398	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:44] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:53:44,592	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:44] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:53:47,270	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:47] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-13 16:53:49,179	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:53:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkB12u&sid=b05aa6c782ff4b95a768143563a42058 HTTP/1.1[0m" 200 -
+2020-06-13 16:54:00,364	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:54:00] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkB2Zz&sid=b05aa6c782ff4b95a768143563a42058 HTTP/1.1[0m" 200 -
+2020-06-13 16:56:03,058	ERROR -- MainProcess google_auth.py:46 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:56:03,059	ERROR -- MainProcess webserver.py:85 -- Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request.  Consult the documentation on testing for
+information about how to avoid this problem.
+2020-06-13 16:56:03,085	INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-13 16:56:03,690	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBYci HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,268	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,417	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBZPl&sid=db347392534d4305ac0ecd2dffcb7c84 HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,911	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,918	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,922	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,926	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-13 16:56:14,930	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:14] "[37mGET /static/cache.appcache HTTP/1.1[0m" 200 -
+2020-06-13 16:56:15,343	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBc9R HTTP/1.1[0m" 200 -
+2020-06-13 16:56:15,557	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:15] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-13 16:56:15,607	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:15] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-13 16:56:15,760	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:15] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-13 16:56:16,228	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:16] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-13 16:56:16,512	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:16] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-13 16:56:16,688	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:16] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:56:25,635	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBcFr&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:56:36,814	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBemc&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:56:40,350	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:40] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkBiMS&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:56:40,350	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBhVG&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:56:48,051	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBiMX&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:56:57,746	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:57] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-13 16:56:59,256	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:56:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBkEr&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:05,361	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:05] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkBoTB&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:05,362	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBmzy&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:10,431	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBoTQ&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:18,798	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:18] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-13 16:57:21,630	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBpiY&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:26,141	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:26] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:57:27,643	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:27] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:57:30,991	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:30] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkBua5&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:30,991	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBsRX&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:32,810	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBujo&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:44,014	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBvAC&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:48,851	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:48] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-13 16:57:55,212	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkBxvG&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:56,611	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:56] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkB-qS&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:56,611	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:56] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkB-eE&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:57:56,874	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:57:56] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-13 16:58:06,393	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:58:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkB--7&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:58:17,575	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:58:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkC1Mx&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:58:21,618	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:58:21] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NAkC54m&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -
+2020-06-13 16:58:21,618	INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [13/Jun/2020 16:58:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NAkC45f&sid=1baad319fbac4484ab11877863cdea0c HTTP/1.1[0m" 200 -

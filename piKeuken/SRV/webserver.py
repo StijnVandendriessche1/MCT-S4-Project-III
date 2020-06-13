@@ -334,6 +334,18 @@ def get_graph_coffee_week():
         logging.error(ex)
         return "Error"
 
+@app.route(endpoint + '/graph/temperature/room')
+def get_graph_temperature_room():
+    try:
+        if google_auth.is_logged_in():
+            global server
+            user_info = google_auth.get_user_info()
+            return server.get_temperature_by_room()
+        return authorization_error
+    except Exception as ex:
+        logging.error(ex)
+        return "Error"
+
 @app.route(endpoint + '/notifications/<notification_id>', methods=['POST'])
 def notifications_viewed(notification_id):
     try:
