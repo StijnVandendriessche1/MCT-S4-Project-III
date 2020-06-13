@@ -346,6 +346,18 @@ def get_graph_temperature_room():
         logging.error(ex)
         return "Error"
 
+@app.route(endpoint + '/graph/humidity/room')
+def get_graph_humidity_room():
+    try:
+        if google_auth.is_logged_in():
+            global server
+            user_info = google_auth.get_user_info()
+            return server.get_humidity_by_room()
+        return authorization_error
+    except Exception as ex:
+        logging.error(ex)
+        return "Error"
+
 @app.route(endpoint + '/notifications/<notification_id>', methods=['POST'])
 def notifications_viewed(notification_id):
     try:
