@@ -7,7 +7,8 @@ let domReady = false;
 let isclicked = false;
 let isSettingsClicked = false;
 
-let notificationsNotViewed = [];
+let notificationsNotViewed = [],
+  apiCoffeeSettingsSend = false;
 
 let domToggleSwitch,
   domToggleSwitchRoomBoxes,
@@ -66,6 +67,21 @@ socket.on("welcome", function (data) {
 
 socket.on("new_notification", function (data) {
   getNotifications(data);
+});
+
+socket.on("coffee_settings", function (data) {
+  log(data)
+  /* Change the settings in the inputfields from the coffee */
+  for (const setting in data) {
+    if (data.hasOwnProperty(setting)) {
+      const settingValue = data[setting];
+      log(settingValue);
+      log(setting);
+      document.querySelector(
+        `.js-coffee-settings__input--${setting}`
+      ).value = settingValue;
+    }
+  }
 });
 
 /* Functions */
@@ -282,6 +298,36 @@ const resetBtnStats = function () {
     domBtnStat.classList.remove(classStatsSelected);
   }
 };
+const changeCoffeeSettingsResponse = function (data) {
+  if (data["status"]) {
+    document.querySelector(".js-coffee-settings--msg").innerHTML = "Changed!";
+  } else {
+    document.querySelector(".js-coffee-settings--msg").innerHTML =
+      "Changes failed!";
+  }
+  apiCoffeeSettingsSend = false;
+};
+const changeCoffeeSettings = function () {
+  if (!apiCoffeeSettingsSend) {
+    /* Get all the data from the fields */
+    const domInputFields = document.querySelectorAll(
+      ".js-coffee-settings__input"
+    );
+    newSettings = {};
+    for (const domInputField of domInputFields) {
+      newSettings[domInputField.getAttribute("data-setting")] =
+        domInputField.value;
+    }
+    /* Send it to the API */
+    getAPI(
+      `settings/coffee`,
+      changeCoffeeSettingsResponse,
+      "POST",
+      JSON.stringify(newSettings)
+    );
+    apiCoffeeSettingsSend = true;
+  }
+};
 /* Load toggleSwitches */
 const loadDOM = function () {
   domMapCardBody = document.querySelector(".js-map-card__body");
@@ -294,6 +340,13 @@ const loadDOM = function () {
     log(domToggleSwitch);
     domToggleSwitch.addEventListener("change", function () {
       toggleSwitch(domToggleSwitch);
+    });
+    const domBtnCoffeeSettings = document.querySelector(
+      ".js-coffee-settings__btn"
+    );
+    domBtnCoffeeSettings.addEventListener("submit", function (e) {
+      e.preventDefault();
+      changeCoffeeSettings();
     });
   }
   /* Load the btns for the stats */
