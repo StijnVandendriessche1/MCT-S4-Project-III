@@ -11,12 +11,9 @@ logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
 
 class GetVars:
     def __init__(self):
-        try:
-            """ /home/pi/project3/settings.json """
-            self.file = "piKeuken\settings.json"
-            self.vars = self.start()
-        except Exception as ex:
-            logging.error(ex)
+        """ /home/pi/project3/settings.json """
+        self.file = "/home/pi/project3/settings.json"
+        self.vars = self.start()
 
     def start(self):
         try:

@@ -29,3 +29,7 @@ Pi/Models/__pycache__/
 Pi/SRV/Logging.txt
 
 piKeuken/Logic/__pycache__/
+
+piKeuken/.idea/
+
+piKeuken/data/logging.txt
