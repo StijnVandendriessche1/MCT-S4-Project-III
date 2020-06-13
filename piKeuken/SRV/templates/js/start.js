@@ -367,6 +367,7 @@ const loadDOM = function () {
   const graphPath = {
     "CoffeeWeek": ["coffee/week", "WeekDay"],
     "temperatureRoom": ["temperature/room", "host"],
+    "humidityRoom": ["humidity/room", "host"]
   };
   for (const domBtnStat of domBtnStats) {
     domBtnStat.addEventListener("click", function () {
