@@ -54,7 +54,7 @@ server = Server()
 def time_status():
     global server
     try:
-        #if google_auth.is_logged_in():
+        # if google_auth.is_logged_in():
         while True:
             try:
                 socketio.emit('status_coffee_left', {
@@ -76,7 +76,8 @@ def notifications():
             while True:
                 try:
                     message = server.notifications.notification_queue.get()
-                    socketio.emit('new_notification', json.dumps(server.get_notifications(user_info)))
+                    socketio.emit('new_notification', json.dumps(
+                        server.get_notifications(user_info)))
                     server.notifications.notification_queue.task_done()
                 except Exception as ex:
                     logging.error(ex)
@@ -115,9 +116,13 @@ def connect():
 
         """ Status of the rooms """
         socketio.emit('status_rooms', {'status': server.status_meeting_box})
-        
+
         """ Coffee settings """
-        socketio.emit('coffee_settings', (server.coffee.get_coffee_settings()))
+        socketio.emit('coffee_settings', server.coffee.get_coffee_settings())
+
+        """ Coffee chart """
+        #socketio.emit('coffee_chart', jsonify({"data": server.get_coffee_day_of_week()}))
+        socketio.emit('coffee_chart', server.get_coffee_day_of_week())
 
         """ Send serverstatus to the clients """
         socketio.emit('status_server')
@@ -317,25 +322,25 @@ def get_notifications():
         logging.error(ex)
         return str(ex)
 
-@app.route(endpoint + '/test_settings')
-def test_settings():
+@app.route(endpoint + '/test_chart')
+def get_test():
     try:
         if google_auth.is_logged_in():
             global server
             user_info = google_auth.get_user_info()
-            return json.dumps(server.coffee.get_coffee_settings())
+            return server.get_coffee_day_of_week()
         return authorization_error
     except Exception as ex:
         logging.error(ex)
         return str(ex)
 
-@app.route(endpoint + '/notifications/<notification_id>', methods = ['POST'])
+@app.route(endpoint + '/notifications/<notification_id>', methods=['POST'])
 def notifications_viewed(notification_id):
     try:
         if google_auth.is_logged_in():
             global server
             """ When the user viewed the notification """
-            user_info=google_auth.get_user_info()
+            user_info = google_auth.get_user_info()
             server.notifications.notification_viewed(
                 notification_id, user_info["id"])
             return jsonify({'status': True, 'nid': notification_id})
@@ -351,14 +356,16 @@ def change_coffee_settings():
             global server
             """ Chech if the values are correct """
             user_info=google_auth.get_user_info()
-            client_data = request.get_json()
-            coffee_left_threshold = float(client_data["coffee_left_threshold"])*1000.0
-            delivery_time = int(client_data["delivery_time"])
-            mail_supplier = client_data["mail_supplier"]
-            client_data["coffee_left_threshold"] = str(coffee_left_threshold)
-            client_data["mail_message"] = client_data["mail_message"].replace('\n', '<br>')
+            client_data=request.get_json()
+            coffee_left_threshold=float(
+                client_data["coffee_left_threshold"])*1000.0
+            delivery_time=int(client_data["delivery_time"])
+            mail_supplier=client_data["mail_supplier"]
+            client_data["coffee_left_threshold"]=str(coffee_left_threshold)
+            client_data["mail_message"]=client_data["mail_message"].replace(
+                '\n', '<br>')
             """ Check if all values are valid """
-            if coffee_left_threshold>0 and coffee_left_threshold<=90000 and delivery_time>0 and delivery_time<=111 and len(mail_supplier)>0:
+            if coffee_left_threshold > 0 and coffee_left_threshold <= 90000 and delivery_time > 0 and delivery_time <= 111 and len(mail_supplier) > 0:
                 server.coffee.change_settings(client_data, user_info["id"])
             else:
                 return jsonify({'status': False})
@@ -370,7 +377,8 @@ def change_coffee_settings():
 
 try:
     if __name__ == '__main__':
-        app.run(host="0.0.0.0", port="5000", ssl_context=('piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'), threaded=True)
+        app.run(host = "0.0.0.0", port = "5000", ssl_context = (
+            'piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'), threaded = True)
 except Exception as ex:
     logging.error(ex)
 

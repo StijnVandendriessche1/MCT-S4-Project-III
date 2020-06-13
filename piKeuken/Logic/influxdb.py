@@ -80,11 +80,11 @@ class Influxdb:
             logging.error(ex)
             raise ex
 
-    def get_data(self, query_in, change_format=True):
+    def get_data(self, query_in, change_format=True, in_import = ""):
         try:
             if change_format:
                 query_in += ' |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
-            query = f'from(bucket: "{self.bucket}") {query_in}'
+            query = f'{in_import} from(bucket: "{self.bucket}") {query_in}'
             results = self.client.query_api().query_data_frame(query, org=self.org)
             return results
         except Exception as ex:
