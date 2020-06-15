@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="/cache.appcache">
+<html lang="en" manifest="{{ url_for('static', filename='cache.appcache') }}">
 
 <head>
     <meta charset="utf-8" />
@@ -8,10 +8,10 @@
     <meta name="description" content="Dashboard Influxdb 2.0 stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#000000">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
@@ -45,8 +45,8 @@
                                             d="M39.7,35.868l-2.257-4.515a2.886,2.886,0,0,1-.3-1.274V20a14.3,14.3,0,0,0-8.883-13.21,5.673,5.673,0,0,0-10.8,0A14.3,14.3,0,0,0,8.572,20V30.074a2.847,2.847,0,0,1-.3,1.286L6.012,35.871A2.857,2.857,0,0,0,8.572,40h9.372a5.662,5.662,0,0,0,9.835,0h9.366A2.857,2.857,0,0,0,39.7,35.865ZM13.2,34.288l.189-.377a8.69,8.69,0,0,0,.906-3.829V20a8.572,8.572,0,1,1,17.144,0V30.079a8.627,8.627,0,0,0,.9,3.835l.189.374-19.33,0Z"
                                             transform="translate(555.142 177.143)" fill="#f90" />
                                     </g>
-                                    <g id="notification_circle" class="js-notification--count" data-name="notification circle"
-                                        transform="translate(-2 -1)">
+                                    <g id="notification_circle" class="js-notification--count"
+                                        data-name="notification circle" transform="translate(-2 -1)">
                                         <circle id="Circle" data-name="Circle" cx="12" cy="12" r="12"
                                             transform="translate(103 72)" fill="red" />
                                         <text id="notification_number" data-name="notification number"
@@ -396,8 +396,9 @@
                                     </div>
                                 </div>
                                 <div class="c-settings">
-                                    <svg class="c-settings__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="40" height="40" viewBox="0 0 40 40">
+                                    <svg class="c-settings__icon" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
+                                        viewBox="0 0 40 40">
                                         <g id="Mask_Group_24" data-name="Mask Group 24" transform="translate(-15 -440)"
                                             clip-path="url(#clip-path)">
                                             <path id="settings"
@@ -409,6 +410,32 @@
                                         <div class="c-settings__item">
                                             Settings
                                         </div>
+                                        <div class="c-settings__item js-coffee-settings--msg">
+                                        </div>
+                                        <form class="c-button js-coffee-settings__btn">
+                                            <div class="c-settings__item">
+                                                <div>Coffee left threshold (in Kg):</div>
+                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--coffee_left_threshold" data-setting="coffee_left_threshold"
+                                                        type="number" min="1" step="0.1" required></div>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <div>Delivery time (in days):</div>
+                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--delivery_time"
+                                                        data-setting="delivery_time" type="number" min="1" required></div>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <div>Mail supplier:</div>
+                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--mail_supplier"
+                                                        data-setting="mail_supplier" type="email" required></div>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <div>Mail:</div>
+                                                <div><textarea class="js-coffee-settings__input js-coffee-settings__input--mail_message" data-setting="mail_message"></textarea></div>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <button>Save</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -479,14 +506,14 @@
 
                                         <div class="c-card__stats--list">
                                             <div class="c-stats c-stats--selected js-btn--stats"
-                                                data-name="MeetingRoom">
-                                                Meeting Room
+                                                data-name="CoffeeWeek">
+                                                Mean Coffee Left - Week
                                             </div>
-                                            <div class="c-stats js-btn--stats" data-name="Dishwasher">
-                                                Dishwasher
+                                            <div class="c-stats js-btn--stats" data-name="temperatureRoom">
+                                                Temperature Rooms
                                             </div>
-                                            <div class="c-stats js-btn--stats" data-name="Coffee">
-                                                Coffee
+                                            <div class="c-stats js-btn--stats" data-name="humidityRoom">
+                                                Humidity Rooms
                                             </div>
                                         </div>
                                     </div>

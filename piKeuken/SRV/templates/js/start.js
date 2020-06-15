@@ -6,8 +6,10 @@ let domReady = false;
 
 let isclicked = false;
 let isSettingsClicked = false;
+let graphLabel;
 
-let notificationsNotViewed = [];
+let notificationsNotViewed = [],
+  apiCoffeeSettingsSend = false;
 
 let domToggleSwitch,
   domToggleSwitchRoomBoxes,
@@ -66,6 +68,33 @@ socket.on("welcome", function (data) {
 
 socket.on("new_notification", function (data) {
   getNotifications(data);
+});
+
+/* socket.on("coffee_chart", function (data) {
+  data = JSON.parse(data)
+  //Create 2 vars with the data 
+  data_labels = [];
+  data_values = []
+  for (const row of data) {
+    data_labels.push(row["WeekDay"])
+    data_values.push(row["_value"])
+  }
+  Graph(data_labels, data_values)
+}); */
+
+socket.on("coffee_settings", function (data) {
+  log(data);
+  /* Change the settings in the inputfields from the coffee */
+  for (const setting in data) {
+    if (data.hasOwnProperty(setting)) {
+      const settingValue = data[setting];
+      log(settingValue);
+      log(setting);
+      document.querySelector(
+        `.js-coffee-settings__input--${setting}`
+      ).value = settingValue;
+    }
+  }
 });
 
 /* Functions */
@@ -282,6 +311,36 @@ const resetBtnStats = function () {
     domBtnStat.classList.remove(classStatsSelected);
   }
 };
+const changeCoffeeSettingsResponse = function (data) {
+  if (data["status"]) {
+    document.querySelector(".js-coffee-settings--msg").innerHTML = "Changed!";
+  } else {
+    document.querySelector(".js-coffee-settings--msg").innerHTML =
+      "Changes failed!";
+  }
+  apiCoffeeSettingsSend = false;
+};
+const changeCoffeeSettings = function () {
+  if (!apiCoffeeSettingsSend) {
+    /* Get all the data from the fields */
+    const domInputFields = document.querySelectorAll(
+      ".js-coffee-settings__input"
+    );
+    newSettings = {};
+    for (const domInputField of domInputFields) {
+      newSettings[domInputField.getAttribute("data-setting")] =
+        domInputField.value;
+    }
+    /* Send it to the API */
+    getAPI(
+      `settings/coffee`,
+      changeCoffeeSettingsResponse,
+      "POST",
+      JSON.stringify(newSettings)
+    );
+    apiCoffeeSettingsSend = true;
+  }
+};
 /* Load toggleSwitches */
 const loadDOM = function () {
   domMapCardBody = document.querySelector(".js-map-card__body");
@@ -295,13 +354,30 @@ const loadDOM = function () {
     domToggleSwitch.addEventListener("change", function () {
       toggleSwitch(domToggleSwitch);
     });
+    const domBtnCoffeeSettings = document.querySelector(
+      ".js-coffee-settings__btn"
+    );
+    domBtnCoffeeSettings.addEventListener("submit", function (e) {
+      e.preventDefault();
+      changeCoffeeSettings();
+    });
   }
   /* Load the btns for the stats */
   domBtnStats = document.querySelectorAll(".js-btn--stats");
+  const graphPath = {
+    "CoffeeWeek": ["coffee/week", "WeekDay"],
+    "temperatureRoom": ["temperature/room", "host"],
+    "humidityRoom": ["humidity/room", "host"]
+  };
   for (const domBtnStat of domBtnStats) {
     domBtnStat.addEventListener("click", function () {
       resetBtnStats();
       domBtnStat.classList.add(classStatsSelected);
+      graphLabel = graphPath[domBtnStat.getAttribute("data-name")][1];
+      getAPI(
+        `graph/${graphPath[domBtnStat.getAttribute("data-name")][0]}`,
+        setDataForGraph
+      );
     });
   }
 
@@ -414,7 +490,6 @@ const getMapBoxes = function () {
 /* init-function --> For starting the script */
 const init = function () {
   loadDOM();
-  Graph();
   getAPI("meetingbox/status", resetMeetingBoxes);
   getAPI("notifications", getNotifications);
   socket.emit("connect");
@@ -422,34 +497,35 @@ const init = function () {
   getMapBoxes();
   /* Send the boxname to the api */
   getAPI(`meetingbox/Kitchen/info`, changeInfoMapBoxes);
+  graphLabel = "WeekDay";
+  getAPI(`graph/coffee/week`, setDataForGraph);
 };
 
-const Graph = function () {
+const setDataForGraph = function (data) {
+  //data = JSON.parse(data)
+  /* Create 2 vars with the data */
+  data_labels = [];
+  data_values = [];
+  for (const row of data) {
+    data_labels.push(row[graphLabel]);
+    data_values.push(row["_value"]);
+  }
+  Graph(data_labels, data_values);
+};
+
+const Graph = function (data_labels, data_values) {
+  document.getElementById("Stats").innerHTML = "";
   var ctx = document.getElementById("Stats").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: data_labels,
       datasets: [
         {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-          ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
-          ],
+          label: "Mean",
+          data: data_values,
+          backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+          borderColor: ["rgba(255, 99, 132, 1)"],
           borderWidth: 1,
         },
       ],
@@ -471,7 +547,7 @@ const Graph = function () {
 const registeredServiceWorker = function () {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("./sw.js")
+      .register("sw.js")
       .then((registration) => {
         console.log("ServiceWorker running");
       })

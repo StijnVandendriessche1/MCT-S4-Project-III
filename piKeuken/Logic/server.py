@@ -160,3 +160,63 @@ class Server:
         except Exception as ex:
             logging.error(ex)
             raise ex
+    
+    def get_day_of_week(self, day):
+        if day == 0:
+            return "Sunday"
+        elif day == 1:
+            return "Monday"
+        elif  day == 3:
+            return "Tuesday"
+        elif  day == 4:
+            return "Wednesday"
+        elif day == 5:
+            return "Thursday"
+        elif day == 6:
+            return "Friday"
+        elif  day == 7:
+            return "Saturday"
+        return "Unknown"
+    
+    def get_coffee_day_of_week(self):
+        try:
+            query ="""  |> range(start: 2018-05-22T23:30:00Z)
+                        |> filter(fn: (r) => r["host"] == "Coffee")
+                        |> filter(fn: (r) => r["_field"] == "weight")
+                        |> map(fn: (r) => ({ r with "DayOfWeek": date.weekDay(t: r["_time"])}))
+                        |> group(columns:["DayOfWeek"])
+                        |> mean(column: "_value")
+                        """
+            coffee_data = self.influxdb.get_data(query, False, 'import "date"')
+            #""" Add a week name to the dataframe """
+            coffee_data["WeekDay"] = [self.get_day_of_week(day) for day in coffee_data["DayOfWeek"]]
+            return coffee_data.to_json(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex
+    
+    def get_temperature_by_room(self):
+        try:
+            query ="""  |> range(start: 2018-05-22T23:30:00Z)
+                        |> filter(fn: (r) => r["_measurement"] == "sensordata")
+                        |> filter(fn: (r) => r["_field"] == "temperature")
+                        |> mean(column: "_value")
+                        """
+            temperature = self.influxdb.get_data(query, False)
+            return temperature.to_json(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex
+    
+    def get_humidity_by_room(self):
+        try:
+            query ="""  |> range(start: 2018-05-22T23:30:00Z)
+                        |> filter(fn: (r) => r["_measurement"] == "sensordata")
+                        |> filter(fn: (r) => r["_field"] == "humidity")
+                        |> mean(column: "_value")
+                        """
+            temperature = self.influxdb.get_data(query, False)
+            return temperature.to_json(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex

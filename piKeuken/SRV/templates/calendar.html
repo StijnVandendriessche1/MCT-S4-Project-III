@@ -17,8 +17,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
 
     <link rel="manifest" href="{{ url_for('static', filename='json/manifest.json') }} ">
 
@@ -34,8 +34,8 @@
                 <div class="c-container o-container">
                     <div class="c-top__content">
                         <div class="c-notificaton">
-                            <svg class="c-notificaton__bell js-bell" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="45" height="47" viewBox="0 0 45 47">
+                            <svg class="c-notificaton__bell js-bell" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="47" viewBox="0 0 45 47">
                                 <g id="bell_icon" data-name="bell icon" transform="translate(-80 -48)">
                                     <g id="bell" data-name="bell" transform="translate(-478 -132)"
                                         clip-path="url(#clip-path)">
@@ -80,7 +80,8 @@
 
                         <div class="c-app__user">
                             <div class="c-app__img">
-                                <img class="c-img__profile" loading="lazy" alt="profilepic"src="{{user_info["picture"]}}" alt="profilepic">
+                                <img class="c-img__profile" loading="lazy" alt="profilepic"
+                                    src="{{user_info["picture"]}}" alt="profilepic">
                             </div>
                             <div class="c-app__userdetails">
                                 <div class="c-app__name">
@@ -97,98 +98,82 @@
             </div>
             <div class="o-container c-container">
                 <div class="c-dashboard">
-                    <div class="c-dashboard__item u-x-span-6-bp3 u-y-span-3-bp3 js-on">
+                    <div class="c-dashboard__item c-dashboard__mini-calendar u-x-span-6-bp3 u-y-span-3-bp3 js-on">
                         <div class="c-calendar__header">
-                            <div class="c-calendar__title">
+                            <div class="c-calendar__title js-mini-month">
                                 June 2020
                             </div>
                             <div class="c-calendar__arrows">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                <svg class="js-mini-left c-arrow" xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 32 32">
                                     <g id="Group_55" data-name="Group 55" transform="translate(-872 -200)">
-                                      <g id="ic_chevron_left" transform="translate(872 200)">
-                                        <rect id="rectangle" width="32" height="32" fill="none"/>
-                                        <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z" transform="translate(1.478)" fill="#ababab" fill-rule="evenodd"/>
-                                      </g>
+                                        <g id="ic_chevron_left" transform="translate(872 200)">
+                                            <rect id="rectangle" width="32" height="32" fill="none" />
+                                            <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z"
+                                                transform="translate(1.478)" fill="#ababab" fill-rule="evenodd" />
+                                        </g>
                                     </g>
-                                  </svg>
-                                
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                </svg>
+
+                                <svg class="js-mini-right c-arrow" xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 32 32">
                                     <g id="Group_56" data-name="Group 56" transform="translate(904 232) rotate(-180)">
-                                      <g id="ic_chevron_left" transform="translate(872 200)">
-                                        <rect id="rectangle" width="32" height="32" fill="none"/>
-                                        <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z" transform="translate(1.478)" fill="#ababab" fill-rule="evenodd"/>
-                                      </g>
+                                        <g id="ic_chevron_left" transform="translate(872 200)">
+                                            <rect id="rectangle" width="32" height="32" fill="none" />
+                                            <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z"
+                                                transform="translate(1.478)" fill="#ababab" fill-rule="evenodd" />
+                                        </g>
                                     </g>
-                                  </svg>
+                                </svg>
                             </div>
                         </div>
-                        <div class="c-calendar__content">
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Mon</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Tue</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Wed</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Thu</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Fri</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Sat</div>
-                            <div class="c-calendar__item c-calendar__day u-x-span-1-bp3 u-y-span-1-bp3">Sun</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">1</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">2</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">3</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">4</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">5</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">6</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">7</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">8</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">9</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">10</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">11</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">12</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">13</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">14</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">15</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">16</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">17</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">18</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">19</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">20</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">21</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">22</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">23</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">24</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">25</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">26</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">27</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">28</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">29</div>
-                            <div class="c-calendar__item u-x-span-1-bp3 u-y-span-1-bp3">30</div>
-                            <div class="c-calendar__item c-calendar__next u-x-span-1-bp3 u-y-span-1-bp3">1</div>
-                            <div class="c-calendar__item c-calendar__next u-x-span-1-bp3 u-y-span-1-bp3">2</div>
-                            <div class="c-calendar__item c-calendar__next u-x-span-1-bp3 u-y-span-1-bp3">3</div>
-                            <div class="c-calendar__item c-calendar__next u-x-span-1-bp3 u-y-span-1-bp3">4</div>
-                            <div class="c-calendar__item c-calendar__next u-x-span-1-bp3 u-y-span-1-bp3">5</div>
-                        </div>
+                        <table class="c-calendar__content">
+                            <thead>
+                                <tr>
+                                    <th class="c-calendar__day">Mon</th>
+                                    <th class="c-calendar__day">Tue</th>
+                                    <th class="c-calendar__day">Wed</th>
+                                    <th class="c-calendar__day">Thu</th>
+                                    <th class="c-calendar__day">Fri</th>
+                                    <th class="c-calendar__day">Sat</th>
+                                    <th class="c-calendar__day">Sun</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="js-mini-body">
+
+                            </tbody>
+                        </table>
                     </div>
                     <div class="c-dashboard__item c-dashboard__disabled u-x-span-18-bp3 u-y-span-1-bp3">
                         <div class="c-calendar__header">
                             <div class="c-calendar__week">
-                                June 1 - 7, 2020
+                                <div class="c-calendar__title--head js-title">
+                                    June 1 - 7, 2020
+                                </div>
                                 <div class="c-calendar__arrows c-calendar__arrows--main">
-                                    <svg class="c-arrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <svg class="c-arrow js-left" xmlns="http://www.w3.org/2000/svg" width="32"
+                                        height="32" viewBox="0 0 32 32">
                                         <g id="Group_55" data-name="Group 55" transform="translate(-872 -200)">
-                                          <g id="ic_chevron_left" transform="translate(872 200)">
-                                            <rect id="rectangle" width="32" height="32" fill="none"/>
-                                            <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z" transform="translate(1.478)" fill="#ababab" fill-rule="evenodd"/>
-                                          </g>
+                                            <g id="ic_chevron_left" transform="translate(872 200)">
+                                                <rect id="rectangle" width="32" height="32" fill="none" />
+                                                <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z"
+                                                    transform="translate(1.478)" fill="#ababab" fill-rule="evenodd" />
+                                            </g>
                                         </g>
-                                      </svg>
-                                    
-                                      <svg class="c-arrow" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                                        <g id="Group_56" data-name="Group 56" transform="translate(904 232) rotate(-180)">
-                                          <g id="ic_chevron_left" transform="translate(872 200)">
-                                            <rect id="rectangle" width="32" height="32" fill="none"/>
-                                            <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z" transform="translate(1.478)" fill="#ababab" fill-rule="evenodd"/>
-                                          </g>
+                                    </svg>
+
+                                    <svg class="c-arrow js-right" xmlns="http://www.w3.org/2000/svg" width="32"
+                                        height="32" viewBox="0 0 32 32">
+                                        <g id="Group_56" data-name="Group 56"
+                                            transform="translate(904 232) rotate(-180)">
+                                            <g id="ic_chevron_left" transform="translate(872 200)">
+                                                <rect id="rectangle" width="32" height="32" fill="none" />
+                                                <path id="path" d="M20.333,8.333,18,6,8,16,18,26l2.333-2.333L12.667,16Z"
+                                                    transform="translate(1.478)" fill="#ababab" fill-rule="evenodd" />
+                                            </g>
                                         </g>
-                                      </svg>
+                                    </svg>
                                 </div>
                             </div>
                             <div class="c-calendar__actions">
@@ -196,7 +181,7 @@
 
                                 </div>
                                 <div class="c-calendar__add">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -271,7 +256,7 @@
                                     <div class="c-meeting__time">
                                         8:00 - 9:00
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
 
@@ -280,142 +265,142 @@
 
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
-                            </div>
-                            <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
 
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
-                                
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
+                            </div>
+                            <div class="c-calendar__hour-box u-x-span-1-bp3">
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp3">
 
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp-3">
-                                
+
                             </div>
                             <div class="c-calendar__hour-box u-x-span-1-bp-3">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -425,7 +410,8 @@
                         </div>
                         <ul class="o-list c-option-list">
                             <li class="c-form-field c-form-field--option c-option-list__item">
-                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios" id="radio1" checked>
+                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios"
+                                    id="radio1" checked>
                                 <label class="c-label c-label--option c-custom-option c-label__rooms" for="radio1">
                                     <span class="c-custom-option__fake-input c-custom-option__fake-input--radio">
                                         <span class="c-custom-option__symbol"></span>
@@ -434,7 +420,8 @@
                                 </label>
                             </li>
                             <li class="c-form-field c-form-field--option c-option-list__item">
-                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios" id="radio2">
+                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios"
+                                    id="radio2">
                                 <label class="c-label c-label--option c-custom-option c-label__rooms" for="radio2">
                                     <span class="c-custom-option__fake-input c-custom-option__fake-input--radio">
                                         <span class="c-custom-option__symbol"></span>
@@ -443,7 +430,8 @@
                                 </label>
                             </li>
                             <li class="c-form-field c-form-field--option c-option-list__item">
-                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios" id="radio3">
+                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios"
+                                    id="radio3">
                                 <label class="c-label c-label--option c-custom-option c-label__rooms" for="radio3">
                                     <span class="c-custom-option__fake-input c-custom-option__fake-input--radio">
                                         <span class="c-custom-option__symbol"></span>
@@ -452,7 +440,8 @@
                                 </label>
                             </li>
                             <li class="c-form-field c-form-field--option c-option-list__item">
-                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios" id="radio4">
+                                <input class="o-hide-accessible c-option c-option--hidden" type="radio" name="radios"
+                                    id="radio4">
                                 <label class="c-label c-label--option c-custom-option c-label__rooms" for="radio4">
                                     <span class="c-custom-option__fake-input c-custom-option__fake-input--radio">
                                         <span class="c-custom-option__symbol"></span>
@@ -466,17 +455,17 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 </body>
 
 <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register("../sw.js").then(function(registration) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register("../sw.js").then(function (registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
+            }, function (err) {
                 // registration failed :(
                 console.log('ServiceWorker registration failed: ', err);
             });
