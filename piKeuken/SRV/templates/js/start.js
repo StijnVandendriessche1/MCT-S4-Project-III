@@ -19,6 +19,9 @@ let domToggleSwitch,
   domMapCardTitle,
   domBoxNotifications,
   domNotificationCount;
+
+let graphAlreadyCreated = false,
+  myChart;
 const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
@@ -365,9 +368,9 @@ const loadDOM = function () {
   /* Load the btns for the stats */
   domBtnStats = document.querySelectorAll(".js-btn--stats");
   const graphPath = {
-    "CoffeeWeek": ["coffee/week", "WeekDay"],
-    "temperatureRoom": ["temperature/room", "host"],
-    "humidityRoom": ["humidity/room", "host"]
+    CoffeeWeek: ["coffee/week", "WeekDay"],
+    temperatureRoom: ["temperature/room", "host"],
+    humidityRoom: ["humidity/room", "host"],
   };
   for (const domBtnStat of domBtnStats) {
     domBtnStat.addEventListener("click", function () {
@@ -502,6 +505,7 @@ const init = function () {
 };
 
 const setDataForGraph = function (data) {
+  log(data);
   //data = JSON.parse(data)
   /* Create 2 vars with the data */
   data_labels = [];
@@ -514,10 +518,14 @@ const setDataForGraph = function (data) {
 };
 
 const Graph = function (data_labels, data_values) {
-  document.getElementById("Stats").innerHTML = "";
-  //var ctx = document.getElementById("Stats").getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  var myChart = new Chart(ctx, {
+  log(data_labels);
+  log(data_values);
+  //document.getElementById("Stats").innerHTML = "";
+  let ctx = document.getElementById("Stats").getContext("2d");
+  /* Check if there is already a chart*/
+  if (graphAlreadyCreated) myChart.destroy();
+  else graphAlreadyCreated = true;
+  myChart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: data_labels,
