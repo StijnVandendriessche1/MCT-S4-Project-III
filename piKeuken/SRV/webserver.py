@@ -1,28 +1,18 @@
-import functools
 import json
 import logging
 import os
-import random
 import sys
 # from crypt import methods
 from threading import Thread
 from time import sleep
-from zipfile import ZipInfo
 
-import flask
-import google.oauth2.credentials
-import googleapiclient.discovery
-import jsonpickle
-import pandas as pd
-from authlib.client import OAuth2Session
-from flask import Flask, jsonify, redirect, request, url_for
+import google_auth
+from flask import Flask, jsonify, redirect, request
 from flask.templating import render_template
-from flask.wrappers import Response
 from flask_cors import CORS
 from flask_socketio import SocketIO
 from flask_sslify import SSLify
 
-import google_auth
 from Logic.server import Server
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +20,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 
-logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+logging.basicConfig(filename="/home/pi/project3/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 app = Flask(__name__)
@@ -402,7 +392,7 @@ def change_coffee_settings():
 try:
     if __name__ == '__main__':
         app.run(host = "0.0.0.0", port = "5000", ssl_context = (
-            'piKeuken/SRV/cert.pem', 'piKeuken/SRV/key.pem'), threaded = True)
+            '/home/pi/project3/SRV/cert.pem', '/home/pi/project3/SRV/key.pem'), threaded = True)
 except Exception as ex:
     logging.error(ex)
 
