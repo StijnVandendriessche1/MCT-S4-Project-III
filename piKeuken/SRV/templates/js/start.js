@@ -515,7 +515,8 @@ const setDataForGraph = function (data) {
 
 const Graph = function (data_labels, data_values) {
   document.getElementById("Stats").innerHTML = "";
-  var ctx = document.getElementById("Stats").getContext("2d");
+  //var ctx = document.getElementById("Stats").getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
