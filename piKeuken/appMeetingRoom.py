@@ -39,11 +39,13 @@ def run_light():
     global light
     while run:
         light = 100 - (mcp.read_channel(1) / 1024 * 100)
+    print("light stopped")
 
 def run_temp():
     global temp
     while run:
         temp = mcp.read_channel(0) / 1024 * 330
+    print("temperatuur stopped")
 
 def run_hmdt():
     global hmdt
@@ -51,15 +53,17 @@ def run_hmdt():
         result = dht.read()
         if result.is_valid():
             hmdt = result.humidity
+    print("humidity stopped")
 
 def run_human_count():
     global prs
     ml = MLObjectDetection()
-    while mqtt.runPrs:
+    while mqtt.runPrs and run:
         prs = ml.count_total_objects
         time.sleep(3)
     ml.stop()
     del ml
+    print("personcounter stopped")
 
 def queue_listener():
     global actPrs
@@ -69,8 +73,11 @@ def queue_listener():
             actPrs = threading.Thread(target=run_human_count)
             actPrs.start()
             q.task_done()
+        elif com == "quit":
+            break
         else:
             print("command not found")
+    print("queuelistener stopped")
 
 def door_change(a):
     doorstate = door.pressed
@@ -111,15 +118,15 @@ try:
         time.sleep(5)
 
 except KeyboardInterrupt as ex:
+    print("Shutting down...")
+except Exception as ex:
+    print("something went wrong")
+    print(ex)
+finally:
     try:
-        print(ex)
         run = False
-        time.sleep(10)
+        q.put("quit")
         GPIO.cleanup()
         print("goodbye")
     except Exception as e:
         print(e)
-        run = False
-        time.sleep(10)
-        GPIO.cleanup()
-        print("goodbye")

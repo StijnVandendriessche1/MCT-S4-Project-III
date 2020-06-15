@@ -39,11 +39,13 @@ def run_light():
     global light
     while run:
         light = 100 - (mcp.read_channel(1) / 1024 * 100)
+    print("light stopped")
 
 def run_temp():
     global temp
     while run:
         temp = mcp.read_channel(0) / 1024 * 330
+    print("temperature stopped")
 
 def run_hmdt():
     global hmdt
@@ -51,6 +53,7 @@ def run_hmdt():
         result = dht.read()
         if result.is_valid():
             hmdt = result.humidity
+    print("humidity stopped")
 
 def tril_vaat(a):
     print("trilling gedetecteerd")
@@ -102,21 +105,15 @@ try:
         time.sleep(5)
 
 except KeyboardInterrupt as ex:
+    print("Shutting down...")
+except Exception as ex:
+    print("something went wrong")
+    print(ex)
+finally:
     try:
-        print("Shutting down...")
         run = False
-        time.sleep(10)
+        q.put("quit")
         GPIO.cleanup()
         print("goodbye")
     except Exception as e:
         print(e)
-        run = False
-        time.sleep(10)
-        GPIO.cleanup()
-        print("goodbye")
-except Exception as ex:
-    print("something went wrong")
-    run = False
-    time.sleep(10)
-    GPIO.cleanup()
-    print("goodbye")

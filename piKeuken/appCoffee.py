@@ -24,5 +24,15 @@ try:
         mqtt.send(y)
         print(y)
         time.sleep(5)
-except:
-    GPIO.cleanup()
+except KeyboardInterrupt as ex:
+    print("Shutting down...")
+except Exception as ex:
+    print("something went wrong")
+    print(ex)
+finally:
+    try:
+        run = False
+        GPIO.cleanup()
+        print("goodbye")
+    except Exception as e:
+        print(e)
