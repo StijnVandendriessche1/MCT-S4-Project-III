@@ -13,8 +13,8 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
-                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class MQTT:
     def __init__(self, device_id, queue = None):
@@ -41,7 +41,6 @@ class MQTT:
 
     def start(self):
         try:
-            #self.client = mqtt.Client(client_id=self._CLIENT_ID)
             # authorization is handled purely with JWT, no user/pass, so username can be whatever
             self.client.username_pw_set(
                 username='unused',
@@ -113,9 +112,6 @@ class MQTT:
 
     def send(self, payload):
         try:
-            """ #payload = '{{ "ts": {}, "temperature": {}, "pressure": {}, "humidity": {} }}'.format(int(time.time()), temperature, light, humidity)
-            payload = "hallo" """
-
             self.client.publish(self.topic, payload, qos=1)
             time.sleep(1)
         except Exception as ex:

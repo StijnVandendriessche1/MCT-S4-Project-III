@@ -19,8 +19,8 @@ from Logic.get_vars import GetVars
 from Models.sensordata import Sensordata
 from Models.data import Data
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
-                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Influxdb:
     def __init__(self, token_type="Pi"):
@@ -90,23 +90,3 @@ class Influxdb:
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
-
-
-""" test = Influxdb('Kitchen', True)
-a = test.get_data('|> range(start: -24h) |> filter(fn: (r) => r["_measurement"] == "temperature_room")')
-print(a) """
-
-""" test = Influxdb("sensors", "Kitchen", "Pi")
-a = test.get_data('|> range(start:-111h)')
-print(a) """
-
-#testa = Influxdb("Cloud")
-""" data = []
-data.append(Data("status", False))
-data.append(Data("ai", "meeting"))
-sensordata = Sensordata("Jos", "TestServer", data)
-print(testa.write_data(sensordata)) """
-
-
-""" test = Influxdb("Pi")
-a = test.get_data('|> range(start: -24) |> filter(fn: (r) => r["_measurement"] == "sensordata") |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")') """
