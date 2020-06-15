@@ -11,7 +11,7 @@ import logging
 
 """ Class for the dishwasher """
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Dishwasher:
