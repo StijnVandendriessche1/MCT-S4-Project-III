@@ -28,8 +28,8 @@ AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth?access_type=of
 
 AUTHORIZATION_SCOPE = 'openid email profile'
 
-AUTH_REDIRECT_URI = "https://localhost:5000/google/auth"
-BASE_URI = "https://localhost:5000"
+AUTH_REDIRECT_URI = get_vars.get_var("RedirectURL")
+BASE_URI = get_vars.get_var("BaseURL")
 CLIENT_ID = get_vars.get_var("Google_Login_ClientID")
 CLIENT_SECRET = get_vars.get_var("Google_Login_Secret")
 

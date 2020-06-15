@@ -15,7 +15,7 @@ logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
 class DB:
     def __init__(self):
         try:
-            self.database_location = "piKeuken/data/ootf.db"
+            self.database_location = "/home/pi/project3/data/ootf.db"
             """ Create the tables if they don't exist'"""
             self.create_start_tables()
         except Exception as ex:
