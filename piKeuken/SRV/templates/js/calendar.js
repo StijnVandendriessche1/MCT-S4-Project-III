@@ -1,5 +1,8 @@
+var moment;
+
 const production = false,
     ip = "https://localhost:5000";
+let socket = io.connect(ip);
 
 let isclicked = false;
 
@@ -18,22 +21,72 @@ let months = [
     "December",
 ];
 
-let today = new Date();
-let day = new Date();
-let currentMonth = today.getMonth();
-let currentYear = today.getFullYear();
-let firstDayOfWeek = today.getDate() - today.getDay() + 1;
+let today = moment();
+let day = moment();
+let now = new Date();
+let currentMonth = now.getMonth();
+let currentYear = now.getFullYear();
+
+socket.on("welcome", function (data) {
+    log(data);
+});
+
+socket.on("new_notification", function (data) {
+    getNotifications(data);
+});
+
+/* Functions */
+const changeNotificationCount = function () {
+    log(notificationsNotViewed);
+    if (notificationsNotViewed.length == 0) {
+        domNotificationCount.style.display = "none";
+    } else {
+        domNotificationCount.style.display = "block";
+        domNotificationCount.querySelector(
+            ".js-notification-count__count"
+        ).innerHTML = notificationsNotViewed.length;
+    }
+};
+const notificationViewed = function (data) {
+    log(data);
+    /* Delete the notification from the viewed list */
+    notificationsNotViewed.splice(notificationsNotViewed.indexOf(data.nid), 1);
+    changeNotificationCount();
+};
+const checkNotificationViewed = function () {
+    /* Check if there are notifications that are not viewed */
+    if (notificationsNotViewed.length > 0) {
+        /* Set the notifications as viewed */
+        for (const notification of notificationsNotViewed) {
+            /* Send it to the API */
+            getAPI(`notifications/${notification}`, notificationViewed, "POST");
+        }
+    }
+};
+/* Function for getting the notifications */
+const getNotifications = function (data) {
+    let output = "";
+    for (const notification of data) {
+        /* Check if the notification already viewed */
+        if (!notification["viewed"])
+            notificationsNotViewed.push(notification["nid"]);
+        output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]}${notification["msg"]}</div>`;
+    }
+    changeNotificationCount();
+    domBoxNotifications.innerHTML = output;
+};
 
 const showNotifications = function () {
-    box = document.getElementById("js-box");
     if (isclicked == false) {
-        box.style.display = "block";
+        domBoxNotifications.style.display = "block";
         isclicked = true;
-        console.log("showed");
+        log("showed");
+        /* Check if the notifications are viewed */
+        checkNotificationViewed();
     } else {
-        box.style.display = "none";
+        domBoxNotifications.style.display = "none";
         isclicked = false;
-        console.log("hidden");
+        log("hidden");
     }
 };
 
@@ -67,57 +120,57 @@ const daysInMonth = function (iMonth, iYear) {
 };
 
 const nextTitle = function () {
-    day.setDate(day.getDate() + 7);
+    day.day(7);
     console.log(day);
     calendarheader(day);
 };
 
 const previousTitle = function () {
-    day.setDate(day.getDate() - 7);
+    day.day(-7);
     console.log(day);
     calendarheader(day);
 };
 
 const calendarheader = function (date) {
-    let firstfullday = new Date();
-    firstfullday.setDate(
-        day.getDate() - day.getDay() + (day.getDay() == 1 ? -6 : 1)
-    );
-    let firstday = firstfullday.getDate();
-    let lastfullday = new Date();
-    lastfullday.setDate(firstfullday.getDate() + 6);
-    let lastday = lastfullday.getDate();
+    let firstday = date.clone().weekday(1);
+    let lastday = date.clone().weekday(7);
+
+    console.log(firstday);
+    console.log(lastday);
 
     titlename = document.querySelector(".js-title");
     titlename.innerHTML =
-        months[firstfullday.getMonth()] +
+        months[firstday.month()] +
         " " +
-        firstday +
+        firstday.date() +
         " - " +
-        months[lastfullday.getMonth()] +
+        months[lastday.month()] +
         " " +
-        lastday +
+        lastday.date() +
         ", " +
-        date.getFullYear();
+        firstday.year();
+
+    monday = document.querySelector(".js-monday");
+    monday.innerHTML = date.clone().weekday(1).date();
+
+    tuesday = document.querySelector(".js-tuesday");
+    tuesday.innerHTML = date.clone().weekday(2).date();
+
+    wednesday = document.querySelector(".js-wednesday");
+    wednesday.innerHTML = date.clone().weekday(3).date();
+
+    thursday = document.querySelector(".js-thursday");
+    thursday.innerHTML = date.clone().weekday(4).date();
+
+    friday = document.querySelector(".js-friday");
+    friday.innerHTML = date.clone().weekday(5).date();
+
+    saturday = document.querySelector(".js-saturday");
+    saturday.innerHTML = date.clone().weekday(6).date();
+
+    sunday = document.querySelector(".js-sunday");
+    sunday.innerHTML = date.clone().weekday(7).date();
 };
-
-/* 
-const calendartitle = function (firstDayOfWeek, month, year) {
-    MonthDays = daysInMonth(currentMonth, currentYear);
-    let lastDay =
-        (firstDayOfWeek + 7) / MonthDays > 1
-            ? (lastday = ((firstDayOfWeek + 6) % MonthDays) - MonthDays)
-            : (lastday = firstDayOfWeek + 6);
-    titlename = document.querySelector(".js-title");
-    titlename.innerHTML =
-        months[currentMonth] +
-        " " +
-        firstDayOfWeek +
-        " - " +
-        lastDay +
-        ", " +
-        year;
-}; */
 
 const MiniCalendar = function (month, year) {
     let firstDay = new Date(year, month).getDay();
@@ -147,9 +200,9 @@ const MiniCalendar = function (month, year) {
                 cell.className += "c-calendar__item";
                 cellText = document.createTextNode(date);
                 if (
-                    date === today.getDate() &&
-                    year === today.getFullYear() &&
-                    month === today.getMonth()
+                    date === now.getDate() &&
+                    year === now.getFullYear() &&
+                    month === now.getMonth()
                 ) {
                     cell.classList.add("c-calendar__mini--current");
                     row.classList.add("c-calendar__mini--week");
@@ -164,9 +217,23 @@ const MiniCalendar = function (month, year) {
     }
 };
 
+const loadDOM = function () {
+    domBoxNotifications = document.querySelector(".js-box-notification");
+    domNotificationCount = document.querySelector(".js-notification--count");
+
+    domBell = document.querySelector(".js-bell");
+    domBell.addEventListener("click", function () {
+        showNotifications();
+    });
+};
+
 /* init-function --> For starting the script */
 const init = function () {
     console.log("script stared");
+
+    loadDOM();
+    getAPI("notifications", getNotifications);
+
     MiniCalendar(currentMonth, currentYear);
     calendarheader(day);
 
@@ -190,16 +257,12 @@ const init = function () {
     right.addEventListener("click", function () {
         nextTitle();
     });
-
-    domBell = document.querySelector(".js-bell");
-    domBell.addEventListener("click", function () {
-        showNotifications();
-    });
 };
 
 /* When the script starts */
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Js Started");
+    moment().format();
     registeredServiceWorker();
     init();
 });
