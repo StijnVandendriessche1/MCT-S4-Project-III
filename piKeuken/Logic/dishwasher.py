@@ -26,7 +26,7 @@ class Dishwasher:
             if not settings_data.empty:
                 """ Send a notification """
                 pass
-
+""" TODO --> Wanneer hij 2 of 3 keer de threshold overschreid --> Dan staat hij aan """
 
 """ test = Dishwasher()
 test.check_state() """

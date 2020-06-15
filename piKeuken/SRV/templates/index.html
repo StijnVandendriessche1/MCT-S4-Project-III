@@ -50,9 +50,10 @@
                                         <circle id="Circle" data-name="Circle" cx="12" cy="12" r="12"
                                             transform="translate(103 72)" fill="red" />
                                         <text id="notification_number" data-name="notification number"
-                                            transform="translate(111 73)" fill="#fff" font-size="16"
-                                            font-family="Roboto-Medium, Roboto" font-weight="500">
-                                            <tspan x="-0.547" y="17" class="js-notification-count__count">1</tspan>
+                                            transform="translate(103 78)" fill="#fff" font-size="16"
+                                            font-family="Roboto-Medium, Roboto" font-weight="500" x="12" y="12"
+                                            text-anchor="middle" class="js-notification-count__count">
+                                            1
                                         </text>
                                     </g>
                                 </g>
@@ -396,9 +397,9 @@
                                     </div>
                                 </div>
                                 <div class="c-settings">
-                                    <svg class="c-settings__icon" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40"
-                                        viewBox="0 0 40 40">
+                                    <svg class="c-settings__icon js-settings__coffee-icon"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="40" height="40" viewBox="0 0 40 40">
                                         <g id="Mask_Group_24" data-name="Mask Group 24" transform="translate(-15 -440)"
                                             clip-path="url(#clip-path)">
                                             <path id="settings"
@@ -406,7 +407,7 @@
                                                 transform="translate(10.106 435.106)" fill="#f90" />
                                         </g>
                                     </svg>
-                                    <div class="c-settings__box">
+                                    <div class="c-settings__box js-settings__coffee">
                                         <div class="c-settings__item">
                                             Settings
                                         </div>
@@ -415,22 +416,29 @@
                                         <form class="c-button js-coffee-settings__btn">
                                             <div class="c-settings__item">
                                                 <div>Coffee left threshold (in Kg):</div>
-                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--coffee_left_threshold" data-setting="coffee_left_threshold"
-                                                        type="number" min="1" step="0.1" required></div>
+                                                <div><input
+                                                        class="js-coffee-settings__input js-coffee-settings__input--coffee_left_threshold"
+                                                        data-setting="coffee_left_threshold" type="number" min="1"
+                                                        step="0.1" required></div>
                                             </div>
                                             <div class="c-settings__item">
                                                 <div>Delivery time (in days):</div>
-                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--delivery_time"
-                                                        data-setting="delivery_time" type="number" min="1" required></div>
+                                                <div><input
+                                                        class="js-coffee-settings__input js-coffee-settings__input--delivery_time"
+                                                        data-setting="delivery_time" type="number" min="1" required>
+                                                </div>
                                             </div>
                                             <div class="c-settings__item">
                                                 <div>Mail supplier:</div>
-                                                <div><input class="js-coffee-settings__input js-coffee-settings__input--mail_supplier"
+                                                <div><input
+                                                        class="js-coffee-settings__input js-coffee-settings__input--mail_supplier"
                                                         data-setting="mail_supplier" type="email" required></div>
                                             </div>
                                             <div class="c-settings__item">
                                                 <div>Mail:</div>
-                                                <div><textarea class="js-coffee-settings__input js-coffee-settings__input--mail_message" data-setting="mail_message"></textarea></div>
+                                                <div><textarea
+                                                        class="js-coffee-settings__input js-coffee-settings__input--mail_message"
+                                                        data-setting="mail_message"></textarea></div>
                                             </div>
                                             <div class="c-settings__item">
                                                 <button>Save</button>
@@ -472,6 +480,23 @@
                                         Dishwasher
                                     </div>
                                 </div>
+                                <div class="c-settings">
+                                    <svg class="c-settings__icon js-settings__dishwasher-icon"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="40" height="40" viewBox="0 0 40 40">
+                                        <g id="Mask_Group_24" data-name="Mask Group 24" transform="translate(-15 -440)"
+                                            clip-path="url(#clip-path)">
+                                            <path id="settings"
+                                                d="M43.68,21.292l-3.7-1.228a15.484,15.484,0,0,0-1-2.423l1.743-3.485a1.66,1.66,0,0,0-.315-1.908L37.539,9.377a1.66,1.66,0,0,0-1.908-.315l-3.485,1.66a15.484,15.484,0,0,0-2.423-1l-1.228-3.7A1.66,1.66,0,0,0,26.835,4.9H22.869a1.66,1.66,0,0,0-1.577,1.129l-1.228,3.7a15.484,15.484,0,0,0-2.423,1l-3.485-1.66a1.66,1.66,0,0,0-1.908.315L9.377,12.248a1.66,1.66,0,0,0-.315,1.908l1.66,3.485a15.484,15.484,0,0,0-1,2.423l-3.7,1.228A1.66,1.66,0,0,0,4.9,22.869v4.049a1.66,1.66,0,0,0,1.129,1.66l3.7,1.228a15.484,15.484,0,0,0,1,2.423l-1.66,3.485a1.66,1.66,0,0,0,.315,1.908l2.871,2.871a1.66,1.66,0,0,0,1.908.315l3.485-1.743a15.484,15.484,0,0,0,2.423,1l1.228,3.7a1.66,1.66,0,0,0,1.577,1.129h4.049a1.66,1.66,0,0,0,1.66-1.129l1.228-3.7a15.483,15.483,0,0,0,2.423-1l3.485,1.743a1.66,1.66,0,0,0,1.908-.315l2.871-2.871a1.66,1.66,0,0,0,.315-1.908l-1.743-3.485a15.484,15.484,0,0,0,1-2.423l3.7-1.228a1.66,1.66,0,0,0,1.129-1.66V22.869A1.66,1.66,0,0,0,43.68,21.292Zm-18.786,11.9a8.3,8.3,0,1,1,8.3-8.3A8.3,8.3,0,0,1,24.893,33.191Z"
+                                                transform="translate(10.106 435.106)" fill="#f90" />
+                                        </g>
+                                    </svg>
+                                    <div class="c-settings__box js-settings__dishwasher">
+                                        <div class="c-settings__item">
+                                            Settings
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="c-card__body c-word js-word--dishwasher">
                                 ---
@@ -505,8 +530,7 @@
                                         </div>
 
                                         <div class="c-card__stats--list">
-                                            <div class="c-stats c-stats--selected js-btn--stats"
-                                                data-name="CoffeeWeek">
+                                            <div class="c-stats c-stats--selected js-btn--stats" data-name="CoffeeWeek">
                                                 Mean Coffee Left - Week
                                             </div>
                                             <div class="c-stats js-btn--stats" data-name="temperatureRoom">

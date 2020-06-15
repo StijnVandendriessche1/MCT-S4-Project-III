@@ -6,6 +6,7 @@ let domReady = false;
 
 let isclicked = false;
 let isSettingsClicked = false;
+let isSettingsClickedDishwasher = false;
 let graphLabel;
 
 let notificationsNotViewed = [],
@@ -19,6 +20,9 @@ let domToggleSwitch,
   domMapCardTitle,
   domBoxNotifications,
   domNotificationCount;
+
+  let graphAlreadyCreated = false,
+  myChart;
 const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
@@ -341,6 +345,19 @@ const changeCoffeeSettings = function () {
     apiCoffeeSettingsSend = true;
   }
 };
+const showSettingsDishwasher = function () {
+    box = document.querySelector(".js-settings__dishwasher");
+    console.log(box);
+    if (isSettingsClickedDishwasher == false) {
+        box.style.display = "block";
+        isSettingsClickedDishwasher = true;
+        console.log("showed");
+    } else {
+        box.style.display = "none";
+        isSettingsClickedDishwasher = false;
+        console.log("hidden");
+    }
+};
 /* Load toggleSwitches */
 const loadDOM = function () {
   domMapCardBody = document.querySelector(".js-map-card__body");
@@ -381,15 +398,20 @@ const loadDOM = function () {
     });
   }
 
-  domBell = document.querySelector(".js-bell");
+  let domBell = document.querySelector(".js-bell");
   domBell.addEventListener("click", function () {
     showNotifications();
   });
 
-  domSettings = document.querySelector(".c-settings__icon");
+  let domSettings = document.querySelector(".c-settings__icon");
   domSettings.addEventListener("click", function () {
     showSettings();
   });
+
+  let domDishwasher = document.querySelector(".js-settings__dishwasher-icon");
+    domDishwasher.addEventListener("click", function () {
+        showSettingsDishwasher();
+    });
 };
 
 const showNotifications = function () {
@@ -516,7 +538,10 @@ const setDataForGraph = function (data) {
 const Graph = function (data_labels, data_values) {
   document.getElementById("Stats").innerHTML = "";
   var ctx = document.getElementById("Stats").getContext("2d");
-  var myChart = new Chart(ctx, {
+  /* Check if there is already a chart*/
+  if (graphAlreadyCreated) myChart.destroy();
+  else graphAlreadyCreated = true;
+  myChart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: data_labels,

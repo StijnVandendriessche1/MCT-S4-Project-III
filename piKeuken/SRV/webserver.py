@@ -368,7 +368,7 @@ def change_coffee_settings():
     try:
         if google_auth.is_logged_in():
             global server
-            """ Chech if the values are correct """
+            """ Check if the values are correct """
             user_info=google_auth.get_user_info()
             client_data=request.get_json()
             coffee_left_threshold=float(

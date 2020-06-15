@@ -586,6 +586,7 @@ span {
 
 .c-card__title {
   display: flex;
+  width: 100%;
 }
 
 .c-card__title-text {
