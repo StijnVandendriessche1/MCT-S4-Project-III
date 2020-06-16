@@ -1348,6 +1348,15 @@ span {
   display: none;
 }
 
+.c-settings__save {
+  width: 100%;
+  background: var(--global-accent);
+  border: 1px solid var(--global-grey);
+  color: var(--global-white);
+  padding: 8px;
+  font-weight: 700;
+}
+
 .c-settings__box {
   background-color: var(--global-white);
   box-shadow: var(--shadow-box);

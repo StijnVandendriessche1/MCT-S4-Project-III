@@ -1,7 +1,8 @@
 var moment;
 
 const production = false,
-    ip = "https://192.168.238.2.xip.io:5000";
+    // ip = "https://192.168.238.2.xip.io:5000";
+    ip = "https://localhost:5000";
 let socket = io.connect(ip);
 
 let isclicked = false;
