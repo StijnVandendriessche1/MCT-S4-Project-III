@@ -562,6 +562,10 @@ span {
   min-height: 100vh;
 }
 
+.c-app__content {
+  margin-bottom: calc(var(--global-whitespace-xxl) * 2);
+}
+
 .c-app__top {
   border-bottom: 1px solid var(--global-title-line);
 }
