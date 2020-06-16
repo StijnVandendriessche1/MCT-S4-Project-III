@@ -11,8 +11,8 @@ import cv2
 import logging
 from time import sleep
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
-                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class MLObjectDetection:
     def __init__(self, objects = ["person"]):
@@ -35,10 +35,6 @@ class MLObjectDetection:
         """ Thread for counting the objects """
         counter_objects = Thread(target=self.count_objects)
         counter_objects.start()
-
-        """ Thread for processing the data """
-        #process_counter = Thread(target=self.process)
-        #process_counter.start()
 
     def start(self):
         try:
@@ -127,8 +123,3 @@ class MLObjectDetection:
         # finally, close the window
         cv2.destroyAllWindows()
         cv2.waitKey(1)
-
-#test = MLObjectDetection()
-#while True:
-    #print(test.count_total_objects)
-    #sleep(3)

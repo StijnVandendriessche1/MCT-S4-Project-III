@@ -21,8 +21,8 @@ sys.path.insert(0, BASE_DIR)
 from Logic.pub_sub_comment import PubSubComment
 from Logic.server import Server
 
-logging.basicConfig(filename="/home/pi/project3/data/logging.txt", level=logging.ERROR,
-                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 app = Flask(__name__)
 CORS(app)
@@ -114,10 +114,6 @@ def connect():
         """ Coffee settings """
         socketio.emit('coffee_settings', server.coffee.get_coffee_settings())
 
-        """ Coffee chart """
-        #socketio.emit('coffee_chart', jsonify({"data": server.get_coffee_day_of_week()}))
-        #socketio.emit('coffee_chart', server.get_coffee_day_of_week())
-
         """ Send serverstatus to the clients """
         socketio.emit('status_server')
     except Exception as ex:
@@ -199,7 +195,6 @@ def html(page):
         if google_auth.is_logged_in():
             user_info = google_auth.get_user_info()
             return render_template(f"{page}.html", user_info=user_info)
-            # return '<div>You are currently logged in as ' + user_info['given_name'] + '<div><pre>' + json.dumps(user_info, indent=4) + "</pre>"
         return redirect("/google/login")
     except Exception as ex:
         logging.error(ex)
@@ -400,7 +395,7 @@ def change_coffee_settings():
 try:
     if __name__ == '__main__':
         app.run(host = "0.0.0.0", port = "5000", ssl_context = (
-            '/home/pi/project3/SRV/cert.pem', '/home/pi/project3/SRV/key.pem'), threaded = True)
+            f'{BASE_DIR}/SRV/cert.pem', f'{BASE_DIR}/SRV/key.pem'), threaded = True)
 except Exception as ex:
     logging.error(ex)
 

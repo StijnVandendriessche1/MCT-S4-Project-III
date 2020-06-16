@@ -14,8 +14,8 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.db import DB
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
-                    format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
+                    format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class Notifications:
     def __init__(self):
@@ -86,7 +86,3 @@ class Notifications:
         except Exception as ex:
             logging.error(ex)
             raise ex
-
-
-""" test = Notifications()
-test.new_notifications_queue.put({"name": "Dit is een grote titel", "message":"Dit is een testbericht"}) """

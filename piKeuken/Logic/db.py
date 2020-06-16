@@ -9,13 +9,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class DB:
     def __init__(self):
         try:
-            self.database_location = "/home/pi/project3/data/ootf.db"
+            self.database_location = f"{BASE_DIR}/data/ootf.db"
             """ Create the tables if they don't exist'"""
             self.create_start_tables()
         except Exception as ex:
@@ -57,24 +57,3 @@ class DB:
             if read == False:
                 cursor.close()
             db.close()
-
-    """ def execute(self, command, par=(), read=False):
-        try:
-             #Open a connections with the database
-            db = sqlite3.connect(self.database_location)
-            db.row_factory = sqlite3.Row
-            connection.row_factory = sqlite3.dict_factory
-            cursor = db.cursor()
-            cursor.execute(command, par)
-            db.commit()
-            #Check if the data must be returned
-            if read:
-                return cursor.fetchall()
-        except Exception as ex:
-            logging.error(ex)
-            db.rollback()
-            raise ex
-        finally:
-            #Close the database connection
-            cursor.close()
-            db.close() """

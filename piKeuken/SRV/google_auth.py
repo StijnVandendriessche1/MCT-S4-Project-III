@@ -16,7 +16,7 @@ sys.path.insert(0, BASE_DIR)
 from Logic.get_vars import GetVars
 import logging
 
-logging.basicConfig(filename="piKeuken/data/logging.txt", level=logging.ERROR,
+logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 
