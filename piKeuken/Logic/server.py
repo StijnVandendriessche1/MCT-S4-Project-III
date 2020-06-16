@@ -146,6 +146,12 @@ class Server:
         try:
             query = f'|> range(start: 2018-05-22T23:30:00Z) |> last() |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r) => r["host"] == "{box}") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
             data_info = self.influxdb.get_data(query, False)
+            for i, r in enumerate(data_info):
+                for col in data_info.columns:
+                    try:
+                        data_info[col] = data_info[col].fillna(data_info.iloc[i][col])
+                    except:
+                        pass
             return data_info.to_json(orient="records")
         except Exception as ex:
             logging.error(ex)
