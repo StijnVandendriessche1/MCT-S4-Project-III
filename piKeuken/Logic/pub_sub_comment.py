@@ -13,26 +13,28 @@ from google.oauth2 import service_account
 from googleapiclient import discovery
 from googleapiclient.errors import HttpError
 import sys, os
+import jsonpickle
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/pi/cert.json'
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
 class PubSubComment:
-    def __init__(self):
+    def __init__(self, id):
         try:
-            self.registry_id="enmregistry"
+            self.registry_id="OfficeOfTheFuture"
             self.cloud_region="europe-west1"
-            self.project_id="iotcoredemo-send"
-            self.device_id="pidieter"
-            self.service_account_json="creds.json"
+            self.project_id="engaged-context-277613"
+            self.device_id=id
+            self.service_account_json="/home/pi/cert.json"
         except Exception as e:
             logging.error(e)
     
-    def send_message(self,message):
+    def send_message(self, message):
         try:
             """Send a command to a device."""
             # [START iot_send_command]

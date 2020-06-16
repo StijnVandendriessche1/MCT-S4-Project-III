@@ -1,5 +1,5 @@
 from Sensors.Mcp import Mcp
-import RPi
+#import RPi
 from RPi import GPIO
 from Sensors.dht11 import DHT11
 from Sensors.klasseknop import Button
@@ -87,7 +87,7 @@ def door_change(a):
     doorstate = str(doorstate.values[0])
     t = []
     t.append(Data("doorstate", doorstate).__dict__)
-    x = Sensordata("sensordata", "MeetingRoom", t)
+    x = Sensordata("sensordata", "GoldenEye", t)
     y = jsonpickle.encode(x.__dict__)
     mqtt.send(y)
     print(y)
@@ -104,18 +104,21 @@ try:
     door.on_change(door_change)
     door_change(0)
 
-    while True:
+    while run:
         t = []
         t.append(Data("temperature", temp).__dict__)
         t.append(Data("light", light).__dict__)
         t.append(Data("humidity", hmdt).__dict__)
         if mqtt.runPrs:
             t.append(Data("persons", prs.get('person')).__dict__)
-        x = Sensordata("sensordata", "MeetingRoom", t)
+        x = Sensordata("sensordata", "GoldenEye", t)
         y = jsonpickle.encode(x.__dict__)
         mqtt.send(y)
         print(y)
         time.sleep(5)
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")
 
 except KeyboardInterrupt as ex:
     print("Shutting down...")
@@ -123,10 +126,7 @@ except Exception as ex:
     print("something went wrong")
     print(ex)
 finally:
-    try:
-        run = False
-        q.put("quit")
-        GPIO.cleanup()
-        print("goodbye")
-    except Exception as e:
-        print(e)
+    run = False
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")

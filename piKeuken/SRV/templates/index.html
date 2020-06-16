@@ -59,20 +59,25 @@
                                 </g>
                             </svg>
                             <div class="c-notification__box js-box-notification">
-                                <div class="c-notification__item">
-                                    🚚 Your coffee is on it's way!
+                                <div class="c-notification__title">
+                                    Notifications
                                 </div>
-                                <div class="c-notification__item">
-                                    ☕ Your coffee has arrived to the office!
-                                </div>
-                                <div class="c-notification__item">
-                                    😢 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️
-                                </div>
-                                <div class="c-notification__item">
-                                    🍽 The Dishwasher is empty! Time to empty it!
-                                </div>
-                                <div class="c-notification__item">
-                                    💩 Don't forget to fill in the dishwasher!
+                                <div class="c-notifications js-notification-list">
+                                    <div class="c-notification__item">
+                                        🚚 Your coffee is on it's way!
+                                    </div>
+                                    <div class="c-notification__item">
+                                        ☕ Your coffee has arrived to the office!
+                                    </div>
+                                    <div class="c-notification__item">
+                                        😢 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️
+                                    </div>
+                                    <div class="c-notification__item">
+                                        🍽 The Dishwasher is empty! Time to empty it!
+                                    </div>
+                                    <div class="c-notification__item">
+                                        💩 Don't forget to fill in the dishwasher!
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -408,40 +413,63 @@
                                         </g>
                                     </svg>
                                     <div class="c-settings__box js-settings__coffee">
-                                        <div class="c-settings__item">
+                                        <div class="c-notification__title">
                                             Settings
                                         </div>
-                                        <div class="c-settings__item js-coffee-settings--msg">
+                                        <div class="c-settings__item c-settings__message js-coffee-settings--msg">
                                         </div>
                                         <form class="c-button js-coffee-settings__btn">
                                             <div class="c-settings__item">
-                                                <div>Coffee left threshold (in Kg):</div>
-                                                <div><input
-                                                        class="js-coffee-settings__input js-coffee-settings__input--coffee_left_threshold"
-                                                        data-setting="coffee_left_threshold" type="number" min="1"
-                                                        step="0.1" required></div>
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="threshold">
+                                                        Coffee left threshold (kg)
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-coffee-settings__input js-coffee-settings__input--coffee_left_threshold"
+                                                        type="number" min="1" step="0.1" name="threshold" id="threshold"
+                                                        data-setting="coffee_left_threshold" required>
+                                                </p>
                                             </div>
                                             <div class="c-settings__item">
-                                                <div>Delivery time (in days):</div>
-                                                <div><input
-                                                        class="js-coffee-settings__input js-coffee-settings__input--delivery_time"
-                                                        data-setting="delivery_time" type="number" min="1" required>
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="delivery">
+                                                        Delivery time (days)
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-coffee-settings__input js-coffee-settings__input--delivery_time"
+                                                        type="number" min="1" name="delivery" id="delivery"
+                                                        data-setting="delivery_time" required>
+                                                </p>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="email">
+                                                        E-mail Supplier
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-coffee-settings__input js-coffee-settings__input--mail_supplier"
+                                                        type="email" min="1" name="email" id="email"
+                                                        data-setting="mail_supplier" required>
+                                                </p>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <div class="c-settings__item">
+                                                    <p class="c-form-field">
+                                                        <label class="c-label" for="message">
+                                                            Message
+                                                        </label>
+                                                        <textarea
+                                                            class="c-input js-coffee-settings__input js-coffee-settings__input--mail_message"
+                                                            type="email" min="1" name="message" id="message"
+                                                            data-setting="mail_message" required></textarea>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="c-settings__item">
-                                                <div>Mail supplier:</div>
-                                                <div><input
-                                                        class="js-coffee-settings__input js-coffee-settings__input--mail_supplier"
-                                                        data-setting="mail_supplier" type="email" required></div>
-                                            </div>
-                                            <div class="c-settings__item">
-                                                <div>Mail:</div>
-                                                <div><textarea
-                                                        class="js-coffee-settings__input js-coffee-settings__input--mail_message"
-                                                        data-setting="mail_message"></textarea></div>
-                                            </div>
-                                            <div class="c-settings__item">
-                                                <button>Save</button>
+                                                <button class="c-settings__save">Save</button>
                                             </div>
                                         </form>
                                     </div>

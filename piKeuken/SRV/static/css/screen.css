@@ -109,7 +109,7 @@
   --global-placeholder-color: var(--global-color-neutral-x-light);
   --global-input-backgroundColor: White;
   --global-input-color: var(--global-color-neutral-xxxx-dark);
-  --global-input-borderColor: var(--global-color-neutral-xxx-light);
+  --global-input-borderColor: var(--global-dark-grey);
   --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
   --global-input-focus-borderColor: var(--global-accent);
   --global-input-error-borderColor: var(--global-color-error);
@@ -498,6 +498,46 @@ span {
 }
 
 /*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-input {
+  --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 4px;
+  border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
+  background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
+  color: var(--global-input-color);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: calc(var(--global-baseline) * 3);
+  padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
+  outline: none;
+  transition: var(--input-transition);
+}
+
+.c-input:hover {
+  border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
+}
+
+.c-input:focus,
+.c-input:active {
+  border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
+  box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
+}
+
+/* input password with floating label */
+
+.c-input--with-floating-label:focus {
+  box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
+}
+
+/*
     Component: Forms
     ---
     Everything form related here
@@ -520,6 +560,10 @@ span {
 
 .c-app {
   min-height: 100vh;
+}
+
+.c-app__content {
+  margin-bottom: calc(var(--global-whitespace-xxl) * 2);
 }
 
 .c-app__top {
@@ -811,7 +855,7 @@ span {
   height: 16px;
   margin-right: 8px;
   background: var(--custom-option-background);
-  border: 1px solid var(--custom-option-borderColor);
+  border: 1px solid var(--global-grey);
   transition: all var(--custom-option-transition);
   box-shadow: var(--custom-option-boxShadow, 0);
 }
@@ -954,6 +998,21 @@ span {
 .c-label {
   font-size: 16px;
   font-weight: 5;
+}
+
+.c-label--floating {
+  position: absolute;
+  top: calc(var(--global-baseline) * 1.6);
+  left: var(--global-whitespace-sm);
+  padding: 0 var(--global-whitespace-sm);
+  background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
+  transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+  z-index: 1;
+}
+
+.is-floating,
+.c-form-field:focus-within .c-label--floating {
+  transform: translateY(calc(var(--global-baseline) * -3))
 }
 
 .c-loading-screen {
@@ -1264,6 +1323,13 @@ span {
   overflow: auto;
 }
 
+.c-notification__title {
+  font-size: 24px;
+  padding: 8px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--global-grey);
+}
+
 .c-notification__item {
   margin-top: var(--global-whitespace-sm);
   border-bottom: 1px solid var(--global-grey);
@@ -1280,6 +1346,19 @@ span {
 
 .c-notificaton__bell {
   cursor: pointer;
+}
+
+.c-settings__message {
+  display: none;
+}
+
+.c-settings__save {
+  width: 100%;
+  background: var(--global-accent);
+  border: 1px solid var(--global-grey);
+  color: var(--global-white);
+  padding: 8px;
+  font-weight: 700;
 }
 
 .c-settings__box {

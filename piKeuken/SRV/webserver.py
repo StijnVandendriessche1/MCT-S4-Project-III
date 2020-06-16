@@ -5,6 +5,7 @@ import sys
 # from crypt import methods
 from threading import Thread
 from time import sleep
+import jsonpickle
 
 import google_auth
 from flask import Flask, jsonify, redirect, request
@@ -13,11 +14,11 @@ from flask_cors import CORS
 from flask_socketio import SocketIO
 from flask_sslify import SSLify
 
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
+from Logic.pub_sub_comment import PubSubComment
 from Logic.server import Server
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
@@ -37,6 +38,9 @@ endpoint = '/api/v1'
 
 """ Objects """
 server = Server()
+pubsubMeeting = PubSubComment(3052736401110405)
+pubsubKitchen = PubSubComment(2817465839732274)
+pubsubCoffee = PubSubComment(2938279615337930)
 
 """ Functions """
 
@@ -123,6 +127,10 @@ def ai_meeting():
         if google_auth.is_logged_in():
             global server
             status = server.change_ai_status("ai_meeting")
+            if server.status_ai["ai_meeting"]:
+                pubsubMeeting.send_message(jsonpickle.encode({"people": "on"}))
+            else:
+                pubsubMeeting.send_message(jsonpickle.encode({"people":"off"}))
             socketio.emit('status_ai_meeting', {
                         'status': server.status_ai["ai_meeting"]})
     except Exception as ex:
