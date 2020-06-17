@@ -562,6 +562,10 @@ span {
   min-height: 100vh;
 }
 
+.c-app__content {
+  margin-bottom: calc(var(--global-whitespace-xxl) * 2);
+}
+
 .c-app__top {
   border-bottom: 1px solid var(--global-title-line);
 }
@@ -1346,6 +1350,15 @@ span {
 
 .c-settings__message {
   display: none;
+}
+
+.c-settings__save {
+  width: 100%;
+  background: var(--global-accent);
+  border: 1px solid var(--global-grey);
+  color: var(--global-white);
+  padding: 8px;
+  font-weight: 700;
 }
 
 .c-settings__box {
