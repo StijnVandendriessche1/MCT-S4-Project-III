@@ -7,9 +7,14 @@ import argparse
 import imutils
 import time
 import cv2
+import sys, os
 
 import logging
 from time import sleep
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_ROOT)
+sys.path.insert(0, BASE_DIR)
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")

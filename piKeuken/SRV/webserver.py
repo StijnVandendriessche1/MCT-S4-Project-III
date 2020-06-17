@@ -392,12 +392,25 @@ def change_coffee_settings():
         logging.error(ex)
         return jsonify({'status': False})
 
+@app.route(endpoint + '/update')
+def update_devices():
+    try:
+        pubsubMeeting.send_message(jsonpickle.encode({"update":"test"}))
+        #pubsubCoffee.send_message(jsonpickle({"update": "test"}))
+        #pubsubKitchen.send_message(jsonpickle({"update": "test"}))
+        return jsonify("update doorgevoerd")
+    except Exception as ex:
+        logging.error(ex)
+        return jsonify("someting went wrong"), 500
+
 try:
     if __name__ == '__main__':
         app.run(host = "0.0.0.0", port = "5000", ssl_context = (
             f'{BASE_DIR}/SRV/cert.pem', f'{BASE_DIR}/SRV/key.pem'), threaded = True)
 except Exception as ex:
     logging.error(ex)
+finally:
+    print("server afgesloten")
 
 
 """ 🚚 Your coffee is on it's way!
