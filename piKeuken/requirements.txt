@@ -24,3 +24,5 @@ numpy
 influxdb_client
 sendgrid
 jsonpickle
+gitdb2==2.0.6
+GitPython==2.1.15

@@ -12,6 +12,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
+from Logic.AutoDeployGit import AutoDeployGit
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
@@ -105,6 +106,13 @@ class MQTT:
                     print("people counter started")
                 else:
                     print("command not recognised")
+            elif k == "update":
+                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/testProject3.git","testGit")
+                autodeploy.pull_git()
+                print("updated")
+                os.system('sudo shutdown -r')
+                self.queue.put("quit")
+
         except Exception as ex:
             logging.error(ex)
             print("failed to execute command")
