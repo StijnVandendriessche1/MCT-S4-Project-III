@@ -1378,3 +1378,17 @@ RuntimeError: You need to use the eventlet server. See the Deployment section of
 2020-06-17 10:38:11,657    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [17/Jun/2020 10:38:11] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
 2020-06-17 10:38:12,270    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [17/Jun/2020 10:38:12] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
 2020-06-17 10:38:26,850    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [17/Jun/2020 10:38:26] "[31m[1mGET /socket.io/?EIO=3&transport=polling&t=NB1RGFB&sid=a42b769299364fd7b4067cac05e718e1 HTTP/1.1[0m" 400 -
+2020-06-17 16:40:03,343    ERROR -- MainProcess AutoDeployGit.py:22 -- Cmd('git') failed due to: exit code(128)
+  cmdline: git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git
+  stderr: 'fatal: destination path 'MCT-S4-Project-III' already exists and is not an empty directory.'
+2020-06-17 16:40:03,345    ERROR -- MainProcess AutoDeployGit.py:57 -- 'AutoDeployGit' object has no attribute 'repo'
+2020-06-17 16:40:03,345    ERROR -- MainProcess mqtt_pub_sub.py:118 -- 'MQTT' object has no attribute 'queue'
+2020-06-17 16:42:11,670    ERROR -- MainProcess AutoDeployGit.py:22 -- Cmd('git') failed due to: exit code(128)
+  cmdline: git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git
+  stderr: 'fatal: destination path 'MCT-S4-Project-III' already exists and is not an empty directory.'
+2020-06-17 16:42:11,671    ERROR -- MainProcess AutoDeployGit.py:57 -- 'AutoDeployGit' object has no attribute 'repo'
+2020-06-17 16:43:33,777    ERROR -- MainProcess AutoDeployGit.py:22 -- Cmd('git') failed due to: exit code(128)
+  cmdline: git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git
+  stderr: 'fatal: destination path 'MCT-S4-Project-III' already exists and is not an empty directory.'
+2020-06-17 16:43:33,778    ERROR -- MainProcess AutoDeployGit.py:57 -- 'AutoDeployGit' object has no attribute 'repo'
+2020-06-17 16:43:33,779    ERROR -- MainProcess mqtt_pub_sub.py:118 -- 'MQTT' object has no attribute 'queue'

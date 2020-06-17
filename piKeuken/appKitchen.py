@@ -78,6 +78,19 @@ def door_change(a):
     mqtt.send(y)
     print(y)
 
+def queue_listener():
+    global actPrs
+    global run
+    while run:
+        com = q.get()
+        if com == "quit":
+            run = False
+            time.sleep(5)
+            break
+        else:
+            print("command not found")
+    print("queuelistener stopped")
+
 try:
     actLight = threading.Thread(target=run_light)
     actLight.start()
@@ -90,10 +103,10 @@ try:
     door_change(0)
     #actPrs = threading.Thread(target=run_human_count)
     #actPrs.start()
-    #actQueueListener = threading.Thread(target=queue_listener)
-    #actQueueListener.start()
+    actQueueListener = threading.Thread(target=queue_listener)
+    actQueueListener.start()
 
-    while True:
+    while run:
         t = []
         t.append(Data("temperature", temp).__dict__)
         t.append(Data("light", light).__dict__)
@@ -103,6 +116,9 @@ try:
         mqtt.send(y)
         print(y)
         time.sleep(5)
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")
 
 except KeyboardInterrupt as ex:
     print("Shutting down...")

@@ -21,8 +21,7 @@ class MQTT:
     def __init__(self, device_id, queue = None):
         try:
             self.get_vars = GetVars()
-            if queue is not None:
-                self.queue = queue
+            self.queue = queue
             self.runPrs = False
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
@@ -107,7 +106,8 @@ class MQTT:
                 else:
                     print("command not recognised")
             elif k == "update":
-                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/testProject3.git","testGit")
+                print("starting update...")
+                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
                 autodeploy.pull_git()
                 print("updated")
                 os.system('sudo shutdown -r')

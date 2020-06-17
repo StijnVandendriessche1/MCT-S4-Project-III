@@ -5,17 +5,36 @@ from Logic.mqtt_pub_sub import MQTT
 from Models.data import Data
 from Models.sensordata import Sensordata
 import jsonpickle
+import queue
+import threading
 GPIO.setmode(GPIO.BCM)
 
 hx = HX711(20, 21)
 hx.set_offset(1255.226245605469)
-mqtt = MQTT(2938279615337930)
+q = queue.Queue()
+mqtt = MQTT(2938279615337930, q)
+run = True
 #hx.set_offset(8330161.230859375)
 #hx.set_scale(-100)
 
+def queue_listener():
+    global actPrs
+    global run
+    while run:
+        com = q.get()
+        if com == "quit":
+            run = False
+            time.sleep(5)
+            break
+        else:
+            print("command not found")
+    print("queuelistener stopped")
+
 
 try:
-    while True:
+    actQueueListener = threading.Thread(target=queue_listener)
+    actQueueListener.start()
+    while run:
         w = max(0, int(hx.get_weight(5)/200))
         t = []
         t.append(Data("weight", w))
@@ -24,15 +43,18 @@ try:
         mqtt.send(y)
         print(y)
         time.sleep(5)
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")
+
 except KeyboardInterrupt as ex:
     print("Shutting down...")
 except Exception as ex:
     print("something went wrong")
     print(ex)
 finally:
-    try:
-        run = False
-        GPIO.cleanup()
-        print("goodbye")
-    except Exception as e:
-        print(e)
+    run = False
+    time.sleep(5)
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")

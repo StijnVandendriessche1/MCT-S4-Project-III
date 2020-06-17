@@ -392,13 +392,37 @@ def change_coffee_settings():
         logging.error(ex)
         return jsonify({'status': False})
 
+def update_thread():
+    try:
+        try:
+            pubsubMeeting.send_message(jsonpickle.encode({"update": "test"}))
+            print("meeting command sent")
+        except:
+            print("update meeting took very long")
+        finally:
+            try:
+                pubsubCoffee.send_message(jsonpickle.encode({"update": "test"}))
+                print("coffee command sent")
+            except:
+                print("update coffee took very long")
+            finally:
+                try:
+                    pubsubKitchen.send_message(jsonpickle.encode({"update": "test"}))
+                    print("kitchen command sent")
+                except:
+                    print("update kitchen took very long")
+                finally:
+                    print("all commands were sent")
+    except Exception as ex:
+        logging.error(ex)
+        print("update failed")
+
 @app.route(endpoint + '/update')
 def update_devices():
     try:
-        pubsubMeeting.send_message(jsonpickle.encode({"update":"test"}))
-        #pubsubCoffee.send_message(jsonpickle({"update": "test"}))
-        #pubsubKitchen.send_message(jsonpickle({"update": "test"}))
-        return jsonify("update doorgevoerd")
+        update = Thread(target=update_thread)
+        update.start()
+        return jsonify("update gestart")
     except Exception as ex:
         logging.error(ex)
         return jsonify("someting went wrong"), 500
