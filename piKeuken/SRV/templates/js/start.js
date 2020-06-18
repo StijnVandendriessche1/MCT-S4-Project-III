@@ -28,11 +28,6 @@ const classStatsSelected = "c-stats--selected";
 
 /* Sockets */
 
-/* socket.on("status_server", function () {
-  document.querySelector(".js-loader").style.display = "none";
-  document.querySelector(".js-end-text").style.display = "block";
-  setTimeout(clearLoadingscreen, 6311);
-}); */
 /* Sockets for putting the ai's on or off */
 socket.on("status_ai_meeting", function (data) {
     toggleSwitchStatusChange("ai-meeting", data.status);
@@ -76,18 +71,6 @@ socket.on("welcome", function (data) {
 socket.on("new_notification", function (data) {
     getNotifications(data);
 });
-
-/* socket.on("coffee_chart", function (data) {
-  data = JSON.parse(data)
-  //Create 2 vars with the data 
-  data_labels = [];
-  data_values = []
-  for (const row of data) {
-    data_labels.push(row["WeekDay"])
-    data_values.push(row["_value"])
-  }
-  Graph(data_labels, data_values)
-}); */
 
 socket.on("coffee_settings", function (data) {
     log(data);
@@ -235,9 +218,7 @@ const getDOMMeetingBoxes = function () {
         });
     }
 };
-/* const clearLoadingscreen = function () {
-  document.querySelector(".js-loadings-screen").style.display = "none";
-}; */
+
 const getStatus = function (status) {
     selected = "off";
     if (status) selected = "on";
@@ -536,7 +517,22 @@ const cleanDict = function (data) {
     }
     return data;
 };
+const resetInfoMapBoxes = function(){
+    /* Reset all roomBoxes */
+    const domRoomBoxes = document.querySelectorAll(".js-map-room");
+    for (const domRoomBox of domRoomBoxes) {
+        //domroombox.style.stroke = "rgb(0, 0, 0)"
+        domRoomBox.style.stroke = ""
+        domRoomBox.style.strokeWidth = "3px";
+    }
+    /* Reset all icons */
+    const domIcons = document.querySelectorAll(".js-map-icon");
+    for (const domIcon of domIcons) {
+        domIcon.style.fill = ""
+    }
+};
 const changeInfoMapBoxes = function (data) {
+    resetInfoMapBoxes()
     let output = "";
     let box = data[0]["host"];
     box = box.replace(/ /g, "");

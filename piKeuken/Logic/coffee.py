@@ -14,7 +14,6 @@ from Logic.send_mail import SendMail
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s	%(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
 
-
 class Coffee:
     def __init__(self, notification_queue):
         try:
