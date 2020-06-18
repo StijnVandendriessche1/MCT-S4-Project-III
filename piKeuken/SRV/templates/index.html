@@ -520,9 +520,52 @@
                                         </g>
                                     </svg>
                                     <div class="c-settings__box js-settings__dishwasher">
-                                        <div class="c-settings__item">
+                                        <div class="c-notification__title">
                                             Settings
                                         </div>
+                                        <div class="c-settings__item c-settings__message js-dishwasher-settings--msg">
+                                        </div>
+                                        <form class="c-button js-dishwasher-settings__btn">
+                                            <div class="c-settings__item">
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="dishwasher_duration">
+                                                        Duration (in minutes)
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-dishwasher-settings__input js-dishwasher-settings__input--dishwasher_duration"
+                                                        type="time" name="dishwasher_duration" id="dishwasher_duration"
+                                                        data-setting="dishwasher_duration" required>
+                                                </p>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="dishwasher_hour_notification">
+                                                        Notification Hour
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-dishwasher-settings__input js-dishwasher-settings__input--dishwasher_hour_notification"
+                                                        type="time" name="dishwasher_hour_notification" id="dishwasher_hour_notification"
+                                                        data-setting="dishwasher_hour_notification" required>
+                                                </p>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <p class="c-form-field">
+                                                    <label class="c-label c-label--floating js-floating-label"
+                                                        for="dishwasher_email">
+                                                        E-mail Person Responsible 
+                                                    </label>
+                                                    <input
+                                                        class="c-input c-input--with-floating-label js-floating-input js-dishwasher-settings__input js-dishwasher-settings__input--dishwasher_email"
+                                                        type="email" min="1" name="dishwasher_email" id="dishwasher_email"
+                                                        data-setting="dishwasher_email" required>
+                                                </p>
+                                            </div>
+                                            <div class="c-settings__item">
+                                                <button class="c-settings__save">Save</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
