@@ -65,16 +65,13 @@ def time_status():
 def notifications():
     try:
         global server
-        if google_auth.is_logged_in():
-            user_info = google_auth.get_user_info()
-            while True:
-                try:
-                    message = server.notifications.notification_queue.get()
-                    socketio.emit('new_notification', json.dumps(
-                        server.get_notifications(user_info)))
-                    server.notifications.notification_queue.task_done()
-                except Exception as ex:
-                    logging.error(ex)
+        while True:
+            try:
+                message = server.notifications.notification_queue.get()
+                socketio.emit('new_notification', {"newNotification": message})
+                server.notifications.notification_queue.task_done()
+            except Exception as ex:
+                logging.error(ex)
     except Exception as ex:
         logging.error(ex)
 
@@ -461,6 +458,5 @@ finally:
     print("server afgesloten")
 
 
-# TODO --> JS --> Selected room --> BUG
 # TODO --> Bug in send new notification (Send only a new notification)
 # TODO --> Rooms
