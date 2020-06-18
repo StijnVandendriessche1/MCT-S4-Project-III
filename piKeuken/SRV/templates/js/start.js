@@ -69,7 +69,8 @@ socket.on("welcome", function (data) {
 });
 
 socket.on("new_notification", function (data) {
-    getNotifications(data);
+    log(data)
+    getAPI("notifications", getNotifications);
 });
 
 socket.on("coffee_settings", function (data) {
