@@ -107,7 +107,7 @@ class MQTT:
                     print("people counter started")
                 else:
                     print("command not recognised")
-            elif k == "dishwasher":
+            elif k == "dishwasher_ai":
                 if value == "off":
                     self.runDish = False
                     print("dishwasher_ai stopped")
