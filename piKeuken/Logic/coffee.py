@@ -18,6 +18,8 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 class Coffee:
     def __init__(self, notification_queue):
         try:
+            # TODO: System error --> Push autmatic to the fontend --> Error
+            self.ai_status = True
             self.coffee_left = 0
             self.coffee_left_threshold = 3000.0
             self.coffee_ordered = False
@@ -35,29 +37,30 @@ class Coffee:
 
     def coffee_checker(self, coffee_left):
         try:
-            """ Change the coffee_left """
-            self.coffee_left = coffee_left
-            """ Check if the coffee must be ordered """
-            if self.coffee_left <= self.coffee_left_threshold and self.coffee_notification_ordered == False:
-                #""" Send a notification when the coffee is ordered"""
-                self.send_mail.send_message(
-                    "Bestelling koffie ML6", self.mail_message, self.mail_supplier)
-                self.coffee_notification_ordered = True
-                self.notification_queue.put(
-                    {"name": "☕", "message": "🚚 Your coffee is on it's way! 🚚"})
-                self.change_settings({"coffee_notification_ordered": str(self.coffee_notification_ordered)})
-            elif self.coffee_left <= 11 and self.coffee_notification_empty == False:
-                #""" Send a notification when the coffee is empty"""
-                self.notification_queue.put(
-                    {"name": "☕", "message": "😥 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️"})
-                self.coffee_notification_empty = True
-                self.change_settings({"coffee_notification_empty": str(self.coffee_notification_empty)})
-            elif self.coffee_left >=(self.coffee_left_threshold*1.11) and self.coffee_notification_empty:
-                #""" Send a notification that the coffee is full """
-                self.coffee_notification_empty = False
-                self.coffee_notification_ordered = False
-                self.notification_queue.put({"name": "☕", "message": "Your coffee has arrived to the office! 🚚"})
-                self.change_settings({"coffee_notification_empty": str(self.coffee_notification_empty),"coffee_notification_ordered": str(self.coffee_notification_ordered)})
+            if self.ai_status:
+                """ Change the coffee_left """
+                self.coffee_left = coffee_left
+                """ Check if the coffee must be ordered """
+                if self.coffee_left <= self.coffee_left_threshold and self.coffee_notification_ordered == False:
+                    #""" Send a notification when the coffee is ordered"""
+                    self.send_mail.send_message(
+                        "Bestelling koffie ML6", self.mail_message, self.mail_supplier)
+                    self.coffee_notification_ordered = True
+                    self.notification_queue.put(
+                        {"name": "☕", "message": "🚚 Your coffee is on it's way! 🚚"})
+                    self.change_settings({"coffee_notification_ordered": str(self.coffee_notification_ordered)})
+                elif self.coffee_left <= 11 and self.coffee_notification_empty == False:
+                    #""" Send a notification when the coffee is empty"""
+                    self.notification_queue.put(
+                        {"name": "☕", "message": "😥 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️"})
+                    self.coffee_notification_empty = True
+                    self.change_settings({"coffee_notification_empty": str(self.coffee_notification_empty)})
+                elif self.coffee_left >=(self.coffee_left_threshold*1.11) and self.coffee_notification_empty:
+                    #""" Send a notification that the coffee is full """
+                    self.coffee_notification_empty = False
+                    self.coffee_notification_ordered = False
+                    self.notification_queue.put({"name": "☕", "message": "Your coffee has arrived to the office! 🚚"})
+                    self.change_settings({"coffee_notification_empty": str(self.coffee_notification_empty),"coffee_notification_ordered": str(self.coffee_notification_ordered)})
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
@@ -73,7 +76,7 @@ class Coffee:
         try:
             """ Get the coffee_settings from the database """
             settings = self.db.execute(
-                '''SELECT name, value FROM tb_settings''', (), True)
+                '''SELECT name, value FROM tb_settings WHERE name="coffee_left_threshold" OR name="coffee_ordered" OR name="coffee_notification_ordered" OR name="coffee_notification_empty" OR name="mail_supplier" OR name="delivery_time" OR name="mail_message"''', (), True)
             """ Check the table is empty """
             if settings.shape[0] == 0:
                 self.db.execute(

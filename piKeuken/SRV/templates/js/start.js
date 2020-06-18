@@ -105,6 +105,19 @@ socket.on("coffee_settings", function (data) {
     }
 });
 
+socket.on("dishwasher_settings", function (data){
+    log(data);
+    for (const setting in data) {
+        if (data.hasOwnProperty(setting)) {
+            const settingValue = data[setting];
+            log(`${setting} - ${settingValue}`);
+            document.querySelector(
+                `.js-dishwasher-settings__input--${setting}`
+            ).value = settingValue;
+        }
+    }
+})
+
 /* Functions */
 const changeNotificationCount = function () {
     log(notificationsNotViewed);
@@ -319,6 +332,39 @@ const resetBtnStats = function () {
         domBtnStat.classList.remove(classStatsSelected);
     }
 };
+const changeDishwasherSettingsResponse = function (data) {
+    document.querySelector(".js-dishwasher-settings--msg").style.display = "block";
+    if (data["status"]) {
+        document.querySelector(".js-dishwasher-settings--msg").innerHTML =
+            "Changed!";
+    } else {
+        document.querySelector(".js-dishwasher-settings--msg").innerHTML =
+            "Changes failed!";
+    }
+    apiCoffeeSettingsSend = false;
+};
+const changeDishwasherSettings = function () {
+    if (!apiCoffeeSettingsSend) {
+        /* Get all the data from the fields */
+        const domInputFields = document.querySelectorAll(
+            ".js-dishwasher-settings__input"
+        );
+        newSettings = {};
+        for (const domInputField of domInputFields) {
+            newSettings[domInputField.getAttribute("data-setting")] =
+                domInputField.value;
+        }
+        log(newSettings);
+        /* Send it to the API */
+        getAPI(
+            `settings/dishwasher`,
+            changeDishwasherSettingsResponse,
+            "POST",
+            JSON.stringify(newSettings)
+        );
+        apiCoffeeSettingsSend = true;
+    }
+};
 const changeCoffeeSettingsResponse = function (data) {
     document.querySelector(".js-coffee-settings--msg").style.display = "block";
     if (data["status"]) {
@@ -382,9 +428,16 @@ const loadDOM = function () {
         const domBtnCoffeeSettings = document.querySelector(
             ".js-coffee-settings__btn"
         );
+        const domBtnDishwasherSettings = document.querySelector(".js-dishwasher-settings__btn");
+        /* Btn for coffee_settings */
         domBtnCoffeeSettings.addEventListener("submit", function (e) {
             e.preventDefault();
             changeCoffeeSettings();
+        });
+        /* Btn for dishwasher_settings */
+        domBtnDishwasherSettings.addEventListener("submit", function (e) {
+            e.preventDefault();
+            changeDishwasherSettings();
         });
     }
     /* Load the btns for the stats */
