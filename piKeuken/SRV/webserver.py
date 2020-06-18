@@ -162,7 +162,7 @@ def ai_dishwasher():
         if server.status_ai["ai_dishwasher"]:
             pubsubKitchen.send_message(jsonpickle.encode({"dishwasher_ai":"on"}))
         else:
-            pubsubKitchen.send_message(jsonpickle.encode({"dishwasher_ai": "on"}))
+            pubsubKitchen.send_message(jsonpickle.encode({"dishwasher_ai": "off"}))
         socketio.emit('status_ai_dishwasher', {
                     'status': server.status_ai["ai_dishwasher"]})
     except Exception as ex:
