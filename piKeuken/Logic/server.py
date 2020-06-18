@@ -15,6 +15,7 @@ from Logic.influxdb import Influxdb
 from Logic.get_vars import GetVars
 from Logic.notifications import Notifications
 from Logic.coffee import Coffee
+from Logic.dishwasher import Dishwasher
 
 
 """ Class for the main_server"""
@@ -30,6 +31,7 @@ class Server:
             self.influxdb_cloud = Influxdb("Cloud")
             self.notifications = Notifications()
             self.coffee = Coffee(self.notifications.new_notifications_queue)
+            self.dishwasher = Dishwasher(self.notifications.new_notifications_queue)
             self.start_status()
         except Exception as ex:
             logging.error(ex)
@@ -48,6 +50,9 @@ class Server:
                 "Gold Finger": False
             }
             self.get_ai_status()
+            """ Change the ai_status in the systems """
+            self.coffee.ai_status = self.status_ai["ai_coffee"]
+            self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
             self.get_meeting_box_status()
         except Exception as ex:
             raise Exception(ex)
@@ -58,7 +63,7 @@ class Server:
             settings_data = self.influxdb.get_data(query, False)
             if settings_data.empty:
                 for ai, status in self.status_ai.items():
-                    self.change_ai_status_influxdb(ai, status)
+                    self.change_status_influxdb("ai", "ai_status", ai, status)
             else:
                 for ai in self.status_ai:
                     row = settings_data[settings_data["ai"] == ai]
@@ -86,6 +91,9 @@ class Server:
             else:
                 self.status_ai[ai] = True
             self.change_status_influxdb("ai", "ai_status", ai, self.status_ai[ai])
+            """ Change the ai_status in the systems """
+            self.coffee.ai_status = self.status_ai["ai_coffee"]
+            self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
             return self.get_ai_status
         except Exception as ex:
             logging.error(ex)
@@ -101,15 +109,14 @@ class Server:
             if coffee_status.empty == False:
                 """ Change the coffee_left_status + check if there is enough """
                 self.coffee.coffee_checker(coffee_status["weight"][0])
-            return self.coffee.coffee_left
+            return round((self.coffee.coffee_left/1000), 2)
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
 
     def check_status_dishwasher(self):
         try:
-            random_status = [True, False]
-            return random.choice(random_status)
+            return self.dishwasher.status
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)

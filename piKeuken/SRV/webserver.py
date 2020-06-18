@@ -80,6 +80,7 @@ def notifications():
 
 
 try:
+    print("Starting")
     t_mqtt = Thread(target=notifications)
     t_mqtt.start()
 
@@ -113,6 +114,9 @@ def connect():
 
         """ Coffee settings """
         socketio.emit('coffee_settings', server.coffee.get_coffee_settings())
+        
+        """ Dishwasher settings """
+        socketio.emit('dishwasher_settings', server.dishwasher.get_dishwasher_settings())
 
         """ Send serverstatus to the clients """
         socketio.emit('status_server')
@@ -392,6 +396,25 @@ def change_coffee_settings():
         logging.error(ex)
         return jsonify({'status': False})
 
+@app.route(endpoint + '/settings/dishwasher', methods = ['POST'])
+def change_dishwasher_settings():
+    try:
+        if google_auth.is_logged_in():
+            global server
+            """ Check if the values are correct """
+            user_info=google_auth.get_user_info()
+            client_data=request.get_json()
+            """ Check if all values are valid """
+            if len(client_data["dishwasher_duration"])>0 and len(client_data["dishwasher_hour_notification"])>0 and len(client_data["dishwasher_email"])>0:
+                server.dishwasher.change_settings(client_data, user_info["id"])
+            else:
+                return jsonify({'status': False})
+            return jsonify({'status': True})
+        return authorization_error
+    except Exception as ex:
+        logging.error(ex)
+        return jsonify({'status': False})
+
 def update_thread():
     try:
         try:
@@ -429,6 +452,7 @@ def update_devices():
 
 try:
     if __name__ == '__main__':
+        print("Started")
         app.run(host = "0.0.0.0", port = "5000", ssl_context = (
             f'{BASE_DIR}/SRV/cert.pem', f'{BASE_DIR}/SRV/key.pem'), threaded = True)
 except Exception as ex:
@@ -437,8 +461,6 @@ finally:
     print("server afgesloten")
 
 
-""" 🚚 Your coffee is on it's way!
-☕ Your coffee has arrived to the office!
-😢 Oh no! Coffee is finished, Time for starbucks 🚶‍♀️
-🍽 The Dishwasher is empty! Time to empty it!
-💩 Don't forget to fill in the dishwasher! """
+# TODO --> JS --> Selected room --> BUG
+# TODO --> Bug in send new notification (Send only a new notification)
+# TODO --> Rooms
