@@ -127,6 +127,8 @@ class MQTT:
                     print("command not recognised")
             elif k == "update":
                 print("starting update...")
+                os.system('yes | ls'
+                          'sudo rm MCT-S4-Project-III/ -r')
                 autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
                 autodeploy.pull_git()
                 print("updated")
