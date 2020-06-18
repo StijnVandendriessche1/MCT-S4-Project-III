@@ -67,6 +67,7 @@ def run_human_count():
 
 def queue_listener():
     global actPrs
+    global run
     while run:
         com = q.get()
         if com == "people":
@@ -74,6 +75,8 @@ def queue_listener():
             actPrs.start()
             q.task_done()
         elif com == "quit":
+            run = False
+            time.sleep(5)
             break
         else:
             print("command not found")
@@ -127,6 +130,7 @@ except Exception as ex:
     print(ex)
 finally:
     run = False
+    time.sleep(5)
     q.put("quit")
     GPIO.cleanup()
     print("goodbye")

@@ -12,6 +12,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
+from Logic.AutoDeployGit import AutoDeployGit
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
@@ -20,8 +21,7 @@ class MQTT:
     def __init__(self, device_id, queue = None):
         try:
             self.get_vars = GetVars()
-            if queue is not None:
-                self.queue = queue
+            self.queue = queue
             self.runPrs = False
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
@@ -105,6 +105,14 @@ class MQTT:
                     print("people counter started")
                 else:
                     print("command not recognised")
+            elif k == "update":
+                print("starting update...")
+                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
+                autodeploy.pull_git()
+                print("updated")
+                os.system('sudo shutdown -r')
+                self.queue.put("quit")
+
         except Exception as ex:
             logging.error(ex)
             print("failed to execute command")
