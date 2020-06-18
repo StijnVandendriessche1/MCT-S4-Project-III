@@ -57,8 +57,8 @@ class AutoDeployGit:
         except Exception as e:
             logging.error(e)
 
-autodeploy = AutoDeployGit("/home/pi","https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git", "MCT-S4-Project-III")
-autodeploy.pull_git()
+#autodeploy = AutoDeployGit("/home/pi","https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git", "MCT-S4-Project-III")
+#autodeploy.pull_git()
 #
 #
 # @app.route('/pull')
