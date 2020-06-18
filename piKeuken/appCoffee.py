@@ -35,13 +35,14 @@ try:
     actQueueListener = threading.Thread(target=queue_listener)
     actQueueListener.start()
     while run:
-        w = max(0, int(hx.get_weight(5)/200))
-        t = []
-        t.append(Data("weight", w))
-        x = Sensordata("sensordata", "Coffee", t)
-        y = jsonpickle.encode(x)
-        mqtt.send(y)
-        print(y)
+        if mqtt.runCoffee:
+            w = max(0, int(hx.get_weight(5) / 200))
+            t = []
+            t.append(Data("weight", w))
+            x = Sensordata("sensordata", "Coffee", t)
+            y = jsonpickle.encode(x)
+            mqtt.send(y)
+            print(y)
         time.sleep(5)
     q.put("quit")
     GPIO.cleanup()

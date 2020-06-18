@@ -23,6 +23,8 @@ class MQTT:
             self.get_vars = GetVars()
             self.queue = queue
             self.runPrs = False
+            self.runCoffee = False
+            self.runDish = False
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
             self.root_cert_filepath = self.get_vars.get_var("GoogleIOT_CertPath")
@@ -103,6 +105,24 @@ class MQTT:
                     self.runPrs = True
                     self.queue.put("people")
                     print("people counter started")
+                else:
+                    print("command not recognised")
+            elif k == "dishwasher":
+                if value == "off":
+                    self.runDish = False
+                    print("dishwasher_ai stopped")
+                elif value == "on":
+                    self.runDish = True
+                    print("dishwasher_ai started")
+                else:
+                    print("command not recognised")
+            elif k == "coffee":
+                if value == "off":
+                    self.runCoffee = False
+                    print("coffee_ai stopped")
+                elif value == "on":
+                    self.runCoffee = True
+                    print("coffee_ai started")
                 else:
                     print("command not recognised")
             elif k == "update":

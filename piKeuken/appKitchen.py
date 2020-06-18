@@ -33,7 +33,6 @@ dht = DHT11(pin=17)
 q = queue.Queue()
 mqtt = MQTT(2817465839732274, q)
 vibr = Button(pin=27)
-door = Button(pin=2)
 
 def run_light():
     global light
@@ -56,27 +55,14 @@ def run_hmdt():
     print("humidity stopped")
 
 def tril_vaat(a):
-    print("trilling gedetecteerd")
-    t = []
-    t.append(Data("dishwasherstate", "Detect").__dict__)
-    x = Sensordata("sensordata", "Kitchen", t)
-    y = jsonpickle.encode(x.__dict__)
-    mqtt.send(y)
-    print(y)
-
-
-def door_change(a):
-    doorstate = door.pressed
-    data = np.array([doorstate])
-    ser = pd.Series(data)
-    doorstate = ser.map({True: 'closed', False: 'open'})
-    doorstate = str(doorstate.values[0])
-    t = []
-    t.append(Data("doorstate", doorstate).__dict__)
-    x = Sensordata("sensordata", "Kitchen", t)
-    y = jsonpickle.encode(x.__dict__)
-    mqtt.send(y)
-    print(y)
+    if mqtt.runDish:
+        print("trilling gedetecteerd")
+        t = []
+        t.append(Data("dishwasherstate", "Detect").__dict__)
+        x = Sensordata("sensordata", "Kitchen", t)
+        y = jsonpickle.encode(x.__dict__)
+        mqtt.send(y)
+        print(y)
 
 def queue_listener():
     global actPrs
@@ -99,10 +85,6 @@ try:
     actHmdt = threading.Thread(target=run_hmdt)
     actHmdt.start()
     vibr.on_change(tril_vaat)
-    door.on_change(door_change)
-    door_change(0)
-    #actPrs = threading.Thread(target=run_human_count)
-    #actPrs.start()
     actQueueListener = threading.Thread(target=queue_listener)
     actQueueListener.start()
 
