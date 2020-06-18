@@ -141,8 +141,13 @@ def ai_meeting():
 @socketio.on('ai_coffee')
 def ai_coffee():
     try:
-        global server
-        status = server.change_ai_status("ai_coffee")
+        if google_auth.is_logged_in():
+            global server
+            status = server.change_ai_status("ai_coffee")
+            if server.status_ai['ai_coffee']:
+                pubsubCoffee.send_message(jsonpickle.encode({"coffee": "on"}))
+            else:
+                pubsubCoffee.send_message(jsonpickle.encode({"coffee": "off"}))
         socketio.emit('status_ai_coffee', {
                     'status': server.status_ai["ai_coffee"]})
     except Exception as ex:
@@ -154,6 +159,10 @@ def ai_dishwasher():
     try:
         global server
         status = server.change_ai_status("ai_dishwasher")
+        if server.status_ai["ai_dishwasher"]:
+            pubsubKitchen.send_message(jsonpickle.encode({"dishwasher_ai":"on"}))
+        else:
+            pubsubKitchen.send_message(jsonpickle.encode({"dishwasher_ai": "on"}))
         socketio.emit('status_ai_dishwasher', {
                     'status': server.status_ai["ai_dishwasher"]})
     except Exception as ex:
