@@ -18,7 +18,6 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 class Coffee:
     def __init__(self, notification_queue):
         try:
-            # TODO: System error --> Push autmatic to the fontend --> Error
             self.ai_status = True
             self.coffee_left = 0
             self.coffee_left_threshold = 3000.0

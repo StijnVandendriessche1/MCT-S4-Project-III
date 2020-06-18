@@ -43,7 +43,6 @@ class Dishwasher:
             self.ai_status = True
             self.mail_person = ["tibo.van.craenenbroeck@student.howest.be"]
             self.get_settings()
-            # TODO: Send a mail to the person
         except Exception as e:
             logging.error(e)
 
