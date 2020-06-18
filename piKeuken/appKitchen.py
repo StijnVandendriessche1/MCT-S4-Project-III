@@ -63,6 +63,8 @@ def tril_vaat(a):
         y = jsonpickle.encode(x.__dict__)
         mqtt.send(y)
         print(y)
+    else:
+        print("trilling gedetecteerd maar niet gestuurd")
 
 def queue_listener():
     global actPrs
