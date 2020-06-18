@@ -109,7 +109,7 @@ class Server:
             if coffee_status.empty == False:
                 """ Change the coffee_left_status + check if there is enough """
                 self.coffee.coffee_checker(coffee_status["weight"][0])
-            return self.coffee.coffee_left
+            return round((self.coffee.coffee_left/1000), 2)
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)

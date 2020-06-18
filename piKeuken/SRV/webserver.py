@@ -459,3 +459,8 @@ except Exception as ex:
     logging.error(ex)
 finally:
     print("server afgesloten")
+
+
+# TODO --> JS --> Selected room --> BUG
+# TODO --> Bug in send new notification (Send only a new notification)
+# TODO --> Rooms
