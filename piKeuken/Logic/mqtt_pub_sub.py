@@ -127,12 +127,12 @@ class MQTT:
                     print("command not recognised")
             elif k == "update":
                 print("starting update...")
-                os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
+                #os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
                 autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
                 autodeploy.pull_git()
+                #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
                 print("updated")
                 os.system('sudo shutdown -r')
-                os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
                 self.queue.put("quit")
 
         except Exception as ex:
