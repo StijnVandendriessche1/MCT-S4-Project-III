@@ -536,5 +536,4 @@ finally:
     print("server afgesloten")
 
 
-# TODO --> Error by changing the status of the meetingbox
 # TODO --> Caching

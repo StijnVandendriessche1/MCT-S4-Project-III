@@ -13,6 +13,7 @@ sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
 from Logic.AutoDeployGit import AutoDeployGit
+from Logic.influxdb import Influxdb
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
@@ -21,10 +22,12 @@ class MQTT:
     def __init__(self, device_id, queue = None):
         try:
             self.get_vars = GetVars()
+            self.influxdb = Influxdb()
             self.queue = queue
             self.runPrs = False
             self.runCoffee = False
             self.runDish = False
+            self.get_ai_status()
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
             self.root_cert_filepath = self.get_vars.get_var("GoogleIOT_CertPath")
@@ -147,4 +150,36 @@ class MQTT:
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
+    
+    def get_ai_status_from_df(self, settings_data, ai):
+        """This function gets the ai_status from the dataframe and returns
 
+        Args:
+            settings_data (DataFrame): This must be a dataframe
+            ai (string): This must be the name of the system
+
+        Returns:
+            bool: This function returns true if on and false if the system is off
+        """
+        try:
+            row = settings_data[settings_data["ai"] == ai]
+            return bool(row["status"].astype(bool).values[0])
+        except:
+            return False
+    
+    def get_ai_status(self):
+        """Set the ai_status of the system.
+
+        Raises:
+            Exception: Error-message
+        """
+        try:
+            query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "ai_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "ai")'
+            settings_data = self.influxdb.get_data(query, False)
+            if not settings_data.empty:
+                self.runPrs = get_ai_status_from_df(settings_data, "ai_meeting")
+                self.runCoffee = get_ai_status_from_df(settings_data, "ai_coffee")
+                self.runDish = get_ai_status_from_df(settings_data, "ai_dishwasher")
+        except Exception as ex:
+            logging.error(ex)
+            raise Exception(ex)
