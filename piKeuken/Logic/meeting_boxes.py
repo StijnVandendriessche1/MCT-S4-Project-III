@@ -25,7 +25,7 @@ class MeetingBoxSystem:
             self.host = "webserver"
             self.status_ai = True
             self.meetingbox_queue = Queue()
-            self.influxdb = Influxdb("Pi")
+            self.influxdb = Influxdb("Cloud")
             self.meetingboxes = self.initialize_meetingboxes()
             self.start()
         except Exception as e:
@@ -79,10 +79,11 @@ class MeetingBoxSystem:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "meetingbox_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "meetingbox")'
             settings_data = self.influxdb.get_data(query, False)
             if settings_data.empty:
-                # TODO --> Change it to the class MeetingBox
-                for meetingbox, status in self.status_meeting_box.items():
+                for meetingbox in self.meetingboxes:
+                    self.change_status_influxdb("meetingbox", "meetingbox_status", meetingbox.name, meetingbox.buzzy)
+                """ for meetingbox, status in self.status_meeting_box.items():
                     self.change_status_influxdb(
-                        "meetingbox", "meetingbox_status", meetingbox, self.status_meeting_box[meetingbox])
+                        "meetingbox", "meetingbox_status", meetingbox, self.status_meeting_box[meetingbox]) """
             else:
                 for i, meetingbox in enumerate(self.meetingboxes):
                     row = settings_data[settings_data["meetingbox"]
@@ -183,7 +184,7 @@ class MeetingBoxSystem:
             data.append(Data("status", meetingbox.buzzy))
             data.append(Data("meetingbox", meetingbox.name))
             sensordata = Sensordata("meetingbox_status", self.host, data)
-            # TODO --> Send it to the Google Pub/Sub
+            self.influxdb.write_data(sensordata)
         except Exception as ex:
             logging.error(ex)
             raise ex

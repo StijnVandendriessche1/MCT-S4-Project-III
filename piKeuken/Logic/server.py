@@ -87,7 +87,6 @@ class Server:
             raise Exception(ex)
 
     def change_status_influxdb(self,sort,sort_status, key, status):
-        # TODO:Change it with the Google Pub/Sub
         try:
             data = []
             data.append(Data("status", status))

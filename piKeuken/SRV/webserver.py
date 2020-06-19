@@ -299,7 +299,7 @@ def get_meetingbox_status():
     """    
     try:
         if google_auth.is_logged_in():
-            return jsonify({'status': server.status_meeting_box})
+            return jsonify({'status': server.meetingbox.get_status()})
         return authorization_error
     except Exception as ex:
         logging.error(ex)
@@ -480,6 +480,8 @@ def change_dishwasher_settings():
         return jsonify({'status': False})
 
 def update_thread():
+    """This function is for updating the devices
+    """
     try:
         try:
             pubsubMeeting.send_message(jsonpickle.encode({"update": "test"}))
@@ -506,6 +508,11 @@ def update_thread():
 
 @app.route(endpoint + '/update')
 def update_devices():
+    """This get-route is for updating the devices
+
+    Returns:
+        JSON: It returns a JSON object with the state
+    """    
     try:
         update = Thread(target=update_thread)
         update.start()
@@ -518,7 +525,6 @@ try:
     """For starting the Flask app
     """    
     if __name__ == '__main__':
-        print("Started")
         app.run(host = "0.0.0.0", port = "5000", ssl_context = (
             f'{BASE_DIR}/SRV/cert.pem', f'{BASE_DIR}/SRV/key.pem'), threaded = True)
 except Exception as ex:
