@@ -50,9 +50,11 @@ class AutoDeployGit:
 
     def pull_git(self):
         try:
+            os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
             o = self.repo.remotes.origin
             o.pull()
-            os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
+            os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
+            #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
             print("updated")
         except Exception as e:
             logging.error(e)
