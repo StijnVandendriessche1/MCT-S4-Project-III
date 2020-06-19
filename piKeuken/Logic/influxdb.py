@@ -86,6 +86,9 @@ class Influxdb:
                 query_in += ' |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
             query = f'{in_import} from(bucket: "{self.bucket}") {query_in}'
             results = self.client.query_api().query_data_frame(query, org=self.org)
+            """ Set _ to space """
+            if "host" in results.columns:
+                results["host"] = [host.replace("_", " ") for host in results["host"]]
             return results
         except Exception as ex:
             logging.error(ex)
