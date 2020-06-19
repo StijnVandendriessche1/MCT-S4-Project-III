@@ -50,16 +50,14 @@ class AutoDeployGit:
 
     def pull_git(self):
         try:
-            try:
-                os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
-            except:
-                print("no directory deleted")
-            finally:
-                o = self.repo.remotes.origin
-                o.pull()
-                os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
-                #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
-                print("updated")
+            os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
+            print("directory deleted")
+            #o = self.repo.remotes.origin
+            #o.pull()
+            os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git')
+            #os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
+            #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
+            print("updated")
         except Exception as e:
             logging.error(e)
 

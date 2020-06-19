@@ -27,6 +27,7 @@ class MQTT:
             self.runPrs = False
             self.runCoffee = False
             self.runDish = False
+            self.isUpdating = False
             self.get_ai_status()
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
@@ -129,14 +130,18 @@ class MQTT:
                 else:
                     print("command not recognised")
             elif k == "update":
-                print("starting update...")
-                #os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
-                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
-                autodeploy.pull_git()
-                #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
-                print("updated")
-                os.system('sudo shutdown -r')
-                self.queue.put("quit")
+                if not self.isUpdating:
+                    self.isUpdating = True
+                    print("starting update...")
+                    # os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
+                    #autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git", "MCT-S4-Project-III")
+                    #autodeploy.pull_git()
+                    os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
+                    os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git')
+                    # os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
+                    print("updated")
+                    os.system('sudo shutdown -r')
+                    self.queue.put("quit")
 
         except Exception as ex:
             logging.error(ex)
