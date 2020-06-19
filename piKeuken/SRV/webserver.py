@@ -423,6 +423,9 @@ def change_dishwasher_settings():
 
 def update_thread():
     try:
+        pubsubMeeting = PubSubComment(3052736401110405)
+        pubsubKitchen = PubSubComment(2817465839732274)
+        pubsubCoffee = PubSubComment(2938279615337930)
         try:
             pubsubMeeting.send_message(jsonpickle.encode({"update": "test"}))
             print("meeting command sent")

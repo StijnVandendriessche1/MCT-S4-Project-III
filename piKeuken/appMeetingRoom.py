@@ -20,6 +20,8 @@ from Logic.switch import Button
 import pandas as pd
 import numpy as np
 import json
+import subprocess
+import os
 GPIO.setmode(GPIO.BCM)
 
 run = True
@@ -94,6 +96,7 @@ def door_change(a):
     y = jsonpickle.encode(x.__dict__)
     mqtt.send(y)
     print(y)
+
 
 try:
     actLight = threading.Thread(target=run_light)
