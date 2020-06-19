@@ -177,9 +177,9 @@ class MQTT:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "ai_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "ai")'
             settings_data = self.influxdb.get_data(query, False)
             if not settings_data.empty:
-                self.runPrs = get_ai_status_from_df(settings_data, "ai_meeting")
-                self.runCoffee = get_ai_status_from_df(settings_data, "ai_coffee")
-                self.runDish = get_ai_status_from_df(settings_data, "ai_dishwasher")
+                self.runPrs = self.get_ai_status_from_df(settings_data, "ai_meeting")
+                self.runCoffee = self.get_ai_status_from_df(settings_data, "ai_coffee")
+                self.runDish = self.get_ai_status_from_df(settings_data, "ai_dishwasher")
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
