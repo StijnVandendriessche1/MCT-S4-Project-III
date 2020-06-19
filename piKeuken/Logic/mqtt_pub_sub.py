@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
-from Logic.AutoDeployGit import AutoDeployGit
+#from Logic.AutoDeployGit import AutoDeployGit
 from Logic.influxdb import Influxdb
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
@@ -27,6 +27,7 @@ class MQTT:
             self.runPrs = False
             self.runCoffee = False
             self.runDish = False
+            self.isUpdating = False
             self.get_ai_status()
             self.ssl_algorithm = self.get_vars.get_var("GoogleIOT_Algorithm") # Either RS256 or ES256
             self.ssl_private_key_filepath = self.get_vars.get_var("GoogleIOT_PrivateKey")
@@ -129,14 +130,17 @@ class MQTT:
                 else:
                     print("command not recognised")
             elif k == "update":
-                print("starting update...")
-                #os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
-                autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git","MCT-S4-Project-III")
-                autodeploy.pull_git()
-                #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
-                print("updated")
-                os.system('sudo shutdown -r')
-                self.queue.put("quit")
+                if not self.isUpdating:
+                    self.isUpdating = True
+                    print("starting update...")
+                    os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
+                    os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git')
+                    os.system('sudo rm -rf /home/pi/project3/*')
+                    os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
+                    os.system('cp /home/pi/settings.json /home/pi/project3')
+                    print("updated")
+                    os.system('sudo shutdown -r')
+                    self.queue.put("quit")
 
         except Exception as ex:
             logging.error(ex)
@@ -177,9 +181,9 @@ class MQTT:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "ai_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "ai")'
             settings_data = self.influxdb.get_data(query, False)
             if not settings_data.empty:
-                self.runPrs = get_ai_status_from_df(settings_data, "ai_meeting")
-                self.runCoffee = get_ai_status_from_df(settings_data, "ai_coffee")
-                self.runDish = get_ai_status_from_df(settings_data, "ai_dishwasher")
+                self.runPrs = self.get_ai_status_from_df(settings_data, "ai_meeting")
+                self.runCoffee = self.get_ai_status_from_df(settings_data, "ai_coffee")
+                self.runDish = self.get_ai_status_from_df(settings_data, "ai_dishwasher")
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
