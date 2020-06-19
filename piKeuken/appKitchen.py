@@ -110,10 +110,8 @@ except Exception as ex:
     print("something went wrong")
     print(ex)
 finally:
-    try:
-        run = False
-        q.put("quit")
-        GPIO.cleanup()
-        print("goodbye")
-    except Exception as e:
-        print(e)
+    run = False
+    time.sleep(5)
+    q.put("quit")
+    GPIO.cleanup()
+    print("goodbye")
