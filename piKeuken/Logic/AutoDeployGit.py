@@ -52,12 +52,12 @@ class AutoDeployGit:
         try:
             o = self.repo.remotes.origin
             o.pull()
-            os.system("sudo reboot")
+            os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
+            print("updated")
         except Exception as e:
             logging.error(e)
 
-#autodeploy = AutoDeployGit("/home/pi/","https://github.com/StijnVandendriessche1/testProject3.git", "testGit")
-
+#autodeploy = AutoDeployGit("/home/pi","https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git", "MCT-S4-Project-III")
 #autodeploy.pull_git()
 #
 #
