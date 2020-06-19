@@ -16,6 +16,7 @@ from Logic.get_vars import GetVars
 from Logic.notifications import Notifications
 from Logic.coffee import Coffee
 from Logic.dishwasher import Dishwasher
+from Logic.meeting_boxes import MeetingBoxSystem
 
 
 """ Class for the main_server"""
@@ -32,11 +33,17 @@ class Server:
             self.notifications = Notifications()
             self.coffee = Coffee(self.notifications.new_notifications_queue)
             self.dishwasher = Dishwasher(self.notifications.new_notifications_queue)
+            self.meetingbox = MeetingBoxSystem()
             self.start_status()
         except Exception as ex:
             logging.error(ex)
 
     def start_status(self):
+        """Starts the webserver
+
+        Raises:
+            Exception: Error-message
+        """        
         try:
             self.status_ai = {
                 "ai_meeting": False,
@@ -55,9 +62,15 @@ class Server:
             self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
             self.get_meeting_box_status()
         except Exception as ex:
+            logging.error(ex)
             raise Exception(ex)
 
     def get_ai_status(self):
+        """Get the ai-status of each system.
+
+        Raises:
+            Exception: Error-message
+        """
         try:
             query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "ai_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "ai")'
             settings_data = self.influxdb.get_data(query, False)
@@ -74,6 +87,7 @@ class Server:
             raise Exception(ex)
 
     def change_status_influxdb(self,sort,sort_status, key, status):
+        # TODO:Change it with the Google Pub/Sub
         try:
             data = []
             data.append(Data("status", status))
@@ -85,6 +99,14 @@ class Server:
             raise Exception(ex)
 
     def change_ai_status(self, ai):
+        """This function changes the ai-status from the frontend and get the new status from the Influxdb
+
+        Args:
+            ai (string): This string must be the name of the system
+
+        Raises:
+            Exception: Error-message
+        """        
         try:
             if self.status_ai[ai]:
                 self.status_ai[ai] = False
@@ -94,12 +116,20 @@ class Server:
             """ Change the ai_status in the systems """
             self.coffee.ai_status = self.status_ai["ai_coffee"]
             self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
-            return self.get_ai_status
+            self.get_ai_status()
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
 
     def check_coffee_status(self):
+        """This function gets the last sensordata from the coffee from the Influxdb
+
+        Raises:
+            Exception: Error-message
+
+        Returns:
+            float: This function returns a value with 2 decimal places
+        """        
         try:
             query = ''' |> range(start: 2018-05-22T23:30:00Z)
                         |> last()
@@ -115,6 +145,14 @@ class Server:
             raise Exception(ex)
 
     def check_status_dishwasher(self):
+        """This function returns the status of the dishwasher
+
+        Raises:
+            Exception: Error-message
+
+        Returns:
+            bool: This function returns a True by on and a False by off.
+        """        
         try:
             return self.dishwasher.status
         except Exception as ex:
@@ -150,6 +188,17 @@ class Server:
             raise Exception(ex)
     
     def get_info_box(self, box):
+        """This function gets the last info about the rooms (temp, humidity, light)
+
+        Args:
+            box (string): This string must be the name of the room
+
+        Raises:
+            Exception: Error-message
+
+        Returns:
+            JSON: This function returns a json object
+        """        
         try:
             query = f'|> range(start: 2018-05-22T23:30:00Z) |> last() |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r) => r["host"] == "{box}") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
             data_info = self.influxdb.get_data(query, False)
@@ -175,6 +224,14 @@ class Server:
             raise ex
     
     def get_day_of_week(self, day):
+        """This function returns the day of the week
+
+        Args:
+            day (int): This must be a number between 0 and 7.
+
+        Returns:
+            string: This function returns the day of the week in string format
+        """
         if day == 0:
             return "Sunday"
         elif day == 1:
@@ -192,6 +249,14 @@ class Server:
         return "Unknown"
     
     def get_coffee_day_of_week(self):
+        """This function gets the mean coffee_left_weight of each DayOfWeek and returns it in JSON. (For the graph on the dashboard)
+
+        Raises:
+            ex: Error-Message
+
+        Returns:
+            JSON: This function returns a json object
+        """        
         try:
             query ="""  |> range(start: 2018-05-22T23:30:00Z)
                         |> filter(fn: (r) => r["host"] == "Coffee")
@@ -209,6 +274,14 @@ class Server:
             raise ex
     
     def get_temperature_by_room(self):
+        """This function gets the mean temperature of each room from the Influxdb (for the graph on the dashboard)
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            JSON: This function returns a JSON object
+        """        
         try:
             query ="""  |> range(start: 2018-05-22T23:30:00Z)
                         |> filter(fn: (r) => r["_measurement"] == "sensordata")
@@ -222,6 +295,14 @@ class Server:
             raise ex
     
     def get_humidity_by_room(self):
+        """This function gets the mean humidity of each room from the influxdb (for the graph on the dashboard)
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            JSON: This function returns a JSON object
+        """        
         try:
             query ="""  |> range(start: 2018-05-22T23:30:00Z)
                         |> filter(fn: (r) => r["_measurement"] == "sensordata")

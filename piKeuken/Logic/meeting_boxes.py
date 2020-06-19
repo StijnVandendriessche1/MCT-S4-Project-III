@@ -9,7 +9,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
-from Models.MeetingBox import MeetingBox
+from Models.meeting_box import MeetingBox
 from Logic.influxdb import Influxdb
 from Models.data import Data
 from Models.sensordata import Sensordata
@@ -20,11 +20,11 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 
 class MeetingBoxSystem:
-    def __init__(self, meetingbox_queue):
+    def __init__(self):
         try:
             self.host = "webserver"
             self.status_ai = True
-            self.meetingbox_queue = meetingbox_queue
+            self.meetingbox_queue = Queue()
             self.influxdb = Influxdb("Pi")
             self.meetingboxes = self.initialize_meetingboxes()
             self.start()
@@ -159,7 +159,7 @@ class MeetingBoxSystem:
             meetingbox = [mb for mb in self.meetingboxes if mb.name == box]
             if len(meetingbox) == 1:
                 i = self.meetingboxes.index(meetingbox[0])
-                if self.meetingboxes[i]:
+                if self.meetingboxes[i].buzzy:
                     self.meetingboxes[i].buzzy = False
                 else:
                     self.meetingboxes[i].buzzy = True
@@ -205,8 +205,3 @@ class MeetingBoxSystem:
         except Exception as ex:
             logging.error(ex)
             raise ex
-
-
-test_queue = Queue()
-test = MeetingBoxSystem(test_queue)
-test.change_meeting_box("GoldenEye")
