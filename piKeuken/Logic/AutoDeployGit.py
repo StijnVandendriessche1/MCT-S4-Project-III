@@ -50,6 +50,7 @@ class AutoDeployGit:
 
     def pull_git(self):
         try:
+            os.system('sudo rm -r /home/pi/MCT-S4-Project-III/piKeuken')
             o = self.repo.remotes.origin
             o.pull()
             os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')

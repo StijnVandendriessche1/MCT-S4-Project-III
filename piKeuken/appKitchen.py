@@ -114,6 +114,4 @@ finally:
     time.sleep(5)
     q.put("quit")
     GPIO.cleanup()
-    print("goodbye")
-
-#als je dit leest dan werkt de deployment
+    print("het lukte!")
