@@ -113,7 +113,7 @@ class MeetingBoxSystem:
                     try:
                         row = settings_data[settings_data["host"]
                                             == meetingbox.name]
-                        self.meetingboxes[i].buzzy = int(
+                        self.meetingboxes[i].count_peoples = int(
                             row["_value"].astype(int).values[0])
                     except:
                         pass
