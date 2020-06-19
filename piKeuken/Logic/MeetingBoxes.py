@@ -1,3 +1,4 @@
+from time import sleep
 from threading import Thread
 import logging
 
@@ -8,11 +9,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
-from Models.sensordata import Sensordata
-from Models.data import Data
-from Logic.influxdb import Influxdb
 from Models.MeetingBox import MeetingBox
-from time import sleep
+from Logic.influxdb import Influxdb
+from Models.data import Data
+from Models.sensordata import Sensordata
 
 """ Class for the room-ai """
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
@@ -22,6 +22,7 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 class MeetingBoxSystem:
     def __init__(self, meetingbox_queue):
         try:
+            self.host = "webserver"
             self.status_ai = True
             self.meetingbox_queue = meetingbox_queue
             self.influxdb = Influxdb("Pi")
@@ -128,12 +129,12 @@ class MeetingBoxSystem:
                 self.get_count_persons()
                 for i, meetingbox in enumerate(self.meetingboxes):
                     """ Check if the meetingbox is changed """
-                    if meetingbox.last_change == 0 and meetingbox.persons > 0:
-                        self.meetingboxes[i].last_change = meetingbox.persons
+                    if meetingbox.last_change == 0 and meetingbox.count_peoples > 0:
+                        self.meetingboxes[i].last_change = meetingbox.count_peoples
                         self.meetingboxes[i].buzzy = True
                         self.meetingbox_queue.put(0)
                     elif meetingbox.last_change > 0 and meetingbox.last_change == 0:
-                        self.meetingboxes[i].last_change = meetingbox.persons
+                        self.meetingboxes[i].last_change = meetingbox.count_peoples
                         self.meetingboxes[i].buzzy = False
                         self.meetingbox_queue.put(0)
             sleep(61)
@@ -151,18 +152,18 @@ class MeetingBoxSystem:
 
         Returns:
             dict: This function returns a dictionary
-        """        
+        """
         # Function that can be call when the user will change the meeting box status with the toggle-switch
         try:
             """ Find the object in the list """
             meetingbox = [mb for mb in self.meetingboxes if mb.name == box]
-            if len(meetingbox)==1:
+            if len(meetingbox) == 1:
                 i = self.meetingboxes.index(meetingbox[0])
                 if self.meetingboxes[i]:
-                    self.meetingboxes[i] = False
+                    self.meetingboxes[i].buzzy = False
                 else:
-                    self.meetingboxes[i] = True
-                self.change_to_influxdb(self.meetingboxes[i].name, self.meetingboxes[i].buzzy)
+                    self.meetingboxes[i].buzzy = True
+                self.change_to_influxdb(self.meetingboxes[i])
             return self.get_status()
         except Exception as ex:
             logging.error(ex)
@@ -186,7 +187,7 @@ class MeetingBoxSystem:
         except Exception as ex:
             logging.error(ex)
             raise ex
-    
+
     def get_status(self):
         """This function returns the current status
 
@@ -204,6 +205,7 @@ class MeetingBoxSystem:
         except Exception as ex:
             logging.error(ex)
             raise ex
+
 
 test_queue = Queue()
 test = MeetingBoxSystem(test_queue)
