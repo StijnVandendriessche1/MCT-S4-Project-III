@@ -58,4 +58,4 @@ finally:
     time.sleep(5)
     q.put("quit")
     GPIO.cleanup()
-    print("het lukte!")
+    print("goodbye")
