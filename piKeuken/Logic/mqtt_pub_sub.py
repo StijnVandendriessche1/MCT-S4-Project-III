@@ -132,7 +132,7 @@ class MQTT:
                 autodeploy.pull_git()
                 #os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
                 print("updated")
-                os.system('sudo shutdown -r')
+                #os.system('sudo shutdown -r')
                 self.queue.put("quit")
 
         except Exception as ex:
