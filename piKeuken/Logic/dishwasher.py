@@ -128,7 +128,6 @@ class Dishwasher:
                 self.hour_on = datetime.strptime(settings[settings["name"] == "dishwasher_hour_on"]["value"].iloc[0], f"%Y-%m-%d %H:%M:%S.%f")
                 self.duration = self.parse_time(settings[settings["name"] == "dishwasher_duration"]["value"].iloc[0])
                 self.mail_person = []
-                print(settings[settings["name"] == "dishwasher_email"]["value"])
                 self.mail_person.append(settings[settings["name"] == "dishwasher_email"]["value"].iloc[0])
         except Exception as ex:
             logging.error(ex)

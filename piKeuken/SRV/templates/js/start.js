@@ -1,5 +1,6 @@
-const production = false, ip = "https://192.168.238.2.xip.io:5000";
-//ip = "https://localhost:5000";
+const production = false;
+//ip = "https://192.168.238.2.xip.io:5000";
+const ip = "https://localhost:5000";
 let socket = io.connect(ip);
 
 let domReady = false;
@@ -30,6 +31,7 @@ const classStatsSelected = "c-stats--selected";
 
 /* Sockets for putting the ai's on or off */
 socket.on("status_ai_meeting", function (data) {
+    log(data)
     toggleSwitchStatusChange("ai-meeting", data.status);
 });
 socket.on("status_ai_coffee", function (data) {
@@ -248,6 +250,7 @@ const changeBoxStatus = function (box, status) {
     icon.classList.add(`js-icon__${selected}`);
 };
 const toggleSwitchStatusChange = function (box, status) {
+    log(`${box} - ${status}`)
     /* Get all the elements from this box */
     const domBoxAIMeeting = document.querySelector(`.js-box--${box}`);
 
