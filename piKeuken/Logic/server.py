@@ -50,17 +50,10 @@ class Server:
                 "ai_coffee": False,
                 "ai_dishwasher": False
             }
-            self.status_meeting_box = {
-                "GoldenEye": False,
-                "Casino Royale": False,
-                "Moon Raker": False,
-                "Gold Finger": False
-            }
             self.get_ai_status()
             """ Change the ai_status in the systems """
             self.coffee.ai_status = self.status_ai["ai_coffee"]
             self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
-            self.get_meeting_box_status()
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
@@ -157,34 +150,6 @@ class Server:
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
-
-    def get_meeting_box_status(self):
-        try:
-            query = '|> range(start: 2018-05-22T23:30:00Z) |> filter(fn: (r) => r["_measurement"] == "meetingbox_status") |> filter(fn: (r) => r["host"] == "webserver") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> unique(column: "meetingbox")'
-            settings_data = self.influxdb.get_data(query, False)
-            if settings_data.empty:
-                for meetingbox, status in self.status_meeting_box.items():
-                    self.change_status_influxdb("meetingbox", "meetingbox_status", meetingbox, self.status_meeting_box[meetingbox])
-            else:
-                for status_meetingbox in self.status_meeting_box:
-                    row = settings_data[settings_data["meetingbox"] == status_meetingbox]
-                    status_meeting_box = bool(row["status"].astype(bool).values[0])
-                    self.status_meeting_box[status_meetingbox] = status_meeting_box
-        except Exception as ex:
-            logging.error(ex)
-            raise Exception(ex)
-
-    def change_meeting_boxs(self, box):
-        try:
-            if self.status_meeting_box[box]:
-                self.status_meeting_box[box] = False
-            else:
-                self.status_meeting_box[box] = True
-            self.change_status_influxdb("meetingbox", "meetingbox_status", box, self.status_meeting_box[box])
-            return self.status_meeting_box
-        except Exception as ex:
-            logging.error(ex)
-            raise Exception(ex)
     
     def get_info_box(self, box):
         """This function gets the last info about the rooms (temp, humidity, light)
@@ -199,6 +164,7 @@ class Server:
             JSON: This function returns a json object
         """        
         try:
+            box = box.replace(" ", "_")
             query = f'|> range(start: 2018-05-22T23:30:00Z) |> last() |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r) => r["host"] == "{box}") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'
             data_info = self.influxdb.get_data(query, False)
             for i, r in enumerate(data_info):

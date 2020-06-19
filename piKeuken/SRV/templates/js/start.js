@@ -1,5 +1,6 @@
-const production = false, ip = "https://192.168.238.2.xip.io:5000";
-//const ip = "https://localhost:5000";
+const production = false;
+//ip = "https://192.168.238.2.xip.io:5000";
+const ip = "https://localhost:5000";
 let socket = io.connect(ip);
 
 let domReady = false;
@@ -535,11 +536,14 @@ const resetInfoMapBoxes = function(){
     }
 };
 const changeInfoMapBoxes = function (data) {
+    log(data)
     resetInfoMapBoxes()
     let output = "";
     let box = data[0]["host"];
     box = box.replace(/ /g, "");
+    log(box)
     const domMapBox = document.querySelector(`.js-map-room${box}`);
+    log(domMapBox)
     domMapBox.style.stroke = "var(--global-accent)";
     domMapBox.style.strokeWidth = "5px";
     document.querySelector(`.js-map-icon${box}`).style.fill =
@@ -593,7 +597,8 @@ const setDataForGraph = function (data) {
     }
     Graph(data_labels, data_values);
 };
-
+/* backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+                    borderColor: ["rgba(255, 99, 132, 1)"], */
 const Graph = function (data_labels, data_values) {
     document.getElementById("Stats").innerHTML = "";
     var ctx = document.getElementById("Stats").getContext("2d");
@@ -608,8 +613,8 @@ const Graph = function (data_labels, data_values) {
                 {
                     label: "Mean",
                     data: data_values,
-                    backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-                    borderColor: ["rgba(255, 99, 132, 1)"],
+                    backgroundColor: "#ff9900",
+                    borderColor: "#ff9900",
                     borderWidth: 1,
                 },
             ],

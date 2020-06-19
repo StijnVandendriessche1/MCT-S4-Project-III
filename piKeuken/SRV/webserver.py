@@ -123,7 +123,7 @@ def connect():
         if google_auth.is_logged_in():
             global server
             """ Ai on or off """
-            socketio.emit('status_ai_meeting', {'status': server.meetingbox.get_status()})
+            socketio.emit('status_ai_meeting', {'status': server.status_ai["ai_meeting"]})
             socketio.emit('status_ai_coffee', {
                         'status': server.status_ai["ai_coffee"]})
             socketio.emit('status_ai_dishwasher', {
@@ -136,7 +136,7 @@ def connect():
                         'status': server.check_status_dishwasher()})
 
             """ Status of the rooms """
-            socketio.emit('status_rooms', {'status': server.status_meeting_box})
+            socketio.emit('status_rooms', {'status': server.meetingbox.get_status()})
 
             """ Coffee settings """
             socketio.emit('coffee_settings', server.coffee.get_coffee_settings())
@@ -535,5 +535,6 @@ except Exception as ex:
 finally:
     print("server afgesloten")
 
-
-# TODO --> Caching
+# TODO --> Dishwasher
+# TODO --> Bug in rooms
+# TODO --> Peer to peer
