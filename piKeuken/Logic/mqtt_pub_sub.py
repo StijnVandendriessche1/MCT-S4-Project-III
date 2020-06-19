@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.get_vars import GetVars
-from Logic.AutoDeployGit import AutoDeployGit
+#from Logic.AutoDeployGit import AutoDeployGit
 from Logic.influxdb import Influxdb
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
@@ -133,12 +133,9 @@ class MQTT:
                 if not self.isUpdating:
                     self.isUpdating = True
                     print("starting update...")
-                    # os.system('yes | sudo rm /home/pi/MCT-S4-Project-III/ -r')
-                    #autodeploy = AutoDeployGit("/home/pi/", "https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git", "MCT-S4-Project-III")
-                    #autodeploy.pull_git()
                     os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
                     os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git')
-                    # os.system('cp /home/pi/settings.json /home/pi/MCT-S4-Project-III/piKeuken')
+                    os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
                     print("updated")
                     os.system('sudo shutdown -r')
                     self.queue.put("quit")
