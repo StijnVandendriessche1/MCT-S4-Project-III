@@ -649,7 +649,7 @@ const Graph = function (data_labels, data_values) {
 const registeredServiceWorker = function () {
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-            .register("/static/sw.js")
+            .register("sw.js")
             .then((registration) => {
                 console.log("ServiceWorker running");
             })
@@ -678,7 +678,7 @@ const handleFloatingLabel = function () {
 /* When the script starts */
 document.addEventListener("DOMContentLoaded", function () {
     log("Js Started");
-    //registeredServiceWorker();
+    registeredServiceWorker();
     init();
     handleFloatingLabel();
 });
