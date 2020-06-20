@@ -61,5 +61,3 @@ finally:
     q.put("quit")
     GPIO.cleanup()
     print("goodbye")
-
-#het werkt
