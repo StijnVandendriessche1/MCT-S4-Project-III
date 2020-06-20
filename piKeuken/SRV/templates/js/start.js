@@ -104,6 +104,11 @@ socket.on("dishwasher_settings", function (data){
 })
 
 /* Functions */
+/* Function for respons update */
+const updatePis = function(data){
+    document.querySelector(".js-update-pis").innerHTML = data
+};
+/* Function for the notifications */
 const changeNotificationCount = function () {
     log(notificationsNotViewed);
     if (notificationsNotViewed.length == 0) {
@@ -457,6 +462,14 @@ const loadDOM = function () {
     domDishwasher.addEventListener("click", function () {
         showSettingsDishwasher();
     });
+
+    /* Check if someone clicks ons the update-btn */
+    const domBtnUpdatePis = document.querySelector(".js-update-pis");
+    domBtnUpdatePis.addEventListener('click', function(){
+        domBtnUpdatePis.innerHTML = "Waiting"
+        /* Sends a get-request to the api */
+        getAPI("update", updatePis);
+    });
 };
 
 const showNotifications = function () {
@@ -479,11 +492,11 @@ const showSettings = function () {
     if (isSettingsClicked == false) {
         box.style.display = "block";
         isSettingsClicked = true;
-        console.log("showed");
+        log("showed");
     } else {
         box.style.display = "none";
         isSettingsClicked = false;
-        console.log("hidden");
+        log("hidden");
     }
 };
 
