@@ -162,7 +162,7 @@ class MQTT:
                     self.isUpdating = True
                     print("starting update...")
                     os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
-                    os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git')
+                    os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git /home/pi/MCT-S4-Project-III')
                     os.system('sudo rm -rf /home/pi/project3/*')
                     os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
                     os.system('cp /home/pi/settings.json /home/pi/project3')
