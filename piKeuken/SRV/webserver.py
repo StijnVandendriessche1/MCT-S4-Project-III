@@ -24,6 +24,7 @@ import secrets
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
+isUpdating = False
 
 """ FLASK """
 app = Flask(__name__)
@@ -479,6 +480,14 @@ def change_dishwasher_settings():
         logging.error(ex)
         return jsonify({'status': False})
 
+def update_self():
+    os.system('sudo rm -rf /home/pi/MCT-S4-Project-III/')
+    os.system('sudo git clone https://github.com/StijnVandendriessche1/MCT-S4-Project-III.git /home/pi/MCT-S4-Project-III')
+    os.system('sudo rm -rf /home/pi/project3/*')
+    os.system('cp -r /home/pi/MCT-S4-Project-III/piKeuken/. /home/pi/project3/')
+    os.system('cp /home/pi/settings.json /home/pi/project3')
+    os.system('sudo shutdown -r')
+
 def update_thread():
     """This function is for updating the devices
     """
@@ -505,6 +514,10 @@ def update_thread():
                     print("update kitchen took very long")
                 finally:
                     print("all commands were sent")
+                    try:
+                        update_self()
+                    except:
+                        print("updating self failed")
     except Exception as ex:
         logging.error(ex)
         print("update failed")
@@ -516,13 +529,18 @@ def update_devices():
     Returns:
         JSON: It returns a JSON object with the state
     """    
-    try:
-        update = Thread(target=update_thread)
-        update.start()
-        return jsonify("update gestart")
-    except Exception as ex:
-        logging.error(ex)
-        return jsonify("someting went wrong"), 500
+    global isUpdating
+    if not isUpdating:
+        isUpdating = True
+        try:
+            update = Thread(target=update_thread)
+            update.start()
+            return jsonify("update gestart")
+        except Exception as ex:
+            logging.error(ex)
+            return jsonify("someting went wrong"), 500
+    else:
+        return jsonify("already updating")
 
 try:
     """For starting the Flask app
