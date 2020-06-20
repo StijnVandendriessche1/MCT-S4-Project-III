@@ -140,6 +140,27 @@ html {
   background-color: var(--global-darker-white);
 }
 
+/* Scollbar */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0); 
+  opacity: 0;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--global-accent)
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--global-color-alpha-transparent)
+}
+
 *,
 *:before,
 *:after {
