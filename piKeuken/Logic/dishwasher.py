@@ -123,7 +123,7 @@ class Dishwasher:
             bool: It returns true if he detects a vibration, else false
         """        
         try:
-            query = '|> range(start: -3m, stop: now()) |> filter(fn: (r) => r["_measurement"] == "sensor_data") |> filter(fn: (r) => r["host"] == "kitchen") |> filter(fn: (r) => r["_value"] == "dishwasher") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> tail(n: 3)'
+            query = '|> range(start: -3m, stop: now()) |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r) => r["host"] == "Kitchen") |> filter(fn: (r) => r["_value"] == "Detect") |> sort(columns: ["_time"], desc: true)'
             vibration_intensity_data = self.influxdb.get_data(query, False)
             if not vibration_intensity_data.empty:
                 return True
