@@ -39,7 +39,7 @@ class Dishwasher:
             self.hour_notification = timedelta(hours=16, minutes=13)
             """ Status:
                     -   0   ==> Nothing
-                    -   1   ==> Notification that the dishwasher must be filled
+                    -   1   ==> Notification that the dishwasher must be filled or the dishwasher is already done
                     -   3   ==> Running
             """
             self.status = 0
@@ -96,11 +96,11 @@ class Dishwasher:
                             self.send_mail.send_message( "The dishwasher needs you!","Don't forget to fill in the dishwasher", self.mail_person)
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
-                        elif self.status == 3 and (self.hour_on + self.duration) >= datetime.now():
+                        elif self.status == 3 and (self.hour_on + self.duration) <= datetime.now():
                             """ Check if the dishwasher is done """
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "The Dishwasher is empty! Time to empty it! 😇"})
-                            self.status = 0
+                            self.status = 1
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
                         elif self.status == 1 and time_now>= timedelta(hours=5, minutes=31):
