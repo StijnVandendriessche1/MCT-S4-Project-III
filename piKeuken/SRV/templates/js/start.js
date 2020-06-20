@@ -678,7 +678,7 @@ const handleFloatingLabel = function () {
 /* When the script starts */
 document.addEventListener("DOMContentLoaded", function () {
     log("Js Started");
-    registeredServiceWorker();
+    //registeredServiceWorker();
     init();
     handleFloatingLabel();
 });

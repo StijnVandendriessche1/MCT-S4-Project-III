@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" manifest="{{ url_for('static', filename='cache.appcache') }}">
+<html lang="en">
+<!-- <html lang="en" manifest="{{ url_for('static', filename='cache.appcache') }}"> -->
 
 <head>
     <meta charset="utf-8" />
@@ -25,8 +26,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./js/datahandler.js"></script>
+    <script type="text/javascript">
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("sw.js", {scope: ''})
+            .then((registration) => {
+                console.log("ServiceWorker running");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+    </script>
     <script src="./js/start.js"></script>
 
+<!--     <script>
+        self.addEventListener('install', function(e) {
+        caches.open(cacheVersion)
+        .then(function(cache) {
+        return cache.addAll([
+            "{{ url_for('static', filename='css/normalize.css') }}",
+            "{{ url_for('static', filename='css/screen.css') }}",
+            './js/start.js'
+                ]);
+        })
+        .catch(console.log);
+        });
+        self.addEventListener('fetch', function(e) {
+ e.respondWith(
+  fetch(e.request)
+   .then((response) => networkThenCache(response,e))
+   .catch(() => pullFromCache(e))
+ );
+});
+    </script> -->
 </head>
 
 <body>
@@ -1238,10 +1271,10 @@
     </div>
 </body>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-            navigator.serviceWorker.register("sw.js").then(function (registration) {
+            navigator.serviceWorker.register("{{ url_for('static', filename='sw.js') }}").then(function (registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function (err) {
@@ -1250,6 +1283,6 @@
             });
         });
     }
-</script>
+</script> -->
 
 </html>
