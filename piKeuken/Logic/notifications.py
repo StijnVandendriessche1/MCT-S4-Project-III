@@ -19,6 +19,8 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class Notifications:
     def __init__(self):
+        """Init of the object
+        """        
         try:
             self.notification_queue = Queue()
             self.new_notifications_queue = Queue()
@@ -28,6 +30,11 @@ class Notifications:
             logging.error(ex)
     
     def start(self):
+        """Start a thread that gets the new notifications from the system.
+
+        Raises:
+            ex: Error-message with the exception
+        """        
         try:
             t_new_notifications = Thread(target=self.new_notification_queue)
             t_new_notifications.start()
@@ -36,6 +43,11 @@ class Notifications:
             raise ex
     
     def new_notification_queue(self):
+        """This function gets the new notifications from the system (queue) and send it to the new_notification-function
+
+        Raises:
+            ex: Error-message
+        """        
         try:
             while True:
                 new_notification = self.new_notifications_queue.get()
@@ -46,6 +58,15 @@ class Notifications:
             raise ex
 
     def new_notification(self, name, message):
+        """This function gets the new notification and put it into the SQLite database
+
+        Args:
+            name (string): This must be the name of the notification
+            message (string): This must be the message of the notification
+
+        Raises:
+            ex: Error-message with the exception
+        """        
         try:
             #""" Put the notification in the database """
             id = str(uuid.uuid4().hex)
@@ -58,6 +79,15 @@ class Notifications:
             raise ex
 
     def notification_viewed(self, notification_id, user_id):
+        """This function must be called when a user viewed a notification
+
+        Args:
+            notification_id (string): This must be the id of the notification
+            user_id (int): This must be the id of the user (Google Auth)
+
+        Raises:
+            ex: Error-message with the exception
+        """        
         try:
             #""" Check if the notification exists """
             notification_exist = self.db.execute(
@@ -75,6 +105,17 @@ class Notifications:
             raise ex
 
     def get_notifications(self, user_id):
+        """This function gets all the notifications from a user
+
+        Args:
+            user_id (int): User-id (Google Auth)
+
+        Raises:
+            ex: Error-message with the exception
+
+        Returns:
+            dataframe: It returns a dataframe with all the notifications from the user
+        """        
         try:
             #""" Get the notifications from the database """
             notifications = self.db.execute('''SELECT id as nid, name as title, message as msg, user_id as uid, tb_notifications.datetime as dt FROM tb_notifications

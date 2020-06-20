@@ -24,6 +24,11 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class Influxdb:
     def __init__(self, token_type="Pi"):
+        """This is the init. Het setup the influxdb-connection
+
+        Args:
+            token_type (str, optional): Use Pi for reads, Cloud for reads/writes. Defaults to "Pi".
+        """        
         try:
             self.get_vars = GetVars()
             self.connection = False
@@ -38,6 +43,11 @@ class Influxdb:
             logging.error(ex)
 
     def start(self):
+        """Get the settings from the settings.json-file and start a write-api
+
+        Raises:
+            Exception: Error-message
+        """        
         try:
             self.bucket = self.get_vars.get_var("Bucket")
             self.org = self.get_vars.get_var("Org")
@@ -50,6 +60,14 @@ class Influxdb:
             raise Exception(ex)
 
     def write_data(self, sensordata):
+        """This function makes a string from the data that must be insert in the influxdb
+
+        Args:
+            sensordata (list): This must be a list of Sensordata (data)
+
+        Returns:
+            bool: It returns true if successful
+        """        
         try:
             fields = ""
             for i, data in enumerate(sensordata.data):
@@ -70,6 +88,17 @@ class Influxdb:
             return False
 
     def write_data_to_influxdb(self, measurement, host, fields, timestamp):
+        """This function is for writing data to the InfluxDB. It can only works with a cloud-object (This class with token_type=cloud)
+
+        Args:
+            measurement (string): This must be the measurement
+            host (string): This must be the host
+            fields (string): This must be the data that should be written
+            timestamp (int): This must be in nanoseconds (bug in influxdb 2.0)
+
+        Raises:
+            ex: Error-message
+        """                
         try:
             """ Convert the datatime to a timestamp in nanoseconds """
             #timestamp = int(datetime.timestamp()*1000000000)
@@ -81,6 +110,19 @@ class Influxdb:
             raise ex
 
     def get_data(self, query_in, change_format=True, in_import = ""):
+        """This function can be called by a pi or cloud token-type-object. It returns a dataframe
+
+        Args:
+            query_in (string): This must be the query that wil execute
+            change_format (bool, optional): If the _field must be the column name and the _value must be the value, set this to true. Defaults to True.
+            in_import (str, optional): If there are imports needed (example: date). Defaults to "".
+
+        Raises:
+            Exception: Error-message
+
+        Returns:
+            [type]: Dataframe
+        """        
         try:
             if change_format:
                 query_in += ' |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")'

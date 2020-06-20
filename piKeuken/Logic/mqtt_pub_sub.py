@@ -20,6 +20,12 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class MQTT:
     def __init__(self, device_id, queue = None):
+        """The init is for setup the settings
+
+        Args:
+            device_id (int): This must be the id of the device (from the Google IOT Core)
+            queue (Queue, optional): This must be a Queue. Defaults to None.
+        """        
         try:
             self.get_vars = GetVars()
             self.influxdb = Influxdb()
@@ -46,6 +52,11 @@ class MQTT:
             logging.error(ex)
 
     def start(self):
+        """This function is for starting everything
+
+        Raises:
+            Exception: Error-message of the exception
+        """        
         try:
             # authorization is handled purely with JWT, no user/pass, so username can be whatever
             self.client.username_pw_set(
@@ -64,6 +75,14 @@ class MQTT:
             raise Exception(ex)
 
     def create_jwt(self):
+        """This function is for creating a JWT token for the connection with the Google IOT-Core
+
+        Raises:
+            Exception: Error-message
+
+        Returns:
+            [type]: [description]
+        """        
         try:
             cur_time = datetime.datetime.utcnow()
             token = {
@@ -84,13 +103,22 @@ class MQTT:
         return '{}: {}'.format(rc, mqtt.error_string(rc))
 
     def on_connect(self, unusued_client, unused_userdata, unused_flags, rc):
+        """Runs this function if the device is connected with Google. Set a subscribe on a topic with QOS 1.
+        """        
         print('on_connect', self.error_str(rc))
         self.client.subscribe(self.commandTopic, qos=1)
 
     def on_publish(self, unused_client, unused_userdata, unused_mid):
+        """Run this function when a publish is successful
+        """        
         print('on_publish')
 
     def on_message(self, unused_client, unused_userdata, message):
+        """Run this function when a message is received
+
+        Arg:
+            message (object): This is the message that must be decoded to utf-8
+        """        
         try:
             payload = str(message.payload.decode('utf-8'))
             print(payload)
