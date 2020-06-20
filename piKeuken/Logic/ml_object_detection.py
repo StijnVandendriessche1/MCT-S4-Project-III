@@ -21,6 +21,11 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class MLObjectDetection:
     def __init__(self, objects = ["person"]):
+        """Init - Starts the detection process
+
+        Args:
+            objects (list, optional): This is a list of objects that must be detected. Defaults to ["person"].
+        """        
         try:
             self.show = False
             self.count_total_objects = {}
@@ -33,15 +38,27 @@ class MLObjectDetection:
             logging.error(ex)
 
     def get_objects_detect(self, objects):
+        """This function set up a dynamically count for the objectcounter
+
+        Args:
+            objects (list): This must be a list of string with the object-names that must be detected
+        """        
         for o in objects:
             self.count_total_objects[o] = 0
 
     def start_threads(self):
+        """Start the thread for the objectcounter
+        """        
         """ Thread for counting the objects """
         counter_objects = Thread(target=self.count_objects)
         counter_objects.start()
 
     def start(self):
+        """This function gets the trained model and open the camera
+
+        Raises:
+            Exception: Error-message with the exception
+        """        
         try:
             self.COLORS = np.random.uniform(0, 255, size=(len(self.CLASSES), 3))
             self.net = cv2.dnn.readNetFromCaffe("/home/pi/project3/ML/MobileNetSSD_deploy.prototxt.txt", "/home/pi/project3/ML/MobileNetSSD_deploy.caffemodel")
@@ -51,6 +68,12 @@ class MLObjectDetection:
             raise Exception(ex)
 
     def count_objects(self):
+        """This function gets the frames and count the objects that must be detected
+
+        Raises:
+            ValueError: Error-message
+            ValueError: Error-message
+        """        
         try:
             self.runPrs = True
             while self.runPrs:
@@ -116,14 +139,19 @@ class MLObjectDetection:
             raise ValueError(ex)
 
     def stop(self):
+        """Call this function to stop the ObjectCounter
+        """        
         self.runPrs = False
 
     def process(self):
+        """This is a function for testing. It prints the dict with the count of the objects that you will detect
+        """        
         while True:
             print(self.count_total_objects)
             sleep(3)
 
     def cleanup(self):
+        """ This function is for cleaning up"""
         self.cap.release()
         # finally, close the window
         cv2.destroyAllWindows()
