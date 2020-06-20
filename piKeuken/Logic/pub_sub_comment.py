@@ -25,6 +25,12 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class PubSubComment:
     def __init__(self, id):
+        # TODO:Aan StijnVandendriessche1 vragen
+        """For setting up the object.
+
+        Args:
+            id ([type]): [description]
+        """        
         try:
             self.registry_id="OfficeOfTheFuture"
             self.cloud_region="europe-west1"
@@ -35,6 +41,17 @@ class PubSubComment:
             logging.error(e)
     
     def send_message(self, message):
+        """This fucntion sends a message to a device
+
+        Args:
+            message (string/json): This must be a message
+
+        Raises:
+            e: Error-message
+
+        Returns:
+            [type]: [description]
+        """        
         try:
             """Send a command to a device."""
             # [START iot_send_command]

@@ -21,6 +21,8 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class MeetingBoxSystem:
     def __init__(self):
+        """The init setup the settings for this class
+        """        
         try:
             self.host = "webserver"
             self.status_ai = True
