@@ -279,6 +279,17 @@ def js(page):
         logging.error(ex)
         return "Error"
 
+@app.route("/sw.js")
+def sw():
+    try:
+        response=make_response(send_from_directory("static",filename="sw.js"))
+        #change the content header file
+        response.headers["Content-Type"]="application/javascript"
+        return response
+    except Exception as ex:
+        logging.error(ex)
+        return "Error"
+    
 
 """ @app.route('/<page>.appache')
 def cache(page):
@@ -544,12 +555,6 @@ def update_devices():
         return jsonify("already updating")
     
 
-@app.route("/sw.js")
-def sw():
-    response=make_response(send_from_directory("static",filename="sw.js"))
-    #change the content header file
-    response.headers["Content-Type"]="application/javascript"
-    return response
 try:
     """For starting the Flask app
     """    
