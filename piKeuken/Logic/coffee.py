@@ -16,6 +16,11 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class Coffee:
     def __init__(self, notification_queue):
+        """Init-function that set up the object
+
+        Args:
+            notification_queue (Queue): This must be the notification_Queue (for add new notifications)
+        """
         try:
             self.ai_status = True
             self.coffee_left = 0
@@ -34,6 +39,14 @@ class Coffee:
             logging.error(ex)
 
     def coffee_checker(self, coffee_left):
+        """This function checks if the coffee must be ordered, checks if the coffee is empty or he checks if the coffee is filled
+
+        Args:
+            coffee_left (float): This var must be a float of the last status of the coffee
+
+        Raises:
+            Exception: Error-message
+        """        
         try:
             if self.ai_status:
                 """ Change the coffee_left """
@@ -64,6 +77,14 @@ class Coffee:
             raise Exception(ex)
 
     def check_bool(self, bool_in):
+        """This function gets a string bool from a dataframe and checks if it is true or false
+
+        Args:
+            bool_in (dataframe string): The incoming var must be a dataframe with a string (true or false)
+
+        Returns:
+            bool: It returns True or False
+        """
         bool_out = bool_in.iloc[0]
         if bool_out == "True":
             return True
@@ -71,6 +92,11 @@ class Coffee:
             return False
 
     def get_settings(self):
+        """This function gets the last settings from the Influxdb. If this is empty, he fills the influxdb with the default settings
+
+        Raises:
+            ex: Error-message
+        """        
         try:
             """ Get the coffee_settings from the database """
             settings = self.db.execute(
@@ -110,6 +136,15 @@ class Coffee:
             raise ex
 
     def change_settings(self, settings_update, user_id=0):
+        """This function is for changing the settings in the SQLite
+
+        Args:
+            settings_update (dict): This must be a dictionary with key: name of the setting and value: the value of the setting
+            user_id (int, optional): This must be the id of the user (From Google Auth). Defaults to 0.
+
+        Raises:
+            ex: Error-message
+        """
         try:
             for setting in settings_update:
                 self.change_settings_db(
@@ -120,6 +155,16 @@ class Coffee:
             raise ex
 
     def change_settings_db(self, name, value, user_id):
+        """This function makes the query for changing the changes in the database
+
+        Args:
+            name (string): This must be the name of the setting to change
+            value (string): This must be the value of the setting
+            user_id (int): This must be the ID of the user (Google Auth)
+
+        Raises:
+            ex: Error-message
+        """        
         try:
             self.db.execute(f"UPDATE tb_settings SET value=:value, user_id=:user_id WHERE name=:name", {
                             "name": name, "value": value, "user_id": user_id})
@@ -128,6 +173,14 @@ class Coffee:
             raise ex
 
     def get_coffee_settings(self):
+        """This function returns all the info in a dictionary
+
+        Raises:
+            ex: error-message
+
+        Returns:
+            dict: He returns a dictionary with settings that are needed in the frontend
+        """
         try:
             data = {}
             data["coffee_left_threshold"] = self.coffee_left_threshold/1000

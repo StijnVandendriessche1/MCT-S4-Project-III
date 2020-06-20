@@ -26,6 +26,11 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class Dishwasher:
     def __init__(self, notification_queue):
+        """The init-function setup the class with default values. He calls the get_settings for getting the new settings.
+
+        Args:
+            notification_queue (Queue): This Queue if for adding new notifications to the frontend.
+        """        
         try:
             self.notification_queue = notification_queue
             self.db = DB()
@@ -47,6 +52,8 @@ class Dishwasher:
             logging.error(e)
 
     def start(self):
+        """This function is for starting a thread. This thread checks if the dishwasher is running and if someone must be started him.
+        """        
         try:
             """ Create a thread that checks if the dishwasher is on and if de server must send a notification """
             t_dishwasher = Thread(target=self.check_state)
@@ -55,12 +62,21 @@ class Dishwasher:
             logging.error(e)
 
     def check_state(self):
+        # TODO:Check if it works
+        """Check_state is a thread-function. He checks the state of the dishwasher and if someone must be started him (after a time)
+
+        Raises:
+            e: Error-message
+        """        
         try:
             while True:
                 try:
                     if self.ai_status:
                         """ Check if the dishwasher is on """
                         vibration = self.check_vibration()
+                        hour_now = datetime.now().hour
+                        minute_now = datetime.now().minute
+                        time_now = timedelta(hours=hour_now, minutes=minute_now)
                         """ Check if the dishwasher is on """
                         if vibration and self.status == 0:
                             """ Send notification that the dishwasher is started """
@@ -71,7 +87,7 @@ class Dishwasher:
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
                             self.change_settings({"dishwasher_hour_on": self.hour_on})
-                        if self.status == 0 and datetime.now() >= self.hour_notification:
+                        elif self.status == 0 and time_now >= self.hour_notification:
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "Don't forget to fill in the dishwasher! 💩"})
                             self.status = 1
@@ -86,6 +102,10 @@ class Dishwasher:
                             self.status = 0
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
+                        elif self.status == 1 and time_now>= timedelta(hours=5, minutes=31):
+                            """ Reset the dishwasher status """
+                            self.status = 0
+                            self.change_settings({"dishwasher_status": self.status})
                 except Exception as e:
                     logging.error(e)
                 sleep(61)
@@ -94,6 +114,14 @@ class Dishwasher:
             raise e
 
     def check_vibration(self):
+        """This function checks if he detects a vibration.
+
+        Raises:
+            e: Error-message
+
+        Returns:
+            bool: It returns true if he detects a vibration, else false
+        """        
         try:
             query = '|> range(start: -3m, stop: now()) |> filter(fn: (r) => r["_measurement"] == "sensor_data") |> filter(fn: (r) => r["host"] == "kitchen") |> filter(fn: (r) => r["_value"] == "dishwasher") |> sort(columns: ["_time"], desc: true) |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value") |> tail(n: 3)'
             vibration_intensity_data = self.influxdb.get_data(query, False)
@@ -105,6 +133,11 @@ class Dishwasher:
             raise e
 
     def get_settings(self):
+        """This function gets the last settings of the dishwasher. If there are no settings yet, he add the default to the SQLite
+
+        Raises:
+            ex: Error-message if someting went wrong
+        """        
         try:
             """ Get the dishwasher_settings from the database """
             settings = self.db.execute(
@@ -134,6 +167,17 @@ class Dishwasher:
             raise ex
     
     def parse_time(self, time_str):
+        """This function converts a string to a timedelta
+
+        Args:
+            time_str (string): This must be a time in format: hh:mm or hh:mm:ss
+
+        Raises:
+            e: Error-message
+
+        Returns:
+            deltatime: This function returns a deltatime
+        """        
         try:
             split_time = time_str.split(':')
             return timedelta(hours=int(split_time[0]), minutes=int(split_time[1]))
@@ -142,6 +186,17 @@ class Dishwasher:
             raise e
     
     def get_str_time_form_timedelta(self, time):
+        """This function converts a deltatime to a string
+
+        Args:
+            time (deltatime): The incoming var must be a deltatime
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            string: This string has the format: hh:mm:ss
+        """        
         try:
             totsec = time.total_seconds()
             h = int(totsec//3600)
@@ -153,6 +208,15 @@ class Dishwasher:
             raise ex
 
     def change_settings(self, settings_update, user_id=0):
+        """This function is for changing the settings in the SQLite
+
+        Args:
+            settings_update (dict): This must be a dictionary
+            user_id (int, optional): This must be the ID of the user (Google Auth). Defaults to 0.
+
+        Raises:
+            ex: Error-message
+        """        
         try:
             for setting in settings_update:
                 self.change_settings_db(
@@ -163,6 +227,16 @@ class Dishwasher:
             raise ex
 
     def change_settings_db(self, name, value, user_id):
+        """This function is for changing the changes in the SQLite
+
+        Args:
+            name (string): This must be the name of the item that has to be changed
+            value (string): Item that is changed
+            user_id (int): This must be the ID of the user (Google Auth)
+
+        Raises:
+            ex: Error-message
+        """        
         try:
             self.db.execute(f"UPDATE tb_settings SET value=:value, user_id=:user_id WHERE name=:name", {
                             "name": name, "value": value, "user_id": user_id})
@@ -171,12 +245,38 @@ class Dishwasher:
             raise ex
     
     def get_dishwasher_settings(self):
+        """This function returns a dict for the frontend
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            dicht: Returns dicht with settings
+        """
         try:
             data = {}
             data["dishwasher_hour_notification"] = self.get_str_time_form_timedelta(self.hour_notification)
             data["dishwasher_duration"] = self.get_str_time_form_timedelta(self.duration)
             data["dishwasher_email"] = self.mail_person[0]
             return data
+        except Exception as ex:
+            logging.error(ex)
+            raise ex
+    
+    def get_dishwasher_status(self):
+        """This function returns a True if the dishwasher is on and False if it is off
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            bool: True if it is on, False if it is off
+        """        
+        try:
+            if self.status == 3:
+                return True
+            else:
+                return False
         except Exception as ex:
             logging.error(ex)
             raise ex

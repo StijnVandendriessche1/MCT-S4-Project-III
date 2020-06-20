@@ -146,7 +146,7 @@ class Server:
             bool: This function returns a True by on and a False by off.
         """        
         try:
-            return self.dishwasher.status
+            return self.dishwasher.get_dishwasher_status()
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)

@@ -14,6 +14,8 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class DB:
     def __init__(self):
+        """Init of the class for setting up the basicConfig
+        """        
         try:
             self.database_location = f"{BASE_DIR}/data/ootf.db"
             """ Create the tables if they don't exist'"""
@@ -22,6 +24,11 @@ class DB:
             logging.error(ex)
 
     def create_start_tables(self):
+        """This function creates all the tables if they don't exist'
+
+        Raises:
+            Exception: Error-message
+        """        
         try:
             #""" Create the notification-table """
             self.execute(
@@ -37,6 +44,19 @@ class DB:
             raise Exception(ex)
 
     def execute(self, command, par=(), read=False):
+        """This function execute the query. It can be return a dataframe. If something went wrong, it will do a rollback.
+
+        Args:
+            command (string): This must be the query
+            par (tuple, dict), optional): This var can be a dictionary, list or a tuple. This are the parameters for the query. Defaults to ().
+            read (bool, optional): If the query must be return a dataframe, this must be set to True. Defaults to False.
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            Dataframe: If the read-bool is set on True, this will be return a dataframe
+        """        
         try:
             # Open a connections with the database
             db = sqlite3.connect(self.database_location)

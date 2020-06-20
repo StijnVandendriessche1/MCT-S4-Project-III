@@ -536,4 +536,3 @@ finally:
     print("server afgesloten")
 
 # TODO --> Dishwasher
-# TODO --> Peer to peer
