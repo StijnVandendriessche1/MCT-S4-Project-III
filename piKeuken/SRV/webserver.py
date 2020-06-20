@@ -13,6 +13,7 @@ from flask.templating import render_template
 from flask_cors import CORS
 from flask_socketio import SocketIO
 from flask_sslify import SSLify
+from flask import make_response, send_from_directory
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
@@ -237,14 +238,14 @@ def index():
         return "Error"
 
 
-@app.route('/sw.js', methods=['GET'])
+""" @app.route('/sw.js', methods=['GET'])
 def sw():
-    """For getting the service-worker
+    For getting the service-worker
 
     Returns:
         Javascript: This route returns a Javascript-file
-    """
-    return app.send_static_file('sw.js')
+    
+    return app.send_static_file('sw.js') """
 
 @app.route('/<page>')
 def html(page):
@@ -278,6 +279,17 @@ def js(page):
         logging.error(ex)
         return "Error"
 
+@app.route("/sw.js")
+def sw():
+    try:
+        response=make_response(send_from_directory("static",filename="sw.js"))
+        #change the content header file
+        response.headers["Content-Type"]="application/javascript"
+        return response
+    except Exception as ex:
+        logging.error(ex)
+        return "Error"
+    
 
 """ @app.route('/<page>.appache')
 def cache(page):
@@ -541,6 +553,7 @@ def update_devices():
             return jsonify("someting went wrong"), 500
     else:
         return jsonify("already updating")
+    
 
 try:
     """For starting the Flask app
