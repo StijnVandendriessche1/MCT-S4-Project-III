@@ -526,13 +526,14 @@ def update_thread():
                     print("update kitchen took very long")
                 finally:
                     print("all commands were sent")
-                    try:
-                        update_self()
-                    except:
-                        print("updating self failed")
     except Exception as ex:
         logging.error(ex)
         print("update failed")
+    finally:
+        try:
+            update_self()
+        except:
+            print("updating self failed")
 
 @app.route(endpoint + '/update')
 def update_devices():
