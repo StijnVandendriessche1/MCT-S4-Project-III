@@ -1392,6 +1392,13 @@ span {
   cursor: pointer;
 }
 
+/* Btn for updating the pi */
+.c-btn__update{
+  cursor: pointer;
+}
+.c-btn__update:hover {
+  box-shadow: var(--shadow-box);
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/

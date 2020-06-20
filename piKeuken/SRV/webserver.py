@@ -534,5 +534,3 @@ except Exception as ex:
     logging.error(ex)
 finally:
     print("server afgesloten")
-
-# TODO --> Dishwasher
