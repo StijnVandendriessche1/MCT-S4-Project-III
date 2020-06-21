@@ -55,6 +55,7 @@ class Server:
             """ Change the ai_status in the systems """
             self.coffee.ai_status = self.status_ai["ai_coffee"]
             self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
+            self.meetingbox.status_ai = self.status_ai["ai_meeting"]
         except Exception as ex:
             logging.error(ex)
             raise Exception(ex)
@@ -109,6 +110,7 @@ class Server:
             """ Change the ai_status in the systems """
             self.coffee.ai_status = self.status_ai["ai_coffee"]
             self.dishwasher.ai_status = self.status_ai["ai_dishwasher"]
+            self.meetingbox.status_ai = self.status_ai["ai_meeting"]
             self.get_ai_status()
         except Exception as ex:
             logging.error(ex)
