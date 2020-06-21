@@ -406,15 +406,15 @@ const changeCoffeeSettings = function () {
 };
 const showSettingsDishwasher = function () {
     box = document.querySelector(".js-settings__dishwasher");
-    console.log(box);
+    log(box);
     if (isSettingsClickedDishwasher == false) {
         box.style.display = "block";
         isSettingsClickedDishwasher = true;
-        console.log("showed");
+        log("showed");
     } else {
         box.style.display = "none";
         isSettingsClickedDishwasher = false;
-        console.log("hidden");
+        log("hidden");
     }
 };
 /* Load toggleSwitches */
@@ -505,7 +505,7 @@ const showNotifications = function () {
 
 const showSettings = function () {
     box = document.querySelector(".c-settings__box");
-    console.log(box);
+    log(box);
     if (isSettingsClicked == false) {
         box.style.display = "block";
         isSettingsClicked = true;
@@ -668,10 +668,10 @@ const registeredServiceWorker = function () {
         navigator.serviceWorker
             .register("sw.js")
             .then((registration) => {
-                console.log("ServiceWorker running");
+                log("ServiceWorker running");
             })
             .catch((err) => {
-                console.log(err);
+                log(err);
             });
     }
 };
@@ -682,7 +682,7 @@ const handleFloatingLabel = function () {
 
     for (const [index, inputfield] of input.entries()) {
         inputfield.addEventListener("blur", function () {
-            console.log(event);
+            log(event);
             if (inputfield.value) {
                 label[index].classList.add("is-floating");
             } else {
