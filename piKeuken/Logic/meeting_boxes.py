@@ -128,19 +128,25 @@ class MeetingBoxSystem:
         This function get the new count of persons from the Influxdb 
         """
         try:
-            if self.status_ai:
-                self.get_count_persons()
-                for i, meetingbox in enumerate(self.meetingboxes):
-                    """ Check if the meetingbox is changed """
-                    if meetingbox.last_change == 0 and meetingbox.count_peoples > 0:
-                        self.meetingboxes[i].last_change = meetingbox.count_peoples
-                        self.meetingboxes[i].buzzy = True
-                        self.meetingbox_queue.put(0)
-                    elif meetingbox.last_change > 0 and meetingbox.last_change == 0:
-                        self.meetingboxes[i].last_change = meetingbox.count_peoples
-                        self.meetingboxes[i].buzzy = False
-                        self.meetingbox_queue.put(0)
-            sleep(61)
+            while True:
+                try:
+                    if self.status_ai:
+                        self.get_count_persons()
+                        for i, meetingbox in enumerate(self.meetingboxes):
+                            """ Check if the meetingbox is changed """
+                            if meetingbox.last_change == 0 and meetingbox.count_peoples > 0:
+                                self.meetingboxes[i].last_change = meetingbox.count_peoples
+                                self.meetingboxes[i].buzzy = True
+                                self.change_to_influxdb(self.meetingboxes[i])
+                                self.meetingbox_queue.put(0)
+                            elif meetingbox.last_change > 0 and meetingbox.last_change == 0:
+                                self.meetingboxes[i].last_change = meetingbox.count_peoples
+                                self.meetingboxes[i].buzzy = False
+                                self.change_to_influxdb(self.meetingboxes[i])
+                                self.meetingbox_queue.put(0)
+                    sleep(61)
+                except:
+                    pass
         except Exception as ex:
             logging.error(ex)
 
