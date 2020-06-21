@@ -79,15 +79,16 @@ class Dishwasher:
                         minute_now = datetime.now().minute
                         time_now = timedelta(hours=hour_now, minutes=minute_now)
                         """ Check if the dishwasher is on """
-                        if vibration and self.status == 0 or self.status == 1:
+                        print(self.hour_on)
+                        print(datetime.now())
+                        if vibration == False and self.status == 0 or self.status == 1:
                             """ Send notification that the dishwasher is started """
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "Dishwasher is cleaning! 🧺🧺🧺"})
                             self.status = 3
                             self.hour_on = datetime.now()
                             """ Change the settings in the database """
-                            self.change_settings({"dishwasher_status": self.status})
-                            self.change_settings({"dishwasher_hour_on": self.hour_on})
+                            self.change_settings({"dishwasher_status": self.status, "dishwasher_hour_on": self.hour_on})
                         elif self.status == 0 and time_now >= self.hour_notification:
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "Don't forget to fill in the dishwasher! 💩"})
