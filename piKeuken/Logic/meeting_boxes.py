@@ -42,6 +42,7 @@ class MeetingBoxSystem:
         try:
             self.get_meeting_box_status()
             self.get_count_persons()
+            self.check_first_time()
 
             """ Start check-thread + start the thread"""
             t_check_meeting_box_status = Thread(
@@ -211,6 +212,17 @@ class MeetingBoxSystem:
             for meetingbox in self.meetingboxes:
                 meetingboxes_dict[meetingbox.name] = meetingbox.buzzy
             return meetingboxes_dict
+        except Exception as ex:
+            logging.error(ex)
+            raise 
+    
+    def check_first_time(self):
+        try:
+            for i, meetingbox in enumerate(self.meetingboxes):
+                try:
+                    self.meetingboxes[i].last_change = meetingbox.count_peoples
+                except:
+                    pass
         except Exception as ex:
             logging.error(ex)
             raise ex

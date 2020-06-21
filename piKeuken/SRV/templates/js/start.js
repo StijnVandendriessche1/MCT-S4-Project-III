@@ -1,5 +1,5 @@
 const production = true, ip = "https://192.168.238.2.xip.io:5000";
-//const ip = "https://localhost:5000";
+// ip = "https://localhost:5000";
 let socket = io.connect(ip);
 
 let domReady = false;
