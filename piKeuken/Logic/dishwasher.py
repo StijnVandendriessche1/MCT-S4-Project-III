@@ -32,6 +32,7 @@ class Dishwasher:
             notification_queue (Queue): This Queue if for adding new notifications to the frontend.
         """        
         try:
+            self.update_settings = 0
             self.notification_queue = notification_queue
             self.db = DB()
             self.influxdb = Influxdb()
@@ -72,7 +73,8 @@ class Dishwasher:
         try:
             while True:
                 try:
-                    if self.ai_status:
+                    if self.ai_status and self.update_settings == 0:
+                        self.update_settings = 3
                         """ Check if the dishwasher is on """
                         vibration = self.check_vibration()
                         hour_now = datetime.now().hour
@@ -110,6 +112,7 @@ class Dishwasher:
                             self.change_settings({"dishwasher_status": self.status})
                 except Exception as e:
                     logging.error(e)
+                self.update_settings = 0
                 sleep(61)
         except Exception as e:
             logging.error(e)
@@ -220,10 +223,15 @@ class Dishwasher:
             ex: Error-message
         """        
         try:
+            if user_id != 0:
+                while self.update_settings == 3:
+                    sleep(0.11)
+            self.update_settings = 1
             for setting in settings_update:
                 self.change_settings_db(
                     setting, settings_update[setting], user_id)
             self.get_settings()
+            self.update_settings = 0
         except Exception as ex:
             logging.error(ex)
             raise ex
