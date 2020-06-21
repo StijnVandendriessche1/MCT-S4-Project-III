@@ -64,7 +64,6 @@ class Dishwasher:
             logging.error(e)
 
     def check_state(self):
-        # TODO:Check if it works
         """Check_state is a thread-function. He checks the state of the dishwasher and if someone must be started him (after a time)
 
         Raises:
@@ -81,11 +80,6 @@ class Dishwasher:
                         minute_now = datetime.now().minute
                         time_now = timedelta(hours=hour_now, minutes=minute_now)
                         """ Check if the dishwasher is on """
-                        print("hour_on: ", self.hour_on)
-                        print("hour_on: ", self.hour_on)
-                        print("self.status: ", self.status)
-                        print("self.duration: ", self.duration)
-                        print("tot: ", (self.hour_on + self.duration))
                         if (vibration and self.status == 0) or (vibration and self.status == 1):
                             """ Send notification that the dishwasher is started """
                             self.notification_queue.put(

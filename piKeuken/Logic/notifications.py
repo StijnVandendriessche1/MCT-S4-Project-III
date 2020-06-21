@@ -13,6 +13,7 @@ BASE_DIR = os.path.dirname(PROJECT_ROOT)
 sys.path.insert(0, BASE_DIR)
 
 from Logic.db import DB
+from datetime import datetime
 
 logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR,
                     format="%(asctime)s    %(levelname)s -- %(processName)s %(filename)s:%(lineno)s -- %(message)s")
@@ -71,7 +72,7 @@ class Notifications:
             #""" Put the notification in the database """
             id = str(uuid.uuid4().hex)
             self.db.execute(
-                "INSERT INTO tb_notifications(id, name, message) VALUES (?, ?, ?)", (id, name, message))
+                "INSERT INTO tb_notifications(id, name, message, datetime) VALUES (?, ?, ?, ?)", (id, name, message, datetime.now()))
             #""" Send it to the frontend """
             self.notification_queue.put({"name": name, "message": message})
         except Exception as ex:
