@@ -158,7 +158,7 @@ class Dishwasher:
             else:
                 """ Change the value of the vars """
                 self.hour_notification = self.parse_time(settings[settings["name"] == "dishwasher_hour_notification"]["value"].iloc[0])
-                self.status = int(settings[settings["name"] == "dishwasher_status"]["value"])
+                self.status = int(settings[settings["name"] == "dishwasher_status"]["value"].iloc[0])
                 self.hour_on = datetime.strptime(settings[settings["name"] == "dishwasher_hour_on"]["value"].iloc[0], f"%Y-%m-%d %H:%M:%S.%f")
                 self.duration = self.parse_time(settings[settings["name"] == "dishwasher_duration"]["value"].iloc[0])
                 self.mail_person = []
