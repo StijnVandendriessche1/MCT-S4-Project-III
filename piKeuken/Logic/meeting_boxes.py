@@ -230,6 +230,7 @@ class MeetingBoxSystem:
                         self.meetingboxes[i].buzzy = True
                     else:
                         self.meetingboxes[i].buzzy = False
+                    self.change_to_influxdb(self.meetingboxes[i])
                 except:
                     pass
         except Exception as ex:
