@@ -1,0 +1,1155 @@
+2020-06-21 08:33:30,753    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:33:45,023    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:45] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 08:33:45,273    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:45] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 08:33:49,642    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:49] "[32mGET /google/auth?state=yKOm6bOZ0ljVuDNjiZS9m6fLsKBVO4&code=4/1AFoC60Ho7TzrQ9vZpNunoL2AYcy0cjKXjVCoCfgr_TvuDuD-SwRLbFywxIIZUe5nqaLkVD_-K2aKaVtSbg0bQo&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 08:33:50,005    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:50] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 08:33:50,717    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:50] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 08:33:50,740    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:50] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 08:33:50,759    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:50] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 08:33:50,792    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:50] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 08:33:51,166    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:51] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLbKlZ HTTP/1.1[0m" 200 -
+2020-06-21 08:33:51,465    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:51] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 08:33:51,759    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:51] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 08:33:51,854    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:51] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 08:33:51,907    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:51] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 08:33:52,328    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:52] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 08:33:52,514    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:52] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 08:33:53,400    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:33:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLbKrN&sid=04271e1ea7414c0a97b6686d3d8a85b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:34:04,663    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:34:04] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLbLO1&sid=04271e1ea7414c0a97b6686d3d8a85b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:34:15,841    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:34:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLbO7z&sid=04271e1ea7414c0a97b6686d3d8a85b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:34:16,462    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:34:16] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLbQxw&sid=04271e1ea7414c0a97b6686d3d8a85b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:34:16,713    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:34:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLbQsa&sid=04271e1ea7414c0a97b6686d3d8a85b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:01,158    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:45:01,624    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:01] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 08:45:01,649    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:01] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 08:45:01,692    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdtuI HTTP/1.1[0m" 200 -
+2020-06-21 08:45:05,056    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:05] "[32mGET /google/auth?state=0g8nIWkNDcan9zKDc3n98FtcxhKtRv&code=4/1AFZQFBkqKY0rBHRZCDahkNo3GTdzYMB_-lnG1XuMN1Zm6-68wTo6agPqPZJmBlkNclSGPGsQLvi5BQPf9nJBu4&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 08:45:06,049    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 08:45:06,128    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:06] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 08:45:06,750    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:06] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 08:45:06,765    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:06] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 08:45:06,773    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:06] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 08:45:07,453    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLduY2&sid=0812cfeb2b744e48bef647b09c1c60ef HTTP/1.1[0m" 200 -
+2020-06-21 08:45:07,464    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:07] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 08:45:07,640    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdvnu HTTP/1.1[0m" 200 -
+2020-06-21 08:45:07,725    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:07] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 08:45:07,863    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:07] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 08:45:08,303    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:08] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 08:45:08,308    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:08] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 08:45:08,368    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:08] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 08:45:09,730    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdv_5&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:10,381    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdwVh&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:21,220    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdwfo&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:21,863    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdzJF&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:32,674    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLdzTF&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:33,287    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:33] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLe05h&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:45:33,312    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:45:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLe069&sid=b18fdb69a4534c14adbdd9796c97e1a2 HTTP/1.1[0m" 200 -
+2020-06-21 08:46:27,076    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:46:27,499    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:46:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLeCjq HTTP/1.1[0m" 200 -
+2020-06-21 08:46:53,147    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:46:53] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLeJbU&sid=9147a17ac6564b6dbcd04d08acfd48b6 HTTP/1.1[0m" 200 -
+2020-06-21 08:46:53,152    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:46:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLeDUs&sid=9147a17ac6564b6dbcd04d08acfd48b6 HTTP/1.1[0m" 200 -
+2020-06-21 08:48:42,734    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:48:48,385    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:48:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLeli_ HTTP/1.1[0m" 200 -
+2020-06-21 08:49:26,909    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:49:28,880    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:49:28] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLevTw HTTP/1.1[0m" 200 -
+2020-06-21 08:49:55,302    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:49:55] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLf03r&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:49:55,304    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:49:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLevn9&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:50:21,306    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:50:21] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLf6Q1&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:50:21,310    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:50:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLf0Dl&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:50:26,127    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:50:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLf6aG&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:50:37,373    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:50:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLf7lM&sid=abaeb9194e704e249ca8861a2aefe6c1 HTTP/1.1[0m" 200 -
+2020-06-21 08:57:06,394    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:57:06,857    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgf2a HTTP/1.1[0m" 200 -
+2020-06-21 08:57:15,465    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:15] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 08:57:15,665    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgfat&sid=3e68094320244d75995af1b81feac5b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:57:16,100    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:16] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 08:57:16,278    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLghkK&sid=3e68094320244d75995af1b81feac5b0 HTTP/1.1[0m" 200 -
+2020-06-21 08:57:19,335    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:19] "[32mGET /google/auth?state=BUsa6osvobmBuSTmsINj1MKOqVPv7g&code=4/1AGrqZlnmtvspPoEoJ3fKuBY2BZsPt3idPwkBLI5VSSa0m5LZi8xDqIJDpbd3-qGPRApLXUM7QE4q74ARO2CSig&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 08:57:19,960    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 08:57:20,654    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:20] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 08:57:20,663    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:20] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 08:57:20,669    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:20] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 08:57:20,676    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:20] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 08:57:21,185    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgiz1 HTTP/1.1[0m" 200 -
+2020-06-21 08:57:21,323    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:21] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 08:57:21,521    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:21] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 08:57:21,632    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:21] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 08:57:21,771    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:21] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 08:57:22,143    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:22] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 08:57:22,190    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:22] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 08:57:27,133    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgj4d&sid=2d41ff9f4bd54ab9a2f48776ccde9ced HTTP/1.1[0m" 200 -
+2020-06-21 08:57:27,750    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgkXX&sid=2d41ff9f4bd54ab9a2f48776ccde9ced HTTP/1.1[0m" 200 -
+2020-06-21 08:57:46,800    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:57:46] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLgpBE&sid=2d41ff9f4bd54ab9a2f48776ccde9ced HTTP/1.1[0m" 200 -
+2020-06-21 08:58:14,993    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 08:58:18,632    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:18] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 08:58:18,883    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:18] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 08:58:21,638    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:21] "[32mGET /google/auth?state=D6ZXUdpTj3Xn6O3d0MnGK1bcLnVnA1&code=4/1AE3bAU54pJTGJQqXLpVw9hsrO51PDWxLRa6PLj_UgXUtR9eeEhyJ1EWz3TrGcLrkojh0tQav8OXFpFCR7zSCOM&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 08:58:21,955    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:21] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 08:58:22,655    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:22] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 08:58:22,663    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:22] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 08:58:22,669    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:22] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 08:58:22,672    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:22] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 08:58:23,061    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:23] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgy5n HTTP/1.1[0m" 200 -
+2020-06-21 08:58:23,320    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:23] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 08:58:23,536    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:23] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 08:58:23,545    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:23] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 08:58:23,853    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:23] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 08:58:24,167    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:24] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 08:58:24,310    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:24] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 08:58:25,628    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgyBS&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:26,242    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:26] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgypV&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:37,018    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLgyz5&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:37,635    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLg_bT&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:46,778    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:46] "[37mGET /api/v1/meetingbox/GoldenEye/info HTTP/1.1[0m" 200 -
+2020-06-21 08:58:48,418    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:48] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLg_l5&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:48,698    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:48] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLh2I4&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 08:58:49,038    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 08:58:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLh2Nb&sid=e6e2735060ec42939d3b546c5afdf7c7 HTTP/1.1[0m" 200 -
+2020-06-21 09:00:47,015    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:00:47,391    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhUzG HTTP/1.1[0m" 200 -
+2020-06-21 09:00:53,639    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:53] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:00:54,253    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:54] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:00:57,439    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:57] "[32mGET /google/auth?state=YgZk0cehQeKHCMwHqo1UbVT0sVkQHB&code=4/1AGdorywMuTt9k9ijz57TqylnaTokcJuf2_DFlt09Nm3L6ARksEaID5LPHvbhMuLjOCrcg7ncTEAFrBg9lT_eyc&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:00:57,681    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:57] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:00:58,354    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:58] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:00:58,362    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:58] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:00:58,366    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:58] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:00:58,374    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:58] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:00:58,520    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhVQY&sid=92ab66c2d8ac407796ab5db6f4fb4408 HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,002    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,132    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,207    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,536    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhY6J HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,736    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:00:59,746    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:00:59] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:01:00,185    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:00] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:01:09,894    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhYOM&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:10,511    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhaw9&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:21,265    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhb3p&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:21,889    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhdhq&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:25,160    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:25] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLheUz&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:25,162    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:25] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhdrb&sid=42e799b7afa84717b7bec852c0b52bc4 HTTP/1.1[0m" 200 -
+2020-06-21 09:01:53,099    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:01:53,500    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhkpP HTTP/1.1[0m" 200 -
+2020-06-21 09:01:55,661    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:55] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:01:56,280    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:56] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:01:59,361    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:59] "[32mGET /google/auth?state=VX1SJtAIF3Myc93Qd5AOlA24PGfcdT&code=4/1AE6Hm65WJZyxutQ6tqPLueuMiHokRN3VDt19N6QY2pSdmK-peBLl9G308miXxc-Vv_fnKSDtkZVAKlIQv6ffI8&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:01:59,729    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:01:59] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,438    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,448    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,453    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,462    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,685    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhlZX&sid=f91fc2f5d47f4ccea31d5f989f8fc8f6 HTTP/1.1[0m" 200 -
+2020-06-21 09:02:00,897    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:00] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhnGd HTTP/1.1[0m" 200 -
+2020-06-21 09:02:01,109    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:01] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:02:01,268    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:01] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:02:01,578    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:01] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:02:01,733    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:01] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:02:01,889    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:01] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:02:02,204    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:02] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:02:04,637    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:04] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhnN7&sid=f3135f635f5e4d51b9d9ba09896ea75f HTTP/1.1[0m" 200 -
+2020-06-21 09:02:05,254    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhoHV&sid=f3135f635f5e4d51b9d9ba09896ea75f HTTP/1.1[0m" 200 -
+2020-06-21 09:02:42,674    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:02:45,570    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:45] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:02:45,799    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:45] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:02:45,811    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhy7C HTTP/1.1[0m" 200 -
+2020-06-21 09:02:47,842    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:47] "[32mGET /google/auth?state=huf5aHiwhvFHmPPe1XRLHLsx0dH6nk&code=4/1AEPWfRIMKqRgo233VP1IGVp638YcMk6Tz_e6bUEFztNshoXY2xE0aZuTwSUROwOOtJJDiCXNySxNwQ4u0QlmRA&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:02:48,485    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:48] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:02:48,533    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:48] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,147    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,150    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,156    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,789    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,923    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,958    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhz9I HTTP/1.1[0m" 200 -
+2020-06-21 09:02:49,982    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:49] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:02:50,059    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:50] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:02:50,435    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:50] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:02:50,570    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:50] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:02:54,203    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLhzLl&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:02:54,379    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:02:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLh-OS&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:05,557    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLh-Qp&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:06,187    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLi19P&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:15,586    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:15] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLi3SK&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:15,586    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:15] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLi1JF&sid=67e4c98cff2c425b8ecd638691439770 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:47,160    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:03:47,494    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiAL0 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:49,686    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:49] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:03:50,301    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:50] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:03:53,125    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:53] "[32mGET /google/auth?state=r8Vv227USR411vDiuTS7X2g4sVDkOl&code=4/1AHyxK-hLJ4qrYCA_uAW01MtoE0UjzqZrqjwoVyb7u-bd2d2RcYb011As4ACSsfS5kAMM8rk8M8ATr2yJXgirw0&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:03:53,424    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:53] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,103    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,112    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,115    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,121    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,351    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiBOf&sid=41e317185b694589a16d695fe2af79fd HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,535    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiD0N HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,753    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,891    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,963    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:03:54,968    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:54] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:03:55,505    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:55] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:03:55,514    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:55] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:03:58,674    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiD6i&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:03:59,298    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:03:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiE7L&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:10,026    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiEH4&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:10,642    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiGui&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:20,155    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:20] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLiJDJ&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:20,156    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:20] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiH2K&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:21,425    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiJN2&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:21,600    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiJgu&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:32,780    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiJja&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:33,397    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiMSF&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:44,127    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiMbw&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:44,749    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiPDW&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:45,792    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:45] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLiPTh&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:45,792    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiPNF&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:55,486    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiPda&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:04:55,655    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:04:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiR-_&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:06,841    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiS1f&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:07,463    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiUmU&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:11,421    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:11] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLiVkD&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:11,422    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiUwB&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:18,213    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiVu4&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:18,383    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiXY7&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:29,560    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiXan&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:30,176    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiaJQ&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:37,044    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:37] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLib-j&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:37,044    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLiaT3&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:40,908    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLic8N&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:41,086    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:41] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLid4m&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:52,260    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLid7X&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:05:52,878    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:05:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLifs6&sid=00b2fa23f1414857a1c41c7e328b2838 HTTP/1.1[0m" 200 -
+2020-06-21 09:07:36,429    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:07:36,791    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj2p6 HTTP/1.1[0m" 200 -
+2020-06-21 09:07:45,224    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:45] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:07:45,840    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:45] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:07:47,968    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj3NP&sid=e43aeda233c94fffaf095a98082fb9a4 HTTP/1.1[0m" 200 -
+2020-06-21 09:07:49,237    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:49] "[32mGET /google/auth?state=VF12PDiNo69S61mzHhTr7BCJTaGalJ&code=4/1AFV6tbfQrsGufaoOzRS60n19QgdwhT4Gr8cTEpaPGJkNIjdpQLolqeWu8x8hMKQh84ICH-4sbEGp1XJ8DMhkSQ&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:07:49,534    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:49] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,188    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,195    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,203    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,210    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,585    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj6fK HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,845    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:07:50,988    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:50] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:07:51,007    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:51] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:07:51,070    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:51] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:07:51,223    ERROR -- MainProcess server.py:239 -- 'DayOfWeek'
+2020-06-21 09:07:51,223    ERROR -- MainProcess webserver.py:377 -- 'DayOfWeek'
+2020-06-21 09:07:51,224    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:51] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:07:51,605    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:07:51] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:07:59,312    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e45040f6795ef32b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,312    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e45040f6795ef32b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,312    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e45040f6795ef32b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,465    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '778754c6f97bbd3c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,465    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '778754c6f97bbd3c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,465    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '778754c6f97bbd3c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,626    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '5a37b70346d3222e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,627    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '5a37b70346d3222e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,627    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '5a37b70346d3222e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,789    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e6eccadfe64bb8f7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,789    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e6eccadfe64bb8f7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,790    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e6eccadfe64bb8f7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,945    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '11ffe8f321d8432', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,945    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '11ffe8f321d8432', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:07:59,945    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '11ffe8f321d8432', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,096    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'eebeff72a31a5756', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,096    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'eebeff72a31a5756', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,096    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:07:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'eebeff72a31a5756', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,251    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '471416577699ffb6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,252    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '471416577699ffb6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,252    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '471416577699ffb6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,419    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b48a3584824a1068', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,419    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b48a3584824a1068', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,419    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b48a3584824a1068', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,576    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '1f4691556728e073', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,576    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '1f4691556728e073', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,576    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '1f4691556728e073', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,741    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'bde727a5365bb067', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,741    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'bde727a5365bb067', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,741    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'bde727a5365bb067', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,898    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ba5629993d5c589a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,898    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ba5629993d5c589a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:00,898    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ba5629993d5c589a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,049    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'cd7e3e270e8fc7e8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,049    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'cd7e3e270e8fc7e8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,050    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'cd7e3e270e8fc7e8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,209    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e9ed8b36f30498ec', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,209    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e9ed8b36f30498ec', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,209    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e9ed8b36f30498ec', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,388    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'dd74e7710d83a87e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,388    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'dd74e7710d83a87e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,388    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'dd74e7710d83a87e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,542    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e7c8e93bd03343da', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,542    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e7c8e93bd03343da', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,542    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'e7c8e93bd03343da', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,705    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'd111f5f79097b070', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,706    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'd111f5f79097b070', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,706    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'd111f5f79097b070', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,871    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c8503dc129336346', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,871    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c8503dc129336346', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:01,871    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c8503dc129336346', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,030    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a01f8cf87f1902fd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,031    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a01f8cf87f1902fd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,031    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a01f8cf87f1902fd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,191    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6e91b9a735574ed5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,191    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6e91b9a735574ed5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,191    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6e91b9a735574ed5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,350    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '730bc8fddfba720d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,350    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '730bc8fddfba720d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,350    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '730bc8fddfba720d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,507    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69e220b9ff2c4f89', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,508    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69e220b9ff2c4f89', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,508    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69e220b9ff2c4f89', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,668    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'be182f2b07d6c1c7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,668    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'be182f2b07d6c1c7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,668    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'be182f2b07d6c1c7', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,738    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:02] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:08:02,819    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '55582be3e6805ab5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,819    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '55582be3e6805ab5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,819    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '55582be3e6805ab5', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,974    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b8a23b6a4d20da0d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,975    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b8a23b6a4d20da0d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:02,975    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b8a23b6a4d20da0d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,137    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '817064fc12ca69dd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,137    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '817064fc12ca69dd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,137    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '817064fc12ca69dd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,299    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c806cd0595354caa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,299    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c806cd0595354caa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,299    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c806cd0595354caa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,368    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:03] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:08:03,377    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:03] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:08:03,382    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:03] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:08:03,385    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:03] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:08:03,455    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b0aeb314e3eeb0a8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,455    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b0aeb314e3eeb0a8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,455    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b0aeb314e3eeb0a8', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,609    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '273d346446e8fd5b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,609    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '273d346446e8fd5b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,610    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '273d346446e8fd5b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,617    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj6k_&sid=2cf8aebc7dac49da85a25d800b8a917e HTTP/1.1[0m" 200 -
+2020-06-21 09:08:03,759    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '912474e65ccdd625', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,759    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '912474e65ccdd625', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,759    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '912474e65ccdd625', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,917    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f2104f0c0907b84d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,917    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f2104f0c0907b84d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:03,917    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f2104f0c0907b84d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,012    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,031    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,076    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '3accc05ec3f542fe', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,076    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '3accc05ec3f542fe', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,076    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:03 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '3accc05ec3f542fe', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,233    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '67ff1d7a9ccf659f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,233    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '67ff1d7a9ccf659f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,233    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '67ff1d7a9ccf659f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,238    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'fb00db895e0489c6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,238    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'fb00db895e0489c6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,238    ERROR -- MainProcess webserver.py:154 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'fb00db895e0489c6', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,238    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj9t2 HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,255    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,388    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6856e89ef02071ed', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,388    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6856e89ef02071ed', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,388    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6856e89ef02071ed', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,406    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c1ab004f138524bb', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,406    ERROR -- MainProcess server.py:239 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c1ab004f138524bb', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,406    ERROR -- MainProcess webserver.py:377 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'c1ab004f138524bb', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,409    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,543    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '812b134342355bb9', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,544    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '812b134342355bb9', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,544    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '812b134342355bb9', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,573    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6f75f65940899aae', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,573    ERROR -- MainProcess server.py:179 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6f75f65940899aae', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,573    ERROR -- MainProcess webserver.py:340 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '6f75f65940899aae', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,574    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,650    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:04] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:08:04,697    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f359d139cb5dd313', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,697    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f359d139cb5dd313', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,697    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f359d139cb5dd313', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,853    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '80e24963da6fdccd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,853    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '80e24963da6fdccd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:04,853    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '80e24963da6fdccd', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,006    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '8078d1f773e2741f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,006    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '8078d1f773e2741f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,006    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '8078d1f773e2741f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,168    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '466110cbb5efcd9f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,168    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '466110cbb5efcd9f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,168    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '466110cbb5efcd9f', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,325    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '189342398e8afc73', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,326    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '189342398e8afc73', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,326    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '189342398e8afc73', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,489    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ab23fc3933b3bf16', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,489    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ab23fc3933b3bf16', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,490    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'ab23fc3933b3bf16', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,649    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69472c6320a53e12', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,649    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69472c6320a53e12', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,649    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '69472c6320a53e12', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,825    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b9f71ed7a919346c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,826    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b9f71ed7a919346c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:05,826    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'b9f71ed7a919346c', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,027    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'babfcb6dcc6df89b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,027    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'babfcb6dcc6df89b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,027    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:05 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'babfcb6dcc6df89b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,202    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'edaf4799a0c4f73e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,202    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'edaf4799a0c4f73e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,202    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'edaf4799a0c4f73e', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,447    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7277dc49a8ec9d9d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,447    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7277dc49a8ec9d9d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,447    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7277dc49a8ec9d9d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,606    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '27945acf8fc0239b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,606    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '27945acf8fc0239b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,606    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '27945acf8fc0239b', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,776    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a7dbeacec3e24007', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,776    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a7dbeacec3e24007', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,776    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'a7dbeacec3e24007', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,948    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '562f567702c6575d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,948    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '562f567702c6575d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:06,948    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '562f567702c6575d', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,099    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7afa17b2f45021aa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,099    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7afa17b2f45021aa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,099    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '7afa17b2f45021aa', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,254    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '563a1e6a7e2b3486', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,254    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '563a1e6a7e2b3486', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,254    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': '563a1e6a7e2b3486', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,415    ERROR -- MainProcess influxdb.py:136 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f66848a518ba802a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,415    ERROR -- MainProcess server.py:137 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f66848a518ba802a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,415    ERROR -- MainProcess webserver.py:67 -- (500)
+Reason: Internal Server Error
+HTTP response headers: HTTPHeaderDict({'Date': 'Sun, 21 Jun 2020 07:08:07 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'trace-id': 'f66848a518ba802a', 'vary': 'Accept-Encoding', 'x-platform-error-code': 'internal error'})
+HTTP response body: b'{"code":"internal error","message":"An internal error has occurred"}'
+
+2020-06-21 09:08:07,595    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:07] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjA4H&sid=19c24eb25acd454bb50dd0774e492f9e HTTP/1.1[0m" 200 -
+2020-06-21 09:08:19,179    INFO -- MainProcess _internal.py:113 --  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-06-21 09:08:19,560    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjDBS HTTP/1.1[0m" 200 -
+2020-06-21 09:08:30,721    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:30] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjDpg&sid=97b5a41344df4bbb8f221ba09acc8e92 HTTP/1.1[0m" 200 -
+2020-06-21 09:08:31,030    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:31] "[32mGET / HTTP/1.1[0m" 302 -
+2020-06-21 09:08:31,340    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:31] "[32mGET /google/login HTTP/1.1[0m" 302 -
+2020-06-21 09:08:34,227    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:34] "[32mGET /google/auth?state=pvBwUzpomrRc6isWsfC2XcZsC1uNp0&code=4/1AFIUKGvlCVj5oQsUVu-JySzKbNGcrwca9yuG8kI_NaAj5oqTdsa9KMfiSIbDv0IENh4ktQal3xJhTDDWtPB4CU&scope=email%20profile%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&authuser=2&hd=ext.ml6.eu&prompt=consent HTTP/1.1[0m" 302 -
+2020-06-21 09:08:34,858    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:34] "[37mGET / HTTP/1.1[0m" 200 -
+2020-06-21 09:08:34,932    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:34] "[37mGET /static/css/normalize.css HTTP/1.1[0m" 200 -
+2020-06-21 09:08:35,540    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:35] "[37mGET /static/css/screen.css HTTP/1.1[0m" 200 -
+2020-06-21 09:08:35,549    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:35] "[37mGET /js/datahandler.js HTTP/1.1[0m" 200 -
+2020-06-21 09:08:35,555    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:35] "[37mGET /js/start.js HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,187    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /api/v1/meetingbox/status HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,334    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /static/json/manifest.json HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,358    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjHjk HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,377    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /static/json/images/icons/icon-144x144.png HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,450    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /api/v1/notifications HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,807    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /api/v1/meetingbox/Kitchen/info HTTP/1.1[0m" 200 -
+2020-06-21 09:08:36,885    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:36] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:08:42,082    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjHwD&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:08:42,274    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:42] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjJJa&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:08:45,403    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:45] "[37mGET /api/v1/meetingbox/GoldenEye/info HTTP/1.1[0m" 200 -
+2020-06-21 09:08:47,502    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:47] "[37mGET /api/v1/meetingbox/Casino%20Royale/info HTTP/1.1[0m" 200 -
+2020-06-21 09:08:49,975    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:49] "[37mGET /api/v1/meetingbox/Gold%20Finger/info HTTP/1.1[0m" 200 -
+2020-06-21 09:08:53,449    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjJMZ&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:08:54,065    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:08:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjM5B&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:01,975    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:01] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjO0p&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:01,975    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjMEp&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:04,837    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:04] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjOAQ&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:05,012    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:05] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjOt7&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:16,203    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjOvt&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:16,819    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:16] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjRej&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:27,571    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:27] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjRoL&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:27,594    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:27] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjUH3&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:28,181    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:28] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjUQL&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:34,811    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:34] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-21 09:09:38,921    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:38] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjUZu&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:39,544    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:39] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjXBi&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:39,648    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:39] "[37mGET /api/v1/graph/humidity/room HTTP/1.1[0m" 200 -
+2020-06-21 09:09:41,649    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:41] "[37mGET /api/v1/graph/temperature/room HTTP/1.1[0m" 200 -
+2020-06-21 09:09:50,278    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjXLS&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:50,485    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:50] "[37mGET /api/v1/graph/humidity/room HTTP/1.1[0m" 200 -
+2020-06-21 09:09:50,889    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:50] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjZz9&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:53,804    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:53] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjagX&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:09:53,805    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:09:53] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLja6h&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:01,642    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjaqF&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:01,813    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:01] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjckk&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:12,987    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:12] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjcnN&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:13,604    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:13] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjfVz&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:19,422    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:19] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjgwv&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:19,422    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:19] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjffd&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:22,151    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:22] "[37mGET /api/v1/graph/coffee/week HTTP/1.1[0m" 200 -
+2020-06-21 09:10:24,336    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjh4W&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:24,955    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:24] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjiHI&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:35,699    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:35] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjiQz&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:36,314    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:36] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjl2s&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:45,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:45] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjnF1&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:45,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:45] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjlCT&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:47,084    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjnOi&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:47,253    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:47] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjnqk&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:58,425    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:58] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjntN&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:10:59,040    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:10:59] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjqbx&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:09,786    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:09] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjqlY&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:10,399    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:10] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjtNR&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:11,013    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:11] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjtbH&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:11,014    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:11] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjtX1&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:21,192    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjtgi&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:21,807    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:21] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjw9f&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:32,554    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:32] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjwJH&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:33,166    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:33] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjyxB&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:37,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:37] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLjzxY&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:37,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:37] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLjz4n&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:43,906    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:43] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj-5E&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:44,084    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:44] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj_ia&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:55,263    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLj_lN&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:11:55,878    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:11:55] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk2U2&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:03,286    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:03] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLk4Ho&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:03,286    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:03] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk2dg&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:06,608    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk4RP&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:06,783    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:06] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk5FK&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:17,968    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:17] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk5I1&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:18,584    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:18] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk80p&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:29,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:29] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLkAe2&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:29,289    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLk8AR&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:29,900    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:29] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkAnh&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:40,682    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:40] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkAxF&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:41,301    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:41] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkDZj&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:52,027    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkDjM&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:52,643    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:52] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkGK-&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:54,906    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:54] "[37mPOST /socket.io/?EIO=3&transport=polling&t=NBLkGuK&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
+2020-06-21 09:12:54,907    INFO -- MainProcess _internal.py:113 -- 127.0.0.1 - - [21/Jun/2020 09:12:54] "[37mGET /socket.io/?EIO=3&transport=polling&t=NBLkGUb&sid=48b7db20b1534791ad468090c2657dec HTTP/1.1[0m" 200 -
