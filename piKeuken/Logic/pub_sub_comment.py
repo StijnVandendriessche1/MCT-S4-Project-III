@@ -25,7 +25,6 @@ logging.basicConfig(filename=f"{BASE_DIR}/data/logging.txt", level=logging.ERROR
 
 class PubSubComment:
     def __init__(self, id):
-        # TODO:Aan StijnVandendriessche1 vragen
         """For setting up the object.
 
         Args:
