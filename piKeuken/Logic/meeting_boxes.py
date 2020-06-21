@@ -217,10 +217,19 @@ class MeetingBoxSystem:
             raise 
     
     def check_first_time(self):
+        """Tis function must be called at the beginning of the program
+
+        Raises:
+            ex: Error-massage
+        """        
         try:
             for i, meetingbox in enumerate(self.meetingboxes):
                 try:
                     self.meetingboxes[i].last_change = meetingbox.count_peoples
+                    if meetingbox.count_peoples > 0:
+                        self.meetingboxes[i].buzzy = True
+                    else:
+                        self.meetingboxes[i].buzzy = False
                 except:
                     pass
         except Exception as ex:
