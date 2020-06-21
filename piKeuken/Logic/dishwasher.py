@@ -81,9 +81,12 @@ class Dishwasher:
                         minute_now = datetime.now().minute
                         time_now = timedelta(hours=hour_now, minutes=minute_now)
                         """ Check if the dishwasher is on """
-                        print(self.hour_on)
-                        print(datetime.now())
-                        if vibration and self.status == 0 or self.status == 1:
+                        print("hour_on: ", self.hour_on)
+                        print("hour_on: ", self.hour_on)
+                        print("self.status: ", self.status)
+                        print("self.duration: ", self.duration)
+                        print("tot: ", (self.hour_on + self.duration))
+                        if (vibration and self.status == 0) or (vibration and self.status == 1):
                             """ Send notification that the dishwasher is started """
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "Dishwasher is running! 🧺🧺🧺"})
