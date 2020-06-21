@@ -159,7 +159,7 @@ const getNotifications = function (data) {
         /* Check if the notification already viewed */
         if (!notification["viewed"])
             notificationsNotViewed.push(notification["nid"]);
-        output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]}${notification["msg"]}</div>`;
+        output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]} ${notification["msg"]} - ${notification["dt"]}</div>`;
     }
     changeNotificationCount();
     domListNotification.innerHTML = output;
