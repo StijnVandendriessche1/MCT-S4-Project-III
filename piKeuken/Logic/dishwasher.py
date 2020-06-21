@@ -81,10 +81,10 @@ class Dishwasher:
                         """ Check if the dishwasher is on """
                         print(self.hour_on)
                         print(datetime.now())
-                        if vibration == False and self.status == 0 or self.status == 1:
+                        if vibration and self.status == 0 or self.status == 1:
                             """ Send notification that the dishwasher is started """
                             self.notification_queue.put(
-                                {"name": "🍽", "message": "Dishwasher is cleaning! 🧺🧺🧺"})
+                                {"name": "🍽", "message": "Dishwasher is running! 🧺🧺🧺"})
                             self.status = 3
                             self.hour_on = datetime.now()
                             """ Change the settings in the database """
@@ -100,7 +100,7 @@ class Dishwasher:
                         elif self.status == 3 and (self.hour_on + self.duration) <= datetime.now():
                             """ Check if the dishwasher is done """
                             self.notification_queue.put(
-                                {"name": "🍽", "message": "The Dishwasher is empty! Time to empty it! 😇"})
+                                {"name": "🍽", "message": "The Dishwasher is done! Time to empty it! 😇"})
                             self.status = 1
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
