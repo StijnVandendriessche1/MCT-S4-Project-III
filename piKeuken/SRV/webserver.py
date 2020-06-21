@@ -60,6 +60,8 @@ def time_status():
                             'status': server.check_coffee_status()})
                 socketio.emit('status_dishwasher', {
                             'status': server.check_status_dishwasher()})
+                socketio.emit('status_light', {
+                            'status': server.get_light()})
                 sleep(11)
             except Exception as ex:
                 logging.error(ex)
@@ -289,18 +291,6 @@ def sw():
     except Exception as ex:
         logging.error(ex)
         return "Error"
-    
-
-""" @app.route('/<page>.appache')
-def cache(page):
-    try:
-        if google_auth.is_logged_in():
-            return render_template(f"{page}.appache")
-        return 'You are not currently logged in.'
-    except Exception as ex:
-        logging.error(ex)
-        return "Error" """
-
 
 @app.route(endpoint + '/meetingbox/status')
 def get_meetingbox_status():

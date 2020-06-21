@@ -32,6 +32,7 @@ class Dishwasher:
             notification_queue (Queue): This Queue if for adding new notifications to the frontend.
         """        
         try:
+            self.update_settings = 0
             self.notification_queue = notification_queue
             self.db = DB()
             self.influxdb = Influxdb()
@@ -39,7 +40,7 @@ class Dishwasher:
             self.hour_notification = timedelta(hours=16, minutes=13)
             """ Status:
                     -   0   ==> Nothing
-                    -   1   ==> Notification that the dishwasher must be filled
+                    -   1   ==> Notification that the dishwasher must be filled or the dishwasher is already done
                     -   3   ==> Running
             """
             self.status = 0
@@ -72,22 +73,24 @@ class Dishwasher:
         try:
             while True:
                 try:
-                    if self.ai_status:
+                    if self.ai_status and self.update_settings == 0:
+                        self.update_settings = 3
                         """ Check if the dishwasher is on """
                         vibration = self.check_vibration()
                         hour_now = datetime.now().hour
                         minute_now = datetime.now().minute
                         time_now = timedelta(hours=hour_now, minutes=minute_now)
                         """ Check if the dishwasher is on """
-                        if vibration and self.status == 0:
+                        print(self.hour_on)
+                        print(datetime.now())
+                        if vibration and self.status == 0 or self.status == 1:
                             """ Send notification that the dishwasher is started """
                             self.notification_queue.put(
-                                {"name": "🍽", "message": "Dishwasher is cleaning! 🧺🧺🧺"})
+                                {"name": "🍽", "message": "Dishwasher is running! 🧺🧺🧺"})
                             self.status = 3
                             self.hour_on = datetime.now()
                             """ Change the settings in the database """
-                            self.change_settings({"dishwasher_status": self.status})
-                            self.change_settings({"dishwasher_hour_on": self.hour_on})
+                            self.change_settings({"dishwasher_status": self.status, "dishwasher_hour_on": self.hour_on})
                         elif self.status == 0 and time_now >= self.hour_notification:
                             self.notification_queue.put(
                                 {"name": "🍽", "message": "Don't forget to fill in the dishwasher! 💩"})
@@ -96,11 +99,11 @@ class Dishwasher:
                             self.send_mail.send_message( "The dishwasher needs you!","Don't forget to fill in the dishwasher", self.mail_person)
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
-                        elif self.status == 3 and (self.hour_on + self.duration) >= datetime.now():
+                        elif self.status == 3 and (self.hour_on + self.duration) <= datetime.now():
                             """ Check if the dishwasher is done """
                             self.notification_queue.put(
-                                {"name": "🍽", "message": "The Dishwasher is empty! Time to empty it! 😇"})
-                            self.status = 0
+                                {"name": "🍽", "message": "The Dishwasher is done! Time to empty it! 😇"})
+                            self.status = 1
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
                         elif self.status == 1 and time_now>= timedelta(hours=5, minutes=31) and time_now <= timedelta(hours=5, minutes=35):
@@ -109,6 +112,7 @@ class Dishwasher:
                             self.change_settings({"dishwasher_status": self.status})
                 except Exception as e:
                     logging.error(e)
+                self.update_settings = 0
                 sleep(61)
         except Exception as e:
             logging.error(e)
@@ -158,7 +162,7 @@ class Dishwasher:
             else:
                 """ Change the value of the vars """
                 self.hour_notification = self.parse_time(settings[settings["name"] == "dishwasher_hour_notification"]["value"].iloc[0])
-                self.status = int(settings[settings["name"] == "dishwasher_status"]["value"])
+                self.status = int(settings[settings["name"] == "dishwasher_status"]["value"].iloc[0])
                 self.hour_on = datetime.strptime(settings[settings["name"] == "dishwasher_hour_on"]["value"].iloc[0], f"%Y-%m-%d %H:%M:%S.%f")
                 self.duration = self.parse_time(settings[settings["name"] == "dishwasher_duration"]["value"].iloc[0])
                 self.mail_person = []
@@ -219,10 +223,15 @@ class Dishwasher:
             ex: Error-message
         """        
         try:
+            if user_id != 0:
+                while self.update_settings == 3:
+                    sleep(0.11)
+            self.update_settings = 1
             for setting in settings_update:
                 self.change_settings_db(
                     setting, settings_update[setting], user_id)
             self.get_settings()
+            self.update_settings = 0
         except Exception as ex:
             logging.error(ex)
             raise ex

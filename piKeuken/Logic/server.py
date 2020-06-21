@@ -34,6 +34,7 @@ class Server:
             self.coffee = Coffee(self.notifications.new_notifications_queue)
             self.dishwasher = Dishwasher(self.notifications.new_notifications_queue)
             self.meetingbox = MeetingBoxSystem()
+            self.threshold_light = 71.0
             self.start_status()
         except Exception as ex:
             logging.error(ex)
@@ -276,6 +277,34 @@ class Server:
                         """
             temperature = self.influxdb.get_data(query, False)
             return temperature.to_json(orient="records")
+        except Exception as ex:
+            logging.error(ex)
+            raise ex
+    
+
+    def get_light(self):
+        """This function gets the last status of the light of every room
+
+        Raises:
+            ex: Error-message
+
+        Returns:
+            dict: This returns a dictionary with keys: room and value: light-status (true or false)
+        """        
+        try:
+            query = '|> range(start: 2018-05-22T23:30:00Z) |> last() |> filter(fn: (r) => r["_measurement"] == "sensordata") |> filter(fn: (r)=>r["_field"]=="light") |> sort(columns: ["_time"], desc: true)'
+            light = self.influxdb.get_data(query, False)
+            """ Check if the light is higher than the threshold """
+            light_rooms = {}
+            for i, light_room in light.iterrows():
+                try:
+                    if light_room["_value"]>=self.threshold_light:
+                        light_rooms[light_room["host"]]=True
+                    else:
+                        light_rooms[light_room["host"]]=False
+                except:
+                    pass
+            return light_rooms
         except Exception as ex:
             logging.error(ex)
             raise ex

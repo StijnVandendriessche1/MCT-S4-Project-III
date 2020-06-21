@@ -1,5 +1,5 @@
 const production = false, ip = "https://192.168.238.2.xip.io:5000";
-// const ip = "https://localhost:5000";
+//const ip = "https://localhost:5000";
 let socket = io.connect(ip);
 
 let domReady = false;
@@ -102,6 +102,23 @@ socket.on("dishwasher_settings", function (data){
     }
 })
 
+socket.on("status_light", function (data){
+    log("Status light")
+    log(data);
+    for (const lightRoom in data["status"]) {
+        log(lightRoom)
+        if (data["status"].hasOwnProperty(lightRoom)) {
+            const lightValue = data["status"][lightRoom];
+            log(`${lightRoom} - ${lightValue}`)
+            box = lightRoom.replace(/ /g, "");
+            /* Check if the light is on or off */
+            lightReturn = ""
+            if(lightValue) lightReturn = "var(--global-accent)";
+            document.querySelector(`.js-map-icon${box}`).style.fill =lightReturn;
+        }
+    }
+})
+
 /* Functions */
 /* Function for respons update */
 const updatePis = function(data){
@@ -142,7 +159,7 @@ const getNotifications = function (data) {
         /* Check if the notification already viewed */
         if (!notification["viewed"])
             notificationsNotViewed.push(notification["nid"]);
-        output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]}${notification["msg"]}</div>`;
+        output += `<div class="c-notification__item" data-notificationId="${notification["nid"]}" data-viewed="${notification["viewed"]}">${notification["title"]} ${notification["msg"]} - ${notification["dt"]}</div>`;
     }
     changeNotificationCount();
     domListNotification.innerHTML = output;
@@ -542,10 +559,10 @@ const resetInfoMapBoxes = function(){
         domRoomBox.style.strokeWidth = "3px";
     }
     /* Reset all icons */
-    const domIcons = document.querySelectorAll(".js-map-icon");
+    /* const domIcons = document.querySelectorAll(".js-map-icon");
     for (const domIcon of domIcons) {
         domIcon.style.fill = ""
-    }
+    } */
 };
 const changeInfoMapBoxes = function (data) {
     log(data)
@@ -558,8 +575,8 @@ const changeInfoMapBoxes = function (data) {
     log(domMapBox)
     domMapBox.style.stroke = "var(--global-accent)";
     domMapBox.style.strokeWidth = "5px";
-    document.querySelector(`.js-map-icon${box}`).style.fill =
-        "var(--global-accent)";
+    /* document.querySelector(`.js-map-icon${box}`).style.fill =
+        "var(--global-accent)"; */
     /* Clean the dict */
     data = cleanDict(data[0]);
     document.querySelector(".js-card__temp").innerHTML = data[
