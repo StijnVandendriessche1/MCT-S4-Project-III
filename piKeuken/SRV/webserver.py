@@ -60,6 +60,8 @@ def time_status():
                             'status': server.check_coffee_status()})
                 socketio.emit('status_dishwasher', {
                             'status': server.check_status_dishwasher()})
+                socketio.emit('status_light', {
+                            'status': server.get_light()})
                 sleep(11)
             except Exception as ex:
                 logging.error(ex)
