@@ -103,7 +103,7 @@ class Dishwasher:
                             self.status = 0
                             """ Change the settings in the database """
                             self.change_settings({"dishwasher_status": self.status})
-                        elif self.status == 1 and time_now>= timedelta(hours=5, minutes=31):
+                        elif self.status == 1 and time_now>= timedelta(hours=5, minutes=31) and time_now <= timedelta(hours=5, minutes=35):
                             """ Reset the dishwasher status """
                             self.status = 0
                             self.change_settings({"dishwasher_status": self.status})
