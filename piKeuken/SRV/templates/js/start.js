@@ -54,13 +54,18 @@ socket.on("status_dishwasher", function (data) {
 socket.on("status_rooms", function (data) {
     if (domReady) {
         for (const box in data.status) {
-            roomDataId = box.replace(/ /g, "");
+            let roomDataId = box.replace(/ /g, "");
             changeBoxStatus(roomDataId, data.status[box]);
-            selected = "Empty";
-            if (data.status[box]) selected = "Busy";
+            let selected = "Empty";
+            let check = "";
+            if (data.status[box]){
+                selected = "Busy";
+                check = "checked";
+            }
             document.querySelector(
                 `.js-word--${roomDataId}`
             ).innerHTML = selected;
+            document.querySelector(`.js-toggleswitch--${roomDataId}`).checked = check;
         }
     }
 });
@@ -198,7 +203,7 @@ const resetMeetingBoxes = function (data) {
             </svg>
         </div>
         <div class="c-item__toggle">
-            <input class="o-hide-accessible c-option c-option--hidden js-toggleswicht--roomBox" type="checkbox"
+            <input class="o-hide-accessible c-option c-option--hidden js-toggleswicht--roomBox js-toggleswitch--${roomDataId}" type="checkbox"
                 id="${roomDataId}" data-room="${roomData}" data-name="RoomStatus" ${check}>
             <label
                 class="c-label c-label--option c-custom-toggle c-custom-toggle--inverted"
