@@ -140,7 +140,7 @@ class MeetingBoxSystem:
                                 self.meetingboxes[i].buzzy = True
                                 self.change_to_influxdb(self.meetingboxes[i])
                                 self.meetingbox_queue.put(0)
-                            elif meetingbox.last_change > 0 and meetingbox.last_change == 0:
+                            elif meetingbox.last_change > 0 and meetingbox.count_peoples == 0:
                                 self.meetingboxes[i].last_change = meetingbox.count_peoples
                                 self.meetingboxes[i].buzzy = False
                                 self.change_to_influxdb(self.meetingboxes[i])
