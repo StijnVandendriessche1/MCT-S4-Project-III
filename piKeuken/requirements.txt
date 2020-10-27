@@ -3,7 +3,7 @@ imutils
 pandas
 picamera
 opencv-contrib-python==4.1.0.25
-cryptography==2.8
+cryptography==3.2
 flaky==3.6.1
 gcp-devrel-py-tools==0.0.15
 google-api-python-client==1.7.11
